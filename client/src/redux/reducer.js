@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "RECEIVE_STATE":
             return { ...state };
-        case "UPDATE_USER":
+        case "RECEIVE_USERINFO":
             return {
                 ...state,
                 user: action.payload.user,
