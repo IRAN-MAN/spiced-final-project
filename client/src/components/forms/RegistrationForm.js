@@ -4,8 +4,8 @@ import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
 import Button from "../Button";
 
 export default function RegistrationForm() {
-    const [submit, error] = useAuthSubmit("/api/users/signup", inputValues);
     const [inputValues, handleChange] = useStatefulFields();
+    const [submit, error] = useAuthSubmit("/api/users/signup", inputValues);
 
     return (
         <form onSubmit={submit}>
@@ -54,7 +54,7 @@ export default function RegistrationForm() {
                 />
             </label>
             <label htmlFor="repeat-password">
-                Password
+                Repeat Password
                 <input
                     id="repeat-password"
                     type="password"
@@ -65,7 +65,6 @@ export default function RegistrationForm() {
                 />
             </label>
             <Button
-                onClick={submit}
                 labeltext="sign up"
                 type="submit"
                 classNames="button submit-button"
