@@ -1,16 +1,17 @@
 import { useState } from "react";
-import axios from "../axios";
+import { useStatefulFields } from "../../hooks/hooks";
+import axios from "../../axios";
 
-import SubmitButton from "./SubmitButton.js";
+import Button from "../Button";
 
 export default function LoginForm() {
-    const [loginInput, setLoginInput] = useState({});
+    const [inputValues, handleChange] = useStatefulFields();
     const [message, setMessage] = useState("");
 
     const onLoginSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post("/api/login", loginInput);
+            await axios.post("/api/users/login", inputValues);
             location.reload();
         } catch (error) {
             console.log(
@@ -31,12 +32,7 @@ export default function LoginForm() {
                     name="email"
                     placeholder="email"
                     required
-                    onChange={(e) =>
-                        setLoginInput({
-                            ...loginInput,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
+                    onChange={handleChange}
                 />
             </label>
             <label htmlFor="password">
@@ -47,15 +43,16 @@ export default function LoginForm() {
                     name="password"
                     placeholder="******"
                     required
-                    onChange={(e) =>
-                        setLoginInput({
-                            ...loginInput,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
+                    onChange={handleChange}
                 />
             </label>
-            <SubmitButton />
+            <Button
+                onClick={onLoginSubmit}
+                labeltext="send"
+                type="submit"
+                classNames="button login-button"
+                icon="send"
+            />
             <p className="message">{message}</p>
         </form>
     );
