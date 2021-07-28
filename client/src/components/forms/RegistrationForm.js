@@ -1,31 +1,14 @@
-import { useState } from "react";
-import { useStatefulFields } from "../../hooks/hooks";
-import axios from "../../axios";
+import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
 
 //components
 import Button from "../Button";
 
 export default function RegistrationForm() {
-    const [registrationInput, setRegistrationInput] = useState({});
-    const [message, setMessage] = useState("");
-
-    const onRegistrationSubmit = async (event) => {
-        event.preventDefault();
-
-        try {
-            await axios.post("/api/register", registrationInput);
-            location.reload();
-        } catch (error) {
-            console.log(
-                "...(onRegistrationSubmit) Error: ",
-                error.response.data.error
-            );
-            setMessage(error.response.data.error);
-        }
-    };
+    const [submit, error] = useAuthSubmit("/api/users/signup", inputValues);
+    const [inputValues, handleChange] = useStatefulFields();
 
     return (
-        <form onSubmit={onRegistrationSubmit}>
+        <form onSubmit={submit}>
             <label htmlFor="first_name" value="First Name">
                 First Name
                 <input
@@ -34,12 +17,7 @@ export default function RegistrationForm() {
                     name="first_name"
                     placeholder="first name"
                     required
-                    onChange={(e) =>
-                        setRegistrationInput({
-                            ...registrationInput,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
+                    onChange={handleChange}
                 />
             </label>
             <label htmlFor="last_name">
@@ -50,12 +28,7 @@ export default function RegistrationForm() {
                     name="last_name"
                     placeholder="last name"
                     required
-                    onChange={(e) =>
-                        setRegistrationInput({
-                            ...registrationInput,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
+                    onChange={handleChange}
                 />
             </label>
             <label htmlFor="email">
@@ -66,12 +39,7 @@ export default function RegistrationForm() {
                     name="email"
                     placeholder="email"
                     required
-                    onChange={(e) =>
-                        setRegistrationInput({
-                            ...registrationInput,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
+                    onChange={handleChange}
                 />
             </label>
             <label htmlFor="password">
@@ -82,16 +50,17 @@ export default function RegistrationForm() {
                     name="password"
                     placeholder="******"
                     required
-                    onChange={(e) =>
-                        setRegistrationInput({
-                            ...registrationInput,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
+                    onChange={handleChange}
                 />
             </label>
-            <SubmitButton />
-            <p className="message">{message}</p>
+            <Button
+                onClick={submit}
+                labeltext="sign up"
+                type="submit"
+                classNames="button submit-button"
+                icon="send"
+            />
+            <p className="message">{error}</p>
         </form>
     );
 }
