@@ -23,6 +23,19 @@ export default function App() {
             <Navigation />
             <div>
                 <p>App Component!</p>
+                <Switch>
+                    <Route
+                        exact
+                        path="/"
+                        render={() => <p>HELLO YOU ARE LOGGED IN!</p>}
+                    />
+                    {/* <Route path="/friends/list" component={Friends} /> */}
+
+                    {/* This one should catch all the weird ones */}
+                    <Route path="/">
+                        <Redirect to="/" />
+                    </Route>
+                </Switch>
             </div>
             <Footer />
         </BrowserRouter>

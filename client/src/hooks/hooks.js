@@ -15,7 +15,9 @@ export function useStatefulFields() {
 export function useAuthSubmit(url, values) {
     const [error, setError] = useState();
 
-    const submit = async () => {
+    const submit = async (event) => {
+        event.preventDefault();
+
         try {
             await axios.post(url, values);
             location.reload();
