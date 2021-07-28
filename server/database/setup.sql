@@ -85,3 +85,4 @@ CREATE TABLE photos (
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+--  changed order
