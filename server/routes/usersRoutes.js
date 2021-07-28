@@ -16,7 +16,7 @@ const {
     checkloggedIn,
 } = require("../middlewares/usersRoutesHandler");
 
-usersRoutes.post("/signUp", createUsers);
+usersRoutes.post("/signup", createUsers);
 usersRoutes.post("/login", userLogin);
 usersRoutes.post("/logout", userLoggedOut);
 

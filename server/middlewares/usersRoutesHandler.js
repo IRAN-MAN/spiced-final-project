@@ -1,9 +1,9 @@
-
-const checkloggedIn = async (request, response) => response.json({ user_id: request.session.user_id });
+const checkloggedIn = async (request, response) =>
+    response.json({ user_id: request.session.user_id });
 
 const createUsers = async (request, response, next) => {
     try {
-        console.log("createUsers");
+        console.log("createUsers", request.body);
     } catch (error) {
         console.log("[createUsers: Error]", error);
         next(error);
