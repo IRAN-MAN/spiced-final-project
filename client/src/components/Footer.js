@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer>
+        <footer className="flex cc">
             Footer Component
             <div>
                 <p>

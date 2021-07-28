@@ -8,7 +8,7 @@ export default function LoginForm() {
     const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
 
     return (
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className="flex">
             <label htmlFor="email">
                 Email
                 <input

@@ -5,7 +5,7 @@ import Logo from "./Logo";
 
 export default function Header() {
     return (
-        <header>
+        <header className="flex cc">
             <p>Header Component</p>
             <Link to="/">
                 <Logo />

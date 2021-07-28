@@ -28,7 +28,7 @@ export default function App() {
         <BrowserRouter>
             <Header />
             <Navigation />
-            <div>
+            <div className="main-content">
                 <p>App Component!</p>
                 <Switch>
                     <Route
