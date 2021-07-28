@@ -6,7 +6,7 @@ export default function Login() {
         <div>
             <h1>Login with your email!</h1>
             <LoginForm />
-            <Link to="/">Login</Link>
+            <Link to="/">Sign up</Link>
         </div>
     );
 }
