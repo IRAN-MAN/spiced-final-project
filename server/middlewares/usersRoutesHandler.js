@@ -1,3 +1,6 @@
+
+const checkloggedIn = async (request, response) => response.json({ user_id: request.session.user_id });
+
 const createUsers = async (request, response, next) => {
     try {
         console.log("createUsers");
@@ -79,4 +82,5 @@ module.exports = {
     uploadProfilePic,
     getUserInfo,
     changeUserInfo,
+    checkloggedIn,
 };

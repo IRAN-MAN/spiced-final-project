@@ -13,6 +13,7 @@ const {
     uploadProfilePic,
     getUserInfo,
     changeUserInfo,
+    checkloggedIn,
 } = require("../middlewares/usersRoutesHandler");
 
 usersRoutes.post("/signUp", createUsers);
@@ -28,7 +29,8 @@ usersRoutes.post(
     uploadProfilePic
 );
 
-usersRoutes.get("/:user_id", getUserInfo);
+usersRoutes.get("/profile/:user_id", getUserInfo);
+usersRoutes.get("/checkLogin", checkloggedIn);
 
 usersRoutes.put("/change_userInfo", changeUserInfo);
 
