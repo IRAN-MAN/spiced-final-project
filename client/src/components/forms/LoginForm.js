@@ -1,29 +1,14 @@
-import { useState } from "react";
-import { useStatefulFields } from "../../hooks/hooks";
-import axios from "../../axios";
+import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
 
+//components
 import Button from "../Button";
 
 export default function LoginForm() {
     const [inputValues, handleChange] = useStatefulFields();
-    const [message, setMessage] = useState("");
-
-    const onLoginSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            await axios.post("/api/users/login", inputValues);
-            location.reload();
-        } catch (error) {
-            console.log(
-                "...(onLoginSubmit) Error: ",
-                error.response.data.error
-            );
-            setMessage(error.response.data.error);
-        }
-    };
+    const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
 
     return (
-        <form onSubmit={onLoginSubmit}>
+        <form onSubmit={submit}>
             <label htmlFor="email">
                 Email
                 <input
@@ -47,13 +32,13 @@ export default function LoginForm() {
                 />
             </label>
             <Button
-                onClick={onLoginSubmit}
-                labeltext="send"
+                onClick={submit}
+                labeltext="log in"
                 type="submit"
-                classNames="button login-button"
+                classNames="button submit-button"
                 icon="send"
             />
-            <p className="message">{message}</p>
+            <p className="message">{error}</p>
         </form>
     );
 }
