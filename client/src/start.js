@@ -3,14 +3,7 @@ import axios from "./axios";
 
 // redux & redux devtools
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import reducer from "./redux/reducer";
-import reduxPromise from "redux-promise";
-import { composeWithDevTools } from "redux-devtools-extension";
-const store = createStore(
-    reducer,
-    composeWithDevTools(applyMiddleware(reduxPromise))
-);
+import store from "./redux/store";
 
 //components
 import Welcome from "./components/Welcome";
@@ -20,8 +13,8 @@ const loggedIn = true;
 
 const isLoggedIn = async () => {
     const { data } = await axios.get("/api/users/checklogin");
-    console.log(data.user_id);
-    if (data.user_id) {
+    console.log("...(start.js) user_id: ", data.user_id);
+    if (!data.user_id) {
         //logged-in
         ReactDOM.render(
             <Provider store={store}>
