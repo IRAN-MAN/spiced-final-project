@@ -9,6 +9,7 @@ import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
+import Logo from "./Logo";
 
 export default function App() {
     //useSelectors here:
@@ -19,11 +20,20 @@ export default function App() {
 
     return (
         <BrowserRouter>
+            <p>App Component</p>
             <Header />
             <Navigation />
-            <div>
-                <p>App Component!</p>
-            </div>
+            <main>
+                <Switch>
+                    <Route exact path="/" render={() => <p>Route 1</p>} />
+                    {/* <Route path="/" component={} /> */}
+
+                    {/* This catches all the weird ones: */}
+                    <Route path="/">
+                        <Redirect to="/" />
+                    </Route>
+                </Switch>
+            </main>
             <Footer />
         </BrowserRouter>
     );
