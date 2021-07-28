@@ -34,6 +34,7 @@ const createUsers = async (request, response, next) => {
             ...request.body,
             hashed_password,
         });
+        console.log("[createUsers: user]", user);
         request.session.user_id = user.id;
         response.status(201).json({
             message: "User successfully created!",

@@ -19,8 +19,8 @@ const createUser = async ({
     hashed_password,
 }) => {
     const createdUser = await db.query(
-        `INSERT INTO users (first_name, last_name, email, hashed_password, temp_token) 
-            VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+        `INSERT INTO users (first_name, last_name, email, hashed_password) 
+            VALUES ($1, $2, $3, $4) RETURNING *`,
         [first_name, last_name, email, hashed_password]
     );
 
