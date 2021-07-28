@@ -5,7 +5,7 @@ const {
     cookBookInfo,
     createCookBook,
     updateCookBookInfo,
-} = require("../middlewares/cookBooksRoutesHandler");
+} = require("../middlewares/cookBooksHandler");
 
 cookBooksRoutes.get("/:user_id", cookBookInfo);
 
