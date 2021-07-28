@@ -18,20 +18,20 @@ import App from "./components/App";
 
 const loggedIn = true;
 
-if (loggedIn) {
-    //logged-in
+const isLoggedIn = async () => {
+    const { data } = await axios.get("/api/users/checklogin");
+    if (data.user_id) {
+        //logged-in
+        ReactDOM.render(
+            <Provider store={store}>
+                <App />
+            </Provider>,
+            document.querySelector("main")
+        );
+    } else {
+        // logged-out
+        ReactDOM.render(<Welcome />, document.querySelector("main"));
+    }
+};
 
-    ReactDOM.render(
-        <Provider store={store}>
-            <App />
-        </Provider>,
-        document.querySelector("main")
-    );
-} else {
-    // logged-out
-    ReactDOM.render(<Welcome />, document.querySelector("main"));
-}
-
-function HelloWorld() {
-    return <div>Hello, World!</div>;
-}
+isLoggedIn();
