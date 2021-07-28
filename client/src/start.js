@@ -1,9 +1,10 @@
 import ReactDOM from "react-dom";
-import reducer from "./redux/reducer";
+import axios from "./axios";
 
 // redux & redux devtools
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
+import reducer from "./redux/reducer";
 import reduxPromise from "redux-promise";
 import { composeWithDevTools } from "redux-devtools-extension";
 const store = createStore(
