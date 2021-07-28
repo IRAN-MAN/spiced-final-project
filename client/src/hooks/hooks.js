@@ -20,7 +20,7 @@ export function useAuthSubmit(url, values) {
         console.log("...(Hooks useAuthSubmit) url, values", url, values);
         try {
             await axios.post(url, values);
-            location.reload();
+            window.location = "/";
         } catch (error) {
             console.log("...(onAuthSubmit) Error: ", error.response.data.error);
             setError(error);
