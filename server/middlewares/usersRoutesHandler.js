@@ -7,7 +7,7 @@ const checkloggedIn = async (request, response) =>
 
 const createUsers = async (request, response, next) => {
     try {
-        console.log("createUsers", request.body);
+        console.log("[createUsers: body]", request.body);
         const { first_name, last_name, email, password, repeat_password } =
             request.body;
         if (
