@@ -53,6 +53,17 @@ export default function RegistrationForm() {
                     onChange={handleChange}
                 />
             </label>
+            <label htmlFor="repeat-password">
+                Password
+                <input
+                    id="repeat-password"
+                    type="password"
+                    name="repeat-password"
+                    placeholder="******"
+                    required
+                    onChange={handleChange}
+                />
+            </label>
             <Button
                 onClick={submit}
                 labeltext="sign up"
