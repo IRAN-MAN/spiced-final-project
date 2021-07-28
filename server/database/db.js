@@ -11,3 +11,20 @@ const db = spicedPg(
 // const db = spicedPg(process.env.DATABASE_URL);
 
 console.log(`Database is connected to: ${DBName}`);
+
+const createUser = async ({
+    first_name,
+    last_name,
+    email,
+    hashed_password,
+}) => {
+    const createdUser = await db.query(
+        `INSERT INTO users (first_name, last_name, email, hashed_password, temp_token) 
+            VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+        [first_name, last_name, email, hashed_password]
+    );
+
+    return createdUser.rows[0];
+};
+
+module.exports = { createUser };

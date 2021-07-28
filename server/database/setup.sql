@@ -17,7 +17,7 @@ CREATE TABLE users (
     hashed_password VARCHAR NOT NULL,
     profile_pic     TEXT,
     about           TEXT,
-    city            VARCHAR(50) NOT NULL,
+    city            VARCHAR(50),
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

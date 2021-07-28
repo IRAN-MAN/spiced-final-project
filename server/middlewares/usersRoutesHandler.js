@@ -1,9 +1,44 @@
+const { hashPassword } = require("../utilities/hashPass");
+const loginCheck = require("../utilities/loginCheck");
+const { createUser } = require("../database/db");
+
 const checkloggedIn = async (request, response) =>
     response.json({ user_id: request.session.user_id });
 
 const createUsers = async (request, response, next) => {
     try {
         console.log("createUsers", request.body);
+        const { first_name, last_name, email, password, repeat_password } =
+            request.body;
+        if (
+            !first_name ||
+            !last_name ||
+            !email ||
+            !password ||
+            !repeat_password
+        ) {
+            response.status(400).json({
+                message: "Please provide the requirements!",
+            });
+            return;
+        }
+
+        if (password !== repeat_password) {
+            response.status(400).json({
+                message: "Password is not match!",
+            });
+            return;
+        }
+        const hashed_password = await hashPassword(password);
+        const user = await createUser({
+            ...request.body,
+            hashed_password,
+        });
+        request.session.user_id = user.id;
+        response.status(201).json({
+            message: "User successfully created!",
+            user,
+        });
     } catch (error) {
         console.log("[createUsers: Error]", error);
         next(error);
