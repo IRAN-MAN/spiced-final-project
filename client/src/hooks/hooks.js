@@ -22,8 +22,11 @@ export function useAuthSubmit(url, values) {
             await axios.post(url, values);
             window.location = "/";
         } catch (error) {
-            console.log("...(onAuthSubmit) Error: ", error.response.data.error);
-            setError(error);
+            console.log(
+                "...(onAuthSubmit) Error: ",
+                error.response.data.message
+            );
+            setError(error.response.data.message);
         }
     };
     return [submit, error];
