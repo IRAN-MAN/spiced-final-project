@@ -1,6 +1,9 @@
 const express = require("express");
 const usersRoutes = express.Router();
 
+const { s3Upload } = require("../utilities/S3_config");
+const { uploader } = require("../utilities/uploader_config");
+
 const {
     createUsers,
     userLogin,
