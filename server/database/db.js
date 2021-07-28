@@ -4,6 +4,7 @@ const DBName = "communal_cookbook";
 
 const { userName, password } = require("../../secrets.json");
 
+//
 const db = spicedPg(
     `postgres:${userName}:${password}@localhost:5432/${DBName}`
 );

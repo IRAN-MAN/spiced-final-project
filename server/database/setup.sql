@@ -20,7 +20,7 @@ CREATE TABLE users (
     city            VARCHAR(50) NOT NULL,
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+-- added
 CREATE TABLE cookbooks (
     id              SERIAL PRIMARY KEY,
     isPrivate       BOOLEAN NOT NULL,
