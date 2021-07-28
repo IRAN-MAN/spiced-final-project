@@ -12,18 +12,25 @@ const store = createStore(
 );
 
 //components
-import Welcome from "./components";
-import App from "./components";
+import Welcome from "./components/Welcome";
+import App from "./components/App";
 
 const loggedIn = true;
 
 if (loggedIn) {
     //logged-in
-    ReactDOM.render(<App />, document.querySelector("main"));
+
+    ReactDOM.render(
+        <Provider store={store}>
+            <App />
+        </Provider>,
+        document.querySelector("main")
+    );
 } else {
     // logged-out
     ReactDOM.render(<Welcome />, document.querySelector("main"));
 }
+
 function HelloWorld() {
     return <div>Hello, World!</div>;
 }
