@@ -10,6 +10,7 @@ import {
 
 //components
 import CoauthorsList from "./CoauthorsList";
+import Chapter from "./Chapter";
 
 export default function Cookbook(props) {
     const dispatch = useDispatch();
@@ -60,33 +61,6 @@ export default function Cookbook(props) {
         },
     ];
 
-    // const renderCoauthors = () => {
-    //     return coauthorsTEST.map((coauthor) => {
-    //         return (
-    //             <li key={coauthor.id} className="coauthorWrapper">
-    //                 <Link to={"/users/profile/" + coauthor.id}>
-    //                     <div className="miniAvatarWrapper">
-    //                         <img
-    //                             className="avatar smallAvatar"
-    //                             src={coauthor.profile_pic}
-    //                             alt={
-    //                                 coauthor.first_name +
-    //                                 " from " +
-    //                                 coauthor.city
-    //                             }
-    //                         />
-    //                         <button className="tooltip">
-    //                             <span className="tooltiptext">
-    //                                 {coauthor.first_name}
-    //                             </span>
-    //                         </button>
-    //                     </div>
-    //                 </Link>
-    //             </li>
-    //         );
-    //     });
-    // };
-
     return (
         <div className="profileWrapper flex cc fcolumn">
             Cookbook Component
@@ -108,6 +82,7 @@ export default function Cookbook(props) {
                 </div>
             </div>
             <CoauthorsList coauthors={coauthorsTEST} />
+            <Chapter />
         </div>
     );
 }
