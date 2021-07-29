@@ -157,9 +157,22 @@ footer {
 .cookbookWrapper {
     border: 1px dotted crimson;
 }
+.cookbooksWrapper ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+}
 .coverWrapper {
     border: 1px solid firebrick;
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    margin-inline: 10px;
 }
+
 .cover {
     background-color: forestgreen;
+    width: 100%;
+    object-fit: cover;
 }
