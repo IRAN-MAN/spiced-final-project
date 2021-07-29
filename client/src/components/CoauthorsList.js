@@ -31,6 +31,7 @@ export default function CoauthorsList(props) {
 
     return (
         <div className="coauthorsListWrapper">
+            CoauthorsList Component
             <ul className="flex jcc frow">
                 {props.coauthors.length > 0 && renderCoauthors()}
             </ul>
