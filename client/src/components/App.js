@@ -16,6 +16,8 @@ import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
+import MyProfile from "./MyProfile";
+import UserProfile from "./UserProfile";
 
 export default function App() {
     //useSelectors here:
@@ -38,12 +40,13 @@ export default function App() {
             <div className="main-content">
                 <p>App Component!</p>
                 <Switch>
-                    <Route
+                    {/* <Route
                         exact
                         path="/"
                         render={() => <p>HELLO YOU ARE LOGGED IN!</p>}
-                    />
-                    {/* <Route path="/friends/list" component={Friends} /> */}
+                    /> */}
+                    <Route path="/" component={MyProfile} />
+                    <Route path="/userprofile/:id" component={UserProfile} />
 
                     {/* This one should catch all the weird ones */}
                     <Route path="/">
