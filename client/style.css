@@ -20,6 +20,10 @@ input {
     border: none;
     padding: 5px;
 }
+
+ul {
+    list-style: none;
+}
 /* FLEX */
 .flex {
     display: flex;
@@ -117,7 +121,6 @@ nav {
 }
 nav ul {
     flex-direction: row;
-    list-style: none;
 }
 nav ul li {
     margin-inline: 10px;
@@ -161,7 +164,6 @@ footer {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    list-style: none;
 }
 .coverWrapper {
     border: 1px solid firebrick;
@@ -186,7 +188,6 @@ footer {
 }
 
 .coauthorsListWrapper ul {
-    list-style: none;
 }
 
 .miniAvatarWrapper {
@@ -219,4 +220,26 @@ footer {
 
 .tooltip:hover .tooltiptext {
     display: block;
+}
+
+/* CHAPTERLIST & CHAPTER */
+
+.chapterListWrapper {
+}
+.chapterListWrapper ul {
+}
+
+.chapterWrapper {
+}
+.chapterWrapper ul {
+}
+
+/* RECIPEPREVIEWS */
+
+.recipePreviewWrapper {
+    width: 100px;
+    margin: 10px;
+}
+.recipePreview {
+    width: 100%;
 }
