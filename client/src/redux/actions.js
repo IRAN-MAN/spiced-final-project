@@ -57,8 +57,8 @@ export const receiveFavourites = async (user_id) => {
         payload: { favourites: favourites.data },
     };
 };
-RECEIVE_ALLFAVOURITES;
-export const receiveAllFavourites = async (user_id) => {
+
+export const receiveAllFavourites = async (recipe_id) => {
     const favourites = await axios.get(`/api/facourite_recipes/${recipe_id}`);
     console.log(
         "...(ACTION receiveAllFavourites) favourites.data:",
