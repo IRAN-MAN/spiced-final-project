@@ -1,7 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-import { getUser, receiveUserInfo } from "../redux/actions";
+import {
+    getUser,
+    receiveUserInfo,
+    receiveChapters,
+    receiveCookbooks,
+} from "../redux/actions";
 
 import axios from "../axios";
 
@@ -14,7 +19,7 @@ import Navigation from "./Navigation";
 
 export default function App() {
     //useSelectors here:
-
+    const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
 
     //useEffects here:
@@ -22,6 +27,8 @@ export default function App() {
         const user_id = await axios.get("/api/users/checkLogin");
         console.log("...(App) user_id: ", user_id);
         dispatch(receiveUserInfo(user_id));
+        dispatch(receiveChapters());
+        dispatch(receiveCookbooks(user_id));
     }, []);
 
     return (
