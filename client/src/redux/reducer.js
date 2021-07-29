@@ -3,17 +3,17 @@
 
 const initialState = {
     user: {},
-    cookbooks: {},
+    cookbooks: [],
     currentCookbook: {
-        coauthors: {},
+        coauthors: [],
     },
     chapters: [],
-    recipes: {},
+    recipes: [],
     currentRecipe: {
-        ingrdients_list: {},
+        ingrdients_list: [],
     },
-    myFavourites: {},
-    allFavourites: {},
+    myFavourites: [],
+    allFavourites: [],
 };
 
 const reducer = (state = initialState, action) => {
