@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
 import { receiveCookbooks } from "../redux/actions";
+import { Link } from "react-router-dom";
 
 export default function MyCookbooks() {
     const user = useSelector((state) => {
@@ -17,24 +18,41 @@ export default function MyCookbooks() {
         dispatch(receiveCookbooks(user.id));
     }, [cookbooks]);
 
-    const userTEST = {
-        first_name: "Sascha",
-        last_name: "Salamander",
-        profile_pic: "../images/testprofile.jpg",
-        city: "Tokyo",
-    };
+    const cookbooksTEST = [
+        {
+            id: 1,
+            cookbook_name: "Name",
+            cover_pic:
+                "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+        },
+        {
+            id: 2,
+            cookbook_name: "Name2",
+            cover_pic:
+                "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+        },
+        {
+            id: 3,
+            cookbook_name: "Name3",
+            cover_pic:
+                "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+        },
+    ];
 
     const renderCookbooks = () => {
-        return cookbooks.map((cookbook) => {
+        return cookbooksTEST.map((cookbook) => {
             return (
                 <li key={cookbook.id} className="cookbookWrapper">
-                    <div className="coverWrapper">
-                        <img
-                            className="cover"
-                            src={cookbook.cover_pic}
-                            alt={cookbook.cookbook_name}
-                        />
-                    </div>
+                    <Link to={"/cookbook/" + cookbook.id}>
+                        <div className="coverWrapper">
+                            <img
+                                className="cover"
+                                src={cookbook.cover_pic}
+                                alt={cookbook.cookbook_name}
+                            />
+                        </div>
+                        <p>{cookbook.cookbook_name}</p>
+                    </Link>
                 </li>
             );
         });
@@ -43,7 +61,7 @@ export default function MyCookbooks() {
     return (
         <div className="cookbooksWrapper flex cc fcolumn">
             MyCookbooks Component
-            <ul>{cookbooks.length > 0 && renderCookbooks()}</ul>
+            <ul>{cookbooksTEST.length > 0 && renderCookbooks()}</ul>
         </div>
     );
 }
