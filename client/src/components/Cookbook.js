@@ -10,7 +10,7 @@ import {
 
 //components
 import CoauthorsList from "./CoauthorsList";
-import Chapter from "./Chapter";
+import ChapterList from "./ChapterList";
 
 export default function Cookbook(props) {
     const dispatch = useDispatch();
@@ -82,7 +82,7 @@ export default function Cookbook(props) {
                 </div>
             </div>
             <CoauthorsList coauthors={coauthorsTEST} />
-            <Chapter />
+            <ChapterList />
         </div>
     );
 }
