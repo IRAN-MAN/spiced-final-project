@@ -42,6 +42,12 @@ const createUsers = async (request, response, next) => {
         });
     } catch (error) {
         console.log("[createUsers: Error]", error);
+        if (error.code === "ECONNREFUSED") {
+            response
+                .status(500)
+                .json({ message: "Unable to connect to Database" });
+            return;
+        }
         next(error);
     }
 };
