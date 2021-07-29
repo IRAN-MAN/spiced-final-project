@@ -1,20 +1,24 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-import { receiveCurrentCookbook } from "../redux/actions";
+import { receiveCurrentCookbook, receiveRecipes } from "../redux/actions";
 
 export default function Cookbook(props) {
     const dispatch = useDispatch();
     const cookbook_id = props.match.params.id;
-    const currentCookbook = useSelector((state) => {
-        return state.currentCookbook;
-    });
+    // const currentCookbook = useSelector((state) => {
+    //     return state.currentCookbook;
+    // });
+    const currentCookbook = useSelector(
+        (state) => state.cookbooks[cookbook_id]
+    );
     const chapters = useSelector((state) => {
         return state.chapters;
     });
 
     useEffect(async () => {
-        await dispatch(receiveCurrentCookbook(cookbook_id));
+        dispatch(receiveCurrentCookbook(cookbook_id));
+        dispatch(receiveRecipes(cookbook_id));
     }, []);
 
     // useEffect(async () => {
