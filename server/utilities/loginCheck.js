@@ -1,18 +1,16 @@
 const { compare } = require("bcryptjs");
 const { getUserByEmail } = require("../database/db");
 
-const loginCheck = ({ email, password }) => {
-    return getUserByEmail({ email }).then((matchUser) => {
-        if (!matchUser) {
-            return null;
-        }
-        return compare(password, matchUser.hashed_password).then((match) => {
-            if (match) {
-                return matchUser;
-            }
-            return null;
-        });
-    });
+const loginCheck = async ({ email, password }) => {
+    const matchUser = await getUserByEmail({ email });
+    if (!matchUser) {
+        return null;
+    }
+    const match = await compare(password, matchUser.hashed_password);
+    if (!match) {
+        return null;
+    }
+    return matchUser;
 };
 
 module.exports = loginCheck;

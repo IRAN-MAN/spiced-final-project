@@ -3,6 +3,7 @@ const usersRoutes = express.Router();
 
 const { s3Upload } = require("../utilities/S3_config");
 const { uploader } = require("../utilities/uploader_config");
+const errorHandler = require("../middlewares/errorHandler");
 
 const {
     createUsers,
@@ -16,7 +17,7 @@ const {
     checkloggedIn,
 } = require("../middlewares/usersRoutesHandler");
 
-usersRoutes.post("/signup", createUsers);
+usersRoutes.post("/signup", createUsers, errorHandler);
 usersRoutes.post("/login", userLogin);
 usersRoutes.post("/logout", userLoggedOut);
 

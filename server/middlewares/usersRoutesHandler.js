@@ -1,6 +1,6 @@
 const { hashPassword } = require("../utilities/hashPass");
 const loginCheck = require("../utilities/loginCheck");
-const { createUser } = require("../database/db");
+const { createUser, getUserById } = require("../database/db");
 
 const checkloggedIn = async (request, response) =>
     response.json({ user_id: request.session.user_id });
@@ -42,13 +42,26 @@ const createUsers = async (request, response, next) => {
         });
     } catch (error) {
         console.log("[createUsers: Error]", error);
+        if (error.code === "ECONNREFUSED") {
+            response
+                .status(500)
+                .json({ message: "Unable to connect to Database" });
+            return;
+        }
         next(error);
     }
 };
 
 const userLogin = async (request, response, next) => {
     try {
-        console.log("userLogin");
+        const matchUser = await loginCheck({ ...request.body });
+        if (!matchUser) {
+            response
+                .status(401)
+                .json({ message: "Email or Password is wrong" });
+            return;
+        }
+        request.session.user_id = matchUser.id;
     } catch (error) {
         console.log("[userLogin: Error]", error);
         next(error);
@@ -93,7 +106,18 @@ const uploadProfilePic = async (request, response, next) => {
 
 const getUserInfo = async (request, response, next) => {
     try {
-        console.log("getUserInfo");
+        console.log("getUserInfo: params", request.params);
+        const user = await getUserById({ ...request.params });
+        response.status(200).json({
+            id: user.id,
+            first_name: user.first_name,
+            last_name: user.last_name,
+            email: user.email,
+            profile_pic: user.profile_pic,
+            about: user.about,
+            city: user.city,
+            created_at: user.created_at,
+        });
     } catch (error) {
         console.log("[getUserInfo: Error]", error);
         next(error);

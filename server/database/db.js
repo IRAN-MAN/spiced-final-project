@@ -27,4 +27,16 @@ const createUser = async ({
     return createdUser.rows[0];
 };
 
-module.exports = { createUser };
+const getUserByEmail = async ({ email }) => {
+    const user = await db.query("SELECT * FROM users WHERE email = $1", [
+        email,
+    ]);
+    return user.rows[0];
+};
+
+const getUserById = async ({ user_id }) => {
+    const user = await db.query("SELECT * FROM users WHERE id = $1", [user_id]);
+    return user.rows[0];
+};
+
+module.exports = { createUser, getUserByEmail, getUserById };

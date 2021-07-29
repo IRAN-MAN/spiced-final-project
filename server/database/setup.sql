@@ -57,7 +57,7 @@ CREATE TABLE co_authors (
 
 CREATE TABLE Ingredients_list (
     id                  SERIAL PRIMARY KEY,
-    Ingredient_name     VARCHAR(25) NOT NULL UNIQUE,         
+    Ingredient_name     VARCHAR(25) NOT NULL,         
     quantity            INT NOT NULL,        
     unit                VARCHAR(25) NOT NULL,
     recipe_id           INT REFERENCES recipes (id) NOT NULL        
@@ -85,4 +85,9 @@ CREATE TABLE photos (
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
---  changed order
+CREATE TABLE profile_photos (
+    id              SERIAL PRIMARY KEY,
+    user_id         INTEGER NOT NULL REFERENCES users (id),
+    photo_url       TEXT NOT NULL ,
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
