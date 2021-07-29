@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
 import { receiveCookbooks } from "../redux/actions";
+import { Link } from "react-router-dom";
 
 export default function MyCookbooks() {
     const user = useSelector((state) => {
@@ -42,13 +43,16 @@ export default function MyCookbooks() {
         return cookbooksTEST.map((cookbook) => {
             return (
                 <li key={cookbook.id} className="cookbookWrapper">
-                    <div className="coverWrapper">
-                        <img
-                            className="cover"
-                            src={cookbook.cover_pic}
-                            alt={cookbook.cookbook_name}
-                        />
-                    </div>
+                    <Link to={"/cookbook/" + cookbook.id}>
+                        <div className="coverWrapper">
+                            <img
+                                className="cover"
+                                src={cookbook.cover_pic}
+                                alt={cookbook.cookbook_name}
+                            />
+                        </div>
+                        <p>{cookbook.cookbook_name}</p>
+                    </Link>
                 </li>
             );
         });

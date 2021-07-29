@@ -17,6 +17,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import MyProfile from "./MyProfile";
+import Test from "./Test";
 // import UserProfile from "./UserProfile";
 
 export default function App() {
@@ -45,8 +46,9 @@ export default function App() {
                         path="/"
                         render={() => <p>HELLO YOU ARE LOGGED IN!</p>}
                     /> */}
-                    <Route path="/" component={MyProfile} />
+                    <Route path="/" exact component={MyProfile} />
                     {/* <Route path="/userprofile/:id" component={UserProfile} /> */}
+                    <Route path="/cookbook/:id" component={Test} />
 
                     {/* This one should catch all the weird ones */}
                     <Route path="/">
