@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import MyCookbooks from "./MyCookbooks";
 
 export default function MyProfile() {
     const user = useSelector((state) => {
@@ -35,6 +36,7 @@ export default function MyProfile() {
                     </p>
                 </div>
             </div>
+            <MyCookbooks />
         </div>
     );
 }
