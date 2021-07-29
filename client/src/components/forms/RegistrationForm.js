@@ -53,12 +53,12 @@ export default function RegistrationForm() {
                     onChange={handleChange}
                 />
             </label>
-            <label htmlFor="repeat-password">
+            <label htmlFor="repeat_password">
                 Repeat Password
                 <input
-                    id="repeat-password"
+                    id="repeat_password"
                     type="password"
-                    name="repeat-password"
+                    name="repeat_password"
                     placeholder="******"
                     required
                     onChange={handleChange}
