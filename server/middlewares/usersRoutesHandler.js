@@ -54,7 +54,14 @@ const createUsers = async (request, response, next) => {
 
 const userLogin = async (request, response, next) => {
     try {
-        console.log("userLogin");
+        const matchUser = await loginCheck({ ...request.body });
+        if (!matchUser) {
+            response
+                .status(401)
+                .json({ message: "Email or Password is wrong" });
+            return;
+        }
+        request.session.user_id = matchUser.id;
     } catch (error) {
         console.log("[userLogin: Error]", error);
         next(error);
