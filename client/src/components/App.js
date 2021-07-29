@@ -17,7 +17,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import MyProfile from "./MyProfile";
-import UserProfile from "./UserProfile";
+// import UserProfile from "./UserProfile";
 
 export default function App() {
     //useSelectors here:
