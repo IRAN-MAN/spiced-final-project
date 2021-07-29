@@ -151,3 +151,15 @@ footer {
 .profileWrapper {
     border: 1px dotted black;
 }
+
+/* COOKBOOKS */
+
+.cookbookWrapper {
+    border: 1px dotted crimson;
+}
+.coverWrapper {
+    border: 1px solid firebrick;
+}
+.cover {
+    background-color: forestgreen;
+}
