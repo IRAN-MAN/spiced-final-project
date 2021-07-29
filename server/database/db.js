@@ -39,4 +39,9 @@ const getUserById = async ({ user_id }) => {
     return user.rows[0];
 };
 
-module.exports = { createUser, getUserByEmail, getUserById };
+const getChapters = async () => {
+    const chapters = await db.query("SELECT * FROM chapters");
+    return chapters.rows;
+};
+
+module.exports = { createUser, getUserByEmail, getUserById, getChapters };
