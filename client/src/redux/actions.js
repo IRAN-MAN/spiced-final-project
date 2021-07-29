@@ -1,8 +1,8 @@
 import axios from "../axios";
 
 export const receiveUserInfo = async (user_id) => {
-    const userInfo = await axios.get(`/api/users/${user_id}`);
-    console.log("...(ACTION receiveUserInfo) userInfo.data:", userInfo.data);
+    const userInfo = await axios.get(`/api/users/profile/${user_id}`);
+    console.log("...(ACTION receiveUserInfo) userInfo.data:", userInfo);
     return {
         type: "RECEIVE_USERINFO",
         payload: { user: userInfo.data },
