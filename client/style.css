@@ -176,3 +176,47 @@ footer {
     width: 100%;
     object-fit: cover;
 }
+
+/* COAUTHORS */
+
+.coauthorsListWrapper {
+}
+
+.coauthorWrapper {
+}
+
+.coauthorsListWrapper ul {
+    list-style: none;
+}
+
+.miniAvatarWrapper {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* TOOL TIPS */
+
+.tooltip {
+    position: relative;
+    /* display: inline-block; */
+}
+
+.tooltip .tooltiptext {
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 0;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    /* Position the tooltip */
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    display: block;
+}

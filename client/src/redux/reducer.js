@@ -10,7 +10,7 @@ const initialState = {
     chapters: [],
     recipes: [],
     currentRecipe: {
-        ingrdients_list: [],
+        ingredients_list: [],
     },
     myFavourites: [],
     allFavourites: [],

@@ -1,7 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import { receiveCurrentCookbook, receiveRecipes } from "../redux/actions";
+import {
+    receiveCoauthors,
+    receiveCurrentCookbook,
+    receiveRecipes,
+} from "../redux/actions";
+
+//components
+import CoauthorsList from "./CoauthorsList";
 
 export default function Cookbook(props) {
     const dispatch = useDispatch();
@@ -15,10 +23,12 @@ export default function Cookbook(props) {
     const chapters = useSelector((state) => {
         return state.chapters;
     });
+    const coauthors = useSelector((state) => state.currentCookbook.coauthors);
 
-    useEffect(async () => {
+    useEffect(() => {
         dispatch(receiveCurrentCookbook(cookbook_id));
         dispatch(receiveRecipes(cookbook_id));
+        dispatch(receiveCoauthors(cookbook_id));
     }, []);
 
     // useEffect(async () => {
@@ -31,6 +41,51 @@ export default function Cookbook(props) {
         cover_pic:
             "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
     };
+    const chaptersTEST = ["Starters", "Main", "Desert"];
+
+    const coauthorsTEST = [
+        {
+            id: 1,
+            first_name: "Sandy",
+            last_name: "Sunshine",
+            profile_pic: "../images/testprofile.jpg",
+            city: "Toronto",
+        },
+        {
+            id: 2,
+            first_name: "Sascha",
+            last_name: "Salamander",
+            profile_pic: "../images/testprofile.jpg",
+            city: "Tokyo",
+        },
+    ];
+
+    // const renderCoauthors = () => {
+    //     return coauthorsTEST.map((coauthor) => {
+    //         return (
+    //             <li key={coauthor.id} className="coauthorWrapper">
+    //                 <Link to={"/users/profile/" + coauthor.id}>
+    //                     <div className="miniAvatarWrapper">
+    //                         <img
+    //                             className="avatar smallAvatar"
+    //                             src={coauthor.profile_pic}
+    //                             alt={
+    //                                 coauthor.first_name +
+    //                                 " from " +
+    //                                 coauthor.city
+    //                             }
+    //                         />
+    //                         <button className="tooltip">
+    //                             <span className="tooltiptext">
+    //                                 {coauthor.first_name}
+    //                             </span>
+    //                         </button>
+    //                     </div>
+    //                 </Link>
+    //             </li>
+    //         );
+    //     });
+    // };
 
     return (
         <div className="profileWrapper flex cc fcolumn">
@@ -52,6 +107,7 @@ export default function Cookbook(props) {
                     </p>
                 </div>
             </div>
+            <CoauthorsList coauthors={coauthorsTEST} />
         </div>
     );
 }
