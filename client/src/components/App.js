@@ -46,7 +46,7 @@ export default function App() {
                         render={() => <p>HELLO YOU ARE LOGGED IN!</p>}
                     /> */}
                     <Route path="/" component={MyProfile} />
-                    <Route path="/userprofile/:id" component={UserProfile} />
+                    {/* <Route path="/userprofile/:id" component={UserProfile} /> */}
 
                     {/* This one should catch all the weird ones */}
                     <Route path="/">
