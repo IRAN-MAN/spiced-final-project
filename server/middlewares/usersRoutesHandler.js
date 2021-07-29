@@ -62,6 +62,7 @@ const userLogin = async (request, response, next) => {
             return;
         }
         request.session.user_id = matchUser.id;
+        response.status(201).json({ message: "login success" });
     } catch (error) {
         console.log("[userLogin: Error]", error);
         next(error);
