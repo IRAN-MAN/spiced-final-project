@@ -28,15 +28,8 @@ export default function App() {
 
     //useEffects here:
     useEffect(async () => {
-        // const { data } = await axios.get("/api/users/checkLogin");
-        // console.log("...(App) user_id: ", data.user_id);
-        // dispatch(receiveUserInfo(data.user_id));
-        dispatch(receiveChapters());
-        // dispatch(receiveCookbooks(data.user_id));
-
         dispatch(receiveUserInfo(-1));
         dispatch(receiveChapters());
-        dispatch(receiveCookbooks(user.id));
     }, []);
 
     return (

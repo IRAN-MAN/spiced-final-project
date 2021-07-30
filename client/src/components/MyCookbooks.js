@@ -10,7 +10,6 @@ import Gallery from "./Gallery";
 
 export default function MyCookbooks() {
     const user = useSelector((state) => {
-        console.log("...(MyCookbooks) line 13: user:", user);
         return state.user;
     });
     const cookbooks = useSelector((state) => {
@@ -18,12 +17,14 @@ export default function MyCookbooks() {
     });
 
     const dispatch = useDispatch();
+    useEffect(() => {}, []);
     useEffect(() => {
-        dispatch(receiveUserInfo(-1));
-    }, []);
-    useEffect(() => {
-        console.log("...(MyCookbooks EFFECT [user]) line 23: user: ", user);
-        dispatch(receiveCookbooks(user.id));
+        console.log("...(BEFORE user: ", user);
+
+        if (user.id) {
+            console.log("...(AFTER user: ", user);
+            dispatch(receiveCookbooks(user.id));
+        }
     }, [user]);
 
     const renderCookbooks = (cookbook) => {
