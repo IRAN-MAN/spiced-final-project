@@ -9,8 +9,8 @@ const {
 
 coAuthorsRoutes.get("/:cookbook_id", cookBookCoAuthorsInfo);
 
-coAuthorsRoutes.post("/:cookbook_id", addCoAuthor);
+coAuthorsRoutes.post("/add_couauthor/:cookbook_id", addCoAuthor);
 
-coAuthorsRoutes.delete("/:cookbook_id", deleteCoAuthor);
+coAuthorsRoutes.delete("/remove_coauthor/:cookbook_id", deleteCoAuthor);
 
 module.exports = { coAuthorsRoutes };
