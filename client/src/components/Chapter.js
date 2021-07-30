@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { recipesTEST } from "./TESTDATA.js";
+import { Link } from "react-router-dom";
 
 // components
 import Recipe from "./Recipe";
@@ -11,22 +12,27 @@ export default function Chapter({ chapter_id }) {
     //filter recipes by chapter
 
     const renderRecipePreviews = () => {
-        return recipesTEST
+        return recipes
             .filter((recipe) => {
-                // console.log(
-                //     "renderRecipePreviews recipe.chapter_id == chapter_id: ",
-                //     recipe.chapter_id,
-                //     chapter_id
-                // );
+                console.log(
+                    "renderRecipePreviews recipe.chapter_id == chapter_id: ",
+                    recipe.chapter_id,
+                    chapter_id
+                );
                 return recipe.chapter_id == chapter_id;
             })
             .map((recipe) => {
                 return (
-                    <li key={recipe.id}>
-                        <div className="recipePreviewWrapper flex jcc fcolumn">
-                            <img className="recipePreview" src="" />
+                    <li key={recipe.recipe_id}>
+                        <Link to={"/recipe/" + recipe.recipe_id}>
+                            <div className="recipePreviewWrapper flex jcc fcolumn">
+                                <img
+                                    className="recipePreview"
+                                    src={recipe.recipe_photo}
+                                />
+                            </div>
                             <p>{recipe.recipe_name}</p>
-                        </div>
+                        </Link>
                     </li>
                 );
             });
@@ -36,7 +42,7 @@ export default function Chapter({ chapter_id }) {
         <div className="chapterWrapper flex cc fcolumn">
             Chapter Component
             <ul className="flex jcc">
-                {recipesTEST.length > 0 && renderRecipePreviews()}
+                {recipes.length > 0 && renderRecipePreviews()}
             </ul>
         </div>
     );

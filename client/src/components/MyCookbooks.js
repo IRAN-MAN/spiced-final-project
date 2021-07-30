@@ -42,7 +42,7 @@ export default function MyCookbooks() {
         <div className="cookbooksWrapper flex cc fcolumn">
             MyCookbooks Component
             {/* <ul>{cookbooks.length > 0 && renderCookbooks()}</ul> */}
-            <ul>
+            <ul className="flex jcc">
                 <Gallery
                     elements={cookbooks}
                     elementsPerPage={2}
