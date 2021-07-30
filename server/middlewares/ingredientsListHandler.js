@@ -9,6 +9,10 @@ const getIngredientList = async (request, response, next) => {
             ...request.params,
         });
         console.log("getIngredientListByRecipe", ingredientList);
+        if (!ingredientList) {
+            response.status(404).json({ message: "No ingredients list found" });
+            return;
+        }
         response.status(200).json({ ingredientList });
     } catch (error) {
         console.log("[recipeInfo: Error]", error);
