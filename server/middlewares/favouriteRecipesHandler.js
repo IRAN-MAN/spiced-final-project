@@ -2,6 +2,7 @@ const {
     getFavRecipesByUserId,
     getMostFavRecipe,
     insertFavRecipe,
+    deleteFavRecipe,
 } = require("../database/favRecipesQueries");
 
 const userfavouriteRecipes = async (request, response, next) => {
@@ -21,7 +22,7 @@ const mostfavouriteRecipe = async (request, response, next) => {
         console.log("[mostfavouriteRecipe : recipe_id]", request.params);
         const mostFavRecipe = await getMostFavRecipe();
         console.log("[getMostFavRecipe]", mostFavRecipe);
-        response.status(200).json(serializeFavRecipe(mostFavRecipe));
+        response.status(200).json(serializeRecipe(mostFavRecipe));
     } catch (error) {
         console.log("[mostfavouriteRecipe: Error]", error);
         next(error);
@@ -36,7 +37,7 @@ const addfavouriteRecipe = async (request, response, next) => {
             ...request.session,
         });
         console.log("[insertFavRecipe]", addedFavRecipe);
-        response.status(200).json(serializeFavRecipe(addedFavRecipe));
+        response.status(200).json(serializeRecipe(addedFavRecipe));
     } catch (error) {
         console.log("[addfavouriteRecipe: Error]", error);
         next(error);
@@ -45,7 +46,12 @@ const addfavouriteRecipe = async (request, response, next) => {
 
 const removefavouriteRecipe = async (request, response, next) => {
     try {
-        console.log("removefavouriteRecipe");
+        console.log("[removefavouriteRecipe : recipe_id]", request.params);
+        const deletedFavRecipe = await deleteFavRecipe({
+            ...request.params,
+        });
+        console.log("[insertFavRecipe]", deletedFavRecipe);
+        response.status(200).json({ message: "Delete successful" });
     } catch (error) {
         console.log("[removefavouriteRecipe: Error]", error);
         next(error);
@@ -59,7 +65,7 @@ module.exports = {
     removefavouriteRecipe,
 };
 
-const serializeFavRecipe = (recipe) => {
+const serializeRecipe = (recipe) => {
     return {
         recipe_id: recipe.recipe_id,
         cookbook_id: recipe.cookbook_id,

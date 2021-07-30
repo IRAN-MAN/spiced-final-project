@@ -41,4 +41,15 @@ const insertFavRecipe = async ({ recipe_id, user_id }) => {
     return addedRecipe.rows[0];
 };
 
-module.exports = { getFavRecipesByUserId, getMostFavRecipe, insertFavRecipe };
+const deleteFavRecipe = async ({ recipe_id }) => {
+    await db.query("DELETE FROM favourite_recipes WHERE recipe_id = $1", [
+        recipe_id,
+    ]);
+};
+
+module.exports = {
+    getFavRecipesByUserId,
+    getMostFavRecipe,
+    insertFavRecipe,
+    deleteFavRecipe,
+};
