@@ -1,5 +1,6 @@
 import axios from "../axios";
 import {
+    RECEIVE_STATE,
     RECEIVE_CHAPTERS,
     RECEIVE_COAUTHORS,
     RECEIVE_COOKBOOKS,
@@ -32,10 +33,10 @@ export const receiveChapters = async () => {
 
 export const receiveCookbooks = async (user_id) => {
     const cookbooks = await axios.get(`/api/cookbooks/${user_id}`);
-    // console.log(
-    //     "...(ACTION receiveCookbooks) cookbooks:",
-    //     cookbooks.data.cookbooks
-    // );
+    console.log(
+        "...(ACTION receiveCookbooks) cookbooks:",
+        cookbooks.data.cookbooks
+    );
     return {
         type: RECEIVE_COOKBOOKS,
         payload: { cookbooks: cookbooks.data.cookbooks },
