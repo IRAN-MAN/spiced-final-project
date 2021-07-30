@@ -1,6 +1,9 @@
+const { getChapters } = require("../database/db");
+
 const chapterInfo = async (request, response, next) => {
     try {
-        console.log("chapterInfo");
+        const chaptersinfo = await getChapters();
+        response.status(200).json({ chaptersinfo });
     } catch (error) {
         console.log("[chapterInfo: Error]", error);
         next(error);

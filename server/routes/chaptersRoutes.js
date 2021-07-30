@@ -1,7 +1,7 @@
 const express = require("express");
 const chaptersRoutes = express.Router();
 
-const { chapterInfo } = require("../middlewares/chapterInfoHandler");
+const { chapterInfo } = require("../middlewares/chapterHandler");
 
 chaptersRoutes.get("/", chapterInfo);
 
