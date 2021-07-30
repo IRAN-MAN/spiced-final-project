@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { receiveCurrentRecipe } from "../redux/action-creators";
+import {
+    receiveCurrentRecipe,
+    receiveIngredientslist,
+    receiveAuthorInfo,
+} from "../redux/action-creators";
 
 //components
 import Gallery from "./Gallery";
@@ -11,14 +15,19 @@ export default function Recipe(props) {
     //need to think about this:
     const currentRecipe = useSelector((state) => state.currentRecipe);
     const recipePhotos = useSelector((state) => state.photos);
+    const author = useSelector((state) => state.author);
     const dispatch = useDispatch();
 
     useEffect(() => {
         console.log("...(Recipe EFFECT) recipe_id: ", recipe_id);
         if (recipe_id) {
             dispatch(receiveCurrentRecipe(recipe_id));
+            dispatch(receiveIngredientslist(recipe_id));
         }
     }, []);
+    useEffect(() => {
+        dispatch(receiveAuthorInfo(currentRecipe.owner_id));
+    }, [currentRecipe]);
 
     return (
         <div className="recipeWrapper flex cc fcolumn">
@@ -75,6 +84,23 @@ export default function Recipe(props) {
                             Nam liber tempor cum soluta nobis eleifend option
                             congue nihil imperdiet doming id quod mazim placerat
                             facer possim assum.
+                        </p>
+                    </div>
+                </div>
+                <div className="madeByWrapper flex cc ">
+                    <div className="miniAvatarWrapper flex vcenter">
+                        <img
+                            className="avatar smallAvatar"
+                            src={author.profile_pic}
+                            alt={author.first_name + " " + author.last_name}
+                        />
+                    </div>
+                    <div>
+                        <p>
+                            Made with love by{" "}
+                            <span className="bolder">
+                                {author.first_name + " " + author.last_name}
+                            </span>
                         </p>
                     </div>
                 </div>

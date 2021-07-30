@@ -90,6 +90,12 @@ ul {
     height: 60%;
 }
 
+.miniAvatarWrapper {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
 /* BUTTONS */
 button {
     display: flex;
@@ -194,12 +200,6 @@ footer {
 }
 
 .coauthorsListWrapper ul {
-}
-
-.miniAvatarWrapper {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
 }
 
 /* TOOL TIPS */
