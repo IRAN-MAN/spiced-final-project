@@ -11,23 +11,38 @@ export default function Gallery({ elements, render, elementsPerPage }) {
     });
 
     useEffect(async () => {
+        // console.log(
+        //     "...(Gallery) props elements, elementsPerPage: ",
+        //     elements,
+        //     elementsPerPage
+        // );
+
+        let hide = false;
+        if (elementsPerPage == elements.length) {
+            console.log(
+                "...(Gallery) props elementsPerPage ",
+                elementsPerPage,
+                elements.length
+            );
+            hide = true;
+        }
         setGalleryControls({
-            start: 1,
-            end: 2,
+            start: 0,
+            end: elementsPerPage,
             hidePrev: true,
-            hideNext: false,
+            hideNext: hide,
             direction: false,
             length: elements.length,
         });
-        console.log("Gallery: elements: ", elements);
+        // console.log("Gallery: elements: ", elements);
     }, []);
 
     const renderElements = (elements) => {
-        console.log(
-            "renderPhotos start, end",
-            galleryControls.start,
-            galleryControls.end
-        );
+        // console.log(
+        //     "renderElements start, end",
+        //     galleryControls.start,
+        //     galleryControls.end
+        // );
         return elements
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {
@@ -50,11 +65,12 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             end -= elementsPerPage;
         }
         let hidePrev, hideNext;
-        if (start < 1) {
+        if (start == 0) {
             hidePrev = true;
         } else {
             hidePrev = false;
         }
+        console.log("...() end, elements.length: ", end, elements.length);
         if (end >= elements.length) {
             hideNext = true;
         } else {
@@ -77,7 +93,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                     className={
                         !galleryControls.hidePrev
                             ? "photoPickerControls"
-                            : "photoPickerControls hideButton"
+                            : "photoPickerControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();
@@ -107,7 +123,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                     className={
                         !galleryControls.hideNext
                             ? "photoPickerControls"
-                            : "photoPickerControls hideButton"
+                            : "photoPickerControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();
