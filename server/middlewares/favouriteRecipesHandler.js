@@ -2,7 +2,7 @@ const { getFavRecipesByUserId } = require("../database/favRecipesQueries");
 
 const userfavouriteRecipes = async (request, response, next) => {
     try {
-        console.log("userfavouriteRecipes");
+        console.log("[userfavouriteRecipes : user_id]", request.params);
         const favRecipes = await getFavRecipesByUserId({ ...request.params });
         console.log("[getFavRecipesByUserId]", favRecipes);
         response.status(200).json({ favRecipes });
