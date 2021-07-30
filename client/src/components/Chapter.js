@@ -40,7 +40,7 @@ export default function Chapter({ chapter_id }) {
                 {/* {recipes.length > 0 && renderRecipePreviews()} */}
                 <Gallery
                     elements={filteredRecipes()}
-                    elementsPerPage={3}
+                    elementsPerPage={5}
                     render={renderRecipe}
                 />
             </ul>

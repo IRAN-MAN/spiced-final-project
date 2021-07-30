@@ -18,7 +18,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         // );
 
         let hide = false;
-        if (elementsPerPage == elements.length) {
+        if (elementsPerPage >= elements.length) {
             console.log(
                 "...(Gallery) props elementsPerPage ",
                 elementsPerPage,
