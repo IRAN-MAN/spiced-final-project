@@ -54,11 +54,15 @@ export const receiveCurrentCookbook = async (cookbook_id) => {
 };
 
 export const receiveRecipes = async (cookbook_id) => {
-    const recipes = await axios.get(`/api/recipes/${cookbook_id}`);
-    console.log("...(ACTION receiveRecipes) recipes.data:", recipes.data);
+    console.log("receiveRecipes cookbook_id:", cookbook_id);
+    const recipes = await axios.get(`/api/recipes/by_cookbook/${cookbook_id}`);
+    console.log(
+        "...(ACTION receiveRecipes) recipes.data:",
+        recipes.data.recipes
+    );
     return {
         type: RECEIVE_RECIPES,
-        payload: { recipes: recipes.data },
+        payload: { recipes: recipes.data.recipes },
     };
 };
 
