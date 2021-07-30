@@ -1,4 +1,8 @@
-const { getAllCoAuthors } = require("../database/coAuthorsQueries");
+const {
+    getAllCoAuthors,
+    insertCoAuthor,
+    deleteCoAuthor
+} = require("../database/coAuthorsQueries");
 
 const cookBookCoAuthorsInfo = async (request, response, next) => {
     try {
@@ -29,13 +33,27 @@ const addCoAuthor = async (request, response, next) => {
     }
 };
 
-const deleteCoAuthor = async (request, response, next) => {
+const deleteFromCoAuthor = async (request, response, next) => {
     try {
-        console.log("deleteCoAuthor");
+        console.log("[deleteCoAuthor : cookbook_id]", request.params);
+        await deleteCoAuthor({
+            ...request.params,
+            ...request.session,
+        });        
+        response.status(200).json({ message: "Delete successful" });
     } catch (error) {
         console.log("[deleteCoAuthor: Error]", error);
         next(error);
     }
 };
 
-module.exports = { cookBookCoAuthorsInfo, addCoAuthor, deleteCoAuthor };
+module.exports = { cookBookCoAuthorsInfo, addCoAuthor, deleteFromCoAuthor };
+
+const serializeCoAuthor = (coAuthor) => {
+    return {
+        coAuthor_id: coAuthor.id,
+        user_id: coAuthor.user_id,
+        cookbook_id: coAuthor.cookbook_id,
+        created_at: coAuthor,.created_at
+    };
+}
