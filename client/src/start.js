@@ -13,7 +13,7 @@ const loggedIn = true;
 
 const isLoggedIn = async () => {
     const { data } = await axios.get("/api/users/checklogin");
-    console.log("...(start.js) user_id: ", data.user_id);
+    // console.log("...(start.js) user_id: ", data.user_id);
     if (data.user_id) {
         //logged-in
         ReactDOM.render(

@@ -33,10 +33,10 @@ export const receiveChapters = async () => {
 
 export const receiveCookbooks = async (user_id) => {
     const cookbooks = await axios.get(`/api/cookbooks/${user_id}`);
-    console.log(
-        "...(ACTION receiveCookbooks) cookbooks:",
-        cookbooks.data.cookbooks
-    );
+    // console.log(
+    //     "...(ACTION receiveCookbooks) cookbooks:",
+    //     cookbooks.data.cookbooks
+    // );
     return {
         type: RECEIVE_COOKBOOKS,
         payload: { cookbooks: cookbooks.data.cookbooks },
@@ -46,7 +46,7 @@ export const receiveCookbooks = async (user_id) => {
 //maybe not necessary, cause we already got all the connected cookbooks together
 export const receiveCurrentCookbook = async (cookbook_id) => {
     const cookbook = await axios.get(`/api/cookbooks/${cookbook_id}`);
-    console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook.data);
+    // console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook.data);
     return {
         type: RECEIVE_CURRENTCOOKBOOK,
         payload: { currentCookbook: cookbook.data },
@@ -54,12 +54,12 @@ export const receiveCurrentCookbook = async (cookbook_id) => {
 };
 
 export const receiveRecipes = async (cookbook_id) => {
-    console.log("receiveRecipes cookbook_id:", cookbook_id);
+    // console.log("receiveRecipes cookbook_id:", cookbook_id);
     const recipes = await axios.get(`/api/recipes/by_cookbook/${cookbook_id}`);
-    console.log(
-        "...(ACTION receiveRecipes) recipes.data:",
-        recipes.data.recipes
-    );
+    // console.log(
+    //     "...(ACTION receiveRecipes) recipes.data:",
+    //     recipes.data.recipes
+    // );
     return {
         type: RECEIVE_RECIPES,
         payload: { recipes: recipes.data.recipes },
