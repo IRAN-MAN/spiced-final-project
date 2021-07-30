@@ -107,7 +107,7 @@ export const receiveCoauthors = async (cookbook_id) => {
         payload: { coauthors: coauthors.data },
     };
 };
-export const receiveCurrentIngredientslist = async (recipe_id) => {
+export const receiveIngredientslist = async (recipe_id) => {
     const ingredients_list = await axios.get(
         `/api/ingredients_list/${recipe_id}`
     );

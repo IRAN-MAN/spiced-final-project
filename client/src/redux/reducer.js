@@ -15,18 +15,16 @@ import {
 } from "./actions";
 
 const initialState = {
-    user: {},
-    cookbooks: [],
-    currentCookbook: {
-        coauthors: [],
-    },
-    chapters: [],
-    recipes: [],
-    currentRecipe: {
-        ingredients_list: [],
-    },
-    myFavourites: [],
     allFavourites: [],
+    chapters: [],
+    coauthors: [],
+    cookbooks: [],
+    currentCookbook: {},
+    currentRecipe: {},
+    ingredients_list: [],
+    myFavourites: [],
+    recipes: [],
+    user: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -56,10 +54,7 @@ const reducer = (state = initialState, action) => {
         case RECEIVE_COAUTHORS:
             return {
                 ...state,
-                currentCookbook: {
-                    ...state.currentCookbook,
-                    coauthors: action.payload.coauthors,
-                },
+                coauthors: action.payload.coauthors,
             };
         case RECEIVE_CURRENTRECIPE:
             return {
@@ -69,10 +64,7 @@ const reducer = (state = initialState, action) => {
         case RECEIVE_INGREDIENTSLIST:
             return {
                 ...state,
-                currentRecipe: {
-                    ...state.currentRecipe,
-                    ingredients_list: action.payload.ingredients_list,
-                },
+                ingredients_list: action.payload.ingredients_list,
             };
         case RECEIVE_CURRENTCOOKBOOK:
             return {
