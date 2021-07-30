@@ -6,7 +6,7 @@ const {
     recipesInCookBook,
 } = require("../middlewares/recipesHandler");
 
-recipesRoutes.get("/:recipe_name", recipeInfo);
-recipesRoutes.get("/:cookbook_id", recipesInCookBook);
+recipesRoutes.get("/:recipe_id", recipeInfo);
+recipesRoutes.get("/by_cookbook/:cookbook_id", recipesInCookBook);
 
 module.exports = { recipesRoutes };
