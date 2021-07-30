@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import {
     receiveCurrentRecipe,
     receiveIngredientslist,
     receiveAuthorInfo,
 } from "../redux/action-creators";
+import Button from "./Button";
 
 //components
 import Gallery from "./Gallery";
@@ -41,11 +43,17 @@ export default function Recipe(props) {
             </div>
             <div className="bioContent">
                 <h1>{currentRecipe.recipe_name}</h1>
-                <div>
-                    <p>
+                <div className="recipeStory">
+                    <q>
                         <span className="bolder">
                             {currentRecipe.recipe_story}
                         </span>
+                    </q>
+                </div>
+                <div className="recipeDetails">
+                    <p className="ingredients">
+                        <span className="bolder">Prep time: </span>60min //{" "}
+                        <span className="bolder">Difficulty</span> Easy
                     </p>
                 </div>
                 <div className="ingredientsWrapper">
@@ -96,14 +104,24 @@ export default function Recipe(props) {
                         />
                     </div>
                     <div>
-                        <p>
-                            Made with love by{" "}
-                            <span className="bolder">
-                                {author.first_name + " " + author.last_name}
-                            </span>
-                        </p>
+                        <Link to="/userprofile/:id">
+                            <p>
+                                Made with love by{" "}
+                                <span className="bolder">
+                                    {author.first_name + " " + author.last_name}
+                                </span>
+                            </p>
+                        </Link>
                     </div>
                 </div>
+
+                <Button
+                    onClick={() => console.log("CLICK!")}
+                    labeltext="edit recipe"
+                    type="submit"
+                    classNames="button edit-button"
+                    icon="edit"
+                />
             </div>
         </div>
     );

@@ -16,13 +16,31 @@ main {
     justify-content: space-between;
 }
 
+/* SELECTION */
+
+::selection {
+    background-color: black;
+    color: green;
+}
+
+/* INPUT */
+
 input {
     border: none;
     padding: 5px;
 }
 
+/* UL LIST */
+
 ul {
     list-style: none;
+}
+
+/* LINKS */
+
+a {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* TEXT & FONTS */
@@ -121,6 +139,11 @@ button {
 }
 .buttonWrapper span i {
     padding-inline-start: 5px;
+}
+
+.edit-button {
+}
+.submit-button {
 }
 
 /* NAVIGATION */
@@ -248,6 +271,11 @@ footer {
 }
 .recipePreview {
     width: 100%;
+}
+
+/* RECIPES */
+
+.recipeStory {
 }
 
 /* GALLERY & GALLERY CONTROLS */
