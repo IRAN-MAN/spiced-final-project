@@ -9,7 +9,7 @@ const {
 } = require("../middlewares/favouriteRecipesHandler");
 
 favouriteRecipesRoutes.get("/user/:user_id", userfavouriteRecipes);
-favouriteRecipesRoutes.get("/:recipe_id", mostfavouriteRecipe);
+favouriteRecipesRoutes.get("/most_fav", mostfavouriteRecipe);
 
 favouriteRecipesRoutes.post("/add_fav/:recipe_id", addfavouriteRecipe);
 
