@@ -20,5 +20,16 @@ export default function Recipe(props) {
         }
     }, []);
 
-    return <div className="recipeWrapper">Recipe Component</div>;
+    return (
+        <div className="recipeWrapper">
+            Recipe Component
+            <div className="avatarWrapper">
+                <img
+                    className="avatar"
+                    src={currentRecipe.recipe_photo}
+                    alt={currentRecipe.recipe_name}
+                />
+            </div>
+        </div>
+    );
 }

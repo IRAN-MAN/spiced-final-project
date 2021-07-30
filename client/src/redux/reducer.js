@@ -64,7 +64,7 @@ const reducer = (state = initialState, action) => {
         case RECEIVE_CURRENTRECIPE:
             return {
                 ...state,
-                currentRecipe: action.payload.recipe,
+                currentRecipe: action.payload,
             };
         case RECEIVE_INGREDIENTSLIST:
             return {

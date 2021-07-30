@@ -90,8 +90,8 @@ export const receiveAllFavourites = async (recipe_id) => {
     };
 };
 
-export const receiveCurrentRecipe = async (cookbook_id) => {
-    const recipe = await axios.get(`/api/recipes/${cookbook_id}`);
+export const receiveCurrentRecipe = async (recipe_id) => {
+    const recipe = await axios.get(`/api/recipes/${recipe_id}`);
     console.log("...(ACTION receiveCurrentRecipe) recipe.data:", recipe.data);
     return {
         type: RECEIVE_CURRENTRECIPE,
