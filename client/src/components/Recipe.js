@@ -5,7 +5,9 @@ import { receiveCurrentRecipe } from "../redux/action-creators";
 //components
 import Gallery from "./Gallery";
 
-export default function RecipeList({ recipe_id }) {
+export default function Recipe(props) {
+    const recipe_id = props.match.params.id;
+
     //need to think about this:
     const currentRecipe = useSelector((state) => state.currentRecipe);
     const recipePhotos = useSelector((state) => state.photos);
@@ -18,5 +20,5 @@ export default function RecipeList({ recipe_id }) {
         }
     }, []);
 
-    return <p>Recipe Component</p>;
+    return <div className="recipeWrapper">Recipe Component</div>;
 }
