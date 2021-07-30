@@ -28,7 +28,9 @@ export default function Recipe(props) {
         }
     }, []);
     useEffect(() => {
-        dispatch(receiveAuthorInfo(currentRecipe.owner_id));
+        if (currentRecipe.owner_id) {
+            dispatch(receiveAuthorInfo(currentRecipe.owner_id));
+        }
     }, [currentRecipe]);
 
     return (
