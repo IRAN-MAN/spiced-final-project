@@ -66,7 +66,7 @@ export default function MyCookbooks() {
             <ul>
                 <Gallery
                     elements={cookbooksTEST}
-                    elementsPerPage={1}
+                    elementsPerPage={2}
                     render={renderCookbooks}
                 />
             </ul>

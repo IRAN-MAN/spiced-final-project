@@ -243,3 +243,11 @@ footer {
 .recipePreview {
     width: 100%;
 }
+
+/* GALLERY & GALLERY CONTROLS */
+
+.hideControls {
+    display: none;
+}
+.gallery {
+}
