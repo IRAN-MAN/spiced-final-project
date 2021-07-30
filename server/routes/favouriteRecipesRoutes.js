@@ -8,11 +8,11 @@ const {
     removefavouriteRecipe,
 } = require("../middlewares/favouriteRecipesHandler");
 
-favouriteRecipesRoutes.get("/:user_id", userfavouriteRecipes);
-favouriteRecipesRoutes.get("/:recipe_id", mostfavouriteRecipe);
+favouriteRecipesRoutes.get("/user/:user_id", userfavouriteRecipes);
+favouriteRecipesRoutes.get("/most_fav", mostfavouriteRecipe);
 
 favouriteRecipesRoutes.post("/add_fav/:recipe_id", addfavouriteRecipe);
 
-favouriteRecipesRoutes.put("/remove_fav/:recipe_id", removefavouriteRecipe);
+favouriteRecipesRoutes.delete("/remove_fav/:recipe_id", removefavouriteRecipe);
 
 module.exports = { favouriteRecipesRoutes };
