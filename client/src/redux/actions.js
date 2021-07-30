@@ -14,7 +14,7 @@ export const receiveChapters = async () => {
     console.log("...(ACTION receiveChapters) chapters.data:", chapters.data);
     return {
         type: "RECEIVE_CHAPTERS",
-        payload: { chapters: chapters.data },
+        payload: { chapters: chapters.data.chaptersinfo },
     };
 };
 
