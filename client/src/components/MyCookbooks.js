@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { receiveCookbooks } from "../redux/action-creators";
 import { Link } from "react-router-dom";
 
+//components
+import Gallery from "./Gallery";
+
 export default function MyCookbooks() {
     const user = useSelector((state) => {
         return state.user;
@@ -39,29 +42,34 @@ export default function MyCookbooks() {
         },
     ];
 
-    const renderCookbooks = () => {
-        return cookbooksTEST.map((cookbook) => {
-            return (
-                <li key={cookbook.id} className="cookbookWrapper">
-                    <Link to={"/cookbook/" + cookbook.id}>
-                        <div className="coverWrapper">
-                            <img
-                                className="cover"
-                                src={cookbook.cover_pic}
-                                alt={cookbook.cookbook_name}
-                            />
-                        </div>
-                        <p>{cookbook.cookbook_name}</p>
-                    </Link>
-                </li>
-            );
-        });
+    const renderCookbooks = (cookbook) => {
+        return (
+            <li key={cookbook.id} className="cookbookWrapper">
+                <Link to={"/cookbook/" + cookbook.id}>
+                    <div className="coverWrapper">
+                        <img
+                            className="cover"
+                            src={cookbook.cover_pic}
+                            alt={cookbook.cookbook_name}
+                        />
+                    </div>
+                    <p>{cookbook.cookbook_name}</p>
+                </Link>
+            </li>
+        );
     };
 
     return (
         <div className="cookbooksWrapper flex cc fcolumn">
             MyCookbooks Component
-            <ul>{cookbooksTEST.length > 0 && renderCookbooks()}</ul>
+            {/* <ul>{cookbooksTEST.length > 0 && renderCookbooks()}</ul> */}
+            <ul>
+                <Gallery
+                    elements={cookbooksTEST}
+                    elementsPerPage={1}
+                    render={renderCookbooks}
+                />
+            </ul>
         </div>
     );
 }
