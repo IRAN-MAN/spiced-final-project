@@ -14,7 +14,7 @@ import {
 
 export const receiveUserInfo = async (user_id) => {
     const userInfo = await axios.get(`/api/users/profile/${user_id}`);
-    console.log("...(ACTION receiveUserInfo) userInfo.data:", userInfo);
+    // console.log("...(ACTION receiveUserInfo) userInfo.data:", userInfo.data);
     return {
         type: RECEIVE_USERINFO,
         payload: { user: userInfo.data },
@@ -23,7 +23,7 @@ export const receiveUserInfo = async (user_id) => {
 
 export const receiveChapters = async () => {
     const chapters = await axios.get(`/api/chapters`);
-    console.log("...(ACTION receiveChapters) chapters.data:", chapters.data);
+    // console.log("...(ACTION receiveChapters) chapters.data:", chapters.data);
     return {
         type: RECEIVE_CHAPTERS,
         payload: { chapters: chapters.data.chaptersinfo },
@@ -32,17 +32,20 @@ export const receiveChapters = async () => {
 
 export const receiveCookbooks = async (user_id) => {
     const cookbooks = await axios.get(`/api/cookbooks/${user_id}`);
-    console.log("...(ACTION receiveCookbooks) cookbooks.data:", cookbooks.data);
+    // console.log(
+    //     "...(ACTION receiveCookbooks) cookbooks:",
+    //     cookbooks.data.cookbooks
+    // );
     return {
         type: RECEIVE_COOKBOOKS,
-        payload: { cookbooks: cookbooks.data },
+        payload: { cookbooks: cookbooks.data.cookbooks },
     };
 };
 
 //maybe not necessary, cause we already got all the connected cookbooks together
 export const receiveCurrentCookbook = async (cookbook_id) => {
     const cookbook = await axios.get(`/api/cookbooks/${cookbook_id}`);
-    console.log("...(ACTION receiveCookbooks) cookbooks.data:", cookbook.data);
+    console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook.data);
     return {
         type: RECEIVE_CURRENTCOOKBOOK,
         payload: { currentCookbook: cookbook.data },
