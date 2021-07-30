@@ -33,4 +33,12 @@ const getMostFavRecipe = async () => {
     return mostFav.rows[0];
 };
 
-module.exports = { getFavRecipesByUserId, getMostFavRecipe };
+const insertFavRecipe = async ({ recipe_id, user_id }) => {
+    const addedRecipe = await db.query(
+        "INSERT INTO favourite_recipes (user_id, recipe_id) VALUES ($1, $2) RETURNING *",
+        [user_id, recipe_id]
+    );
+    return addedRecipe.rows[0];
+};
+
+module.exports = { getFavRecipesByUserId, getMostFavRecipe, insertFavRecipe };

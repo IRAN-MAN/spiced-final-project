@@ -1,6 +1,7 @@
 const {
     getFavRecipesByUserId,
     getMostFavRecipe,
+    insertFavRecipe,
 } = require("../database/favRecipesQueries");
 
 const userfavouriteRecipes = async (request, response, next) => {
@@ -20,7 +21,7 @@ const mostfavouriteRecipe = async (request, response, next) => {
         console.log("[mostfavouriteRecipe : recipe_id]", request.params);
         const mostFavRecipe = await getMostFavRecipe();
         console.log("[getMostFavRecipe]", mostFavRecipe);
-        response.status(200).json(serializeMostFavRecipe(mostFavRecipe));
+        response.status(200).json(serializeFavRecipe(mostFavRecipe));
     } catch (error) {
         console.log("[mostfavouriteRecipe: Error]", error);
         next(error);
@@ -29,7 +30,13 @@ const mostfavouriteRecipe = async (request, response, next) => {
 
 const addfavouriteRecipe = async (request, response, next) => {
     try {
-        console.log("addfavouriteRecipe");
+        console.log("[addfavouriteRecipe : recipe_id]", request.params);
+        const addedFavRecipe = await insertFavRecipe({
+            ...request.params,
+            ...request.session,
+        });
+        console.log("[insertFavRecipe]", addedFavRecipe);
+        response.status(200).json(serializeFavRecipe(addedFavRecipe));
     } catch (error) {
         console.log("[addfavouriteRecipe: Error]", error);
         next(error);
@@ -52,7 +59,7 @@ module.exports = {
     removefavouriteRecipe,
 };
 
-const serializeMostFavRecipe = (recipe) => {
+const serializeFavRecipe = (recipe) => {
     return {
         recipe_id: recipe.recipe_id,
         cookbook_id: recipe.cookbook_id,
@@ -63,5 +70,6 @@ const serializeMostFavRecipe = (recipe) => {
         prep_time: recipe.prep_time,
         difficulty_level: recipe.difficulty_level,
         recipe_story: recipe.recipe_story,
+        recipe_photo: recipe.recipe_photo,
     };
 };
