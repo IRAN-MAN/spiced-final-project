@@ -1,4 +1,4 @@
-const { getCookBookByUserId } = require("../database/db");
+const { getCookBookByUserId } = require("../database/cookbooksQueries");
 
 const cookBookInfo = async (request, response, next) => {
     try {

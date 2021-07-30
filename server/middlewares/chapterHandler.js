@@ -1,4 +1,4 @@
-const { getChapters } = require("../database/db");
+const { getChapters } = require("../database/chaptersQueries");
 
 const chapterInfo = async (request, response, next) => {
     try {

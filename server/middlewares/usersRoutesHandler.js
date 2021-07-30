@@ -1,6 +1,6 @@
 const { hashPassword } = require("../utilities/hashPass");
 const loginCheck = require("../utilities/loginCheck");
-const { createUser, getUserById } = require("../database/db");
+const { createUser, getUserById } = require("../database/usersQueries");
 
 const checkloggedIn = async (request, response) =>
     response.json({ user_id: request.session.user_id });
@@ -106,19 +106,21 @@ const uploadProfilePic = async (request, response, next) => {
 };
 
 const getUserInfo = async (request, response, next) => {
+    request.session.user_id = 1;
     try {
-        console.log("getUserInfo: params", request.params);
+        if (request.params.user_id === "-1") {
+            const user = await getUserById({ ...request.session });
+            console.log("[getUserById 114: user]", user);
+            response.status(200).json(serializeUserInfo(user));
+            return;
+        }
+        console.log("[session]", request.session);
         const user = await getUserById({ ...request.params });
-        response.status(200).json({
-            id: user.id,
-            first_name: user.first_name,
-            last_name: user.last_name,
-            email: user.email,
-            profile_pic: user.profile_pic,
-            about: user.about,
-            city: user.city,
-            created_at: user.created_at,
-        });
+        if (!user) {
+            response.status(404).json({ message: "Such user does not exist!" });
+        }
+        console.log("[getUserById 119: user]", user);
+        response.status(200).json(serializeUserInfo(user));
     } catch (error) {
         console.log("[getUserInfo: Error]", error);
         next(error);
@@ -144,4 +146,17 @@ module.exports = {
     getUserInfo,
     changeUserInfo,
     checkloggedIn,
+};
+
+const serializeUserInfo = (user) => {
+    return {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        profile_pic: user.profile_pic,
+        about: user.about,
+        city: user.city,
+        created_at: user.created_at,
+    };
 };

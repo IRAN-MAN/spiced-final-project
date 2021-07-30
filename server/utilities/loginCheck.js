@@ -1,5 +1,5 @@
 const { compare } = require("bcryptjs");
-const { getUserByEmail } = require("../database/db");
+const { getUserByEmail } = require("../database/usersQueries");
 
 const loginCheck = async ({ email, password }) => {
     const matchUser = await getUserByEmail({ email });
