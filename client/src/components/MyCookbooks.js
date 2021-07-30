@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-import { receiveCookbooks } from "../redux/actions";
+import { receiveCookbooks } from "../redux/action-creators";
 import { Link } from "react-router-dom";
 
 export default function MyCookbooks() {

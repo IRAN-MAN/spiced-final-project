@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { receiveCurrentRecipe } from "../redux/actions";
+import { receiveCurrentRecipe } from "../redux/action-creators";
 
 export default function RecipeList({ recipe_id }) {
     //need to think about this:

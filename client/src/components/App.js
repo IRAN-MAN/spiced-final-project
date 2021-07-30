@@ -6,7 +6,7 @@ import {
     receiveUserInfo,
     receiveChapters,
     receiveCookbooks,
-} from "../redux/actions";
+} from "../redux/action-creators";
 
 import axios from "../axios";
 
