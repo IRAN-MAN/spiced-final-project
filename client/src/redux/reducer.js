@@ -12,10 +12,12 @@ import {
     RECEIVE_RECIPES,
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
+    RECEIVE_AUTHORINFO,
 } from "./actions";
 
 const initialState = {
     allFavourites: [],
+    author: {},
     chapters: [],
     coauthors: [],
     cookbooks: [],
@@ -80,6 +82,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 allFavourites: action.payload.favourites,
+            };
+        case RECEIVE_AUTHORINFO:
+            return {
+                ...state,
+                author: action.payload.author,
             };
         default:
             return state;

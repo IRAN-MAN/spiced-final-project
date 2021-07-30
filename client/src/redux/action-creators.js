@@ -11,6 +11,7 @@ import {
     RECEIVE_RECIPES,
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
+    RECEIVE_AUTHORINFO,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -119,6 +120,17 @@ export const receiveIngredientslist = async (recipe_id) => {
         type: RECEIVE_INGREDIENTSLIST,
         payload: {
             ingredients_list: ingredients_list.data,
+        },
+    };
+};
+
+export const receiveAuthorInfo = async (user_id) => {
+    const author = await axios.get(`/api/users/profile/${user_id}`);
+    console.log("...(ACTION receiveAuthorInfo) author.data:", author.data);
+    return {
+        type: RECEIVE_AUTHORINFO,
+        payload: {
+            author: author.data,
         },
     };
 };
