@@ -45,14 +45,18 @@ CREATE TABLE recipes (
     instructions            TEXT NOT NULL,
     prep_time               VARCHAR(25) NOT NULL,
     difficulty_level        INT NOT NULL,
-    recipe_story            TEXT
+    recipe_story            TEXT,
+    created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
 );
 
 
 CREATE TABLE co_authors (
     id              SERIAL PRIMARY KEY,
     user_id         INT REFERENCES users (id) NOT NULL,    
-    cookbook_id     INT REFERENCES cookbooks (id) NOT NULL        
+    cookbook_id     INT REFERENCES cookbooks (id) NOT NULL,
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        
 );
 
 CREATE TABLE Ingredients_list (
