@@ -82,14 +82,14 @@ export default function Gallery({ elements, render, elementsPerPage }) {
     };
 
     return (
-        <div className="galleryWrapper">
+        <div className="galleryWrapper flex cc">
             {/* Prev Button */}
             <div>
                 <button
                     className={
                         !galleryControls.hidePrev
-                            ? "photoPickerControls"
-                            : "photoPickerControls hideControls"
+                            ? "galleryControls"
+                            : "galleryControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();
@@ -109,7 +109,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             </div>
 
             {/* Gallery */}
-            <div className="gallery">
+            <div className="gallery flex">
                 {elements.length > 0 && renderElements(elements)}
             </div>
 
@@ -118,8 +118,8 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                 <button
                     className={
                         !galleryControls.hideNext
-                            ? "photoPickerControls"
-                            : "photoPickerControls hideControls"
+                            ? "galleryControls"
+                            : "galleryControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();
