@@ -5,7 +5,7 @@ const getIngredientListByRecipe = async ({ recipe_id }) => {
         "SELECT * FROM Ingredients_list WHERE recipe_id = $1",
         [recipe_id]
     );
-    return ingredient.rows[0];
+    return ingredient.rows;
 };
 
 module.exports = {

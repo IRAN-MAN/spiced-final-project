@@ -9,7 +9,7 @@ const getIngredientList = async (request, response, next) => {
             ...request.params,
         });
         console.log("getIngredientListByRecipe", ingredientList);
-        response.status(200).json(serializeIngredientList(ingredientList));
+        response.status(200).json({ ingredientList });
     } catch (error) {
         console.log("[recipeInfo: Error]", error);
         next(error);
