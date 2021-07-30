@@ -31,7 +31,14 @@ export default function App() {
         dispatch(receiveUserInfo(-1));
         dispatch(receiveChapters());
     }, []);
+    useEffect(() => {
+        // console.log("...(BEFORE user: ", user);
 
+        if (user.id) {
+            // console.log("...(AFTER user: ", user);
+            dispatch(receiveCookbooks(user.id));
+        }
+    }, [user]);
     return (
         <BrowserRouter>
             <Header />

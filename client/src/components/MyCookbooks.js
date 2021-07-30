@@ -18,14 +18,6 @@ export default function MyCookbooks() {
 
     const dispatch = useDispatch();
     useEffect(() => {}, []);
-    useEffect(() => {
-        console.log("...(BEFORE user: ", user);
-
-        if (user.id) {
-            console.log("...(AFTER user: ", user);
-            dispatch(receiveCookbooks(user.id));
-        }
-    }, [user]);
 
     const renderCookbooks = (cookbook) => {
         return (
