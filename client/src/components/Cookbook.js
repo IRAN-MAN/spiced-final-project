@@ -15,21 +15,21 @@ import ChapterList from "./ChapterList";
 export default function Cookbook(props) {
     const dispatch = useDispatch();
     const cookbook_id = props.match.params.id;
-    // const currentCookbook = useSelector((state) => {
-    //     return state.currentCookbook;
-    // });
-    const currentCookbook = useSelector(
-        (state) => state.cookbooks[cookbook_id]
-    );
-    const chapters = useSelector((state) => {
-        return state.chapters;
+    const currentCookbook = useSelector((state) => {
+        return state.currentCookbook;
     });
-    const coauthors = useSelector((state) => state.currentCookbook.coauthors);
+    // const currentCookbook = useSelector(
+    //     (state) => state.cookbooks[cookbook_id]
+    // );
+    // const chapters = useSelector((state) => {
+    //     return state.chapters;
+    // });
+    // const coauthors = useSelector((state) => state.currentCookbook.coauthors);
 
     useEffect(() => {
-        dispatch(receiveCurrentCookbook(cookbook_id));
+        // dispatch(receiveCurrentCookbook(cookbook_id));
         dispatch(receiveRecipes(cookbook_id));
-        dispatch(receiveCoauthors(cookbook_id));
+        // dispatch(receiveCoauthors(cookbook_id));
     }, []);
 
     // useEffect(async () => {
@@ -42,7 +42,7 @@ export default function Cookbook(props) {
         cover_pic:
             "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
     };
-    const chaptersTEST = ["Starters", "Main", "Desert"];
+    // const chaptersTEST = ["Starters", "Main", "Desert"];
 
     const coauthorsTEST = [
         {
