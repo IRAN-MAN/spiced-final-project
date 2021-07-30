@@ -9,6 +9,10 @@ const {
 } = require("../middlewares/ingredientsListHandler");
 
 ingredientsListRoutes.get("/:recipe_id", getIngredientList, errorHandler);
-ingredientsListRoutes.post("/:recipe_id", addIngredientList, errorHandler);
+ingredientsListRoutes.post(
+    "/add_ingredient/:recipe_id",
+    addIngredientList,
+    errorHandler
+);
 
 module.exports = { ingredientsListRoutes };
