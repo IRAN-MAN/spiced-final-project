@@ -46,11 +46,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         return elements
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {
-                return (
-                    <div className="" key={element.id}>
-                        {render(element)}
-                    </div>
-                );
+                return render(element);
             });
     };
 

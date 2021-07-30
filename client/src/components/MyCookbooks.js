@@ -29,18 +29,20 @@ export default function MyCookbooks() {
 
     const renderCookbooks = (cookbook) => {
         return (
-            <li key={cookbook.cookbook_id} className="cookbookWrapper">
-                <Link to={"/cookbook/" + cookbook.cookbook_id}>
-                    <div className="coverWrapper">
-                        <img
-                            className="cover"
-                            src={cookbook.cover_pic}
-                            alt={cookbook.cookbook_name}
-                        />
-                    </div>
-                    <p>{cookbook.cookbook_name}</p>
-                </Link>
-            </li>
+            <div className="" key={cookbook.cookbook_id}>
+                <li key={cookbook.cookbook_id} className="cookbookWrapper">
+                    <Link to={"/cookbook/" + cookbook.cookbook_id}>
+                        <div className="coverWrapper">
+                            <img
+                                className="cover"
+                                src={cookbook.cover_pic}
+                                alt={cookbook.cookbook_name}
+                            />
+                        </div>
+                        <p>{cookbook.cookbook_name}</p>
+                    </Link>
+                </li>
+            </div>
         );
     };
 
