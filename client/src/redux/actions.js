@@ -1,104 +1,128 @@
-import axios from "../axios";
+// CHAPTER
+export const RECEIVE_CHAPTERS = "RECEIVE_CHAPTERS";
 
-export const receiveUserInfo = async (user_id) => {
-    const userInfo = await axios.get(`/api/users/profile/${user_id}`);
-    console.log("...(ACTION receiveUserInfo) userInfo.data:", userInfo);
-    return {
-        type: "RECEIVE_USERINFO",
-        payload: { user: userInfo.data },
-    };
-};
+// COAUTHORS
+export const RECEIVE_COAUTHORS = "RECEIVE_COAUTHORS";
 
-export const receiveChapters = async () => {
-    const chapters = await axios.get(`/api/chapters`);
-    console.log("...(ACTION receiveChapters) chapters.data:", chapters.data);
-    return {
-        type: "RECEIVE_CHAPTERS",
-        payload: { chapters: chapters.data },
-    };
-};
+// COOKBOOK
+export const RECEIVE_COOKBOOKS = "RECEIVE_COOKBOOKS";
+export const RECEIVE_CURRENTCOOKBOOK = "RECEIVE_CURRENTCOOKBOOK";
 
-export const receiveCookbooks = async (user_id) => {
-    const cookbooks = await axios.get(`/api/cookbooks/${user_id}`);
-    console.log("...(ACTION receiveCookbooks) cookbooks.data:", cookbooks.data);
-    return {
-        type: "RECEIVE_COOKBOOKS",
-        payload: { cookbooks: cookbooks.data },
-    };
-};
+// FAVOURITES
+export const RECEIVE_MYFAVOURITES = "RECEIVE_MYFAVOURITES";
+export const RECEIVE_ALLFAVOURITES = "RECEIVE_ALLFAVOURITES";
 
-//maybe not necessary, cause we already got all the connected cookbooks together
-export const receiveCurrentCookbook = async (cookbook_id) => {
-    const cookbook = await axios.get(`/api/cookbooks/${cookbook_id}`);
-    console.log("...(ACTION receiveCookbooks) cookbooks.data:", cookbook.data);
-    return {
-        type: "RECEIVE_CURRENTCOOKBOOK",
-        payload: { currentCookbook: cookbook.data },
-    };
-};
+// INGREDIENTSLIST
+export const RECEIVE_INGREDIENTSLIST = "RECEIVE_INGREDIENTSLIST";
 
-export const receiveRecipes = async (cookbook_id) => {
-    const recipes = await axios.get(`/api/recipes/${cookbook_id}`);
-    console.log("...(ACTION receiveRecipes) recipes.data:", recipes.data);
-    return {
-        type: "RECEIVE_RECIPES",
-        payload: { recipes: recipes.data },
-    };
-};
+// RECIPES
+export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
+export const RECEIVE_CURRENTRECIPE = "RECEIVE_CURRENTRECIPE";
 
-export const receiveFavourites = async (user_id) => {
-    const favourites = await axios.get(`/api/facourite_recipes/${user_id}`);
-    console.log(
-        "...(ACTION receiveFavourites) favourites.data:",
-        favourites.data
-    );
-    return {
-        type: "RECEIVE_MYFAVOURITES",
-        payload: { favourites: favourites.data },
-    };
-};
+// USER
+export const RECEIVE_USERINFO = "RECEIVE_USERINFO";
 
-export const receiveAllFavourites = async (recipe_id) => {
-    const favourites = await axios.get(`/api/facourite_recipes/${recipe_id}`);
-    console.log(
-        "...(ACTION receiveAllFavourites) favourites.data:",
-        favourites.data
-    );
-    return {
-        type: "RECEIVE_ALLFAVOURITES",
-        payload: { favourites: favourites.data },
-    };
-};
+// import axios from "../axios";
 
-export const receiveCurrentRecipe = async (cookbook_id) => {
-    const recipe = await axios.get(`/api/recipes/${cookbook_id}`);
-    console.log("...(ACTION receiveCurrentRecipe) recipe.data:", recipe.data);
-    return {
-        type: "RECEIVE_CURRENTRECIPE",
-        payload: { currentRecipe: recipe.data },
-    };
-};
+// export const receiveUserInfo = async (user_id) => {
+//     const userInfo = await axios.get(`/api/users/profile/${user_id}`);
+//     console.log("...(ACTION receiveUserInfo) userInfo.data:", userInfo);
+//     return {
+//         type: "RECEIVE_USERINFO",
+//         payload: { user: userInfo.data },
+//     };
+// };
 
-export const receiveCoauthors = async (cookbook_id) => {
-    const coauthors = await axios.get(`/api/coauthors/${cookbook_id}`);
-    console.log("...(ACTION receiveCoauthors) coauthors.data:", coauthors.data);
-    return {
-        type: "RECEIVE_COAUTHORS",
-        payload: { coauthors: coauthors.data },
-    };
-};
-export const receiveCurrentIngredientslist = async (recipe_id) => {
-    const ingredients_list = await axios.get(
-        `/api/ingredients_list/${recipe_id}`
-    );
-    console.log(
-        "...(ACTION receiveCurrentIngredientslist) ingredients_list.data:",
-        ingredients_list.data
-    );
-    return {
-        type: "RECEIVE_INGREDIENTSLIST",
-        payload: {
-            ingredients_list: ingredients_list.data,
-        },
-    };
-};
+// export const receiveChapters = async () => {
+//     const chapters = await axios.get(`/api/chapters`);
+//     console.log("...(ACTION receiveChapters) chapters.data:", chapters.data);
+//     return {
+//         type: "RECEIVE_CHAPTERS",
+//         payload: { chapters: chapters.data.chaptersinfo },
+//     };
+// };
+
+// export const receiveCookbooks = async (user_id) => {
+//     const cookbooks = await axios.get(`/api/cookbooks/${user_id}`);
+//     console.log("...(ACTION receiveCookbooks) cookbooks.data:", cookbooks.data);
+//     return {
+//         type: "RECEIVE_COOKBOOKS",
+//         payload: { cookbooks: cookbooks.data },
+//     };
+// };
+
+// //maybe not necessary, cause we already got all the connected cookbooks together
+// export const receiveCurrentCookbook = async (cookbook_id) => {
+//     const cookbook = await axios.get(`/api/cookbooks/${cookbook_id}`);
+//     console.log("...(ACTION receiveCookbooks) cookbooks.data:", cookbook.data);
+//     return {
+//         type: "RECEIVE_CURRENTCOOKBOOK",
+//         payload: { currentCookbook: cookbook.data },
+//     };
+// };
+
+// export const receiveRecipes = async (cookbook_id) => {
+//     const recipes = await axios.get(`/api/recipes/${cookbook_id}`);
+//     console.log("...(ACTION receiveRecipes) recipes.data:", recipes.data);
+//     return {
+//         type: "RECEIVE_RECIPES",
+//         payload: { recipes: recipes.data },
+//     };
+// };
+
+// export const receiveFavourites = async (user_id) => {
+//     const favourites = await axios.get(`/api/facourite_recipes/${user_id}`);
+//     console.log(
+//         "...(ACTION receiveFavourites) favourites.data:",
+//         favourites.data
+//     );
+//     return {
+//         type: "RECEIVE_MYFAVOURITES",
+//         payload: { favourites: favourites.data },
+//     };
+// };
+
+// export const receiveAllFavourites = async (recipe_id) => {
+//     const favourites = await axios.get(`/api/facourite_recipes/${recipe_id}`);
+//     console.log(
+//         "...(ACTION receiveAllFavourites) favourites.data:",
+//         favourites.data
+//     );
+//     return {
+//         type: "RECEIVE_ALLFAVOURITES",
+//         payload: { favourites: favourites.data },
+//     };
+// };
+
+// export const receiveCurrentRecipe = async (cookbook_id) => {
+//     const recipe = await axios.get(`/api/recipes/${cookbook_id}`);
+//     console.log("...(ACTION receiveCurrentRecipe) recipe.data:", recipe.data);
+//     return {
+//         type: "RECEIVE_CURRENTRECIPE",
+//         payload: { currentRecipe: recipe.data },
+//     };
+// };
+
+// export const receiveCoauthors = async (cookbook_id) => {
+//     const coauthors = await axios.get(`/api/coauthors/${cookbook_id}`);
+//     console.log("...(ACTION receiveCoauthors) coauthors.data:", coauthors.data);
+//     return {
+//         type: "RECEIVE_COAUTHORS",
+//         payload: { coauthors: coauthors.data },
+//     };
+// };
+// export const receiveCurrentIngredientslist = async (recipe_id) => {
+//     const ingredients_list = await axios.get(
+//         `/api/ingredients_list/${recipe_id}`
+//     );
+//     console.log(
+//         "...(ACTION receiveCurrentIngredientslist) ingredients_list.data:",
+//         ingredients_list.data
+//     );
+//     return {
+//         type: "RECEIVE_INGREDIENTSLIST",
+//         payload: {
+//             ingredients_list: ingredients_list.data,
+//         },
+//     };
+// };

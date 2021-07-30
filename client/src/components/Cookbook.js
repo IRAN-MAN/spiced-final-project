@@ -6,7 +6,7 @@ import {
     receiveCoauthors,
     receiveCurrentCookbook,
     receiveRecipes,
-} from "../redux/actions";
+} from "../redux/action-creators";
 
 //components
 import CoauthorsList from "./CoauthorsList";

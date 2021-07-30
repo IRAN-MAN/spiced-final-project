@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 // components
 import Recipe from "./Recipe";
+import Gallery from "./Gallery";
 
 export default function Chapter({ chapter_id }) {
     const recipes = useSelector((state) => state.recipes);
@@ -65,10 +66,7 @@ export default function Chapter({ chapter_id }) {
                 return (
                     <li key={recipe.id}>
                         <div className="recipePreviewWrapper flex jcc fcolumn">
-                            <img
-                                className="recipePreview"
-                                src="../images/testprofile.jpg"
-                            />
+                            <img className="recipePreview" src="" />
                             <p>{recipe.recipe_name}</p>
                         </div>
                     </li>
