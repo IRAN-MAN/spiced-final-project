@@ -47,10 +47,7 @@ const addfavouriteRecipe = async (request, response, next) => {
 const removefavouriteRecipe = async (request, response, next) => {
     try {
         console.log("[removefavouriteRecipe : recipe_id]", request.params);
-        const deletedFavRecipe = await deleteFavRecipe({
-            ...request.params,
-        });
-        console.log("[insertFavRecipe]", deletedFavRecipe);
+        await deleteFavRecipe({ ...request.params });
         response.status(200).json({ message: "Delete successful" });
     } catch (error) {
         console.log("[removefavouriteRecipe: Error]", error);
