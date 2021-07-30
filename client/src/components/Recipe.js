@@ -21,7 +21,7 @@ export default function Recipe(props) {
     }, []);
 
     return (
-        <div className="recipeWrapper">
+        <div className="recipeWrapper flex cc fcolumn">
             Recipe Component
             <div className="avatarWrapper">
                 <img
@@ -29,6 +29,16 @@ export default function Recipe(props) {
                     src={currentRecipe.recipe_photo}
                     alt={currentRecipe.recipe_name}
                 />
+            </div>
+            <div className="bioContent">
+                <h1>{currentRecipe.recipe_name}</h1>
+                <div>
+                    <p>
+                        <span className="bolder">
+                            {currentRecipe.recipe_story}
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
     );
