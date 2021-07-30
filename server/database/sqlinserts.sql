@@ -303,3 +303,37 @@ VALUES
 (2,2, 'Comment lorem ipsum !'),
 (2,1, 'Comment lorem ipsum !'),
 (2,2, 'Comment lorem ipsum !');
+
+
+Insert INTO photos (
+    recipe_id,          
+    user_id,        
+    photo_url)
+    VALUES 
+    (1,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (2,1, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (3,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (4,1, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (5,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (6,1, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (7,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (8,3, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (9,5, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (10,1, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (11,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (12,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (13,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (14,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (15,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (16,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (17,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (18,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (19,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (20,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (21,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (22,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (23,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (24,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (25,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (26,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80'),
+    (27,2, 'https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2574&q=80');

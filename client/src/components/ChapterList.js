@@ -7,7 +7,7 @@ export default function ChapterList() {
     const chapters = useSelector((state) => state.chapters);
 
     const renderChapters = () => {
-        console.log("...(ChapterList) chapters: ", chapters);
+        // console.log("...(ChapterList) chapters: ", chapters);
         return chapters.map((chapter) => {
             return (
                 <li key={chapter.id}>

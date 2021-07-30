@@ -1,5 +1,6 @@
 import axios from "../axios";
 import {
+    RECEIVE_STATE,
     RECEIVE_CHAPTERS,
     RECEIVE_COAUTHORS,
     RECEIVE_COOKBOOKS,
@@ -45,7 +46,7 @@ export const receiveCookbooks = async (user_id) => {
 //maybe not necessary, cause we already got all the connected cookbooks together
 export const receiveCurrentCookbook = async (cookbook_id) => {
     const cookbook = await axios.get(`/api/cookbooks/${cookbook_id}`);
-    console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook.data);
+    // console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook.data);
     return {
         type: RECEIVE_CURRENTCOOKBOOK,
         payload: { currentCookbook: cookbook.data },
@@ -53,11 +54,15 @@ export const receiveCurrentCookbook = async (cookbook_id) => {
 };
 
 export const receiveRecipes = async (cookbook_id) => {
-    const recipes = await axios.get(`/api/recipes/${cookbook_id}`);
-    console.log("...(ACTION receiveRecipes) recipes.data:", recipes.data);
+    // console.log("receiveRecipes cookbook_id:", cookbook_id);
+    const recipes = await axios.get(`/api/recipes/by_cookbook/${cookbook_id}`);
+    // console.log(
+    //     "...(ACTION receiveRecipes) recipes.data:",
+    //     recipes.data.recipes
+    // );
     return {
         type: RECEIVE_RECIPES,
-        payload: { recipes: recipes.data },
+        payload: { recipes: recipes.data.recipes },
     };
 };
 

@@ -15,20 +15,14 @@ import ChapterList from "./ChapterList";
 export default function Cookbook(props) {
     const dispatch = useDispatch();
     const cookbook_id = props.match.params.id;
-    const currentCookbook = useSelector((state) => {
-        return state.currentCookbook;
-    });
-    // const currentCookbook = useSelector(
-    //     (state) => state.cookbooks[cookbook_id]
-    // );
-    // const chapters = useSelector((state) => {
-    //     return state.chapters;
-    // });
-    // const coauthors = useSelector((state) => state.currentCookbook.coauthors);
+
+    const coauthors = useSelector((state) => state.currentCookbook.coauthors);
 
     useEffect(() => {
-        // dispatch(receiveCurrentCookbook(cookbook_id));
-        dispatch(receiveRecipes(cookbook_id));
+        if (cookbook_id != undefined) {
+            console.log("...(Cookbook) EFFECT cookbook_id:", cookbook_id);
+            dispatch(receiveRecipes(cookbook_id));
+        }
         // dispatch(receiveCoauthors(cookbook_id));
     }, []);
 

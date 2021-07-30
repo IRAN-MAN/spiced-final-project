@@ -19,6 +19,7 @@ import Navigation from "./Navigation";
 import MyProfile from "./MyProfile";
 import Test from "./Test";
 import Cookbook from "./Cookbook";
+import Recipe from "./Recipe";
 // import UserProfile from "./UserProfile";
 
 export default function App() {
@@ -28,17 +29,17 @@ export default function App() {
 
     //useEffects here:
     useEffect(async () => {
-        // const { data } = await axios.get("/api/users/checkLogin");
-        // console.log("...(App) user_id: ", data.user_id);
-        // dispatch(receiveUserInfo(data.user_id));
-        dispatch(receiveChapters());
-        // dispatch(receiveCookbooks(data.user_id));
-
         dispatch(receiveUserInfo(-1));
         dispatch(receiveChapters());
-        dispatch(receiveCookbooks(user.id));
     }, []);
+    useEffect(() => {
+        // console.log("...(BEFORE user: ", user);
 
+        if (user.id) {
+            // console.log("...(AFTER user: ", user);
+            dispatch(receiveCookbooks(user.id));
+        }
+    }, [user]);
     return (
         <BrowserRouter>
             <Header />
@@ -54,6 +55,7 @@ export default function App() {
                     <Route path="/" exact component={MyProfile} />
                     {/* <Route path="/userprofile/:id" component={UserProfile} /> */}
                     <Route path="/cookbook/:id" component={Cookbook} />
+                    <Route path="/recipe/:id" component={Recipe} />
 
                     {/* This one should catch all the weird ones */}
                     <Route path="/">

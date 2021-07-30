@@ -18,7 +18,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         // );
 
         let hide = false;
-        if (elementsPerPage == elements.length) {
+        if (elementsPerPage >= elements.length) {
             console.log(
                 "...(Gallery) props elementsPerPage ",
                 elementsPerPage,
@@ -46,11 +46,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         return elements
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {
-                return (
-                    <div className="" key={element.id}>
-                        {render(element)}
-                    </div>
-                );
+                return render(element);
             });
     };
 
@@ -86,14 +82,14 @@ export default function Gallery({ elements, render, elementsPerPage }) {
     };
 
     return (
-        <div className="galleryWrapper">
+        <div className="galleryWrapper flex cc">
             {/* Prev Button */}
             <div>
                 <button
                     className={
                         !galleryControls.hidePrev
-                            ? "photoPickerControls"
-                            : "photoPickerControls hideControls"
+                            ? "galleryControls"
+                            : "galleryControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();
@@ -113,7 +109,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             </div>
 
             {/* Gallery */}
-            <div className="gallery">
+            <div className="gallery flex">
                 {elements.length > 0 && renderElements(elements)}
             </div>
 
@@ -122,8 +118,8 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                 <button
                     className={
                         !galleryControls.hideNext
-                            ? "photoPickerControls"
-                            : "photoPickerControls hideControls"
+                            ? "galleryControls"
+                            : "galleryControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();

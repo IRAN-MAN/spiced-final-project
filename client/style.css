@@ -245,9 +245,20 @@ footer {
 }
 
 /* GALLERY & GALLERY CONTROLS */
+.galleryWrapper {
+    min-height: 200px;
+    min-width: 660px;
+}
+
+.galleryControls {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    visibility: visible;
+}
 
 .hideControls {
-    display: none;
+    visibility: hidden;
 }
 .gallery {
 }

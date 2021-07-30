@@ -10,7 +10,6 @@ import Gallery from "./Gallery";
 
 export default function MyCookbooks() {
     const user = useSelector((state) => {
-        console.log("...(MyCookbooks) line 13: user:", user);
         return state.user;
     });
     const cookbooks = useSelector((state) => {
@@ -18,28 +17,24 @@ export default function MyCookbooks() {
     });
 
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(receiveUserInfo(-1));
-    }, []);
-    useEffect(() => {
-        console.log("...(MyCookbooks EFFECT [user]) line 23: user: ", user);
-        dispatch(receiveCookbooks(user.id));
-    }, [user]);
+    useEffect(() => {}, []);
 
     const renderCookbooks = (cookbook) => {
         return (
-            <li key={cookbook.cookbook_id} className="cookbookWrapper">
-                <Link to={"/cookbook/" + cookbook.cookbook_id}>
-                    <div className="coverWrapper">
-                        <img
-                            className="cover"
-                            src={cookbook.cover_pic}
-                            alt={cookbook.cookbook_name}
-                        />
-                    </div>
-                    <p>{cookbook.cookbook_name}</p>
-                </Link>
-            </li>
+            <div className="" key={cookbook.cookbook_id}>
+                <li key={cookbook.cookbook_id} className="cookbookWrapper">
+                    <Link to={"/cookbook/" + cookbook.cookbook_id}>
+                        <div className="coverWrapper">
+                            <img
+                                className="cover"
+                                src={cookbook.cover_pic}
+                                alt={cookbook.cookbook_name}
+                            />
+                        </div>
+                        <p>{cookbook.cookbook_name}</p>
+                    </Link>
+                </li>
+            </div>
         );
     };
 
@@ -47,7 +42,7 @@ export default function MyCookbooks() {
         <div className="cookbooksWrapper flex cc fcolumn">
             MyCookbooks Component
             {/* <ul>{cookbooks.length > 0 && renderCookbooks()}</ul> */}
-            <ul>
+            <ul className="flex jcc">
                 <Gallery
                     elements={cookbooks}
                     elementsPerPage={2}

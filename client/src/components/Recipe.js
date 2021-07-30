@@ -12,7 +12,10 @@ export default function RecipeList({ recipe_id }) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(receiveCurrentRecipe(recipe_id));
+        console.log("...(Recipe EFFECT) recipe_id: ", recipe_id);
+        if (recipe_id) {
+            dispatch(receiveCurrentRecipe(recipe_id));
+        }
     }, []);
 
     return <p>Recipe Component</p>;
