@@ -24,6 +24,12 @@ input {
 ul {
     list-style: none;
 }
+
+/* TEXT & FONTS */
+
+.bolder {
+    font-weight: bolder;
+}
 /* FLEX */
 .flex {
     display: flex;
@@ -261,4 +267,25 @@ footer {
     visibility: hidden;
 }
 .gallery {
+}
+
+/* INGREDIENTS */
+
+.ingredientsWrapper {
+}
+.ingredients {
+}
+
+/* INSTRUCTIONS */
+.instructionsWrapper {
+}
+.instructions {
+    width: 80vw;
+    column-count: 3;
+    column-gap: 15px;
+    column-rule-style: solid;
+    column-width: 100px;
+    column-rule-width: 2px;
+    text-align: justify;
+    text-justify: inter-word;
 }
