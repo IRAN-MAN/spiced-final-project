@@ -4,6 +4,7 @@ const {
     createUser,
     getUserById,
     updateProfilePic,
+    updateUser,
 } = require("../database/usersQueries");
 
 const checkloggedIn = async (request, response) =>
@@ -132,11 +133,17 @@ const getUserInfo = async (request, response, next) => {
     }
 };
 
-const changeUserInfo = async (request, response, next) => {
+const editUserInfo = async (request, response, next) => {
     try {
-        console.log("changeUserInfo");
+        console.log("[editUserInfo: body]", request.body);
+        const updatedUser = await updateUser({
+            ...request.session,
+            ...request.body,
+        });
+        console.log("updateUser", updatedUser);
+        response.status(200).json(serializeUserInfo(updatedUser));
     } catch (error) {
-        console.log("[changeUserInfo: Error]", error);
+        console.log("[editUserInfo: Error]", error);
         next(error);
     }
 };
@@ -149,7 +156,7 @@ module.exports = {
     ResetPassTwo,
     uploadProfilePic,
     getUserInfo,
-    changeUserInfo,
+    editUserInfo,
     checkloggedIn,
 };
 
