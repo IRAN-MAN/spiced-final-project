@@ -12,6 +12,9 @@ import axios from "../axios";
 
 import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
 
+//hooks
+import { useToggle } from "../hooks/hooks";
+
 // components
 import Footer from "./Footer";
 import Header from "./Header";
@@ -20,12 +23,15 @@ import MyProfile from "./MyProfile";
 import Test from "./Test";
 import Cookbook from "./Cookbook";
 import Recipe from "./Recipe";
+import Button from "./Button";
+import AddRecipe from "./AddRecipe";
 // import UserProfile from "./UserProfile";
 
 export default function App() {
     //useSelectors here:
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
+    const [toggle, toggleOnOff] = useToggle();
 
     //useEffects here:
     useEffect(async () => {
@@ -64,6 +70,14 @@ export default function App() {
                 </Switch>
             </div>
             <Footer />
+            <Button
+                onClick={() => toggleOnOff(false)}
+                labeltext="add recipe"
+                type="submit"
+                classNames="button edit-button"
+                icon="edit"
+            />
+            {toggle && <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />}
         </BrowserRouter>
     );
 }
