@@ -15,8 +15,14 @@ const getCookBookByUserId = async ({ user_id }) => {
     return cookbooks.rows;
 };
 
-const createCookbook = async ({}) => {
-    // const newCookbook;
+const createCookbook = async ({ isPrivate, cookbook_name, author }) => {
+    const newCookbook = await db.query(
+        `INSERT INTO cookbooks 
+        (isPrivate, cookbook_name, author) 
+        VALUES ($1, $2, $3) RETURNING *`,
+        [isPrivate, cookbook_name, author]
+    );
+    return newCookbook.rows[0];
 };
 
 module.exports = {
