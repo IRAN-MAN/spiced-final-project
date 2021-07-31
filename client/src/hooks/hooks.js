@@ -31,3 +31,12 @@ export function useAuthSubmit(url, values) {
     };
     return [submit, error];
 }
+
+export function useToggle() {
+    const [toggle, setToggle] = useState(false);
+
+    const toggleOnOff = (toggleState) => {
+        setToggle(!toggleState);
+    };
+    return [toggle, toggleOnOff];
+}
