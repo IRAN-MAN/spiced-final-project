@@ -14,14 +14,16 @@ import { useSelector, useDispatch } from "react-redux";
 import Gallery from "./Gallery";
 import Button from "./Button";
 import AddRecipe from "./AddRecipe";
+import IngredientsList from "./IngredientsList";
 
 export default function Recipe(props) {
     const recipe_id = props.match.params.id;
 
-    //need to think about this:
     const currentRecipe = useSelector((state) => state.currentRecipe);
-    const recipePhotos = useSelector((state) => state.photos);
+    const photos = useSelector((state) => state.photos);
     const author = useSelector((state) => state.author);
+    const ingredients_list = useSelector((state) => state.ingredients_list);
+
     const dispatch = useDispatch();
     const [toggle, toggleOnOff] = useToggle();
 
@@ -48,7 +50,7 @@ export default function Recipe(props) {
                     alt={currentRecipe.recipe_name}
                 />
             </div>
-            <div className="bioContent">
+            <div className="recipeMain">
                 <h1>{currentRecipe.recipe_name}</h1>
                 <div className="recipeStory">
                     <q>
@@ -63,12 +65,9 @@ export default function Recipe(props) {
                         <span className="bolder">Difficulty</span> Easy
                     </p>
                 </div>
-                <div className="ingredientsWrapper">
-                    <p className="ingredients">
-                        <span className="bolder">Ingredients:</span>INSERT
-                        INGREDIENTS HERE!
-                    </p>
-                </div>
+
+                <IngredientsList ingredients_list={ingredients_list} />
+
                 <div className="instructionsWrapper">
                     <div className="instructions">
                         <p>

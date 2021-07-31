@@ -308,6 +308,9 @@ footer {
 
 .recipeStory {
 }
+.recipeMain {
+    width: 100vw;
+}
 
 /* GALLERY & GALLERY CONTROLS */
 .galleryWrapper {
@@ -331,15 +334,19 @@ footer {
 /* INGREDIENTS */
 
 .ingredientsWrapper {
+    width: 75%;
+    margin: auto;
 }
 .ingredients {
 }
 
 /* INSTRUCTIONS */
 .instructionsWrapper {
+    width: 90%;
+    margin: auto;
 }
 .instructions {
-    width: 80vw;
+    width: 100%;
     column-count: 3;
     column-gap: 15px;
     column-rule-style: solid;
