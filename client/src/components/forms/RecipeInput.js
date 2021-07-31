@@ -1,4 +1,10 @@
-export default function RecipeInput() {
+import { useStatefulFields } from "../../hooks/hooks";
+
+import Button from "../Button";
+
+export default function RecipeInput(props) {
+    const [inputValues, handleChange] = useStatefulFields();
+
     return (
         <div className="formWrapper">
             <label htmlFor="recipe_name">
@@ -8,6 +14,7 @@ export default function RecipeInput() {
                     name="recipe_name"
                     placeholder="Name"
                     required
+                    onChange={handleChange}
                 />
             </label>
 
@@ -18,6 +25,7 @@ export default function RecipeInput() {
                     name="instructions"
                     placeholder="Instructions"
                     required
+                    onChange={handleChange}
                 />
             </label>
             <label htmlFor="prep_time">
@@ -27,6 +35,7 @@ export default function RecipeInput() {
                     name="prep_time"
                     placeholder="Prep time (in min)"
                     required
+                    onChange={handleChange}
                 />
             </label>
             <label htmlFor="recipe_story">
@@ -36,6 +45,7 @@ export default function RecipeInput() {
                     name="recipe_story"
                     placeholder="Story"
                     required
+                    onChange={handleChange}
                 />
             </label>
 
@@ -46,9 +56,17 @@ export default function RecipeInput() {
                     name="difficulty_level"
                     min="0"
                     max="5"
+                    onChange={handleChange}
                 />
                 <label htmlFor="difficulty_level">Difficulty</label>
             </div>
+            <Button
+                labeltext="add recipe"
+                type="submit"
+                classNames="button submit-button"
+                icon="send"
+                onClick={() => props.collectRecipeInputes(inputValues)}
+            />
         </div>
     );
 }
