@@ -40,7 +40,7 @@ const insertRecipe = async ({
         `INSERT INTO recipes
         (cookbook_id, chapter_id, owner_id, recipe_name,
             instructions, prep_time, difficulty_level, recipe_story)
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id`,
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id AS recipe_id`,
         [
             cookbook_id,
             chapter_id,
