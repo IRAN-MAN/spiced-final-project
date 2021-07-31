@@ -1,7 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 
-import { receiveCoauthors, receiveRecipes } from "../redux/action-creators";
+import {
+    receiveCoauthors,
+    receiveRecipes,
+    receiveCurrentCookbook,
+} from "../redux/action-creators";
 
 //components
 import CoauthorsList from "./CoauthorsList";
@@ -20,14 +24,18 @@ export default function Cookbook(props) {
     const cookbooks = useSelector((state) => state.cookbooks);
     const [toggle, toggleOnOff] = useToggle();
 
+    const currentCB = cookbooks.filter((x) => x.cookbook_id == cookbook_id);
+
     useEffect(() => {
         if (cookbook_id != undefined) {
             dispatch(receiveRecipes(cookbook_id));
         }
         dispatch(receiveCoauthors(cookbook_id));
     }, []);
+
     useEffect(() => {
-        setCurrentCookbook(cookbooks[cookbook_id]);
+        setCurrentCookbook(currentCB);
+        console.log("[currentCookbook]", currentCB);
     }, [cookbooks]);
     return (
         <div className="profileWrapper flex cc fcolumn">
