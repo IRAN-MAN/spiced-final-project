@@ -40,6 +40,17 @@ export default function Recipe(props) {
         }
     }, [currentRecipe]);
 
+    const renderDifficulty = (difficulty) => {
+        console.log("difficulty: ", difficulty);
+
+        let string = "";
+        for (var i = 0; i < difficulty; i++) {
+            string += "⭑";
+        }
+        console.log("string: ", string);
+        return <i>{string}</i>;
+    };
+
     return (
         <div className="recipeWrapper flex cc fcolumn">
             Recipe Component
@@ -61,8 +72,11 @@ export default function Recipe(props) {
                 </div>
                 <div className="recipeDetails">
                     <p className="ingredients">
-                        <span className="bolder">Prep time: </span>60min //{" "}
-                        <span className="bolder">Difficulty</span> Easy
+                        <span className="bolder">Prep time: </span>
+                        {currentRecipe.prep_time}
+                        {" ••• "}
+                        <span className="bolder">Difficulty: </span>
+                        {renderDifficulty(currentRecipe.difficulty_level)}
                     </p>
                 </div>
 
@@ -70,35 +84,7 @@ export default function Recipe(props) {
 
                 <div className="instructionsWrapper">
                     <div className="instructions">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit, sed diam nonummy nibh euismod tincidunt ut
-                            laoreet dolore magna aliquam erat volutpat. Ut wisi
-                            enim ad minim veniam, quis nostrud exerci tation
-                            ullamcorper suscipit lobortis nisl ut aliquip ex ea
-                            commodo consequat. Duis autem vel eum iriure dolor
-                            in hendrerit in vulputate velit esse molestie
-                            consequat, vel illum dolore eu feugiat nulla
-                            facilisis at vero eros et accumsan et iusto odio
-                            dignissim qui blandit praesent luptatum zzril
-                            delenit augue duis dolore te feugait nulla facilisi.
-                            Nam liber tempor cum soluta nobis eleifend option
-                            congue nihil imperdiet doming id quod mazim placerat
-                            facer possim assum.Lorem ipsum dolor sit amet,
-                            consectetuer adipiscing elit, sed diam nonummy nibh
-                            euismod tincidunt ut laoreet dolore magna aliquam
-                            erat volutpat. Ut wisi enim ad minim veniam, quis
-                            nostrud exerci tation ullamcorper suscipit lobortis
-                            nisl ut aliquip ex ea commodo consequat. Duis autem
-                            vel eum iriure dolor in hendrerit in vulputate velit
-                            esse molestie consequat, vel illum dolore eu feugiat
-                            nulla facilisis at vero eros et accumsan et iusto
-                            odio dignissim qui blandit praesent luptatum zzril
-                            delenit augue duis dolore te feugait nulla facilisi.
-                            Nam liber tempor cum soluta nobis eleifend option
-                            congue nihil imperdiet doming id quod mazim placerat
-                            facer possim assum.
-                        </p>
+                        <p>{currentRecipe.instructions}</p>
                     </div>
                 </div>
                 <div className="madeByWrapper flex cc ">
@@ -123,9 +109,8 @@ export default function Recipe(props) {
 
                 <Button
                     onClick={() => toggleOnOff(false)}
-                    labeltext="edit recipe"
                     type="submit"
-                    classNames="button edit-button"
+                    classNames="button addrecipe-button flex cc"
                     icon="edit"
                 />
                 {toggle && (
