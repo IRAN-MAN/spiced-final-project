@@ -36,6 +36,7 @@ export function useToggle() {
     const [toggle, setToggle] = useState(false);
 
     const toggleOnOff = (toggleState) => {
+        console.log("...(HOOK useToggle) toggleState:", !toggleState);
         setToggle(!toggleState);
     };
     return [toggle, toggleOnOff];
