@@ -41,3 +41,11 @@ export function useToggle() {
     };
     return [toggle, toggleOnOff];
 }
+
+export function useAddToIngredients() {
+    const ingredients = [];
+    const addIngredient = (ingredient) => {
+        ingredients.push(ingredient);
+    };
+    return [ingredients, addIngredient];
+}
