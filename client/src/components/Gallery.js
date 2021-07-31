@@ -18,12 +18,8 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         // );
 
         let hide = false;
+        console.log("...(Gallery) props elementsPerPage --- Length");
         if (elementsPerPage >= elements.length) {
-            console.log(
-                "...(Gallery) props elementsPerPage ",
-                elementsPerPage,
-                elements.length
-            );
             hide = true;
         }
         setGalleryControls({

@@ -16,13 +16,37 @@ main {
     justify-content: space-between;
 }
 
+/* SELECTION */
+
+::selection {
+    background-color: black;
+    color: green;
+}
+
+/* INPUT */
+
 input {
     border: none;
     padding: 5px;
 }
 
+/* UL LIST */
+
 ul {
     list-style: none;
+}
+
+/* LINKS */
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* TEXT & FONTS */
+
+.bolder {
+    font-weight: bolder;
 }
 /* FLEX */
 .flex {
@@ -84,6 +108,12 @@ ul {
     height: 60%;
 }
 
+.miniAvatarWrapper {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
 /* BUTTONS */
 button {
     display: flex;
@@ -109,6 +139,11 @@ button {
 }
 .buttonWrapper span i {
     padding-inline-start: 5px;
+}
+
+.edit-button {
+}
+.submit-button {
 }
 
 /* NAVIGATION */
@@ -190,12 +225,6 @@ footer {
 .coauthorsListWrapper ul {
 }
 
-.miniAvatarWrapper {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-}
-
 /* TOOL TIPS */
 
 .tooltip {
@@ -244,6 +273,11 @@ footer {
     width: 100%;
 }
 
+/* RECIPES */
+
+.recipeStory {
+}
+
 /* GALLERY & GALLERY CONTROLS */
 .galleryWrapper {
     min-height: 200px;
@@ -261,4 +295,25 @@ footer {
     visibility: hidden;
 }
 .gallery {
+}
+
+/* INGREDIENTS */
+
+.ingredientsWrapper {
+}
+.ingredients {
+}
+
+/* INSTRUCTIONS */
+.instructionsWrapper {
+}
+.instructions {
+    width: 80vw;
+    column-count: 3;
+    column-gap: 15px;
+    column-rule-style: solid;
+    column-width: 100px;
+    column-rule-width: 2px;
+    text-align: justify;
+    text-justify: inter-word;
 }

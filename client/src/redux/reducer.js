@@ -12,21 +12,21 @@ import {
     RECEIVE_RECIPES,
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
+    RECEIVE_AUTHORINFO,
 } from "./actions";
 
 const initialState = {
-    user: {},
-    cookbooks: [],
-    currentCookbook: {
-        coauthors: [],
-    },
-    chapters: [],
-    recipes: [],
-    currentRecipe: {
-        ingredients_list: [],
-    },
-    myFavourites: [],
     allFavourites: [],
+    author: {},
+    chapters: [],
+    coauthors: [],
+    cookbooks: [],
+    currentCookbook: {},
+    currentRecipe: {},
+    ingredients_list: [],
+    myFavourites: [],
+    recipes: [],
+    user: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -56,23 +56,17 @@ const reducer = (state = initialState, action) => {
         case RECEIVE_COAUTHORS:
             return {
                 ...state,
-                currentCookbook: {
-                    ...state.currentCookbook,
-                    coauthors: action.payload.coauthors,
-                },
+                coauthors: action.payload.coauthors,
             };
         case RECEIVE_CURRENTRECIPE:
             return {
                 ...state,
-                currentRecipe: action.payload.recipe,
+                currentRecipe: action.payload.currentRecipe,
             };
         case RECEIVE_INGREDIENTSLIST:
             return {
                 ...state,
-                currentRecipe: {
-                    ...state.currentRecipe,
-                    ingredients_list: action.payload.ingredients_list,
-                },
+                ingredients_list: action.payload.ingredients_list,
             };
         case RECEIVE_CURRENTCOOKBOOK:
             return {
@@ -88,6 +82,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 allFavourites: action.payload.favourites,
+            };
+        case RECEIVE_AUTHORINFO:
+            return {
+                ...state,
+                author: action.payload.author,
             };
         default:
             return state;

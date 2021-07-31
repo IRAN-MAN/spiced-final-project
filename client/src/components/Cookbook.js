@@ -67,13 +67,6 @@ export default function Cookbook(props) {
             </div>
             <div className="bioContent">
                 <h1>{currentCookbookTEST.cookbook_name}</h1>
-                <div>
-                    <p>
-                        <span className="bolder">
-                            {currentCookbookTEST.story}
-                        </span>
-                    </p>
-                </div>
             </div>
             <CoauthorsList coauthors={coauthorsTEST} />
             <ChapterList />
