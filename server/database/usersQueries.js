@@ -55,10 +55,21 @@ const updateUser = async ({
     return updatedUser.rows[0];
 };
 
+const updatePassword = async ({ email, hashed_password }) => {
+    return await db.query(
+        `UPDATE users 
+        SET hashed_password = $1
+        WHERE email = $2
+        RETURNING * `,
+        [hashed_password, email]
+    );
+};
+
 module.exports = {
     createUser,
     getUserByEmail,
     getUserById,
     updateProfilePic,
     updateUser,
+    updatePassword,
 };

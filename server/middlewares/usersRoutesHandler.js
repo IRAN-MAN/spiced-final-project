@@ -1,10 +1,21 @@
+const cryptoRandomString = require("crypto-random-string");
+
+const resetPassEmail = require("../utilities/reset-pass-email");
 const { hashPassword } = require("../utilities/hashPass");
 const loginCheck = require("../utilities/loginCheck");
+
+const {
+    insertSecretCode,
+    fetchSecretCode,
+} = require("../database/resetCodesQueries");
+
 const {
     createUser,
     getUserById,
+    getUserByEmail,
     updateProfilePic,
     updateUser,
+    updatePassword,
 } = require("../database/usersQueries");
 
 const checkloggedIn = async (request, response) =>
@@ -81,7 +92,20 @@ const userLoggedOut = async (request, response) => {
 
 const ResetPassOne = async (request, response, next) => {
     try {
-        console.log("ResetPassOne");
+        const user = await getUserByEmail(request.body);
+        if (!user) {
+            response.status(404).json({ message: "User Not Found!" });
+            return;
+        }
+        const secret_code = cryptoRandomString({ length: 6 });
+        const emailToSend = {
+            sendTo: user.email,
+            emailBody: renderhtmlBody(secret_code), //in line 197
+            emailSubject: "Reset Password",
+        };
+        resetPassEmail(emailToSend);
+        insertSecretCode({ ...user, secret_code });
+        response.status(200).json({ message: "Success!" });
     } catch (error) {
         console.log("[ResetPassOne: Error]", error);
         next(error);
@@ -90,7 +114,23 @@ const ResetPassOne = async (request, response, next) => {
 
 const ResetPassTwo = async (request, response, next) => {
     try {
-        console.log("ResetPassTwo");
+        const { reset_code, new_pass, repeat_pass } = request.body;
+        const secret_code = await fetchSecretCode({ ...request.body });
+        if (!secret_code || secret_code !== reset_code) {
+            response.status(401).json({
+                message: "This reset code is invalid, please use a new code.",
+            });
+            return;
+        }
+        if (new_pass !== repeat_pass) {
+            response.status(400).json({
+                message: "Password is not match!",
+            });
+            return;
+        }
+        const hashed_password = await hashPassword(new_pass);
+        await updatePassword({ ...request.body, hashed_password });
+        response.status(201).json({ message: "Password Updated!" });
     } catch (error) {
         console.log("[ResetPassTwo: Error]", error);
         next(error);
@@ -171,4 +211,19 @@ const serializeUserInfo = (user) => {
         city: user.city,
         created_at: user.created_at,
     };
+};
+
+const renderhtmlBody = (secret_code) => {
+    return `<html>
+            <head></head>
+            <body>
+                <h2>Community Cookbook password reset</h2>
+                  <p>We heard that you lost your password. Sorry about that!</p>
+                  <p>But don’t worry! You can use the following code to reset your password:</p>
+                  <p><strong>Reset-Code:</strong> ${secret_code}
+                  <strong><p>Mind that If you don’t use this code within 10 minutes, it will expire.</p></strong>
+                  <br><p>Have a blast day and stay safe!</p>
+                  <p>Your Support Team</p>
+            </body>
+            </html>`;
 };
