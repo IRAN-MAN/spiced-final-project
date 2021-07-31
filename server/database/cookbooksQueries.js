@@ -15,6 +15,11 @@ const getCookBookByUserId = async ({ user_id }) => {
     return cookbooks.rows;
 };
 
+const createCookbook = async ({}) => {
+    // const newCookbook;
+};
+
 module.exports = {
     getCookBookByUserId,
+    createCookbook,
 };
