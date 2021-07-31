@@ -13,28 +13,21 @@ export default function MyProfile() {
     useEffect(() => {}, []);
     useEffect(() => {}, [user]);
 
-    const userTEST = {
-        first_name: "Sascha",
-        last_name: "Salamander",
-        profile_pic: "../images/testprofile.jpg",
-        city: "Tokyo",
-    };
-
     return (
         <div className="profileWrapper flex cc fcolumn">
             MyProfile Component
             <div className="avatarWrapper">
                 <img
                     className="avatar"
-                    src={userTEST.profile_pic}
-                    alt={userTEST.first_name + " " + userTEST.last_name}
+                    src={user.profile_pic}
+                    alt={user.first_name + " " + user.last_name}
                 />
             </div>
             <div className="bioContent">
-                <h1>{userTEST.first_name + " " + userTEST.last_name}</h1>
+                <h1>{user.first_name + " " + user.last_name}</h1>
                 <div>
                     <p>
-                        from <span className="bolder">{userTEST.city}</span>
+                        from <span className="bolder">{user.city}</span>
                     </p>
                 </div>
             </div>
