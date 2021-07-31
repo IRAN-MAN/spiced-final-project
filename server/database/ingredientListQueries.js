@@ -23,7 +23,26 @@ const addNewIngredientList = async ({
     return newIngredient.rows[0];
 };
 
+const updateIngredientList = async ({
+    Ingredient_name,
+    quantity,
+    unit,
+    ingredient_id,
+}) => {
+    const ingredient = await db.query(
+        `UPDATE cookbooks 
+        SET Ingredient_name = $1,
+        quantity = $2,
+        unit = $3
+        WHERE id = $4
+        RETURNING * `,
+        [Ingredient_name, quantity, unit, ingredient_id]
+    );
+    return ingredient.rows[0];
+};
+
 module.exports = {
     getIngredientListByRecipe,
     addNewIngredientList,
+    updateIngredientList,
 };
