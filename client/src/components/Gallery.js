@@ -18,7 +18,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         // );
 
         let hide = false;
-        console.log("...(Gallery) props elementsPerPage --- Length");
+        // console.log("...(Gallery) props elementsPerPage --- Length");
         if (elementsPerPage >= elements.length) {
             hide = true;
         }
@@ -62,7 +62,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         } else {
             hidePrev = false;
         }
-        console.log("...() end, elements.length: ", end, elements.length);
+        // console.log("...() end, elements.length: ", end, elements.length);
         if (end >= elements.length) {
             hideNext = true;
         } else {
@@ -94,10 +94,10 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                             galleryControls.end,
                             false
                         );
-                        console.log(
-                            "...(CLICK PREV) galleryControls: ",
-                            galleryControls
-                        );
+                        // console.log(
+                        //     "...(CLICK PREV) galleryControls: ",
+                        //     galleryControls
+                        // );
                     }}
                 >
                     <i className="material-icons">arrow_left</i>
@@ -124,10 +124,10 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                             galleryControls.end,
                             true
                         );
-                        console.log(
-                            "...(CLICK NEXT) galleryControls: ",
-                            galleryControls
-                        );
+                        // console.log(
+                        //     "...(CLICK NEXT) galleryControls: ",
+                        //     galleryControls
+                        // );
                     }}
                 >
                     <i className="material-icons">arrow_right</i>

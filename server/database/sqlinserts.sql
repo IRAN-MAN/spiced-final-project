@@ -15,7 +15,9 @@ VALUES
 ('Tom', 'Tucker', 't@t.com', '$2a$10$Tu/tkQyUf9kHGhDb9BrzO.9KYNJBLpbW95wZgHgdf7r9OyPSK8ZjS',
 'https://via.placeholder.com/150', 'Hej its me! I love cooking!', 'Old Town'), 
 ('Frida', 'Fox', 'f@f.com', '$2a$10$Tu/tkQyUf9kHGhDb9BrzO.9KYNJBLpbW95wZgHgdf7r9OyPSK8ZjS',
-'https://via.placeholder.com/150', 'Hej its me! I love cooking!', 'Old Town'); 
+'https://via.placeholder.com/150', 'Hej its me! I love cooking!', 'Old Town'),
+('Berta', 'Borchert', 'b@b.com', '$2a$10$Tu/tkQyUf9kHGhDb9BrzO.9KYNJBLpbW95wZgHgdf7r9OyPSK8ZjS',
+'https://via.placeholder.com/150', 'Hej its me! I love cooking!', 'Old Town');
 
 
 INSERT INTO chapters (

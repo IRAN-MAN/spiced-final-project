@@ -14,19 +14,20 @@ import { useSelector, useDispatch } from "react-redux";
 import Gallery from "./Gallery";
 import Button from "./Button";
 import AddRecipe from "./AddRecipe";
+import IngredientsList from "./IngredientsList";
 
 export default function Recipe(props) {
     const recipe_id = props.match.params.id;
 
-    //need to think about this:
     const currentRecipe = useSelector((state) => state.currentRecipe);
-    const recipePhotos = useSelector((state) => state.photos);
+    const photos = useSelector((state) => state.photos);
     const author = useSelector((state) => state.author);
+    const ingredients_list = useSelector((state) => state.ingredients_list);
+
     const dispatch = useDispatch();
     const [toggle, toggleOnOff] = useToggle();
 
     useEffect(() => {
-        console.log("...(Recipe EFFECT) recipe_id: ", recipe_id);
         if (recipe_id) {
             dispatch(receiveCurrentRecipe(recipe_id));
             dispatch(receiveIngredientslist(recipe_id));
@@ -38,6 +39,14 @@ export default function Recipe(props) {
         }
     }, [currentRecipe]);
 
+    const renderDifficulty = (difficulty) => {
+        let string = "";
+        for (var i = 0; i < difficulty; i++) {
+            string += "⭑";
+        }
+        return <i>{string}</i>;
+    };
+
     return (
         <div className="recipeWrapper flex cc fcolumn">
             Recipe Component
@@ -48,7 +57,7 @@ export default function Recipe(props) {
                     alt={currentRecipe.recipe_name}
                 />
             </div>
-            <div className="bioContent">
+            <div className="recipeMain">
                 <h1>{currentRecipe.recipe_name}</h1>
                 <div className="recipeStory">
                     <q>
@@ -59,47 +68,19 @@ export default function Recipe(props) {
                 </div>
                 <div className="recipeDetails">
                     <p className="ingredients">
-                        <span className="bolder">Prep time: </span>60min //{" "}
-                        <span className="bolder">Difficulty</span> Easy
+                        <span className="bolder">Prep time: </span>
+                        {currentRecipe.prep_time}
+                        {" ••• "}
+                        <span className="bolder">Difficulty: </span>
+                        {renderDifficulty(currentRecipe.difficulty_level)}
                     </p>
                 </div>
-                <div className="ingredientsWrapper">
-                    <p className="ingredients">
-                        <span className="bolder">Ingredients:</span>INSERT
-                        INGREDIENTS HERE!
-                    </p>
-                </div>
+
+                <IngredientsList ingredients_list={ingredients_list} />
+
                 <div className="instructionsWrapper">
                     <div className="instructions">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing
-                            elit, sed diam nonummy nibh euismod tincidunt ut
-                            laoreet dolore magna aliquam erat volutpat. Ut wisi
-                            enim ad minim veniam, quis nostrud exerci tation
-                            ullamcorper suscipit lobortis nisl ut aliquip ex ea
-                            commodo consequat. Duis autem vel eum iriure dolor
-                            in hendrerit in vulputate velit esse molestie
-                            consequat, vel illum dolore eu feugiat nulla
-                            facilisis at vero eros et accumsan et iusto odio
-                            dignissim qui blandit praesent luptatum zzril
-                            delenit augue duis dolore te feugait nulla facilisi.
-                            Nam liber tempor cum soluta nobis eleifend option
-                            congue nihil imperdiet doming id quod mazim placerat
-                            facer possim assum.Lorem ipsum dolor sit amet,
-                            consectetuer adipiscing elit, sed diam nonummy nibh
-                            euismod tincidunt ut laoreet dolore magna aliquam
-                            erat volutpat. Ut wisi enim ad minim veniam, quis
-                            nostrud exerci tation ullamcorper suscipit lobortis
-                            nisl ut aliquip ex ea commodo consequat. Duis autem
-                            vel eum iriure dolor in hendrerit in vulputate velit
-                            esse molestie consequat, vel illum dolore eu feugiat
-                            nulla facilisis at vero eros et accumsan et iusto
-                            odio dignissim qui blandit praesent luptatum zzril
-                            delenit augue duis dolore te feugait nulla facilisi.
-                            Nam liber tempor cum soluta nobis eleifend option
-                            congue nihil imperdiet doming id quod mazim placerat
-                            facer possim assum.
-                        </p>
+                        <p>{currentRecipe.instructions}</p>
                     </div>
                 </div>
                 <div className="madeByWrapper flex cc ">
@@ -124,9 +105,8 @@ export default function Recipe(props) {
 
                 <Button
                     onClick={() => toggleOnOff(false)}
-                    labeltext="edit recipe"
                     type="submit"
-                    classNames="button edit-button"
+                    classNames="button addrecipe-button flex cc"
                     icon="edit"
                 />
                 {toggle && (

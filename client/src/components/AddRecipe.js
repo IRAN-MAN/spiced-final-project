@@ -6,7 +6,7 @@ import UploadPictureForm from "./forms/UploadPictureForm";
 
 export default function AddRecipe(props) {
     // const [toggle, toggleOnOff] = useToggle();
-    const { toggle, toggleOnOff } = props;
+    const { toggleOnOff } = props;
 
     return (
         <section className="backdrop" onClick={() => toggleOnOff(true)}>

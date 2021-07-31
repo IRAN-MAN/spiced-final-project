@@ -6,6 +6,11 @@ import { receiveCoauthors, receiveRecipes } from "../redux/action-creators";
 //components
 import CoauthorsList from "./CoauthorsList";
 import ChapterList from "./ChapterList";
+import Button from "./Button";
+import AddRecipe from "./AddRecipe";
+
+//hooks
+import { useToggle } from "../hooks/hooks";
 
 export default function Cookbook(props) {
     const dispatch = useDispatch();
@@ -13,6 +18,7 @@ export default function Cookbook(props) {
     const [currentCookbook, setCurrentCookbook] = useState({});
     const coauthors = useSelector((state) => state.coauthors);
     const cookbooks = useSelector((state) => state.cookbooks);
+    const [toggle, toggleOnOff] = useToggle();
 
     useEffect(() => {
         if (cookbook_id != undefined) {
@@ -42,6 +48,13 @@ export default function Cookbook(props) {
             )}
             <CoauthorsList coauthors={coauthors} />
             <ChapterList />
+            <Button
+                onClick={() => toggleOnOff(false)}
+                type="submit"
+                classNames="button addrecipe-button flex cc"
+                icon="edit"
+            />
+            {toggle && <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />}
         </div>
     );
 }
