@@ -13,7 +13,7 @@ const {
     ResetPassTwo,
     uploadProfilePic,
     getUserInfo,
-    changeUserInfo,
+    editUserInfo,
     checkloggedIn,
 } = require("../middlewares/usersRoutesHandler");
 
@@ -34,6 +34,6 @@ usersRoutes.post(
 usersRoutes.get("/profile/:user_id", getUserInfo, errorHandler);
 usersRoutes.get("/checkLogin", checkloggedIn);
 
-usersRoutes.put("/change_userInfo", changeUserInfo, errorHandler);
+usersRoutes.put("/edit_userInfo", editUserInfo, errorHandler);
 
 module.exports = { usersRoutes };

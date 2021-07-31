@@ -1,6 +1,6 @@
 const {
     getIngredientListByRecipe,
-    addNewIngredientList,
+    updateIngredientList,
 } = require("../database/ingredientListQueries");
 
 const getIngredientList = async (request, response, next) => {
@@ -21,22 +21,26 @@ const getIngredientList = async (request, response, next) => {
     }
 };
 
-const addIngredientList = async (request, response, next) => {
+const editIngredientList = async (request, response, next) => {
     try {
-        console.log("addIngredientList", request.params, request.body);
-        const newIngredient = await addNewIngredientList({
+        console.log(
+            "[editIngredientList: params, body]",
+            request.params,
+            request.body
+        );
+        const updatedngredient = await updateIngredientList({
             ...request.params,
             ...request.body,
         });
-        console.log("addNewIngredientList", newIngredient);
-        response.status(200).json(serializeIngredientList(newIngredient));
+        console.log("[updateIngredientList]", updatedngredient);
+        response.status(200).json(serializeIngredientList(updatedngredient));
     } catch (error) {
         console.log("[recipeInfo: Error]", error);
         next(error);
     }
 };
 
-module.exports = { getIngredientList, addIngredientList };
+module.exports = { getIngredientList, editIngredientList };
 
 const serializeIngredientList = (list) => {
     return {

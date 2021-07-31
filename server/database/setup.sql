@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS reset_codes;
 DROP TABLE IF EXISTS profile_photos;
 DROP TABLE IF EXISTS photos;
 DROP TABLE IF EXISTS comments;
@@ -93,5 +94,12 @@ CREATE TABLE profile_photos (
     id              SERIAL PRIMARY KEY,
     user_id         INTEGER NOT NULL REFERENCES users (id),
     photo_url       TEXT NOT NULL ,
+    created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE reset_codes (
+    id              SERIAL PRIMARY KEY,    
+    email           VARCHAR(50) NOT NULL ,
+    secret_code     VARCHAR(6) NOT NULL,
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
