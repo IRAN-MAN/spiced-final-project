@@ -55,6 +55,24 @@ const updateUser = async ({
     return updatedUser.rows[0];
 };
 
+const updateUserWithPassword = async ({
+    first_name,
+    last_name,
+    email,
+    about,
+    city,
+    user_id,
+    hashed_password,
+}) => {
+    const updatedUser = await db.query(
+        `UPDATE users
+            SET first_name = $1, last_name = $2, email = $3, about = $4, city =$5, hashed_password = $6
+            WHERE id = $7 RETURNING *`,
+        [first_name, last_name, email, about, city, hashed_password, user_id]
+    );
+    return updatedUser.rows[0];
+};
+
 const updatePassword = async ({ email, hashed_password }) => {
     return await db.query(
         `UPDATE users 
@@ -71,5 +89,6 @@ module.exports = {
     getUserById,
     updateProfilePic,
     updateUser,
+    updateUserWithPassword,
     updatePassword,
 };

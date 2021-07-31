@@ -34,6 +34,6 @@ usersRoutes.post(
 usersRoutes.get("/profile/:user_id", getUserInfo, errorHandler);
 usersRoutes.get("/checkLogin", checkloggedIn);
 
-usersRoutes.put("/edit_userInfo", editUserInfo, errorHandler);
+usersRoutes.post("/edit_userInfo", editUserInfo, errorHandler);
 
 module.exports = { usersRoutes };
