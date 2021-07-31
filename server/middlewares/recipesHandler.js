@@ -32,8 +32,7 @@ const recipesInCookBook = async (request, response, next) => {
 };
 
 const addRecipeInCookBook = async (request, response, next) => {
-    const recipeInfo = request.body.recipeInfo;
-    const ingredients = request.body.ingredients;
+    const { recipeDetails, ingredients } = request.body.recipeInfo;
     try {
         console.log(
             "[addRecipeInCookBook: query and body]",
@@ -42,10 +41,10 @@ const addRecipeInCookBook = async (request, response, next) => {
         );
         const newRecipeId = await insertRecipe({
             ...request.query,
-            ...recipeInfo,
+            ...recipeDetails,
         });
         console.log("[insertRecipe]", newRecipeId);
-        response.status(201).json({ ...newRecipeId });
+        response.status(201).json({ message: "We are SMART" });
         addIngredientToDB({ ingredients, ...newRecipeId });
     } catch (error) {
         console.log("[addRecipeInCookBook: Error]", error);
