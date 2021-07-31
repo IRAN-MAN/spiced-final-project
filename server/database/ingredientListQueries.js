@@ -9,16 +9,16 @@ const getIngredientListByRecipe = async ({ recipe_id }) => {
 };
 
 const addNewIngredientList = async ({
-    Ingredient_name,
+    ingredient_name,
     quantity,
     unit,
     recipe_id,
 }) => {
     const newIngredient = await db.query(
         `INSERT INTO Ingredients_list 
-        (Ingredient_name, quantity, unit, recipe_id) 
+        (ingredient_name, quantity, unit, recipe_id) 
         VALUES ($1, $2, $3, $4) RETURNING *`,
-        [Ingredient_name, quantity, unit, recipe_id]
+        [ingredient_name, quantity, unit, recipe_id]
     );
     return newIngredient.rows[0];
 };
