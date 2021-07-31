@@ -1,4 +1,4 @@
-
+DROP TABLE IF EXISTS profile_photos;
 DROP TABLE IF EXISTS photos;
 DROP TABLE IF EXISTS comments;
 DROP TABLE IF EXISTS favourite_recipes;
