@@ -20,6 +20,7 @@ import MyProfile from "./MyProfile";
 import Test from "./Test";
 import Cookbook from "./Cookbook";
 import Recipe from "./Recipe";
+import EditProfile from "./EditProfile";
 
 // import UserProfile from "./UserProfile";
 
@@ -57,6 +58,7 @@ export default function App() {
                     {/* <Route path="/userprofile/:id" component={UserProfile} /> */}
                     <Route path="/cookbook/:id" component={Cookbook} />
                     <Route path="/recipe/:id" component={Recipe} />
+                    <Route path="/editProfile" component={EditProfile} />
 
                     {/* This one should catch all the weird ones */}
                     <Route path="/">

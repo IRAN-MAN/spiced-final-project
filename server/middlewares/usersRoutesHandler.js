@@ -15,6 +15,7 @@ const {
     getUserByEmail,
     updateProfilePic,
     updateUser,
+    updateUserWithPassword,
     updatePassword,
 } = require("../database/usersQueries");
 
@@ -114,7 +115,7 @@ const ResetPassOne = async (request, response, next) => {
 
 const ResetPassTwo = async (request, response, next) => {
     try {
-        const { reset_code, new_pass, repeat_pass } = request.body;
+        const { reset_code, new_password, repeat_password } = request.body;
         const secret_code = await fetchSecretCode({ ...request.body });
         if (!secret_code || secret_code !== reset_code) {
             response.status(401).json({
@@ -122,13 +123,13 @@ const ResetPassTwo = async (request, response, next) => {
             });
             return;
         }
-        if (new_pass !== repeat_pass) {
+        if (new_password !== repeat_password) {
             response.status(400).json({
                 message: "Password is not match!",
             });
             return;
         }
-        const hashed_password = await hashPassword(new_pass);
+        const hashed_password = await hashPassword(new_password);
         await updatePassword({ ...request.body, hashed_password });
         response.status(201).json({ message: "Password Updated!" });
     } catch (error) {
@@ -174,14 +175,32 @@ const getUserInfo = async (request, response, next) => {
 };
 
 const editUserInfo = async (request, response, next) => {
+    console.log("[editUserInfo: body]", request.body);
+    const { new_password, repeat_password } = request.body;
     try {
-        console.log("[editUserInfo: body]", request.body);
-        const updatedUser = await updateUser({
+        if (!new_password && !repeat_password) {
+            const updatedUser = await updateUser({
+                ...request.session,
+                ...request.body,
+            });
+            console.log("updateUser", updatedUser);
+            response.status(200).json(serializeUserInfo(updatedUser));
+            return;
+        }
+        if (new_password !== repeat_password) {
+            response.status(400).json({
+                message: "Password is not match!",
+            });
+            return;
+        }
+        const hashed_password = await hashPassword(new_password);
+        const updatedUserWithPass = await updateUserWithPassword({
             ...request.session,
             ...request.body,
+            hashed_password,
         });
-        console.log("updateUser", updatedUser);
-        response.status(200).json(serializeUserInfo(updatedUser));
+        console.log("[updateUserWithPassword]", updatedUserWithPass);
+        response.status(200).json(serializeUserInfo(updatedUserWithPass));
     } catch (error) {
         console.log("[editUserInfo: Error]", error);
         next(error);

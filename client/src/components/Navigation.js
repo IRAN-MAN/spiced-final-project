@@ -10,7 +10,7 @@ export default function Navigation() {
                         <Link to="/">My Cookbooks</Link>
                     </li>
                     <li>
-                        <Link to="/">Edit Profile</Link>
+                        <Link to="/editProfile">Edit Profile</Link>
                     </li>
                 </ul>
             </nav>
