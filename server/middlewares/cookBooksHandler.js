@@ -1,6 +1,7 @@
 const {
     getCookBookByUserId,
     createCookbook,
+    updateCookbookCover,
 } = require("../database/cookbooksQueries");
 
 const cookBookInfo = async (request, response, next) => {
@@ -33,6 +34,21 @@ const updateCookBookInfo = async (request, response, next) => {
         console.log("createCookBook");
     } catch (error) {
         console.log("[createCookBook: Error]", error);
+        next(error);
+    }
+};
+
+const updateCookBookCover = async (request, response, next) => {
+    const { filename } = request.file;
+    const imgURL = `https://community-cookbook.s3.amazonaws.com/${filename}`;
+    try {
+        const cookbookCoverURL = await updateCookbookCover({
+            ...request.params,
+            imgURL,
+        });
+        response.status(201).json({ ...cookbookCoverURL });
+    } catch (error) {
+        console.log("[updateCookBookCover: Error]", error);
         next(error);
     }
 };

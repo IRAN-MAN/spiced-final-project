@@ -16,9 +16,13 @@ cookBooksRoutes.get("/:user_id", cookBookInfo, errorHandler);
 
 cookBooksRoutes.post("/create_cookbook", createNewCookBook, errorHandler);
 
-cookBooksRoutes.put("/update_info", updateCookBookInfo, errorHandler);
 cookBooksRoutes.put(
-    "/update_cover",
+    "/update_info/:cookbook_id",
+    updateCookBookInfo,
+    errorHandler
+);
+cookBooksRoutes.put(
+    "/update_cover/:cookbook_id",
     uploader.single("file"),
     s3Upload,
     updateCookBookCover,

@@ -25,7 +25,19 @@ const createCookbook = async ({ isPrivate, cookbook_name, author }) => {
     return newCookbook.rows[0];
 };
 
+const updateCookbookCover = async ({ cookbook_id, imgURL }) => {
+    const cover_pic = await db.query(
+        `UPDATE cookbooks 
+        SET cover_pic = $1
+        WHERE id = $2
+        RETURNING * `,
+        [imgURL, cookbook_id]
+    );
+    return cover_pic.rows[0].cover_pic;
+};
+
 module.exports = {
     getCookBookByUserId,
     createCookbook,
+    updateCookbookCover,
 };
