@@ -13,7 +13,10 @@ import {
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
     RECEIVE_AUTHORINFO,
+    ADD_INGREDIENT,
 } from "./actions";
+
+import { addIngredients } from "./action-creators";
 
 const initialState = {
     allFavourites: [],
@@ -27,6 +30,7 @@ const initialState = {
     myFavourites: [],
     recipes: [],
     user: {},
+    ingredients: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -87,6 +91,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 author: action.payload.author,
+            };
+        case ADD_INGREDIENT:
+            return {
+                ...state,
+                ingredients: [...state.ingredients, action.payload.ingredient],
             };
         default:
             return state;
