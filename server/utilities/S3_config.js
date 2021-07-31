@@ -23,7 +23,7 @@ const s3Upload = (request, response, next) => {
     const { filename, mimetype, size, path } = request.file;
 
     s3.putObject({
-        Bucket: "spiced-final-project",
+        Bucket: "community-cookbook",
         ACL: "public-read",
         Key: filename,
         Body: fs.createReadStream(path),
