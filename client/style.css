@@ -45,6 +45,13 @@ a {
 
 /* TEXT & FONTS */
 
+h1 {
+    font-size: 3em;
+    font-family: "Cookie", cursive;
+}
+q {
+    quotes: "«" "»" "‹" "›";
+}
 .bolder {
     font-weight: bolder;
 }
@@ -71,8 +78,9 @@ a {
 
 .backdrop {
     position: fixed;
-    background-color: paleturquoise;
+    background-color: whitesmoke;
     inset: 10% 0;
+    padding: 50px;
 }
 /* FORMS */
 
@@ -166,7 +174,7 @@ input[type="file"] {
     height: 50px;
     bottom: 50px;
     right: 50px;
-    background-color: whitesmoke;
+    background-color: wheat;
     border-radius: 50%;
 }
 .edit-button {
@@ -216,7 +224,7 @@ header {
     border: 1px solid black;
     width: 100vw;
     text-align: center;
-    background-color: khaki;
+    background-color: whitesmoke;
 }
 /* FOOTER */
 footer {
@@ -315,9 +323,11 @@ footer {
 /* RECIPES */
 
 .recipeStory {
+    margin-block: 10px;
 }
 .recipeMain {
     width: 100vw;
+    margin-block-start: 15px;
 }
 
 /* GALLERY & GALLERY CONTROLS */
@@ -343,7 +353,8 @@ footer {
 
 .ingredientsWrapper {
     width: 75%;
-    margin: auto;
+    margin-inline: auto;
+    margin-block-end: 20px;
 }
 .ingredients {
 }
@@ -351,7 +362,10 @@ footer {
 /* INSTRUCTIONS */
 .instructionsWrapper {
     width: 90%;
-    margin: auto;
+    padding: 20px;
+    margin-inline: auto;
+    margin-block: 20px;
+    background-color: white;
 }
 .instructions {
     width: 100%;
