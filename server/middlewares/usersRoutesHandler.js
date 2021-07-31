@@ -1,6 +1,10 @@
 const { hashPassword } = require("../utilities/hashPass");
 const loginCheck = require("../utilities/loginCheck");
-const { createUser, getUserById } = require("../database/usersQueries");
+const {
+    createUser,
+    getUserById,
+    updateProfilePic,
+} = require("../database/usersQueries");
 
 const checkloggedIn = async (request, response) =>
     response.json({ user_id: request.session.user_id });
@@ -69,13 +73,9 @@ const userLogin = async (request, response, next) => {
     }
 };
 
-const userLoggedOut = async (request, response, next) => {
-    try {
-        console.log("userLoggedOut");
-    } catch (error) {
-        console.log("[userLoggedOut: Error]", error);
-        next(error);
-    }
+const userLoggedOut = async (request, response) => {
+    request.session.user_id = null;
+    response.status(200).json({ message: "logout successfull" });
 };
 
 const ResetPassOne = async (request, response, next) => {
@@ -97,8 +97,14 @@ const ResetPassTwo = async (request, response, next) => {
 };
 
 const uploadProfilePic = async (request, response, next) => {
+    const { filename } = request.file;
+    const imgURL = `https://community-cookbook.s3.amazonaws.com/${filename}`;
     try {
-        console.log("uploadProfilePic");
+        const profilePicURL = await updateProfilePic({
+            ...request.session,
+            imgURL,
+        });
+        response.status(201).json({ ...profilePicURL });
     } catch (error) {
         console.log("[uploadProfilePic: Error]", error);
         next(error);
@@ -106,7 +112,6 @@ const uploadProfilePic = async (request, response, next) => {
 };
 
 const getUserInfo = async (request, response, next) => {
-    request.session.user_id = 1;
     try {
         if (request.params.user_id === "-1") {
             const user = await getUserById({ ...request.session });

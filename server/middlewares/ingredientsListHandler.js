@@ -1,5 +1,6 @@
 const {
     getIngredientListByRecipe,
+    addNewIngredientList,
 } = require("../database/ingredientListQueries");
 
 const getIngredientList = async (request, response, next) => {
@@ -9,6 +10,10 @@ const getIngredientList = async (request, response, next) => {
             ...request.params,
         });
         console.log("getIngredientListByRecipe", ingredientList);
+        if (!ingredientList) {
+            response.status(404).json({ message: "No ingredients list found" });
+            return;
+        }
         response.status(200).json({ ingredientList });
     } catch (error) {
         console.log("[recipeInfo: Error]", error);
@@ -18,7 +23,13 @@ const getIngredientList = async (request, response, next) => {
 
 const addIngredientList = async (request, response, next) => {
     try {
-        console.log("recipeInfo");
+        console.log("addIngredientList", request.params, request.body);
+        const newIngredient = await addNewIngredientList({
+            ...request.params,
+            ...request.body,
+        });
+        console.log("addNewIngredientList", newIngredient);
+        response.status(200).json(serializeIngredientList(newIngredient));
     } catch (error) {
         console.log("[recipeInfo: Error]", error);
         next(error);
