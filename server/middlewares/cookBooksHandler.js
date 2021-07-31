@@ -16,9 +16,10 @@ const cookBookInfo = async (request, response, next) => {
 };
 
 const createNewCookBook = async (request, response, next) => {
+    const author = request.session.user_id;
     try {
         console.log("createNewCookBook", request.body);
-        const cookbook = await createCookbook({ ...request.body });
+        const cookbook = await createCookbook({ ...request.body, author });
         console.log("cookBookInfo", cookbook);
         response.status(200).json(serializeCookbook(cookbook));
     } catch (error) {
@@ -36,4 +37,19 @@ const updateCookBookInfo = async (request, response, next) => {
     }
 };
 
-module.exports = { cookBookInfo, createNewCookBook, updateCookBookInfo };
+module.exports = {
+    cookBookInfo,
+    createNewCookBook,
+    updateCookBookInfo,
+    updateCookBookCover,
+};
+
+const serializeCookbook = (cookbook) => {
+    return {
+        cookbook_id: cookbook.id,
+        isPrivate: cookbook.isPrivate,
+        cookbook_name: cookbook.cookbook_name,
+        author: cookbook.author,
+        created_at: cookbook.created_at,
+    };
+};
