@@ -5,13 +5,13 @@ const errorHandler = require("../middlewares/errorHandler");
 
 const {
     cookBookInfo,
-    createCookBook,
+    createNewCookBook,
     updateCookBookInfo,
 } = require("../middlewares/cookBooksHandler");
 
 cookBooksRoutes.get("/:user_id", cookBookInfo, errorHandler);
 
-cookBooksRoutes.post("/create_cookbook", createCookBook, errorHandler);
+cookBooksRoutes.post("/create_cookbook", createNewCookBook, errorHandler);
 
 cookBooksRoutes.put("/update_info", updateCookBookInfo, errorHandler);
 

@@ -1,20 +1,26 @@
-const { getCookBookByUserId } = require("../database/cookbooksQueries");
+const {
+    getCookBookByUserId,
+    createCookbook,
+} = require("../database/cookbooksQueries");
 
 const cookBookInfo = async (request, response, next) => {
     try {
         console.log("cookBookInfo", request.params);
-        const cookbooks = await getCookBookByUserId({ ...request.params });
-        console.log("cookBookInfo", cookbooks);
-        response.status(200).json({ cookbooks });
+        const NewCookbooks = await getCookBookByUserId({ ...request.params });
+        console.log("cookBookInfo", NewCookbooks);
+        response.status(200).json({ NewCookbooks });
     } catch (error) {
         console.log("[cookBookInfo: Error]", error);
         next(error);
     }
 };
 
-const createCookBook = async (request, response, next) => {
+const createNewCookBook = async (request, response, next) => {
     try {
-        console.log("createCookBook");
+        console.log("createNewCookBook", request.body);
+        const cookbook = await createCookbook({ ...request.body });
+        console.log("cookBookInfo", cookbook);
+        response.status(200).json(serializeCookbook(cookbook));
     } catch (error) {
         console.log("[createCookBook: Error]", error);
         next(error);
@@ -30,4 +36,4 @@ const updateCookBookInfo = async (request, response, next) => {
     }
 };
 
-module.exports = { cookBookInfo, createCookBook, updateCookBookInfo };
+module.exports = { cookBookInfo, createNewCookBook, updateCookBookInfo };
