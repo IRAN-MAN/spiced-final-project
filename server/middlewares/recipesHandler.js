@@ -32,20 +32,24 @@ const recipesInCookBook = async (request, response, next) => {
 };
 
 const addRecipeInCookBook = async (request, response, next) => {
-    const { recipeDetails, ingredients } = request.body.recipeInfo;
+    console.log(
+        "[addRecipeInCookBook: query and body]",
+        request.query,
+        request.body
+    );
+    const { recipeDetails, ingredients } = request.body;
+    const owner_id = request.session.user_id;
     try {
-        console.log(
-            "[addRecipeInCookBook: query and body]",
-            request.query,
-            request.body
-        );
         const newRecipeId = await insertRecipe({
             ...request.query,
             ...recipeDetails,
+            owner_id,
         });
+        const recipe_id = newRecipeId.recipe_id;
         console.log("[insertRecipe]", newRecipeId);
         response.status(201).json({ message: "We are SMART" });
-        addIngredientToDB({ ingredients, ...newRecipeId });
+        addIngredientToDB(ingredients, recipe_id);
+        console.log("[SUCCESS]");
     } catch (error) {
         console.log("[addRecipeInCookBook: Error]", error);
         next(error);
@@ -106,10 +110,10 @@ const serializeRecipe = (recipe) => {
     };
 };
 
-const addIngredientToDB = (ingredients, id) => {
+const addIngredientToDB = (ingredients, recipe_id) => {
     ingredients.forEach(async (ingredient) => {
         try {
-            await addNewIngredientList({ ...ingredient, id });
+            await addNewIngredientList({ ...ingredient, recipe_id });
         } catch (error) {
             console.log("[addIngredientToDB: Error]", error);
         }
