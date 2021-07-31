@@ -5,23 +5,23 @@ export default function CoauthorsList(props) {
     const renderCoauthors = () => {
         return props.coauthors.map((coauthor) => {
             return (
-                <li key={coauthor.id} className="coauthorWrapper">
+                <li key={coauthor.coauthor_id} className="coauthorWrapper">
                     <Link to={"/users/profile/" + coauthor.id}>
                         <div className="miniAvatarWrapper">
-                            <img
-                                className="avatar smallAvatar"
-                                src={coauthor.profile_pic}
-                                alt={
-                                    coauthor.first_name +
-                                    " from " +
-                                    coauthor.city
-                                }
-                            />
-                            <button className="tooltip">
+                            <div className="tooltip">
                                 <span className="tooltiptext">
                                     {coauthor.first_name}
                                 </span>
-                            </button>
+                                <img
+                                    className="avatar smallAvatar"
+                                    src={coauthor.profile_pic}
+                                    alt={
+                                        coauthor.first_name +
+                                        " from " +
+                                        coauthor.city
+                                    }
+                                />
+                            </div>
                         </div>
                     </Link>
                 </li>
