@@ -101,11 +101,14 @@ export const receiveCurrentRecipe = async (recipe_id) => {
 };
 
 export const receiveCoauthors = async (cookbook_id) => {
-    const coauthors = await axios.get(`/api/coauthors/${cookbook_id}`);
-    console.log("...(ACTION receiveCoauthors) coauthors.data:", coauthors.data);
+    const coauthors = await axios.get(`/api/co_authors/${cookbook_id}`);
+    console.log(
+        "...(ACTION receiveCoauthors) coauthors.data.allCoAuthors:",
+        coauthors.data.allCoAuthors
+    );
     return {
         type: RECEIVE_COAUTHORS,
-        payload: { coauthors: coauthors.data },
+        payload: { coauthors: coauthors.data.allCoAuthors },
     };
 };
 export const receiveIngredientslist = async (recipe_id) => {

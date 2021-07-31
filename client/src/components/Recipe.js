@@ -1,15 +1,19 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
     receiveCurrentRecipe,
     receiveIngredientslist,
     receiveAuthorInfo,
 } from "../redux/action-creators";
-import Button from "./Button";
+
+//hooks
+import { useToggle } from "../hooks/hooks";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 //components
 import Gallery from "./Gallery";
+import Button from "./Button";
+import AddRecipe from "./AddRecipe";
 
 export default function Recipe(props) {
     const recipe_id = props.match.params.id;
@@ -19,6 +23,7 @@ export default function Recipe(props) {
     const recipePhotos = useSelector((state) => state.photos);
     const author = useSelector((state) => state.author);
     const dispatch = useDispatch();
+    const [toggle, toggleOnOff] = useToggle();
 
     useEffect(() => {
         console.log("...(Recipe EFFECT) recipe_id: ", recipe_id);
@@ -118,12 +123,15 @@ export default function Recipe(props) {
                 </div>
 
                 <Button
-                    onClick={() => console.log("CLICK!")}
+                    onClick={() => toggleOnOff(false)}
                     labeltext="edit recipe"
                     type="submit"
                     classNames="button edit-button"
                     icon="edit"
                 />
+                {toggle && (
+                    <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />
+                )}
             </div>
         </div>
     );

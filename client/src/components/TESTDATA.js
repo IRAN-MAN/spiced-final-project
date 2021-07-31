@@ -80,3 +80,27 @@ export const cookbooksTEST = [
             "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
     },
 ];
+
+export const coauthorsTEST = [
+    {
+        id: 1,
+        first_name: "Sandy",
+        last_name: "Sunshine",
+        profile_pic: "../images/testprofile.jpg",
+        city: "Toronto",
+    },
+    {
+        id: 2,
+        first_name: "Sascha",
+        last_name: "Salamander",
+        profile_pic: "../images/testprofile.jpg",
+        city: "Tokyo",
+    },
+];
+
+export const currentCookbookTEST = {
+    cookbook_name: "Pasta Dreams",
+    author: "Sally Salamander",
+    cover_pic:
+        "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+};

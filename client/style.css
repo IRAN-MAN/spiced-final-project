@@ -69,10 +69,22 @@ a {
     flex-direction: row;
 }
 
+.backdrop {
+    position: fixed;
+    background-color: paleturquoise;
+    inset: 10% 0;
+}
+/* FORMS */
+
+.formWrapper {
+    min-height: 200px;
+    border: 1px dashed palevioletred;
+}
+
 /* AUTH FORMS */
 .authWrapper {
     text-align: center;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
 }
@@ -141,9 +153,28 @@ button {
     padding-inline-start: 5px;
 }
 
+.pictureUploadButton span {
+    margin: auto;
+    color: white;
+}
+input[type="file"] {
+    display: none;
+}
+
 .edit-button {
 }
 .submit-button {
+}
+.closeBackdropButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    margin: 10px;
+    color: black;
+    background: none;
+    border: none;
+    font-size: 26pt;
 }
 
 /* NAVIGATION */
@@ -229,7 +260,7 @@ footer {
 
 .tooltip {
     position: relative;
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 .tooltip .tooltiptext {

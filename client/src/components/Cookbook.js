@@ -1,12 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-import {
-    receiveCoauthors,
-    receiveCurrentCookbook,
-    receiveRecipes,
-} from "../redux/action-creators";
+import { receiveCoauthors, receiveRecipes } from "../redux/action-creators";
 
 //components
 import CoauthorsList from "./CoauthorsList";
@@ -15,60 +10,37 @@ import ChapterList from "./ChapterList";
 export default function Cookbook(props) {
     const dispatch = useDispatch();
     const cookbook_id = props.match.params.id;
-
-    const coauthors = useSelector((state) => state.currentCookbook.coauthors);
+    const [currentCookbook, setCurrentCookbook] = useState({});
+    const coauthors = useSelector((state) => state.coauthors);
+    const cookbooks = useSelector((state) => state.cookbooks);
 
     useEffect(() => {
         if (cookbook_id != undefined) {
-            console.log("...(Cookbook) EFFECT cookbook_id:", cookbook_id);
             dispatch(receiveRecipes(cookbook_id));
         }
-        // dispatch(receiveCoauthors(cookbook_id));
+        dispatch(receiveCoauthors(cookbook_id));
     }, []);
-
-    // useEffect(async () => {
-    //     await dispatch(receiveCurrentCookbook(cookbook_id));
-    // }, [currentCookbook]);
-
-    const currentCookbookTEST = {
-        cookbook_name: "Pasta Dreams",
-        author: "Sally Salamander",
-        cover_pic:
-            "https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
-    };
-    // const chaptersTEST = ["Starters", "Main", "Desert"];
-
-    const coauthorsTEST = [
-        {
-            id: 1,
-            first_name: "Sandy",
-            last_name: "Sunshine",
-            profile_pic: "../images/testprofile.jpg",
-            city: "Toronto",
-        },
-        {
-            id: 2,
-            first_name: "Sascha",
-            last_name: "Salamander",
-            profile_pic: "../images/testprofile.jpg",
-            city: "Tokyo",
-        },
-    ];
-
+    useEffect(() => {
+        setCurrentCookbook(cookbooks[cookbook_id]);
+    }, [cookbooks]);
     return (
         <div className="profileWrapper flex cc fcolumn">
             Cookbook Component
-            <div className="avatarWrapper">
-                <img
-                    className="avatar"
-                    src={currentCookbookTEST.cover_pic}
-                    alt={currentCookbookTEST.cookbook_name}
-                />
-            </div>
-            <div className="bioContent">
-                <h1>{currentCookbookTEST.cookbook_name}</h1>
-            </div>
-            <CoauthorsList coauthors={coauthorsTEST} />
+            {currentCookbook && (
+                <div className="avatarWrapper">
+                    <img
+                        className="avatar"
+                        src={currentCookbook.cover_pic}
+                        alt={currentCookbook.cookbook_name}
+                    />
+                </div>
+            )}
+            {currentCookbook && (
+                <div className="bioContent">
+                    <h1>{currentCookbook.cookbook_name}</h1>
+                </div>
+            )}
+            <CoauthorsList coauthors={coauthors} />
             <ChapterList />
         </div>
     );
