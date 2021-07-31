@@ -18,21 +18,22 @@ const {
 } = require("../middlewares/usersRoutesHandler");
 
 usersRoutes.post("/signup", createUsers, errorHandler);
-usersRoutes.post("/login", userLogin);
+usersRoutes.post("/login", userLogin, errorHandler);
 usersRoutes.post("/logout", userLoggedOut);
 
-usersRoutes.post("/resetPass/step1", ResetPassOne);
-usersRoutes.post("/resetPass/step2", ResetPassTwo);
+usersRoutes.post("/resetPass/step1", ResetPassOne, errorHandler);
+usersRoutes.post("/resetPass/step2", ResetPassTwo, errorHandler);
 usersRoutes.post(
     "/profile/upload_profile_pic",
     uploader.single("file"),
     s3Upload,
-    uploadProfilePic
+    uploadProfilePic,
+    errorHandler
 );
 
-usersRoutes.get("/profile/:user_id", getUserInfo);
+usersRoutes.get("/profile/:user_id", getUserInfo, errorHandler);
 usersRoutes.get("/checkLogin", checkloggedIn);
 
-usersRoutes.put("/change_userInfo", changeUserInfo);
+usersRoutes.put("/change_userInfo", changeUserInfo, errorHandler);
 
 module.exports = { usersRoutes };
