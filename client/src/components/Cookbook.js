@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import {
     receiveCoauthors,
     receiveRecipes,
-    receiveCurrentCookbook,
+    populateCurrentCookbook,
 } from "../redux/action-creators";
 
 //components
@@ -36,6 +36,7 @@ export default function Cookbook(props) {
     useEffect(() => {
         setCurrentCookbook(currentCB);
         console.log("[currentCookbook]", currentCB);
+        dispatch(populateCurrentCookbook(currentCB));
     }, [cookbooks]);
     return (
         <div className="profileWrapper flex cc fcolumn">
