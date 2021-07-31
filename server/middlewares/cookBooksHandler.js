@@ -2,6 +2,7 @@ const {
     getCookBookByUserId,
     createCookbook,
     updateCookbookCover,
+    updateCookBook,
 } = require("../database/cookbooksQueries");
 
 const cookBookInfo = async (request, response, next) => {
@@ -31,9 +32,19 @@ const createNewCookBook = async (request, response, next) => {
 
 const updateCookBookInfo = async (request, response, next) => {
     try {
-        console.log("createCookBook");
+        console.log(
+            "[updateCookBookInfo: params and body]",
+            request.params,
+            request.body
+        );
+        const updatedCookbooks = await updateCookBook({
+            ...request.params,
+            ...request.body,
+        });
+        console.log("updateCookBook", updatedCookbooks);
+        response.status(200).json(serializeCookbook(updatedCookbooks));
     } catch (error) {
-        console.log("[createCookBook: Error]", error);
+        console.log("[cookBookInfo: Error]", error);
         next(error);
     }
 };
