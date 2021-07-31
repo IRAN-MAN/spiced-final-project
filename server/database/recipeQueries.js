@@ -55,4 +55,47 @@ const insertRecipe = async ({
     return newRecipeId.rows[0];
 };
 
-module.exports = { getRecipesByCookbookId, getRecipesById, insertRecipe };
+const updateRecipe = async ({
+    cookbook_id,
+    chapter_id,
+    owner_id,
+    recipe_name,
+    instructions,
+    prep_time,
+    difficulty_level,
+    recipe_story,
+    recipe_id,
+}) => {
+    const updatedRecipe = await db.query(
+        `UPDATE recipes 
+        SET cookbook_id = $1,
+        chapter_id = $2,
+        owner_id = $3
+        recipe_name = $4
+        instructions = $5
+        prep_time = $6
+        difficulty_level = $7
+        recipe_story = $8
+        WHERE id = $9
+        RETURNING * `,
+        [
+            cookbook_id,
+            chapter_id,
+            owner_id,
+            recipe_name,
+            instructions,
+            prep_time,
+            difficulty_level,
+            recipe_story,
+            recipe_id,
+        ]
+    );
+    return updatedRecipe.rows[0];
+};
+
+module.exports = {
+    getRecipesByCookbookId,
+    getRecipesById,
+    insertRecipe,
+    updateRecipe,
+};

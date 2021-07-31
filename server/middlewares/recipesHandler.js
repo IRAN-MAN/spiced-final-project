@@ -2,6 +2,7 @@ const {
     getRecipesByCookbookId,
     getRecipesById,
     insertRecipe,
+    updateRecipe,
 } = require("../database/recipeQueries");
 
 const { addNewIngredientList } = require("../database/ingredientListQueries");
@@ -64,11 +65,31 @@ const addRecipePhoto = async (request, response, next) => {
     }
 };
 
+const editRecipeInCookBook = async (request, response, next) => {
+    try {
+        console.log(
+            "[editRecipeInCookBook: params and body]",
+            request.params,
+            request.body
+        );
+        const updatedRecipe = await updateRecipe({
+            ...request.params,
+            ...request.body,
+        });
+        console.log("updateRecipe", updatedRecipe);
+        response.status(200).json(serializeRecipe(updatedRecipe));
+    } catch (error) {
+        console.log("[cookBookInfo: Error]", error);
+        next(error);
+    }
+};
+
 module.exports = {
     recipeInfo,
     recipesInCookBook,
     addRecipeInCookBook,
     addRecipePhoto,
+    editRecipeInCookBook,
 };
 
 const serializeRecipe = (recipe) => {
