@@ -9,14 +9,14 @@ export default function AddRecipe(props) {
     const { toggle, toggleOnOff } = props;
 
     return (
-        <section className="backdrop">
-            AddRecipe Component
-            <button className="closeButton" onClick={() => toggleOnOff(true)}>
+        <section className="backdrop" onClick={() => toggleOnOff(true)}>
+            <button
+                className="closeBackdropButton"
+                onClick={() => toggleOnOff(true)}
+            >
                 ×
             </button>
-            <div className="">
-                <UploadPictureForm />
-            </div>
+            <UploadPictureForm />
         </section>
     );
 }

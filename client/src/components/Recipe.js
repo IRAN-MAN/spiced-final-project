@@ -129,7 +129,9 @@ export default function Recipe(props) {
                     classNames="button edit-button"
                     icon="edit"
                 />
-                <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />
+                {toggle && (
+                    <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />
+                )}
             </div>
         </div>
     );
