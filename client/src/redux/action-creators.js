@@ -93,7 +93,7 @@ export const receiveAllFavourites = async (recipe_id) => {
 
 export const receiveCurrentRecipe = async (recipe_id) => {
     const recipe = await axios.get(`/api/recipes/${recipe_id}`);
-    console.log("...(ACTION receiveCurrentRecipe) recipe.data:", recipe.data);
+    // console.log("...(ACTION receiveCurrentRecipe) recipe.data:", recipe.data);
     return {
         type: RECEIVE_CURRENTRECIPE,
         payload: { currentRecipe: recipe.data },
@@ -115,10 +115,10 @@ export const receiveIngredientslist = async (recipe_id) => {
     const ingredients_list = await axios.get(
         `/api/ingredients_list/${recipe_id}`
     );
-    console.log(
-        "...(ACTION receiveCurrentIngredientslist) ingredients_list.data.ingredientList:",
-        ingredients_list.data.ingredientList
-    );
+    // console.log(
+    //     "...(ACTION receiveCurrentIngredientslist) ingredients_list.data.ingredientList:",
+    //     ingredients_list.data.ingredientList
+    // );
     return {
         type: RECEIVE_INGREDIENTSLIST,
         payload: {
@@ -129,7 +129,7 @@ export const receiveIngredientslist = async (recipe_id) => {
 
 export const receiveAuthorInfo = async (user_id) => {
     const author = await axios.get(`/api/users/profile/${user_id}`);
-    console.log("...(ACTION receiveAuthorInfo) author.data:", author.data);
+    // console.log("...(ACTION receiveAuthorInfo) author.data:", author.data);
     return {
         type: RECEIVE_AUTHORINFO,
         payload: {
