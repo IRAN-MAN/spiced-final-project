@@ -116,13 +116,13 @@ export const receiveIngredientslist = async (recipe_id) => {
         `/api/ingredients_list/${recipe_id}`
     );
     console.log(
-        "...(ACTION receiveCurrentIngredientslist) ingredients_list.data:",
-        ingredients_list.data
+        "...(ACTION receiveCurrentIngredientslist) ingredients_list.data.ingredientList:",
+        ingredients_list.data.ingredientList
     );
     return {
         type: RECEIVE_INGREDIENTSLIST,
         payload: {
-            ingredients_list: ingredients_list.data,
+            ingredients_list: ingredients_list.data.ingredientList,
         },
     };
 };
