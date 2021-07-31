@@ -62,7 +62,7 @@ CREATE TABLE co_authors (
 
 CREATE TABLE Ingredients_list (
     id                  SERIAL PRIMARY KEY,
-    Ingredient_name     VARCHAR(25) NOT NULL,         
+    ingredient_name     VARCHAR(25) NOT NULL,         
     quantity            INT NOT NULL,        
     unit                VARCHAR(25) NOT NULL,
     recipe_id           INT REFERENCES recipes (id) NOT NULL        
