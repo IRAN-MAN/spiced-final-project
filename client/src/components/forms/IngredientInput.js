@@ -1,39 +1,33 @@
-export default function IngredientInput() {
-    return (
-        <ol>
-            <li>
-                <label htmlFor="quantity">
-                    Quantity
-                    <input
-                        type="number"
-                        name="quantity"
-                        placeholder="quantity"
-                        required
-                    />
-                </label>
+import Button from "../Button";
 
-                <label htmlFor="unit">
-                    unit
-                    <select name="unit">
-                        <option value="l">litre</option>
-                        <option value="ml">millilitre</option>
-                        <option value="cup">cup</option>
-                        <option value="g">gramm</option>
-                        <option value="kg">kilogramm</option>
-                        <option value="tsp">teaspoon</option>
-                        <option value="tbsp">tablespoon</option>
-                    </select>
-                </label>
-                <label htmlFor="ingredient">
-                    ingredient
-                    <input
-                        type="text"
-                        name="ingredient"
-                        placeholder="ingredient"
-                        required
-                    />
-                </label>
-            </li>
-        </ol>
-    );
+import { useEffect, useState } from "react";
+import { useStatefulFields, useAddToIngredients } from "../../hooks/hooks";
+import SingleIngredientRow from "./singleIngredientRow";
+
+export default function IngredientInput(props) {
+    const [inputValues, handleChange] = useStatefulFields();
+
+    const [ingredients, addIngredient] = useAddToIngredients();
+
+    useEffect(() => {}, [ingredients]);
+
+    const saveInputToArray = (input) => {
+        console.log("INPUT:", input);
+        addIngredient(input);
+        console.log("ingredients:", ingredients);
+    };
+
+    const renderIngredientInput = () => {
+        return (
+            <div>
+                <SingleIngredientRow saveInputToArray={saveInputToArray} />
+                <div>
+                    {ingredients.length > 0 &&
+                        ingredients.quantity + " " + ingredients.unit}
+                </div>
+            </div>
+        );
+    };
+
+    return <ol className="formWrapper">{renderIngredientInput()}</ol>;
 }

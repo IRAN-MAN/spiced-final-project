@@ -21,7 +21,7 @@ export default function AddRecipe(props) {
             >
                 ×
             </button>
-            <UploadPictureForm />
+            {/* <UploadPictureForm /> */}
             <RecipeForm />
         </section>
     );
