@@ -12,6 +12,8 @@ import {
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
     RECEIVE_AUTHORINFO,
+    ADD_INGREDIENT,
+    SEND_RECIPE_INFO,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -134,6 +136,29 @@ export const receiveAuthorInfo = async (user_id) => {
         type: RECEIVE_AUTHORINFO,
         payload: {
             author: author.data,
+        },
+    };
+};
+
+export const addIngredients = (ingredient) => {
+    return {
+        type: ADD_INGREDIENT,
+        payload: {
+            ingredient,
+        },
+    };
+};
+
+export const sendRecipeInfo = async (recipeInfo, chapter_id, cookbook_id) => {
+    const { message } = await axios.post(
+        `/api/recipes/add_recipe?chapter_id=${chapter_id}&cookbook_id=${cookbook_id}`,
+        recipeInfo
+    );
+    console.log("[sendRecipeInfo: axios]", message);
+    return {
+        type: SEND_RECIPE_INFO,
+        payload: {
+            // ingredient,
         },
     };
 };
