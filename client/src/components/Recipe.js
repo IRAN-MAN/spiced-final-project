@@ -28,7 +28,6 @@ export default function Recipe(props) {
     const [toggle, toggleOnOff] = useToggle();
 
     useEffect(() => {
-        console.log("...(Recipe EFFECT) recipe_id: ", recipe_id);
         if (recipe_id) {
             dispatch(receiveCurrentRecipe(recipe_id));
             dispatch(receiveIngredientslist(recipe_id));
@@ -41,13 +40,10 @@ export default function Recipe(props) {
     }, [currentRecipe]);
 
     const renderDifficulty = (difficulty) => {
-        console.log("difficulty: ", difficulty);
-
         let string = "";
         for (var i = 0; i < difficulty; i++) {
             string += "⭑";
         }
-        console.log("string: ", string);
         return <i>{string}</i>;
     };
 
