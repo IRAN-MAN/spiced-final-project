@@ -29,11 +29,11 @@ export default function SingleIngredientRow(props) {
                     onChange={handleChange}
                 />
             </label>
-            <label htmlFor="ingredient">
+            <label htmlFor="ingredient_name">
                 ingredient
                 <input
                     type="text"
-                    name="ingredient"
+                    name="ingredient_name"
                     placeholder="ingredient"
                     required
                     onChange={handleChange}
