@@ -1,6 +1,7 @@
 //components
 import { useState } from "react";
-import Button from "../Button";
+import { useSelector } from "react-redux";
+
 import IngredientInput from "./IngredientInput";
 import RecipeInput from "./RecipeInput";
 
@@ -13,9 +14,23 @@ export default function RecipeForm() {
     //     "/api/recipes/add_recipe",
     //     inputValues
     // );
+    const ingredientList = useSelector((state) => state.ingredients);
 
-    const serialiseDataObject = () => {
-        console.log("serialiseDataObject");
+    const serialiseDataObject = (ingredients, recipe) => {
+        console.log(
+            "[serialiseDataObject: ingredients, recipe]",
+            ingredients,
+            recipe
+        );
+        return {
+            ingredients: ingredients,
+            recipeDetails: recipe,
+        };
+    };
+
+    const collectRecipeInputes = (inputValues) => {
+        const recipeInfo = serialiseDataObject(ingredientList, inputValues);
+        console.log("[collectRecipeInputes: recipeInfo]", recipeInfo);
     };
 
     return (
@@ -24,16 +39,9 @@ export default function RecipeForm() {
             {/* <form className="flex"> */}
             <div className="ingredientsInputWrapper">
                 <IngredientInput />
-                <RecipeInput />
+                <RecipeInput collectRecipeInputes={collectRecipeInputes} />
             </div>
             <div className="recipeInputWrapper"></div>
-            <Button
-                labeltext="add recipe"
-                type="submit"
-                classNames="button submit-button"
-                icon="send"
-                onClick={serialiseDataObject}
-            />
             {/* <p className="message">{error}</p> */}
             {/* </form> */}
         </div>
