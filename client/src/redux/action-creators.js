@@ -14,6 +14,7 @@ import {
     RECEIVE_AUTHORINFO,
     ADD_INGREDIENT,
     SEND_RECIPE_INFO,
+    POPULATE_CURRENT_COOKBOOK,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -158,7 +159,16 @@ export const sendRecipeInfo = async (recipeInfo, chapter_id, cookbook_id) => {
     return {
         type: SEND_RECIPE_INFO,
         payload: {
-            // ingredient,
+            message,
+        },
+    };
+};
+
+export const populateCurrentCookbook = (currentCookbook) => {
+    return {
+        type: POPULATE_CURRENT_COOKBOOK,
+        payload: {
+            currentCookbook: currentCookbook,
         },
     };
 };

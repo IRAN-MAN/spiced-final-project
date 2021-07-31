@@ -14,6 +14,7 @@ import {
     RECEIVE_USERINFO,
     RECEIVE_AUTHORINFO,
     ADD_INGREDIENT,
+    POPULATE_CURRENT_COOKBOOK,
 } from "./actions";
 
 import { addIngredients } from "./action-creators";
@@ -96,6 +97,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ingredients: [...state.ingredients, action.payload.ingredient],
+            };
+        case POPULATE_CURRENT_COOKBOOK:
+            return {
+                ...state,
+                currentCookbook: action.payload.currentCookbook,
             };
         default:
             return state;
