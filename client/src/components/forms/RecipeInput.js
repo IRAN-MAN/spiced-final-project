@@ -54,6 +54,7 @@ export default function RecipeInput(props) {
                     type="range"
                     id="difficulty_level"
                     name="difficulty_level"
+                    defaultValue="3"
                     min="0"
                     max="5"
                     onChange={handleChange}

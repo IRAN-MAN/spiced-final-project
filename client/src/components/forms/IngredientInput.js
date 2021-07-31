@@ -31,7 +31,7 @@ export default function IngredientInput(props) {
             return (
                 <li>
                     {ingredient.quantity} {ingredient.unit}{" "}
-                    {ingredient.ingredient}
+                    {ingredient.ingredient_name}
                 </li>
             );
         });
