@@ -114,7 +114,6 @@ module.exports = {
     addRecipePhoto,
     editRecipeInCookBook,
     recipePhotos,
-    addRecipephoto,
 };
 
 const serializeRecipe = (recipe) => {
