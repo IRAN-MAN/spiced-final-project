@@ -57,12 +57,15 @@ export default function Cookbook(props) {
             )}
             <CoauthorsList coauthors={coauthors} />
             <ChapterList />
-            <Button
-                onClick={() => toggleOnOff(false)}
-                type="submit"
-                classNames="button addrecipe-button flex cc"
-                icon="edit"
-            />
+            <div className="tooltip tooltipBtn">
+                <span className="tooltiptext">Add new Recipe</span>
+                <Button
+                    onClick={() => toggleOnOff(false)}
+                    type="submit"
+                    classNames="button addrecipe-button flex cc"
+                    icon="post_add"
+                />
+            </div>
             {toggle && <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />}
         </div>
     );
