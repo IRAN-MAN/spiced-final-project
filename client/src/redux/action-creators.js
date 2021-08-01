@@ -18,6 +18,7 @@ import {
     POPULATE_CURRENT_COOKBOOK,
     DELETE_INGREDIENT,
     IS_LIGHTBOX_VISIBLE,
+    ADD_RECIPE_PHOTO,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -205,5 +206,20 @@ export const toggleLightboxVisible = (isVisible) => {
     return {
         type: IS_LIGHTBOX_VISIBLE,
         payload: { isVisible: !isVisible },
+    };
+};
+
+export const uploadRecipePhoto = async (formData, recipe_id) => {
+    const recipePhoto = await axios.post(
+        `/api/recipes/photos/add_photo/${recipe_id}`,
+        formData
+    );
+    console.log(
+        "...(ACTION uploadRecipePhoto) recipePhoto.data: ",
+        recipePhoto.data
+    );
+    return {
+        type: ADD_RECIPE_PHOTO,
+        payload: { recipePhoto: recipePhoto.data },
     };
 };

@@ -18,6 +18,7 @@ import {
     POPULATE_CURRENT_COOKBOOK,
     DELETE_INGREDIENT,
     IS_LIGHTBOX_VISIBLE,
+    ADD_RECIPE_PHOTO,
 } from "./actions";
 
 import { addIngredients } from "./action-creators";
@@ -122,6 +123,14 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLightboxVisible: action.payload.isVisible,
+            };
+        case ADD_RECIPE_PHOTO:
+            return {
+                ...state,
+                recipePhotos: [
+                    ...state.recipePhotos,
+                    action.payload.recipePhoto,
+                ],
             };
         default:
             return state;
