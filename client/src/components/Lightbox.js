@@ -8,13 +8,17 @@ export default function Lightbox({ elements, toggleLightbox }) {
                 key={image.photo_id}
                 className="lightboxImageWrapper flex jcc vcenter"
             >
-                <img src={image.recipe_photo} alt={image.photo_id} />
+                <img
+                    src={image.recipe_photo}
+                    alt={image.photo_id}
+                    onClick={(event) => event.stopPropagation()}
+                />
             </div>
         );
     };
 
     return (
-        <div className="lightboxWrapper flex fcolumn">
+        <div className="lightboxWrapper flex fcolumn" onClick={toggleLightbox}>
             <button className="closeBackdropButton" onClick={toggleLightbox}>
                 {"×"}
             </button>
