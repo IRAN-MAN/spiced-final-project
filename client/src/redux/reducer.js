@@ -87,7 +87,7 @@ const reducer = (state = initialState, action) => {
         case RECEIVE_CURRENTCOOKBOOK:
             return {
                 ...state,
-                currentCookbook: action.payload.cookbook,
+                currentCookbook: action.payload.currentCookbook,
             };
         case RECEIVE_MYFAVOURITES:
             return {
