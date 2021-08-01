@@ -1,6 +1,6 @@
 import Gallery from "./Gallery";
 
-export default function Lightbox(elements, toggleLightbox) {
+export default function Lightbox({ elements, toggleLightbox }) {
     const renderPhoto = (image) => {
         return (
             <div className="lightboxImageWrapper">
@@ -10,11 +10,16 @@ export default function Lightbox(elements, toggleLightbox) {
     };
 
     return (
-        <div className="lightboxWrapper" onClick={toggleLightbox}>
-            <button className="closeButton" onClick={toggleLightbox}>
+        <div className="lightboxWrapper">
+            LIGHTBOX
+            <button className="closeBackdropButton" onClick={toggleLightbox}>
                 ×
             </button>
-            <Gallery elements={render()} elementsPerPage={1} render={render} />
+            {/* <Gallery
+                elements={elements}
+                elementsPerPage={1}
+                render={renderPhoto}
+            /> */}
         </div>
     );
 }
