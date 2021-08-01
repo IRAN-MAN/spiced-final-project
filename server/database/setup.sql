@@ -16,7 +16,7 @@ CREATE TABLE users (
     last_name       VARCHAR(255) NOT NULL,
     email           VARCHAR(50) NOT NULL UNIQUE,
     hashed_password VARCHAR NOT NULL,
-    profile_pic     TEXT DEFAULT '/default_user',
+    profile_pic     TEXT DEFAULT '/images/default_user.jpeg',
     about           TEXT,
     city            VARCHAR(50),
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -26,7 +26,7 @@ CREATE TABLE cookbooks (
     id              SERIAL PRIMARY KEY,
     isPrivate       BOOLEAN NOT NULL,
     cookbook_name   VARCHAR(50) NOT NULL,
-    cover_pic       TEXT DEFAULT '/default_cover',
+    cover_pic       TEXT DEFAULT '/images/default_cover.jpeg',
     author          INT REFERENCES users (id) NOT NULL,    
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -86,7 +86,7 @@ CREATE TABLE photos (
     id              SERIAL PRIMARY KEY,
     recipe_id       INT REFERENCES recipes (id) NOT NULL,        
     user_id         INTEGER NOT NULL REFERENCES users (id),
-    photo_url       TEXT NOT NULL DEFAULT '/default_photo',
+    photo_url       TEXT NOT NULL DEFAULT '/images/default_photo.jpeg',
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
