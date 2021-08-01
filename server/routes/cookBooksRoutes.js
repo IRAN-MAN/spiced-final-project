@@ -8,11 +8,13 @@ const { uploader } = require("../utilities/uploader_config");
 const {
     cookBookInfo,
     createNewCookBook,
+    cookBookInfoById,
     updateCookBookInfo,
     updateCookBookCover,
 } = require("../middlewares/cookBooksHandler");
 
 cookBooksRoutes.get("/:user_id", cookBookInfo, errorHandler);
+cookBooksRoutes.get("/by_id/:cookbook_id", cookBookInfoById, errorHandler);
 
 cookBooksRoutes.post("/create_cookbook", createNewCookBook, errorHandler);
 

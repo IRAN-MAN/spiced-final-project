@@ -1,5 +1,6 @@
 const {
     getCookBookByUserId,
+    getCookBookById,
     createCookbook,
     updateCookbookCover,
     updateCookBook,
@@ -13,6 +14,18 @@ const cookBookInfo = async (request, response, next) => {
         response.status(200).json({ cookbooks });
     } catch (error) {
         console.log("[cookBookInfo: Error]", error);
+        next(error);
+    }
+};
+
+const cookBookInfoById = async (request, response, next) => {
+    try {
+        console.log("cookBookInfo", request.params);
+        const cookbook = await getCookBookById({ ...request.params });
+        console.log("getCookBookByUserId", cookbook);
+        response.status(200).json(cookbook);
+    } catch (error) {
+        console.log("[getCookBookByUserId: Error]", error);
         next(error);
     }
 };
@@ -66,6 +79,7 @@ const updateCookBookCover = async (request, response, next) => {
 
 module.exports = {
     cookBookInfo,
+    cookBookInfoById,
     createNewCookBook,
     updateCookBookInfo,
     updateCookBookCover,
@@ -77,6 +91,7 @@ const serializeCookbook = (cookbook) => {
         isPrivate: cookbook.isPrivate,
         cookbook_name: cookbook.cookbook_name,
         author: cookbook.author,
+        cover_pic: cookbook.cover_pic,
         created_at: cookbook.created_at,
     };
 };
