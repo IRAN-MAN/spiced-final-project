@@ -70,7 +70,7 @@ const updateCookBookCover = async (request, response, next) => {
             ...request.params,
             imgURL,
         });
-        response.status(201).json({ ...cookbookCoverURL });
+        response.status(201).json(cookbookCoverURL);
     } catch (error) {
         console.log("[updateCookBookCover: Error]", error);
         next(error);
