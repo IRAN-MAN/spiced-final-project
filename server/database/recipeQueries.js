@@ -106,11 +106,11 @@ const getRecipePhotos = async ({ recipe_id }) => {
 const insertRecipePhoto = async ({ recipe_id, user_id, imgURL }) => {
     const addedRecipePhoto = await db.query(
         `INSERT INTO photos (recipe_id, user_id, photo_url)
-        VALUES ($1, $2, $3) RETURNING photo_url
+        VALUES ($1, $2, $3) RETURNING id AS photo_id, photo_url AS recipe_photo 
         `,
         [recipe_id, user_id, imgURL]
     );
-    return addedRecipePhoto.rows[0].photo_url;
+    return addedRecipePhoto.rows[0];
 };
 
 module.exports = {
