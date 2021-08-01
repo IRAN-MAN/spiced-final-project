@@ -15,6 +15,7 @@ import {
     RECEIVE_AUTHORINFO,
     ADD_INGREDIENT,
     POPULATE_CURRENT_COOKBOOK,
+    DELETE_INGREDIENT,
 } from "./actions";
 
 import { addIngredients } from "./action-creators";
@@ -102,6 +103,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentCookbook: action.payload.currentCookbook,
+            };
+        case DELETE_INGREDIENT:
+            return {
+                ...state,
+                ingredients: action.payload.newIngredients,
             };
         default:
             return state;

@@ -15,6 +15,7 @@ import {
     ADD_INGREDIENT,
     SEND_RECIPE_INFO,
     POPULATE_CURRENT_COOKBOOK,
+    DELETE_INGREDIENT,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -169,6 +170,19 @@ export const populateCurrentCookbook = (currentCookbook) => {
         type: POPULATE_CURRENT_COOKBOOK,
         payload: {
             currentCookbook: currentCookbook,
+        },
+    };
+};
+
+export const deleteIngredientById = (id, ingredients) => {
+    id--;
+
+    const newIngredients = ingredients.filter((_, i) => i != id);
+    console.log("newIngredients", newIngredients);
+    return {
+        type: DELETE_INGREDIENT,
+        payload: {
+            newIngredients: newIngredients,
         },
     };
 };
