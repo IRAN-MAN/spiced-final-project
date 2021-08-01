@@ -128,8 +128,8 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 recipePhotos: [
-                    ...state.recipePhotos,
                     action.payload.recipePhoto,
+                    ...state.recipePhotos,
                 ],
             };
         default:
