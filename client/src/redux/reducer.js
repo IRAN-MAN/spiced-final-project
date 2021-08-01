@@ -19,6 +19,8 @@ import {
     DELETE_INGREDIENT,
     IS_LIGHTBOX_VISIBLE,
     ADD_RECIPE_PHOTO,
+    UPDATE_USERINPUT,
+    UPDATE_USER,
 } from "./actions";
 
 import { addIngredients } from "./action-creators";
@@ -38,6 +40,7 @@ const initialState = {
     recipes: [],
     recipePhotos: [],
     user: {},
+    userInput: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -131,6 +134,16 @@ const reducer = (state = initialState, action) => {
                     action.payload.recipePhoto,
                     ...state.recipePhotos,
                 ],
+            };
+        case UPDATE_USERINPUT:
+            return {
+                ...state,
+                userInput: { ...state.userInput, ...action.payload.input },
+            };
+        case UPDATE_USER:
+            return {
+                ...state,
+                user: { ...state.user, ...action.payload },
             };
         default:
             return state;

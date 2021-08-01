@@ -3,7 +3,7 @@ import axios from "../axios";
 
 export function useStatefulFields() {
     const [inputValues, setInputValues] = useState({});
-    console.log("...(Hook useStatefulFields) inputValues: ", inputValues);
+    // console.log("...(Hook useStatefulFields) inputValues: ", inputValues);
     const handleChange = (e) =>
         setInputValues({
             ...inputValues,
@@ -17,7 +17,7 @@ export function useAuthSubmit(url, values) {
 
     const submit = async (event) => {
         event.preventDefault();
-        console.log("...(Hooks useAuthSubmit) url, values", url, values);
+        // console.log("...(Hooks useAuthSubmit) url, values", url, values);
         try {
             await axios.post(url, values);
             window.location = "/";

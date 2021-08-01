@@ -19,6 +19,8 @@ import {
     DELETE_INGREDIENT,
     IS_LIGHTBOX_VISIBLE,
     ADD_RECIPE_PHOTO,
+    UPDATE_USERINPUT,
+    UPDATE_USER,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -221,5 +223,23 @@ export const uploadRecipePhoto = async (formData, recipe_id) => {
     return {
         type: ADD_RECIPE_PHOTO,
         payload: { recipePhoto: recipePhoto.data },
+    };
+};
+
+export const onUserInputChange = (input) => {
+    console.log("...(ACTIONS onUserInputChange) input: ", input);
+    return {
+        type: UPDATE_USERINPUT,
+        payload: { input },
+    };
+};
+
+export const updateAccount = async (editUserInfo) => {
+    console.log("...(ACTIONS updateAccount) editUserInfo: ", editUserInfo);
+    const user = await axios.post("/api/users/edit_userInfo", editUserInfo);
+    console.log("...(ACTIONS updateAccount) user: ", user.data);
+    return {
+        type: UPDATE_USER,
+        payload: user.data.rows[0],
     };
 };
