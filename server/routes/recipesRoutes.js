@@ -17,14 +17,16 @@ const {
 recipesRoutes.get("/:recipe_id", recipeInfo, errorHandler);
 recipesRoutes.get("/photos/:recipe_id", recipePhotos, errorHandler);
 recipesRoutes.get("/by_cookbook/:cookbook_id", recipesInCookBook, errorHandler);
+
 recipesRoutes.post("/add_recipe", addRecipeInCookBook, errorHandler);
+
 recipesRoutes.post(
     "/edit_recipe/:recipe_id",
     editRecipeInCookBook,
     errorHandler
 );
 recipesRoutes.post(
-    "/add_recipe_photo/:recipe_id",
+    "/photos/add_photo/:recipe_id",
     uploader.single("file"),
     s3Upload,
     addRecipePhoto,
