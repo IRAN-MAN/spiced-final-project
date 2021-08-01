@@ -40,6 +40,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         //     galleryControls.end
         // );
         return elements
+            .reverse()
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {
                 return render(element);
