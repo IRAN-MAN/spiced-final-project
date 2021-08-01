@@ -155,7 +155,10 @@ const reducer = (state = initialState, action) => {
         case UPDATE_COOKBOOK_COVER:
             return {
                 ...state,
-                currentCookbook: action.payload.cookbook,
+                currentCookbook: {
+                    ...state.currentCookbook,
+                    cover_pic: action.payload.cover_pic,
+                },
             };
 
         default:
