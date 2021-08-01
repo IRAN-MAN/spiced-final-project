@@ -129,9 +129,9 @@ export default function Recipe(props) {
                     />
                 </div>
 
-                {/* {toggle && (
+                {toggle && (
                     <EditRecipe toggle={toggle} toggleOnOff={toggleOnOff} />
-                )} */}
+                )}
                 {isLightboxVisible && (
                     // && recipePhotos
                     <Lightbox

@@ -256,6 +256,8 @@ export const createNewCookbook = async (cookbookInfo) => {
     );
     return {
         type: CREATE_NEW_COOKBOOK,
-        payload: { recipePhotos: newCookbook.data },
+        payload: {
+            newCookbook: newCookbook.data,
+        },
     };
 };

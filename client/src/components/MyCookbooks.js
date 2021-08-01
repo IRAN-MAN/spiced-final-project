@@ -48,7 +48,7 @@ export default function MyCookbooks() {
             <ul className="flex jcc">
                 <Gallery
                     elements={cookbooks}
-                    elementsPerPage={2}
+                    elementsPerPage={4}
                     render={renderCookbooks}
                 />
             </ul>
