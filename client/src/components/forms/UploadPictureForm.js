@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 // import { updateProfilePic } from "../actions";
 
-export default function UploadPictureForm() {
+export default function UploadPictureForm(props) {
     const dispatch = useDispatch();
     // console.log(
     //     "...(UploadPictureForm) props:",
@@ -12,7 +12,7 @@ export default function UploadPictureForm() {
     const onPictureUpload = async (file) => {
         const formData = new FormData();
         formData.append("file", file);
-        await dispatch(updateProfilePic(formData));
+        await dispatch(props.action(formData, props.recipe_id));
     };
     return (
         <div
@@ -25,7 +25,6 @@ export default function UploadPictureForm() {
                 action="/api/upload"
                 method="POST"
             >
-                UploadPictureForm Component
                 <label className="buttonWrapper" forhtml="file">
                     <input
                         id="file"
@@ -37,8 +36,8 @@ export default function UploadPictureForm() {
                         required
                     />
                     <span className="flex">
+                        {props.label}
                         <i className="material-icons white">add_a_photo</i>
-                        Pick a new Photo
                     </span>
                 </label>
             </form>

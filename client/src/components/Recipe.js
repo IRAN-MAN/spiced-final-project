@@ -5,6 +5,7 @@ import {
     receiveAuthorInfo,
     receiveRecipePhotos,
     toggleLightboxVisible,
+    uploadRecipePhoto,
 } from "../redux/action-creators";
 
 //hooks
@@ -17,6 +18,7 @@ import Lightbox from "./Lightbox";
 import Button from "./Button";
 import AddRecipe from "./AddRecipe";
 import IngredientsList from "./IngredientsList";
+import UploadPictureForm from "./forms/UploadPictureForm";
 
 export default function Recipe(props) {
     const recipe_id = props.match.params.id;
@@ -69,6 +71,11 @@ export default function Recipe(props) {
                     onClick={toggleLightbox}
                 />
             </div>
+            <UploadPictureForm
+                label="add photo"
+                action={uploadRecipePhoto}
+                recipe_id={currentRecipe.recipe_id}
+            />
             <div className="recipeMain">
                 <h1>{currentRecipe.recipe_name}</h1>
                 <div className="recipeStory">
