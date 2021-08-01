@@ -57,10 +57,13 @@ export const receiveCookbooks = async (user_id) => {
 
 export const receiveCurrentCookbook = async (cookbook_id) => {
     const cookbook = await axios.get(`/api/cookbooks/by_id/${cookbook_id}`);
-    console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook);
+    console.log(
+        "...(ACTION receiveCurrentCookbook) cookbooks:",
+        cookbook.data[0]
+    );
     return {
         type: RECEIVE_CURRENTCOOKBOOK,
-        payload: { currentCookbook: cookbook.data },
+        payload: { currentCookbook: cookbook.data[0] },
     };
 };
 
@@ -228,7 +231,7 @@ export const uploadRecipePhoto = async (formData, recipe_id) => {
 };
 
 export const uploadCookbookCover = async (formData, cookbook_id) => {
-    const cookbook = await axios.post(
+    const cookbook = await axios.put(
         `/api/cookbooks/update_cover/${cookbook_id}`,
         formData
     );
