@@ -16,7 +16,7 @@ import { useSelector, useDispatch } from "react-redux";
 //components
 import Lightbox from "./Lightbox";
 import Button from "./Button";
-// import EditRecipe from "./EditRecipe";
+import EditRecipe from "./EditRecipe";
 import IngredientsList from "./IngredientsList";
 import UploadPictureForm from "./forms/UploadPictureForm";
 

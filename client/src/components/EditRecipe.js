@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
-import { useStatefulFields } from "../../hooks/hooks";
+import { useStatefulFields } from "../hooks/hooks";
 
-import IngredientInput from "./IngredientInput";
+import IngredientInput from "./forms/IngredientInput";
 import Button from "./Button";
 
 export default function EditRecipe(props) {
