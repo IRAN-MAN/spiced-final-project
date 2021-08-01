@@ -24,7 +24,7 @@ CREATE TABLE users (
 
 CREATE TABLE cookbooks (
     id              SERIAL PRIMARY KEY,
-    isPrivate       BOOLEAN NOT NULL,
+    isPrivate       BOOLEAN DEFAULT true,
     cookbook_name   VARCHAR(50) NOT NULL,
     cover_pic       TEXT DEFAULT '/images/default_cover.jpeg',
     author          INT REFERENCES users (id) NOT NULL,    
