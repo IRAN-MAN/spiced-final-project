@@ -12,7 +12,7 @@ export default function UploadPictureForm(props) {
     const onPictureUpload = async (file) => {
         const formData = new FormData();
         formData.append("file", file);
-        await dispatch(props.action(formData, props.recipe_id));
+        await dispatch(props.action(formData, props.id));
     };
     return (
         <div
