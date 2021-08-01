@@ -32,6 +32,7 @@ const initialState = {
     ingredients_list: [],
     myFavourites: [],
     recipes: [],
+    recipePhotos: [],
     user: {},
     ingredients: [],
 };
