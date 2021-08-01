@@ -45,7 +45,7 @@ CREATE TABLE recipes (
     recipe_name             VARCHAR(255) NOT NULL,
     instructions            TEXT NOT NULL,
     prep_time               VARCHAR(25) NOT NULL,
-    difficulty_level        INT NOT NULL DEFAULT 3,
+    difficulty_level        INT DEFAULT 3,
     recipe_story            TEXT,
     created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
