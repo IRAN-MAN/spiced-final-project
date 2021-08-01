@@ -59,11 +59,17 @@ const addRecipeInCookBook = async (request, response, next) => {
 };
 
 const addRecipePhoto = async (request, response, next) => {
+    const { filename } = request.file;
+    const imgURL = `https://community-cookbook.s3.amazonaws.com/${filename}`;
     try {
-        console.log("[addRecipePhoto: params]", request.params.cookbook_id);
-        const recipes = await getRecipesByCookbookId({ ...request.params });
-        console.log("[getRecipesByCookbookId]", recipes);
-        response.status(200).json({ recipes });
+        console.log("[addRecipePhoto: params]", request.params);
+        const addedRecipePhoto = await insertRecipePhoto({
+            ...request.params,
+            ...request.session,
+            imgURL,
+        });
+        console.log("[insertRecipePhoto]", addedRecipePhoto);
+        response.status(200).json(addedRecipePhoto);
     } catch (error) {
         console.log("[recipesInCookBook: Error]", error);
         next(error);
@@ -95,20 +101,6 @@ const recipePhotos = async (request, response, next) => {
         const recipePhotos = await getRecipePhotos({ ...request.params });
         console.log("[getRecipePhotos]", recipePhotos);
         response.status(200).json(recipePhotos);
-    } catch (error) {
-        console.log("[recipesInCookBook: Error]", error);
-        next(error);
-    }
-};
-
-const addRecipephoto = async (request, response, next) => {
-    try {
-        console.log("[addRecipephoto: params]", request.params);
-        const addedRecipePhotos = await insertRecipePhoto({
-            ...request.params,
-        });
-        console.log("[insertRecipePhoto]", addedRecipePhotos);
-        response.status(200).json(addedRecipePhotos);
     } catch (error) {
         console.log("[recipesInCookBook: Error]", error);
         next(error);
