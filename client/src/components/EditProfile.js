@@ -1,25 +1,43 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import {
+    onUserInputChange,
+    updateAccount,
+    receiveUserInfo,
+} from "../redux/action-creators";
 
-import { useStatefulFields, useAuthSubmit } from "../hooks/hooks";
 import Button from "./Button";
 
 export default function EditProfile() {
     const dispatch = useDispatch();
-    const [inputValues, handleChange] = useStatefulFields();
-    const [submit, error] = useAuthSubmit(
-        "/api/users/edit_userInfo",
-        inputValues
-    );
-
     const user = useSelector((state) => state.user);
+    const userInput = useSelector((state) => state.userInput);
 
+    const onEditAccountSubmit = async (event) => {
+        event.preventDefault();
+
+        await dispatchUserInput(event, dispatch);
+    };
+    // const [inputValues, handleChange] = useStatefulFields();
+    // const [submit, error] = useAuthSubmit(
+    //     "/api/users/edit_userInfo",
+    //     inputValues
+    // );
+    useEffect(() => {
+        if (userInput.first_name) {
+            dispatch(updateAccount(userInput));
+            dispatch(receiveUserInfo(user.id));
+        }
+    }, [userInput]);
     useEffect(() => {}, []);
 
     return (
         <div className="formWrapper flex ">
             <p>Edit Profile Component</p>
-            <form onSubmit={submit} className="flex fcolumn">
+            <form
+                onSubmit={(event) => onEditAccountSubmit(event)}
+                className="flex fcolumn"
+            >
                 <label htmlFor="first_name" value="First Name">
                     First Name
                     <input
@@ -29,7 +47,6 @@ export default function EditProfile() {
                         placeholder="first name"
                         defaultValue={user.first_name}
                         required
-                        onChange={handleChange}
                     />
                 </label>
                 <label htmlFor="last_name">
@@ -41,7 +58,6 @@ export default function EditProfile() {
                         placeholder="last name"
                         defaultValue={user.last_name}
                         required
-                        onChange={handleChange}
                     />
                 </label>
                 <label htmlFor="email">
@@ -53,7 +69,6 @@ export default function EditProfile() {
                         placeholder="email"
                         defaultValue={user.email}
                         required
-                        onChange={handleChange}
                     />
                 </label>
                 <label htmlFor="about">
@@ -64,8 +79,6 @@ export default function EditProfile() {
                         name="about"
                         placeholder="last name"
                         defaultValue={user.about}
-                        required
-                        onChange={handleChange}
                     />
                 </label>
                 <label htmlFor="city">
@@ -76,8 +89,6 @@ export default function EditProfile() {
                         name="city"
                         placeholder="last name"
                         defaultValue={user.city}
-                        required
-                        onChange={handleChange}
                     />
                 </label>
                 <label htmlFor="password">
@@ -87,7 +98,6 @@ export default function EditProfile() {
                         type="password"
                         name="new_password"
                         placeholder="******"
-                        onChange={handleChange}
                     />
                 </label>
                 <label htmlFor="repeat_password">
@@ -97,7 +107,6 @@ export default function EditProfile() {
                         type="password"
                         name="repeat_password"
                         placeholder="******"
-                        onChange={handleChange}
                     />
                 </label>
                 <Button
@@ -106,8 +115,44 @@ export default function EditProfile() {
                     classNames="button submit-button"
                     icon="send"
                 />
-                <p className="message">{error}</p>
             </form>
         </div>
     );
+}
+
+async function dispatchUserInput(event, dispatch) {
+    console.log("...(dispatchUserInput)");
+    const {
+        first_name,
+        last_name,
+        email,
+        about,
+        city,
+        password,
+        repeat_password,
+    } = event.target;
+
+    if (!password.value) {
+        await dispatch(
+            onUserInputChange({
+                first_name: first_name.value,
+                last_name: last_name.value,
+                email: email.value,
+                about: about.value,
+                city: city.value,
+            })
+        );
+    } else {
+        await dispatch(
+            onUserInputChange({
+                first_name: first_name.value,
+                last_name: last_name.value,
+                email: email.value,
+                about: about.value,
+                city: city.value,
+                password: password.value,
+                repeat_password: repeat_password.value,
+            })
+        );
+    }
 }
