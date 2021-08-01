@@ -10,6 +10,7 @@ import {
     RECEIVE_ALLFAVOURITES,
     RECEIVE_INGREDIENTSLIST,
     RECEIVE_RECIPES,
+    RECEIVE_RECIPE_PHOTOS,
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
     RECEIVE_AUTHORINFO,
@@ -108,6 +109,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ingredients: action.payload.newIngredients,
+            };
+        case RECEIVE_RECIPE_PHOTOS:
+            return {
+                ...state,
+                recipePhotos: action.payload.recipePhotos,
             };
         default:
             return state;

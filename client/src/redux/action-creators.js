@@ -9,6 +9,7 @@ import {
     RECEIVE_ALLFAVOURITES,
     RECEIVE_INGREDIENTSLIST,
     RECEIVE_RECIPES,
+    RECEIVE_RECIPE_PHOTOS,
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
     RECEIVE_AUTHORINFO,
@@ -184,5 +185,17 @@ export const deleteIngredientById = (id, ingredients) => {
         payload: {
             newIngredients: newIngredients,
         },
+    };
+};
+
+export const receiveRecipePhotos = async (recipe_id) => {
+    const recipePhotos = await axios.get(`/api/recipes/photos/${recipe_id}`);
+    console.log(
+        "...(ACTION receiveRecipePhotos) recipePhotos.data.recipePhotos:",
+        recipePhotos.data.recipePhotos
+    );
+    return {
+        type: RECEIVE_RECIPE_PHOTOS,
+        payload: { recipePhotos: recipePhotos.data.recipePhotos },
     };
 };
