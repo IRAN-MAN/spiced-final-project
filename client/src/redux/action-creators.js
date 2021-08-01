@@ -21,6 +21,7 @@ import {
     ADD_RECIPE_PHOTO,
     UPDATE_USERINPUT,
     UPDATE_USER,
+    CREATE_NEW_COOKBOOK,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -241,5 +242,20 @@ export const updateAccount = async (editUserInfo) => {
     return {
         type: UPDATE_USER,
         payload: user.data.rows[0],
+    };
+};
+
+export const createNewCookbook = async (cookbookInfo) => {
+    const newCookbook = await axios.post(
+        `/api/cookbooks/create_cookbook`,
+        cookbookInfo
+    );
+    console.log(
+        "...(ACTION createNewCookbook) newCookbook.data:",
+        newCookbook.data
+    );
+    return {
+        type: CREATE_NEW_COOKBOOK,
+        payload: { recipePhotos: newCookbook.data },
     };
 };

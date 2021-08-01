@@ -21,6 +21,7 @@ import {
     ADD_RECIPE_PHOTO,
     UPDATE_USERINPUT,
     UPDATE_USER,
+    CREATE_NEW_COOKBOOK,
 } from "./actions";
 
 import { addIngredients } from "./action-creators";
@@ -144,6 +145,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 user: { ...state.user, ...action.payload },
+            };
+        case CREATE_NEW_COOKBOOK:
+            return {
+                ...state,
+                cookbooks: [action.payload.newCookbook, ...state.cookbooks],
             };
         default:
             return state;
