@@ -10,12 +10,14 @@ import {
     RECEIVE_ALLFAVOURITES,
     RECEIVE_INGREDIENTSLIST,
     RECEIVE_RECIPES,
+    RECEIVE_RECIPE_PHOTOS,
     RECEIVE_CURRENTRECIPE,
     RECEIVE_USERINFO,
     RECEIVE_AUTHORINFO,
     ADD_INGREDIENT,
     POPULATE_CURRENT_COOKBOOK,
     DELETE_INGREDIENT,
+    IS_LIGHTBOX_VISIBLE,
 } from "./actions";
 
 import { addIngredients } from "./action-creators";
@@ -28,11 +30,13 @@ const initialState = {
     cookbooks: [],
     currentCookbook: {},
     currentRecipe: {},
+    ingredients: [],
     ingredients_list: [],
+    isLightboxVisible: false,
     myFavourites: [],
     recipes: [],
+    recipePhotos: [],
     user: {},
-    ingredients: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -108,6 +112,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ingredients: action.payload.newIngredients,
+            };
+        case RECEIVE_RECIPE_PHOTOS:
+            return {
+                ...state,
+                recipePhotos: action.payload.recipePhotos,
+            };
+        case IS_LIGHTBOX_VISIBLE:
+            return {
+                ...state,
+                isLightboxVisible: action.payload.isVisible,
             };
         default:
             return state;

@@ -381,6 +381,21 @@ footer {
 
 /* SLIDER */
 
+/* LIGHTBOX */
+.lightboxWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(53, 146, 197, 0.5);
+    z-index: 20;
+}
+
+.lightbox img {
+    max-width: 90vw;
+}
+
 @media only screen and (min-width: 480px) {
     body {
         /* background-color: cadetblue; */
