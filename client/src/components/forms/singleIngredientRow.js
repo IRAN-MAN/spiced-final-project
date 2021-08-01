@@ -1,3 +1,4 @@
+import { createRef } from "react";
 // hooks
 import { useStatefulFields } from "../../hooks/hooks";
 
@@ -5,12 +6,16 @@ import { useStatefulFields } from "../../hooks/hooks";
 import Button from "../Button";
 
 export default function SingleIngredientRow(props) {
+    const quantityInput = createRef();
+    const unitInput = createRef();
+    const nameInput = createRef();
     const [inputValues, handleChange] = useStatefulFields();
     return (
         <li>
             <label htmlFor="quantity">
                 Quantity
                 <input
+                    ref={quantityInput}
                     type="number"
                     name="quantity"
                     placeholder="quantity"
@@ -22,6 +27,7 @@ export default function SingleIngredientRow(props) {
             <label htmlFor="unit">
                 Unit
                 <input
+                    ref={unitInput}
                     type="text"
                     name="unit"
                     placeholder="unit"
@@ -32,6 +38,7 @@ export default function SingleIngredientRow(props) {
             <label htmlFor="ingredient_name">
                 ingredient
                 <input
+                    ref={nameInput}
                     type="text"
                     name="ingredient_name"
                     placeholder="ingredient"
@@ -45,8 +52,10 @@ export default function SingleIngredientRow(props) {
                 classNames="button submit-button"
                 icon="send"
                 onClick={() => {
-                    console.log("CLICK");
                     props.saveInputToArray(inputValues);
+                    quantityInput.current.value = "";
+                    unitInput.current.value = "";
+                    nameInput.current.value = "";
                 }}
             />
         </li>

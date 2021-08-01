@@ -1,18 +1,11 @@
 //components
 import axios from "../../axios";
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import IngredientInput from "./IngredientInput";
 import RecipeInput from "./RecipeInput";
 
-import sendRecipeInfo from "../../redux/action-creators";
-
-//hooks
-import { useAddToIngredients } from "../../hooks/hooks";
-
 export default function RecipeForm() {
-    const dispatch = useDispatch();
     const ingredientList = useSelector((state) => state.ingredients);
     const currentCB = useSelector((state) => state.currentCookbook);
 
@@ -29,6 +22,13 @@ export default function RecipeForm() {
     };
 
     const collectRecipeInputes = async (inputValues) => {
+        if (
+            !inputValues.recipe_name ||
+            !inputValues.instructions ||
+            !inputValues.prep_time
+        ) {
+            return;
+        }
         console.log("[collectRecipeInputes]", ingredientList, inputValues);
         const recipeInfo = serialiseDataObject(ingredientList, inputValues);
         const cookbook_id = currentCB[0].cookbook_id;

@@ -21,6 +21,9 @@ export default function IngredientInput(props) {
     const ingredients = useSelector((state) => state.ingredients);
 
     const addToIngredients = (input) => {
+        if (!input.quantity || !input.unit || !input.ingredient_name) {
+            return;
+        }
         dispatch(addIngredients(input));
         console.log("[addToIngredients]", ingredients);
     };
