@@ -26,9 +26,9 @@ const recipesInCookBook = async (request, response, next) => {
     try {
         console.log("[recipesInCookBook: params]", request.params.cookbook_id);
         const recipes = await getRecipesByCookbookId({ ...request.params });
-        const latestPhotos = getLatesPhotos(recipes);
-        console.log("[getRecipesByCookbookId]", recipes);
-        console.log("[getLatesPhotos]", latestPhotos);
+        // const latestPhotos = getLatesPhotos(recipes);
+        // console.log("[getRecipesByCookbookId]", recipes);
+        // console.log("[getLatesPhotos]", latestPhotos);
         response.status(200).json({ recipes });
     } catch (error) {
         console.log("[recipesInCookBook: Error]", error);
@@ -146,15 +146,13 @@ const addIngredientToDB = (ingredients, recipe_id) => {
 
 const getLatesPhotos = (recipes) => {
     const latestPhotos = [];
-    recipes.forEach(async (recipe) => {
-        try {
-            const photo = await getLastesPhotoByRecipe({ ...recipe });
-            console.log("photo", photo);
-            latestPhotos.push(photo);
-        } catch (error) {
-            console.log("[getLatesPhotos: Error]", error);
-        }
-    });
-    console.log("PHOTOSSSSS", latestPhotos);
-    return latestPhotos;
+    const photo = new Promise(
+        recipes.forEach((recipe) => {
+            getLastesPhotoByRecipe({ ...recipe }).then((obj) => {
+                return Promise.resolve(obj);
+            });
+        })
+    );
+    latestPhotos.push(photo);
+    console.log("[Photos Array]", latestPhotos);
 };

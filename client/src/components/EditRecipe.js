@@ -9,6 +9,7 @@ export default function EditRecipe(props) {
     const { toggleOnOff } = props;
     const [inputValues, handleChange] = useStatefulFields();
     const currentRecipe = useSelector((state) => state.currentRecipe);
+    const currentIngredients = useSelector((state) => state.ingredients_list);
 
     return (
         <section className="backdrop">

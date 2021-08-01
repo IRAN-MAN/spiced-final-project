@@ -4,9 +4,12 @@ import { useEffect } from "react";
 import { receiveCookbooks, receiveUserInfo } from "../redux/action-creators";
 import { Link } from "react-router-dom";
 import { cookbooksTEST } from "./TESTDATA";
+import Button from "./Button";
 
+import { useToggle } from "../hooks/hooks";
 //components
 import Gallery from "./Gallery";
+import CreateCookbook from "./CreateCookbook";
 
 export default function MyCookbooks() {
     const user = useSelector((state) => {
@@ -16,6 +19,7 @@ export default function MyCookbooks() {
         return state.cookbooks;
     });
 
+    const [toggle, toggleOnOff] = useToggle();
     const dispatch = useDispatch();
     useEffect(() => {}, []);
 
@@ -48,6 +52,15 @@ export default function MyCookbooks() {
                     render={renderCookbooks}
                 />
             </ul>
+            <Button
+                onClick={() => toggleOnOff(false)}
+                type="Create CookBook"
+                classNames="button addrecipe-button flex cc"
+                icon="edit"
+            />
+            {toggle && (
+                <CreateCookbook toggle={toggle} toggleOnOff={toggleOnOff} />
+            )}
         </div>
     );
 }
