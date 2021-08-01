@@ -93,9 +93,31 @@ const updateRecipe = async ({
     return updatedRecipe.rows[0];
 };
 
+const getRecipePhotos = async ({ recipe_id }) => {
+    const recipePhotos = await db.query(
+        `SELECT id AS photo_id, photo_url AS recipe_photo
+        FROM photos
+        WHERE (recipe_id = $1)`,
+        [recipe_id]
+    );
+    return recipePhotos.rows;
+};
+
+const insertRecipePhoto = async ({ recipe_id, user_id, imgURL }) => {
+    const addedRecipePhoto = await db.query(
+        `INSERT INTO photos (recipe_id, user_id, photo_url)
+        VALUES ($1, $2, $3) RETURNING photo_url
+        `,
+        [recipe_id, user_id, imgURL]
+    );
+    return addedRecipePhoto.rows[0].photo_url;
+};
+
 module.exports = {
     getRecipesByCookbookId,
     getRecipesById,
     insertRecipe,
     updateRecipe,
+    getRecipePhotos,
+    insertRecipePhoto,
 };
