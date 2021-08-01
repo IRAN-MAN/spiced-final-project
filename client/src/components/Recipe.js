@@ -119,15 +119,19 @@ export default function Recipe(props) {
                         </Link>
                     </div>
                 </div>
-                <Button
-                    onClick={() => toggleOnOff(false)}
-                    type="submit"
-                    classNames="button addrecipe-button flex cc"
-                    icon="edit"
-                />
-                {toggle && (
+                <div className="tooltip tooltipBtn flex jcc vcenter">
+                    <span className="tooltiptext">Edit Recipe</span>
+                    <Button
+                        onClick={() => toggleOnOff(false)}
+                        type="submit"
+                        classNames="button addrecipe-button flex cc"
+                        icon="edit"
+                    />
+                </div>
+
+                {/* {toggle && (
                     <EditRecipe toggle={toggle} toggleOnOff={toggleOnOff} />
-                )}
+                )} */}
                 {isLightboxVisible && (
                     // && recipePhotos
                     <Lightbox

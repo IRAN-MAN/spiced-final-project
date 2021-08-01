@@ -40,7 +40,6 @@ export default function MyCookbooks() {
 
     return (
         <div className="cookbooksWrapper flex cc fcolumn">
-            MyCookbooks Component
             {/* <ul>{cookbooks.length > 0 && renderCookbooks()}</ul> */}
             <ul className="flex jcc">
                 <Gallery

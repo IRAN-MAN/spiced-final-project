@@ -35,10 +35,12 @@ export default function UploadPictureForm(props) {
                         onChange={() => onPictureUpload(event.target.files[0])}
                         required
                     />
-                    <span className="flex">
-                        {props.label}
-                        <i className="material-icons white">add_a_photo</i>
-                    </span>
+                    <div className="tooltip">
+                        <span className="tooltiptext">{props.label}</span>
+                        <span className="flex">
+                            <i className="material-icons white">add_a_photo</i>
+                        </span>
+                    </div>
                 </label>
             </form>
         </div>
