@@ -17,6 +17,7 @@ import {
     SEND_RECIPE_INFO,
     POPULATE_CURRENT_COOKBOOK,
     DELETE_INGREDIENT,
+    IS_LIGHTBOX_VISIBLE,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -197,5 +198,12 @@ export const receiveRecipePhotos = async (recipe_id) => {
     return {
         type: RECEIVE_RECIPE_PHOTOS,
         payload: { recipePhotos: recipePhotos.data.recipePhotos },
+    };
+};
+
+export const toggleLightboxVisible = (isVisible) => {
+    return {
+        type: IS_LIGHTBOX_VISIBLE,
+        payload: { isVisible: !isVisible },
     };
 };
