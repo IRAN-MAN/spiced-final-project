@@ -34,7 +34,7 @@ export default function Recipe(props) {
         if (recipe_id) {
             dispatch(receiveCurrentRecipe(recipe_id));
             dispatch(receiveIngredientslist(recipe_id));
-            dispatch(receiveRecipePhotos(currentRecipe.recipe_id));
+            dispatch(receiveRecipePhotos(recipe_id));
         }
     }, []);
     useEffect(() => {
