@@ -74,7 +74,7 @@ export default function Recipe(props) {
             <UploadPictureForm
                 label="add photo"
                 action={uploadRecipePhoto}
-                recipe_id={currentRecipe.recipe_id}
+                id={currentRecipe.recipe_id}
             />
             <div className="recipeMain">
                 <h1>{currentRecipe.recipe_name}</h1>

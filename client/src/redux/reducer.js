@@ -22,6 +22,7 @@ import {
     UPDATE_USERINPUT,
     UPDATE_USER,
     CREATE_NEW_COOKBOOK,
+    UPDATE_COOKBOOK_COVER,
 } from "./actions";
 
 import { addIngredients } from "./action-creators";
@@ -151,6 +152,12 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 cookbooks: [action.payload.newCookbook, ...state.cookbooks],
             };
+        case UPDATE_COOKBOOK_COVER:
+            return {
+                ...state,
+                currentCookbook: action.payload.cookbook,
+            };
+
         default:
             return state;
     }
