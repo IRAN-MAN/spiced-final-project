@@ -7,6 +7,26 @@ export default function RecipeInput(props) {
 
     return (
         <div className="formWrapper">
+            <label htmlFor="category">
+                Category
+                <input
+                    name="category"
+                    placeholder="Name"
+                    list="category"
+                    required
+                    onChange={handleChange}
+                />
+                <datalist id="category">
+                    <option value="Starters" />
+                    <option value="Salad" />
+                    <option value="Desert" />
+                    <option value="Soups" />
+                    <option value="Cakes" />
+                    <option value="Cocktails" />
+                    <option value="Fast Food" />
+                    <option value="Snacks" />
+                </datalist>
+            </label>
             <label htmlFor="recipe_name">
                 Recipe Name
                 <input
