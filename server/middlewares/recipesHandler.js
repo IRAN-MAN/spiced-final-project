@@ -5,6 +5,7 @@ const {
     updateRecipe,
     getRecipePhotos,
     insertRecipePhoto,
+    getLastesPhotoByRecipe,
 } = require("../database/recipeQueries");
 
 const { addNewIngredientList } = require("../database/ingredientListQueries");
@@ -25,7 +26,9 @@ const recipesInCookBook = async (request, response, next) => {
     try {
         console.log("[recipesInCookBook: params]", request.params.cookbook_id);
         const recipes = await getRecipesByCookbookId({ ...request.params });
+        const latestPhotos = getLatesPhotos(recipes);
         console.log("[getRecipesByCookbookId]", recipes);
+        console.log("[getLatesPhotos]", latestPhotos);
         response.status(200).json({ recipes });
     } catch (error) {
         console.log("[recipesInCookBook: Error]", error);
@@ -139,4 +142,19 @@ const addIngredientToDB = (ingredients, recipe_id) => {
             console.log("[addIngredientToDB: Error]", error);
         }
     });
+};
+
+const getLatesPhotos = (recipes) => {
+    const latestPhotos = [];
+    recipes.forEach(async (recipe) => {
+        try {
+            const photo = await getLastesPhotoByRecipe({ ...recipe });
+            console.log("photo", photo);
+            latestPhotos.push(photo);
+        } catch (error) {
+            console.log("[getLatesPhotos: Error]", error);
+        }
+    });
+    console.log("PHOTOSSSSS", latestPhotos);
+    return latestPhotos;
 };

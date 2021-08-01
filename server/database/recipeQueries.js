@@ -2,10 +2,8 @@ const { db } = require("./db");
 
 const getRecipesByCookbookId = async ({ cookbook_id }) => {
     const recipes = await db.query(
-        `SELECT recipes.id AS recipe_id, chapter_id, photo_url AS recipe_photo,
-        recipe_name, owner_id
-        FROM recipes
-        JOIN photos ON (recipe_id = recipes.id)
+        `SELECT recipes.id AS recipe_id, chapter_id, recipe_name, owner_id
+        FROM recipes  
         WHERE (cookbook_id = $1)`,
         [cookbook_id]
     );
@@ -24,6 +22,14 @@ const getRecipesById = async ({ recipe_id }) => {
         [recipe_id]
     );
     return recipe.rows[0];
+};
+
+const getLastesPhotoByRecipe = async ({ recipe_id }) => {
+    const latestPhoto = await db.query(
+        "SELECT recipe_id, photo_url AS recipe_photo FROM photos WHERE recipe_id = $1 ORDER BY created_at DESC LIMIT 1",
+        [recipe_id]
+    );
+    return latestPhoto.rows[0];
 };
 
 const insertRecipe = async ({
@@ -120,4 +126,5 @@ module.exports = {
     updateRecipe,
     getRecipePhotos,
     insertRecipePhoto,
+    getLastesPhotoByRecipe,
 };
