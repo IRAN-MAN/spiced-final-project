@@ -93,9 +93,20 @@ const updateRecipe = async ({
     return updatedRecipe.rows[0];
 };
 
+const getRecipePhotos = async ({ recipe_id }) => {
+    const recipePhotos = await db.query(
+        `SELECT id AS photo_id, photo_url AS recipe_photo
+        FROM photos
+        WHERE (recipe_id = $1)`,
+        [recipe_id]
+    );
+    return recipePhotos.rows;
+};
+
 module.exports = {
     getRecipesByCookbookId,
     getRecipesById,
     insertRecipe,
     updateRecipe,
+    getRecipePhotos,
 };
