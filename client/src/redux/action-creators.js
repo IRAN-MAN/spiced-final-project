@@ -22,6 +22,7 @@ import {
     UPDATE_USERINPUT,
     UPDATE_USER,
     CREATE_NEW_COOKBOOK,
+    UPDATE_COOKBOOK_COVER,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -54,10 +55,9 @@ export const receiveCookbooks = async (user_id) => {
     };
 };
 
-//maybe not necessary, cause we already got all the connected cookbooks together
 export const receiveCurrentCookbook = async (cookbook_id) => {
-    const cookbook = await axios.get(`/api/cookbooks/${cookbook_id}`);
-    // console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook.data);
+    const cookbook = await axios.get(`/api/cookbooks/by_id/${cookbook_id}`);
+    console.log("...(ACTION receiveCurrentCookbook) cookbooks:", cookbook);
     return {
         type: RECEIVE_CURRENTCOOKBOOK,
         payload: { currentCookbook: cookbook.data },
@@ -65,7 +65,7 @@ export const receiveCurrentCookbook = async (cookbook_id) => {
 };
 
 export const receiveRecipes = async (cookbook_id) => {
-    // console.log("receiveRecipes cookbook_id:", cookbook_id);
+    console.log("receiveRecipes cookbook_id:", cookbook_id);
     const recipes = await axios.get(`/api/recipes/by_cookbook/${cookbook_id}`);
     // console.log(
     //     "...(ACTION receiveRecipes) recipes.data:",
@@ -224,6 +224,21 @@ export const uploadRecipePhoto = async (formData, recipe_id) => {
     return {
         type: ADD_RECIPE_PHOTO,
         payload: { recipePhoto: recipePhoto.data },
+    };
+};
+
+export const uploadCookbookCover = async (formData, cookbook_id) => {
+    const cookbook = await axios.post(
+        `/api/cookbooks/update_cover/${cookbook_id}`,
+        formData
+    );
+    console.log(
+        "...(ACTION uploadCookbookCover) cookbook.data: ",
+        cookbook.data
+    );
+    return {
+        type: UPDATE_COOKBOOK_COVER,
+        payload: { cookbook: cookbook.data },
     };
 };
 
