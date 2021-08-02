@@ -13,6 +13,7 @@ import CoauthorsList from "./CoauthorsList";
 import ChapterList from "./ChapterList";
 import Button from "./Button";
 import AddRecipe from "./AddRecipe";
+import InviteCoauthors from "./InviteCoauthors";
 import UploadPictureForm from "./forms/UploadPictureForm";
 
 //hooks
@@ -25,6 +26,7 @@ export default function Cookbook(props) {
     const currentCookbook = useSelector((state) => state.currentCookbook);
 
     const [toggle, toggleOnOff] = useToggle();
+    const [toggle2, toggleOnOff2] = useToggle();
 
     useEffect(() => {
         dispatch(receiveCurrentCookbook(cookbook_id));
@@ -47,7 +49,7 @@ export default function Cookbook(props) {
                 </div>
             )}
             <UploadPictureForm
-                label="add photo"
+                label="change cover"
                 action={uploadCookbookCover}
                 id={cookbook_id}
             />
@@ -56,7 +58,7 @@ export default function Cookbook(props) {
                     <h1>{currentCookbook.cookbook_name}</h1>
                 </div>
             )}
-            <CoauthorsList coauthors={coauthors} />
+            <CoauthorsList coauthors={coauthors} toggleOnOff={toggleOnOff2} />
             <ChapterList />
             <div className="tooltip tooltipBtn">
                 <span className="tooltiptext">Add new Recipe</span>
@@ -68,6 +70,9 @@ export default function Cookbook(props) {
                 />
             </div>
             {toggle && <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />}
+            {toggle2 && (
+                <InviteCoauthors toggle={toggle2} toggleOnOff={toggleOnOff2} />
+            )}
         </div>
     );
 }
