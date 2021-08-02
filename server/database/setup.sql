@@ -44,7 +44,7 @@ CREATE TABLE recipes (
     owner_id                INT REFERENCES users (id) NOT NULL, 
     recipe_name             VARCHAR(255) NOT NULL,
     instructions            TEXT NOT NULL,
-    prep_time               VARCHAR(25) NOT NULL,
+    prep_time               INTEGER NOT NULL,
     difficulty_level        INT DEFAULT 3,
     recipe_story            TEXT,
     created_at              TIMESTAMP DEFAULT CURRENT_TIMESTAMP
