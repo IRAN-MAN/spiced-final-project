@@ -25,7 +25,7 @@ const getCookBookById = async ({ cookbook_id }) => {
         WHERE cookbooks.id = ($1)`,
         [cookbook_id]
     );
-    return cookbook.rows;
+    return cookbook.rows[0];
 };
 
 const createCookbook = async ({ cookbook_name, author }) => {

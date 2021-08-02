@@ -2,8 +2,10 @@ const { db } = require("./db");
 
 const getRecipesByCookbookId = async ({ cookbook_id }) => {
     const recipes = await db.query(
-        `SELECT recipes.id AS recipe_id, chapter_id, recipe_name, owner_id
+        `SELECT recipes.id AS recipe_id,photo_url AS recipe_photo , chapter_id, recipe_name, owner_id
         FROM recipes  
+        JOIN photos
+        ON (recipe_id = recipes.id)
         WHERE (cookbook_id = $1)`,
         [cookbook_id]
     );
