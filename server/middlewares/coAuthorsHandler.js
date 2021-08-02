@@ -112,6 +112,7 @@ const cookBookInviteLogin = async (request, response, next) => {
             return;
         }
         request.session.user_id = matchUser.id;
+        request.session.inviteURL = `/cookbook/${request.params.cookbook_id}`;
         const coAuthor = await getCoAuthorById({
             ...request.session,
             ...request.params,
@@ -123,7 +124,7 @@ const cookBookInviteLogin = async (request, response, next) => {
                 ...request.session,
             });
             console.log("[cookBookInviteLogin: addedCoAuthor]", addedCoAuthor);
-            response.redirect(`http://localhost:3000/cookbook/9`);
+            response.status(201).json(addedCoAuthor);
             return;
         }
         response.status(403).json({
