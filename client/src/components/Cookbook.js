@@ -39,7 +39,6 @@ export default function Cookbook(props) {
 
     return (
         <div className="profileWrapper flex cc fcolumn">
-            Cookbook Component
             {currentCookbook && (
                 <div className="avatarWrapper">
                     <img
