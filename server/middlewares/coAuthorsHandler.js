@@ -2,6 +2,7 @@ const loginCheck = require("../utilities/loginCheck");
 
 const {
     getAllCoAuthors,
+    getCoAuthorById,
     insertCoAuthor,
     deleteCoAuthor,
 } = require("../database/coAuthorsQueries");
@@ -21,14 +22,25 @@ const cookBookCoAuthorsInfo = async (request, response, next) => {
 };
 
 const addCoAuthor = async (request, response, next) => {
+    console.log("[addCoAuthor : cookbook_id]", request.params);
     try {
-        console.log("[addCoAuthor : cookbook_id]", request.params);
-        const addedCoAuthor = await insertCoAuthor({
-            ...request.params,
+        const coAuthor = await getCoAuthorById({
             ...request.session,
+            ...request.params,
         });
-        console.log("[insertCoAuthor]", addedCoAuthor);
-        response.status(200).json(serializeCoAuthor(addedCoAuthor));
+        if (!coAuthor) {
+            console.log("[CoAuthor is NEW!]");
+            const addedCoAuthor = await insertCoAuthor({
+                ...request.params,
+                ...request.session,
+            });
+            console.log("[insertCoAuthor: addedCoAuthor]", addedCoAuthor);
+            response.status(200).json(serializeCoAuthor(addedCoAuthor));
+            return;
+        }
+        response
+            .status(403)
+            .json({ message: "You already are a co-author of this CookBook!" });
     } catch (error) {
         console.log("[addCoAuthor: Error]", error);
         next(error);
