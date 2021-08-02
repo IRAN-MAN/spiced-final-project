@@ -8,7 +8,7 @@ import {
 
 import Button from "./Button";
 
-export default function EditProfile() {
+export default function EditProfile(props) {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
     const userInput = useSelector((state) => state.userInput);
@@ -17,6 +17,7 @@ export default function EditProfile() {
         event.preventDefault();
 
         await dispatchUserInput(event, dispatch);
+        props.toggleOnOff(true);
     };
     // const [inputValues, handleChange] = useStatefulFields();
     // const [submit, error] = useAuthSubmit(
