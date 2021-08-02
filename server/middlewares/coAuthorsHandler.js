@@ -102,6 +102,7 @@ const cookBookinvite = async (request, response, next) => {
 };
 
 const cookBookInviteLogin = async (request, response, next) => {
+    console.log("[cookBookInviteLogin: params]", request.params);
     try {
         const matchUser = await loginCheck({ ...request.body });
         if (!matchUser) {
@@ -111,14 +112,23 @@ const cookBookInviteLogin = async (request, response, next) => {
             return;
         }
         request.session.user_id = matchUser.id;
-        const co_author = await insertCoAuthor({
-            ...request.params,
+        const coAuthor = await getCoAuthorById({
             ...request.session,
+            ...request.params,
         });
-        console.log("[cookBookInviteLogin: add co_author]", co_author);
-        response.redirect(
-            `http://localhost:3000/cookbook/${request.params.cookbook_id}`
-        );
+        if (!coAuthor) {
+            console.log("[cookBookInviteLogin: CoAuthor is NEW!]");
+            const addedCoAuthor = await insertCoAuthor({
+                ...request.params,
+                ...request.session,
+            });
+            console.log("[cookBookInviteLogin: addedCoAuthor]", addedCoAuthor);
+            response.redirect(`http://localhost:3000/cookbook/9`);
+            return;
+        }
+        response.status(403).json({
+            message: "You already are a co-author of this CookBook!",
+        });
     } catch (error) {
         console.log("[userLogin: Error]", error);
         next(error);

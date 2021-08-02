@@ -10,7 +10,7 @@ export default function InvitationForm() {
     // const [inputValues, handleChange] = useStatefulFields();
     // const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
     const [inviteLink, setInviteLink] = useState(
-        "http://localhost:3000/api/co_authors/community/invite?cookbook_id=4"
+        "http://localhost:3000/api/co_authors/community/invite/9"
     );
 
     return (

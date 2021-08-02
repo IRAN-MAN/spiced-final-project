@@ -10,7 +10,6 @@ const cookBookInfo = async (request, response, next) => {
     try {
         console.log("cookBookInfo", request.params);
         const cookbooks = await getCookBookByUserId({ ...request.params });
-        console.log("cookBookInfo", cookbooks);
         response.status(200).json({ cookbooks });
     } catch (error) {
         console.log("[cookBookInfo: Error]", error);
@@ -20,7 +19,6 @@ const cookBookInfo = async (request, response, next) => {
 
 const cookBookInfoById = async (request, response, next) => {
     try {
-        console.log("cookBookInfo", request.params);
         const cookbook = await getCookBookById({ ...request.params });
         console.log("getCookBookByUserId", cookbook);
         response.status(200).json(cookbook);
@@ -33,7 +31,6 @@ const cookBookInfoById = async (request, response, next) => {
 const createNewCookBook = async (request, response, next) => {
     const author = request.session.user_id;
     try {
-        console.log("createNewCookBook", request.body);
         const cookbook = await createCookbook({ ...request.body, author });
         console.log("cookBookInfo", cookbook);
         response.status(200).json(serializeCookbook(cookbook));
