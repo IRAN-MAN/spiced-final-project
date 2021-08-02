@@ -70,15 +70,31 @@ const cookBookinvite = async (request, response, next) => {
         return;
     }
     try {
-        const co_author = await insertCoAuthor({
-            ...request.params,
+        const coAuthor = await getCoAuthorById({
             ...request.session,
+            ...request.params,
         });
-        console.log("[Invite: add co_author]", co_author);
+        if (!coAuthor) {
+            console.log("[CoAuthor is NEW!]");
+            const addedCoAuthor = await insertCoAuthor({
+                ...request.params,
+                ...request.session,
+            });
+            console.log("[insertCoAuthor: addedCoAuthor]", addedCoAuthor);
+            response.redirect(
+                `http://localhost:3000/cookbook/${request.params.cookbook_id}`
+            );
+            return;
+        }
+        response.status(403).json({
+            message: "You already are a co-author of this CookBook!",
+        });
 
-        response.redirect(
-            `http://localhost:3000/cookbook/${request.params.cookbook_id}`
-        );
+        // const co_author = await insertCoAuthor({
+        //     ...request.params,
+        //     ...request.session,
+        // });
+        // console.log("[Invite: add co_author]", co_author);
     } catch (error) {
         console.log("[deleteCoAuthor: Error]", error);
         next(error);
