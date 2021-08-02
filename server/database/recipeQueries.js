@@ -6,7 +6,7 @@ const getRecipesByCookbookId = async ({ cookbook_id }) => {
         FROM recipes  
         JOIN photos
         ON (recipe_id = recipes.id)
-        WHERE (cookbook_id = $1)`,
+        WHERE cookbook_id = $1 `,
         [cookbook_id]
     );
     return recipes.rows;
