@@ -12,7 +12,7 @@ export default function AcceptInvite(props) {
     const [cookbook, setCookbook] = useState({});
     const [inputValues, handleChange] = useStatefulFields();
     const [submit, error] = useAuthSubmit(
-        `/api/coauthors/invite/login/${cookbook_id}`,
+        `/api/co_authors/invite/login/${cookbook_id}`,
         inputValues
     );
 
