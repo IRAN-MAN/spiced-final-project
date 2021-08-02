@@ -22,6 +22,7 @@ export default function Welcome() {
                             <li>
                                 <Link to="/">Sign up</Link>
                             </li>
+                            <li></li>
                         </ul>
                     </nav>
                 </div>
