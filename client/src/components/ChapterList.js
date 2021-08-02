@@ -19,7 +19,6 @@ export default function ChapterList() {
     };
     return (
         <div className="chapterListWrapper flex cc fcolumn">
-            ChapterList Component
             <ul className="flex jcc fcolumn">
                 {chapters.length > 0 && renderChapters()}
             </ul>

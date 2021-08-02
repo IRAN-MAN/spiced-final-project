@@ -47,7 +47,6 @@ export default function App() {
             <Header />
             <Navigation />
             <div className="main-content">
-                <p>App Component!</p>
                 <Switch>
                     {/* <Route
                         exact
