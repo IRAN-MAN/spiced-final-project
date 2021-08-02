@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
 
 export default function Navigation() {
     return (
@@ -10,6 +11,9 @@ export default function Navigation() {
                     </li>
                     <li>
                         <Link to="/editProfile">Edit Profile</Link>
+                    </li>
+                    <li>
+                        <Logout />
                     </li>
                 </ul>
             </nav>
