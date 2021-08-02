@@ -86,10 +86,15 @@ q {
     background-color: whitesmoke;
     inset: 10% 0;
     padding: 50px;
+    z-index: 20;
 }
 /* FORMS */
 
 .formWrapper {
+    text-align: center;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 /* AUTH FORMS */
@@ -127,13 +132,14 @@ q {
     object-fit: cover;
 }
 .smallAvatar {
-    width: 60%;
-    height: 60%;
 }
 
 .miniAvatarWrapper {
-    width: 60px;
-    height: 60px;
+    margin-block-start: 20px;
+}
+.miniAvatarWrapper div {
+    width: 40px;
+    height: 40px;
     object-fit: cover;
 }
 
@@ -195,6 +201,7 @@ input[type="file"] {
 /* NAVIGATION */
 
 .navWrapper {
+    z-index: 10;
 }
 
 nav {
@@ -205,6 +212,10 @@ nav ul {
 }
 nav ul li {
     margin-inline: 10px;
+    height: 30px;
+}
+nav ul li:hover {
+    border-block-end: 2px solid black;
 }
 
 /* LOGO */
@@ -232,6 +243,8 @@ footer {
 
 /* MyProfile & UserProfile */
 .profileWrapper {
+    position: relative;
+    top: -75px;
 }
 
 /* COOKBOOKS */
@@ -269,6 +282,7 @@ footer {
 }
 
 .coauthorWrapper {
+    margin-inline: 10px;
 }
 
 .coauthorsListWrapper ul {

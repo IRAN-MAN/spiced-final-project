@@ -17,7 +17,6 @@ export default function MyProfile() {
 
     return (
         <div className="profileWrapper flex cc fcolumn">
-            MyProfile Component
             <div className="avatarWrapper">
                 <img
                     className="avatar"

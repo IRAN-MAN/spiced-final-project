@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 export default function Login() {
     return (
         <div className="flex authWrapper">
-            <h1>Login with your email!</h1>
+            <h2>Login with your email!</h2>
             <LoginForm />
-            <Link to="/">Sign up</Link>
         </div>
     );
 }
