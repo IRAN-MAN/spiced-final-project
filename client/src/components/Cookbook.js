@@ -5,7 +5,6 @@ import {
     receiveCoauthors,
     receiveRecipes,
     receiveCurrentCookbook,
-    populateCurrentCookbook,
     uploadCookbookCover,
 } from "../redux/action-creators";
 
@@ -22,14 +21,10 @@ import { useToggle } from "../hooks/hooks";
 export default function Cookbook(props) {
     const dispatch = useDispatch();
     const cookbook_id = props.match.params.id;
-    // const [currentCookbook, setCurrentCookbook] = useState({});
     const coauthors = useSelector((state) => state.coauthors);
-    const cookbooks = useSelector((state) => state.cookbooks);
     const currentCookbook = useSelector((state) => state.currentCookbook);
 
     const [toggle, toggleOnOff] = useToggle();
-
-    // const currentCB = cookbooks.filter((x) => x.cookbook_id == cookbook_id);
 
     useEffect(() => {
         dispatch(receiveCurrentCookbook(cookbook_id));
@@ -38,15 +33,6 @@ export default function Cookbook(props) {
             dispatch(receiveRecipes(cookbook_id));
         }
     }, []);
-
-    // useEffect(() => {
-    //     // setCurrentCookbook(currentCB);
-    //     // console.log("[currentCookbook]", currentCB);
-    //     //dispatch(populateCurrentCookbook(currentCB));
-    // }, [cookbooks]);
-
-    // useEffect(() => {
-    // }, [currentCookbook]);
 
     return (
         <div className="profileWrapper flex cc fcolumn">
