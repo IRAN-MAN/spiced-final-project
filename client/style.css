@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: "Noto Sans JP", sans-serif;
     font-size: 12pt;
+    font-weight: 900;
     color: black;
 }
 body {
@@ -29,6 +30,10 @@ main {
 input {
     border: none;
     padding: 5px;
+}
+textarea {
+    border: none;
+    padding-inline-start: 5px;
 }
 
 /* UL LIST */
@@ -60,6 +65,7 @@ q {
 .bolder {
     font-weight: bolder;
 }
+
 /* FLEX */
 .flex {
     display: flex;
@@ -78,13 +84,13 @@ q {
     flex-direction: column;
 }
 .frow {
-    flex-direction: row;
+    flex-direction: row !important;
 }
 
 .backdrop {
     position: fixed;
-    background-color: whitesmoke;
-    inset: 10% 0;
+    background-color: rgba(245, 245, 245, 0.95);
+    inset: 0;
     padding: 50px;
     z-index: 20;
 }
@@ -186,6 +192,9 @@ input[type="file"] {
 }
 .submit-button {
 }
+.logout-btn {
+    padding: 0;
+}
 .closeBackdropButton {
     position: absolute;
     top: 0;
@@ -207,8 +216,12 @@ input[type="file"] {
 nav {
     width: 100vw;
 }
-nav ul {
+nav-ul {
+    width: 100vw;
     flex-direction: row;
+}
+.nav-ul :last-child {
+    margin-inline-start: auto;
 }
 nav ul li {
     margin-inline: 10px;
@@ -387,6 +400,18 @@ footer {
 }
 .ingredients {
 }
+.ingredientslist {
+    list-style: none;
+    padding-inline-start: 50px;
+    padding-block-start: 20px;
+    height: 225px;
+    overflow-y: scroll;
+}
+.ingredientslist li {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
 
 /* INSTRUCTIONS */
 .instructionsWrapper {
@@ -440,6 +465,7 @@ footer {
     padding: 10px;
     background-color: white;
 }
+
 @media only screen and (min-width: 480px) {
     body {
         /* background-color: cadetblue; */

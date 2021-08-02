@@ -8,7 +8,7 @@ export default function RegistrationForm() {
     const [submit, error] = useAuthSubmit("/api/users/signup", inputValues);
 
     return (
-        <div className="formWrapper">
+        <div className="authWrapper">
             <form onSubmit={submit} className="flex">
                 <label htmlFor="first_name" value="First Name">
                     First Name

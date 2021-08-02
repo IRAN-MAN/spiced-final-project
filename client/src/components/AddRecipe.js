@@ -14,7 +14,7 @@ export default function AddRecipe(props) {
                 ×
             </button>
             {/* <UploadPictureForm /> */}
-            <RecipeForm />
+            <RecipeForm toggleOnOff={toggleOnOff} />
         </section>
     );
 }

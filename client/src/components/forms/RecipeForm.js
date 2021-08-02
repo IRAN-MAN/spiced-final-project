@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import IngredientInput from "./IngredientInput";
 import RecipeInput from "./RecipeInput";
 
-export default function RecipeForm() {
+export default function RecipeForm(props) {
     const ingredientList = useSelector((state) => state.ingredients);
     const currentCB = useSelector((state) => state.currentCookbook);
 
@@ -31,7 +31,8 @@ export default function RecipeForm() {
         }
         console.log("[collectRecipeInputes]", ingredientList, inputValues);
         const recipeInfo = serialiseDataObject(ingredientList, inputValues);
-        const cookbook_id = currentCB[0].cookbook_id;
+        const cookbook_id = currentCB.cookbook_id;
+        console.log(cookbook_id);
         const chapter_id = 5;
         const message = await axios.post(
             `/api/recipes/add_recipe?chapter_id=${chapter_id}&cookbook_id=${cookbook_id}`,
@@ -39,19 +40,18 @@ export default function RecipeForm() {
         );
         console.log("[sendRecipeInfo: axios]", message);
         // dispatch(useAddToIngredients(recipeInfo, chapter_id, cookbook_id));
+        props.toggleOnOff(true);
     };
 
     return (
-        <div className="formWrapper">
-            Recipeform Component
-            {/* <form className="flex"> */}
-            <div className="ingredientsInputWrapper">
+        <div className="authWrapper flex cc fcolumn scrollY">
+            <h2>Add a new delicious Recipe</h2>
+            <div>
                 <IngredientInput />
                 <RecipeInput collectRecipeInputes={collectRecipeInputes} />
             </div>
-            <div className="recipeInputWrapper"></div>
-            {/* <p className="message">{error}</p> */}
-            {/* </form> */}
+            <div></div>
+            {/* s<p className="message">{message}</p> */}
         </div>
     );
 }
