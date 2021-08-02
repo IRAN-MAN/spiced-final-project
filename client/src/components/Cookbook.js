@@ -29,6 +29,7 @@ export default function Cookbook(props) {
     const [toggle2, toggleOnOff2] = useToggle();
 
     useEffect(() => {
+        console.log("...(COOKBOOK) cookbook_id", cookbook_id);
         dispatch(receiveCurrentCookbook(cookbook_id));
         dispatch(receiveCoauthors(cookbook_id));
         if (cookbook_id != undefined) {
