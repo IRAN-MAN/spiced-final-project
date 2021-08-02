@@ -17,7 +17,7 @@ coAuthorsRoutes.get(
     cookBookinvite,
     errorHandler
 );
-coAuthorsRoutes.get(
+coAuthorsRoutes.post(
     "/invite/login/:cookbook_id",
     cookBookInviteLogin,
     errorHandler
