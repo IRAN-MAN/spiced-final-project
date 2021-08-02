@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import {
     onUserInputChange,
     updateAccount,
@@ -8,16 +9,16 @@ import {
 
 import Button from "./Button";
 
-export default function EditProfile(props) {
+export default function EditProfile() {
     const dispatch = useDispatch();
+    let history = useHistory();
     const user = useSelector((state) => state.user);
     const userInput = useSelector((state) => state.userInput);
 
     const onEditAccountSubmit = async (event) => {
         event.preventDefault();
-
         await dispatchUserInput(event, dispatch);
-        props.toggleOnOff(true);
+        history.push("/");
     };
     // const [inputValues, handleChange] = useStatefulFields();
     // const [submit, error] = useAuthSubmit(
