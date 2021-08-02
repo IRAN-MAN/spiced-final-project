@@ -5,7 +5,8 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         start: 0,
         end: elementsPerPage,
         showPrev: false,
-        showNext: elementsPerPage >= elements.length,
+        // showNext: elementsPerPage >= elements.length,
+        showNext: true,
         direction: true,
         length: elements.length,
     });
