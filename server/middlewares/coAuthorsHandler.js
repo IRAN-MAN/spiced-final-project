@@ -1,3 +1,5 @@
+const loginCheck = require("../utilities/loginCheck");
+
 const {
     getAllCoAuthors,
     insertCoAuthor,
@@ -47,7 +49,61 @@ const deleteFromCoAuthor = async (request, response, next) => {
     }
 };
 
-module.exports = { cookBookCoAuthorsInfo, addCoAuthor, deleteFromCoAuthor };
+const cookBookinvite = async (request, response, next) => {
+    console.log("[cookBookinvite: params]", request.params);
+    if (!request.session.user_id) {
+        response.redirect(
+            `http://localhost:3000/cookbookinvite/${request.params.cookbook_id}`
+        );
+        return;
+    }
+    try {
+        const co_author = await insertCoAuthor({
+            ...request.params,
+            ...request.session,
+        });
+        console.log("[Invite: add co_author]", co_author);
+
+        response.redirect(
+            `http://localhost:3000/cookbook/${request.params.cookbook_id}`
+        );
+    } catch (error) {
+        console.log("[deleteCoAuthor: Error]", error);
+        next(error);
+    }
+};
+
+const cookBookInviteLogin = async (request, response, next) => {
+    try {
+        const matchUser = await loginCheck({ ...request.body });
+        if (!matchUser) {
+            response
+                .status(401)
+                .json({ message: "Email or Password is wrong" });
+            return;
+        }
+        request.session.user_id = matchUser.id;
+        const co_author = await insertCoAuthor({
+            ...request.params,
+            ...request.session,
+        });
+        console.log("[cookBookInviteLogin: add co_author]", co_author);
+        response.redirect(
+            `http://localhost:3000/cookbook/${request.params.cookbook_id}`
+        );
+    } catch (error) {
+        console.log("[userLogin: Error]", error);
+        next(error);
+    }
+};
+
+module.exports = {
+    cookBookCoAuthorsInfo,
+    addCoAuthor,
+    deleteFromCoAuthor,
+    cookBookinvite,
+    cookBookInviteLogin,
+};
 
 const serializeCoAuthor = (coAuthor) => {
     return {

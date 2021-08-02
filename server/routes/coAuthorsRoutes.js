@@ -7,9 +7,21 @@ const {
     cookBookCoAuthorsInfo,
     addCoAuthor,
     deleteFromCoAuthor,
+    cookBookinvite,
+    cookBookInviteLogin,
 } = require("../middlewares/coAuthorsHandler");
 
 coAuthorsRoutes.get("/:cookbook_id", cookBookCoAuthorsInfo, errorHandler);
+coAuthorsRoutes.get(
+    "/community/invite/:cookbook_id",
+    cookBookinvite,
+    errorHandler
+);
+coAuthorsRoutes.get(
+    "/invite/login/:cookbook_id",
+    cookBookInviteLogin,
+    errorHandler
+);
 
 coAuthorsRoutes.post("/add_couauthor/:cookbook_id", addCoAuthor, errorHandler);
 
