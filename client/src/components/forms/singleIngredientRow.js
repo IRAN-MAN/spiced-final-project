@@ -11,7 +11,7 @@ export default function SingleIngredientRow(props) {
     const nameInput = createRef();
     const [inputValues, handleChange] = useStatefulFields();
     return (
-        <li>
+        <div>
             <label htmlFor="quantity">
                 Quantity
                 <input
@@ -50,7 +50,7 @@ export default function SingleIngredientRow(props) {
                 labeltext="add ingredient"
                 type="submit"
                 classNames="button submit-button"
-                icon="send"
+                icon="arrow_right_alt"
                 onClick={() => {
                     props.saveInputToArray(inputValues);
                     quantityInput.current.value = "";
@@ -58,6 +58,6 @@ export default function SingleIngredientRow(props) {
                     nameInput.current.value = "";
                 }}
             />
-        </li>
+        </div>
     );
 }

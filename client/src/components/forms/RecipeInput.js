@@ -6,12 +6,12 @@ export default function RecipeInput(props) {
     const [inputValues, handleChange] = useStatefulFields();
 
     return (
-        <div className="formWrapper">
+        <div className="authWrapper flex cc fcolumn">
             <label htmlFor="category">
                 Category
                 <input
                     name="category"
-                    placeholder="Name"
+                    placeholder="Category"
                     list="category"
                     required
                     onChange={handleChange}
@@ -32,7 +32,7 @@ export default function RecipeInput(props) {
                 <input
                     type="text"
                     name="recipe_name"
-                    placeholder="Name"
+                    placeholder="Recipe Name"
                     required
                     onChange={handleChange}
                 />
@@ -40,7 +40,7 @@ export default function RecipeInput(props) {
 
             <label htmlFor="instructions">
                 Instructions
-                <input
+                <textarea
                     type="text"
                     name="instructions"
                     placeholder="Instructions"
@@ -70,22 +70,25 @@ export default function RecipeInput(props) {
             </label>
 
             <div>
-                <input
-                    type="range"
-                    id="difficulty_level"
-                    name="difficulty_level"
-                    defaultValue="3"
-                    min="0"
-                    max="5"
-                    onChange={handleChange}
-                />
-                <label htmlFor="difficulty_level">Difficulty</label>
+                <label htmlFor="difficulty_level">
+                    Difficulty
+                    <input
+                        type="range"
+                        id="difficulty_level"
+                        name="difficulty_level"
+                        defaultValue="3"
+                        min="0"
+                        max="5"
+                        onChange={handleChange}
+                        className="slider"
+                    />
+                </label>
             </div>
             <Button
                 labeltext="add recipe"
                 type="submit"
                 classNames="button submit-button"
-                icon="send"
+                icon="arrow_right_alt"
                 onClick={() => props.collectRecipeInputes(inputValues)}
             />
         </div>

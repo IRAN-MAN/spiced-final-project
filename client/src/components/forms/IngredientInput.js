@@ -10,13 +10,6 @@ import {
 } from "../../redux/action-creators";
 
 export default function IngredientInput(props) {
-    // const [inputValues, handleChange] = useStatefulFields();
-    // const [ingredients, addIngredient] = useAddToIngredients();
-    // const saveInputToArray = (input) => {
-    //     // console.log("INPUT:", input);
-    //     addIngredient(input);
-    //     console.log("ingredients:", ingredients);
-    // };
     const dispatch = useDispatch();
     const ingredients = useSelector((state) => state.ingredients);
 
@@ -47,22 +40,24 @@ export default function IngredientInput(props) {
                 <li key={count}>
                     {ingredient.quantity} {ingredient.unit}{" "}
                     {ingredient.ingredient_name}
-                    <button onClick={() => deleteIngredient(a)}>delete</button>
+                    <button onClick={() => deleteIngredient(a)}>×</button>
                 </li>
             );
         });
     };
 
     const renderIngredientInput = () => {
-        return (
-            <div>
-                <SingleIngredientRow saveInputToArray={addToIngredients} />
-                <div>
-                    <ul>{ingredients.length > 0 && renderIngredients()}</ul>
-                </div>
-            </div>
-        );
+        return <SingleIngredientRow saveInputToArray={addToIngredients} />;
     };
 
-    return <ol className="formWrapper">{renderIngredientInput()}</ol>;
+    return (
+        <div className="authWrapper flex cc frow ">
+            <div>{renderIngredientInput()}</div>
+            <div>
+                <ul className="ingredientslist">
+                    {ingredients.length > 0 && renderIngredients()}
+                </ul>
+            </div>
+        </div>
+    );
 }
