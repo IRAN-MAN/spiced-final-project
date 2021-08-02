@@ -27,8 +27,18 @@ const deleteCoAuthor = async ({ user_id, cookbook_id }) => {
     );
 };
 
+const getCoAuthorById = async ({ user_id, cookbook_id }) => {
+    const foundCoAuthor = await db.query(
+        `SELECT user_id FROM co_authors
+        WHERE user_id = $1 AND cookbook_id = $2`,
+        [user_id, cookbook_id]
+    );
+    return foundCoAuthor.rows[0];
+};
+
 module.exports = {
     getAllCoAuthors,
+    getCoAuthorById,
     insertCoAuthor,
     deleteCoAuthor,
 };
