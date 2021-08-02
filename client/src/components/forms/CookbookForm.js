@@ -21,7 +21,7 @@ export default function CookbookForm(props) {
         <div className="authWrapper flex fcolumn">
             <h2>Create your own Cookbook</h2>
             <p>Collect and share all your delicious Recipes </p>
-            <div className="flex cc fcolumn">
+            <div className="cookbookForm flex cc fcolumn">
                 <label htmlFor="cookbook_name" value="First Name">
                     Your Cookbook Name
                     <input
@@ -36,7 +36,7 @@ export default function CookbookForm(props) {
                     labeltext="Create Cookbook"
                     type="submit"
                     classNames="button submit-button"
-                    icon="send"
+                    icon="arrow_right_alt"
                     onClick={onClick}
                 />
             </div>
