@@ -86,10 +86,15 @@ q {
     background-color: whitesmoke;
     inset: 10% 0;
     padding: 50px;
+    z-index: 20;
 }
 /* FORMS */
 
 .formWrapper {
+    text-align: center;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 /* AUTH FORMS */

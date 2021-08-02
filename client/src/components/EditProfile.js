@@ -32,7 +32,7 @@ export default function EditProfile() {
     useEffect(() => {}, []);
 
     return (
-        <div className="formWrapper flex fcolumn">
+        <div className="authWrapper flex fcolumn">
             <form
                 onSubmit={(event) => onEditAccountSubmit(event)}
                 className="flex fcolumn"
