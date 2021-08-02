@@ -31,13 +31,13 @@ export default function Gallery({ elements, render, elementsPerPage }) {
     }, []);
 
     const renderElements = (elements) => {
-        console.log(
-            "...( Gallery renderElements) elementsPerPage elements.length,: ",
-            elementsPerPage,
-            elements.length
-        );
+        // console.log(
+        //     "...( Gallery renderElements) elementsPerPage elements.length,: ",
+        //     elementsPerPage,
+        //     elements.length
+        // );
 
-        console.log("...( Gallery renderElements) controls: ", galleryControls);
+        // console.log("...( Gallery renderElements) controls: ", galleryControls);
         return elements
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {

@@ -9,7 +9,9 @@ import { useState } from "react";
 export default function InvitationForm() {
     // const [inputValues, handleChange] = useStatefulFields();
     // const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
-    const [inviteLink, setInviteLink] = useState("INVITATIONLINK");
+    const [inviteLink, setInviteLink] = useState(
+        "http://www.whatscooking-goodlooking.com/invite"
+    );
 
     return (
         <div className="formWrapper">
@@ -28,7 +30,10 @@ export default function InvitationForm() {
                                 navigator.clipboard.writeText(inviteLink);
                             }}
                         >
-                            <q>click to copy</q>
+                            <q>
+                                click to copy:
+                                http://www.whatscooking-goodlooking.com/invite
+                            </q>
                             <button />
                             <div className="tooltip">
                                 <span className="tooltiptext">

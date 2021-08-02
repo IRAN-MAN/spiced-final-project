@@ -45,19 +45,23 @@ export default function MyCookbooks() {
     return (
         <div className="cookbooksWrapper flex cc fcolumn">
             {/* <ul>{cookbooks.length > 0 && renderCookbooks()}</ul> */}
-            <ul className="flex jcc">
+            <h2>My cookbooks</h2>
+            <ul className="flex jcc ">
                 <Gallery
                     elements={cookbooks}
                     elementsPerPage={4}
                     render={renderCookbooks}
                 />
             </ul>
-            <Button
-                onClick={() => toggleOnOff(false)}
-                type="Create CookBook"
-                classNames="button addrecipe-button flex cc"
-                icon="edit"
-            />
+            <div className="tooltip tooltipBtn">
+                <span className="tooltiptext">Create Cookbook</span>
+                <Button
+                    onClick={() => toggleOnOff(false)}
+                    type="Create CookBook"
+                    classNames="button addrecipe-button flex cc"
+                    icon="menu_book"
+                />
+            </div>
             {toggle && (
                 <CreateCookbook toggle={toggle} toggleOnOff={toggleOnOff} />
             )}
