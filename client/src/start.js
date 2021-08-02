@@ -9,8 +9,6 @@ import store from "./redux/store";
 import Welcome from "./components/Welcome";
 import App from "./components/App";
 
-const loggedIn = true;
-
 const isLoggedIn = async () => {
     const { data } = await axios.get("/api/users/checklogin");
     // console.log("...(start.js) user_id: ", data.user_id);

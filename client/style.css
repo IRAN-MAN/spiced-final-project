@@ -341,11 +341,13 @@ footer {
 /* RECIPEPREVIEWS */
 
 .recipePreviewWrapper {
-    width: 100px;
-    margin: 10px;
 }
 .recipePreview {
-    width: 100%;
+    width: 150px;
+    height: 200px;
+    overflow: hidden;
+    margin-inline: 10px;
+    object-fit: cover;
 }
 
 /* RECIPES */

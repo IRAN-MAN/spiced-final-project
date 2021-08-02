@@ -48,6 +48,7 @@ export default function Cookbook(props) {
                     />
                 </div>
             )}
+
             <UploadPictureForm
                 label="change cover"
                 action={uploadCookbookCover}
