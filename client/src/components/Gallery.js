@@ -12,14 +12,14 @@ export default function Gallery({ elements, render, elementsPerPage }) {
 
     useEffect(async () => {
         // console.log(
-        //     "...(Gallery) props elements, elementsPerPage: ",
-        //     elements,
+        //     "...(Gallery) props elements.length, elementsPerPage: ",
+        //     elements.length,
         //     elementsPerPage
         // );
 
         let hide = false;
         // console.log("...(Gallery) props elementsPerPage --- Length");
-        if (elementsPerPage >= elements.length) {
+        if (elementsPerPage <= elements.length) {
             hide = true;
         }
         setGalleryControls({
@@ -30,17 +30,12 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             direction: false,
             length: elements.length,
         });
-        // console.log("Gallery: elements: ", elements);
+        // console.log("Gallery: controls: ", galleryControls);
     }, []);
 
     const renderElements = (elements) => {
-        // console.log(
-        //     "renderElements start, end",
-        //     galleryControls.start,
-        //     galleryControls.end
-        // );
+        // console.log("...( Gallery renderElements) controls: ", galleryControls);
         return elements
-            .reverse()
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {
                 return render(element);
@@ -84,7 +79,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             <div>
                 <button
                     className={
-                        !galleryControls.hidePrev
+                        galleryControls.hidePrev == false
                             ? "galleryControls"
                             : "galleryControls hideControls"
                     }
@@ -114,7 +109,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             <div>
                 <button
                     className={
-                        !galleryControls.hideNext
+                        galleryControls.hideNext == false
                             ? "galleryControls"
                             : "galleryControls hideControls"
                     }

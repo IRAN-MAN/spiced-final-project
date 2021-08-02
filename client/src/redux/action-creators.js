@@ -23,6 +23,7 @@ import {
     UPDATE_USER,
     CREATE_NEW_COOKBOOK,
     UPDATE_COOKBOOK_COVER,
+    UPDATE_PROFILE_PIC,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -231,17 +232,31 @@ export const uploadRecipePhoto = async (formData, recipe_id) => {
 };
 
 export const uploadCookbookCover = async (formData, cookbook_id) => {
-    const cookbook = await axios.put(
+    const cover_pic = await axios.put(
         `/api/cookbooks/update_cover/${cookbook_id}`,
         formData
     );
     console.log(
-        "...(ACTION uploadCookbookCover) cookbook.data: ",
-        cookbook.data
+        "...(ACTION uploadCookbookCover) cover_pic.data: ",
+        cover_pic.data
     );
     return {
         type: UPDATE_COOKBOOK_COVER,
-        payload: { cookbook: cookbook.data },
+        payload: { cover_pic: cover_pic.data },
+    };
+};
+export const uploadProfilePic = async (formData) => {
+    const profile_pic = await axios.post(
+        `/api/users/profile/upload_profile_pic`,
+        formData
+    );
+    console.log(
+        "...(ACTION uploadProfilePic) profile_pic.data: ",
+        profile_pic.data
+    );
+    return {
+        type: UPDATE_PROFILE_PIC,
+        payload: { profile_pic: profile_pic.data },
     };
 };
 
