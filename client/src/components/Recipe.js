@@ -6,6 +6,7 @@ import {
     receiveRecipePhotos,
     toggleLightboxVisible,
     uploadRecipePhoto,
+    addRecipePhoto,
 } from "../redux/action-creators";
 
 //hooks
@@ -40,6 +41,7 @@ export default function Recipe(props) {
         }
     }, []);
     useEffect(() => {
+        dispatch(receiveRecipePhotos(recipe_id));
         if (currentRecipe.owner_id) {
             dispatch(receiveAuthorInfo(currentRecipe.owner_id));
         }

@@ -20,7 +20,10 @@ const {
 } = require("../database/usersQueries");
 
 const checkloggedIn = async (request, response) =>
-    response.json({ user_id: request.session.user_id });
+    response.json({
+        user_id: request.session.user_id,
+        inviteURL: request.session.inviteURL,
+    });
 
 const createUsers = async (request, response, next) => {
     try {
@@ -88,6 +91,7 @@ const userLogin = async (request, response, next) => {
 
 const userLoggedOut = async (request, response) => {
     request.session.user_id = null;
+    request.session.inviteURL = null;
     response.status(200).json({ message: "logout successfull" });
 };
 
