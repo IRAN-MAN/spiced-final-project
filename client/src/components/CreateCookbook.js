@@ -9,10 +9,10 @@ export default function CreateCookbook(props) {
                 className="closeBackdropButton"
                 onClick={() => toggleOnOff(true)}
             >
-                X
+                ×
             </button>
-            <div>Create Cook Book</div>
-            <CookbookForm />
+            <h1>Create Cook Book</h1>
+            <CookbookForm toggleOnOff={toggleOnOff} />
         </section>
     );
 }
