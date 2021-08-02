@@ -1,4 +1,5 @@
 import axios from "../axios";
+
 import {
     RECEIVE_STATE,
     RECEIVE_CHAPTERS,
@@ -24,6 +25,8 @@ import {
     CREATE_NEW_COOKBOOK,
     UPDATE_COOKBOOK_COVER,
     UPDATE_PROFILE_PIC,
+    GET_INVITE_LINK,
+    UPDATE_RECIPE_PHOTO,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -213,6 +216,15 @@ export const toggleLightboxVisible = (isVisible) => {
     };
 };
 
+export const addRecipePhoto = (photo) => {
+    return {
+        type: ADD_RECIPE_PHOTO,
+        payload: {
+            recipePhoto: photo,
+        },
+    };
+};
+
 export const uploadRecipePhoto = async (formData, recipe_id) => {
     const recipePhoto = await axios.post(
         `/api/recipes/photos/add_photo/${recipe_id}`,
@@ -223,8 +235,8 @@ export const uploadRecipePhoto = async (formData, recipe_id) => {
         recipePhoto.data
     );
     return {
-        type: ADD_RECIPE_PHOTO,
-        payload: { recipePhoto: recipePhoto.data },
+        type: UPDATE_RECIPE_PHOTO,
+        payload: { recipePhoto: recipePhoto.data.recipe_photo },
     };
 };
 
@@ -288,6 +300,15 @@ export const createNewCookbook = async (cookbookInfo) => {
         type: CREATE_NEW_COOKBOOK,
         payload: {
             newCookbook: newCookbook.data,
+        },
+    };
+};
+
+export const getInviteLink = (link) => {
+    return {
+        type: GET_INVITE_LINK,
+        payload: {
+            inviteLink: link,
         },
     };
 };
