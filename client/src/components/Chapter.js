@@ -12,11 +12,9 @@ export default function Chapter({ chapter_id }) {
     //filter recipes by chapter
     const filteredRecipes = () => {
         // console.log("...(Chapter) filteredRecipes recipes:", recipes);
-        return recipes
-            .filter((recipe) => {
-                return recipe.chapter_id == chapter_id;
-            })
-            .reverse();
+        return recipes.filter((recipe) => {
+            return recipe.chapter_id == chapter_id;
+        });
     };
 
     const renderRecipe = (recipe) => {
