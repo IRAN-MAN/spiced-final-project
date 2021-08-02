@@ -81,161 +81,639 @@ INSERT INTO recipes (
     difficulty_level,
     recipe_story)
 VALUES 
-(1,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,2,1, 'Pasta Salad', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,3,1, 'Pasta Salad', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,1,1, 'Pasta Salad', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,2,1, 'Pasta Salad', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,3,1, 'Bolognaise', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,1,1, 'Bolognaise', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,2,1, 'Bolognaise', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,3,1, 'Bolognaise', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(1,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(1,1,1, 'Chocolate Mousse', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
-'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
-Set aside for 30 mins to rest if you have time, or start cooking straight away.
-Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
-When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
-Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
-'60min', 5, 'My Nanny used to cook this for me!'),
-(2,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Chocolate Mousse', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(2,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(2,3,1, 'Chocolate Mousse', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(2,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(2,1,1, 'Chocolate Mousse', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(2,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(2,2,1, 'Chocolate Mousse', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(2,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(2,3,1, 'Chocolate Mousse', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(2,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(2,1,1, 'Chocolate Mousse', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(3,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(2,2,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(3,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
-Set aside for 30 mins to rest if you have time, or start cooking straight away.
-Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
-When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
-Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
-'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(3,3,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(3,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(3,1,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(3,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(3,3,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(3,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(3,1,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(3,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(3,2,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(3,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(3,3,1, 'Rice Pudding', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(4,2,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(3,1,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(4,3,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(4,2,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
 Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
 '60min', 5, 'My Nanny used to cook this for me!'),
-(4,1,1, 'My Recipe', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+(4,3,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,1,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,3,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,1,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,2,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,3,1, 'Lemon Cake', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,1,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,2,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,3,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,1,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,3,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,1,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,2,1, 'Spaghetti', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,3,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,1,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,2,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,3,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,1,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,3,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,1,1, 'Shepards Pie', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,2,1, 'Pea Soup', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,3,1, 'Pea Soup', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,1,1, 'Pea Soup', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,2,1, 'Pea Soup', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,3,1, 'Pea Soup', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,1,1, 'Pea Soup', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,4,1, 'Pea Soup', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,5,1, 'Pho', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,4,1, 'Pho', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,5,1, 'Pho', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,4,1, 'Pho', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,5,1, 'Pho', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,4,1, 'Pho', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,5,1, 'Potato Stew', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,5,1, 'Potato Stew', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Potato Stew', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,6,1, 'Potato Stew', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,5,1, 'Potato Stew', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,6,1, 'Potato Stew', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,5,1, 'Lasagna', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,6,1, 'Lasagna', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,5,1, 'Lasagna', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,6,1, 'Lasagna', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,7,1, 'Lasagna', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Banh mi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,6,1, 'Banh mi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,7,1, 'Banh mi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,6,1, 'Banh mi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,4,1, 'Strawberry Jam', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,5,1, 'Strawberry Jam', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,6,1, 'Strawberry Jam', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,1,1, 'Strawberry Jam', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,2,1, 'Strawberry Jam', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Strawberry Jam', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,1,1, 'Lemonade', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,2,1, 'Lemonade', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,2,1, 'Lemonade', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,5,1, 'Lemonade', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,3,1, 'Lemonade', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,4,1, 'Lemonade', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,3,1, 'Nans Applestrudel', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(1,1,1, 'Nans Applestrudel', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Nans Applestrudel', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,3,1, 'Nans Applestrudel', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,1,1, 'Homemade Kimchi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,2,1, 'Homemade Kimchi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,3,1, 'Homemade Kimchi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,1,1, 'Homemade Kimchi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(2,2,1, 'Homemade Kimchi', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,3,1, 'Vegan Mayonnaise', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,1,1, 'Vegan Mayonnaise', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),(1,2,1, 'Vegan Mayonnaise', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,3,1, 'Roasted Vegetables', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,1,1, 'Roasted Vegetables', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,2,1, 'Roasted Vegetables', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,3,1, 'Roasted Vegetables', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(3,1,1, 'Roasted Vegetables', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,2,1, 'Juicy Muffins', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,3,1, 'Juicy Muffins', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
+Set aside for 30 mins to rest if you have time, or start cooking straight away.
+Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
+When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
+Serve with lemon wedges and caster sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.', 
+'60min', 5, 'My Nanny used to cook this for me!'),
+(4,1,1, 'Juicy Muffins', 'Put 100g plain flour, 2 large eggs, 300ml milk, 1 tbsp sunflower or vegetable oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter.
 Set aside for 30 mins to rest if you have time, or start cooking straight away.
 Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper.
 When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
