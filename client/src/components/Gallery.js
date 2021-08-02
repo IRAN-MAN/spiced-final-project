@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 export default function Gallery({ elements, render, elementsPerPage }) {
     const [galleryControls, setGalleryControls] = useState({
         start: 0,
-        end: 0,
-        hidePrev: true,
-        hideNext: false,
+        end: elementsPerPage,
+        showPrev: false,
+        showNext: elementsPerPage >= elements.length,
         direction: true,
-        length: 1,
+        length: elements.length,
     });
 
     useEffect(async () => {
@@ -16,25 +16,28 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         //     elements.length,
         //     elementsPerPage
         // );
-
-        let hide = false;
-        // console.log("...(Gallery) props elementsPerPage --- Length");
-        if (elementsPerPage <= elements.length) {
-            hide = true;
-        }
-        setGalleryControls({
-            start: 0,
-            end: elementsPerPage,
-            hidePrev: true,
-            hideNext: hide,
-            direction: false,
-            length: elements.length,
-        });
+        // let hide = false;
+        // // console.log("...(Gallery) props elementsPerPage --- Length");
+        // if (galleryControls.end >= elements.length) {
+        //     hide = true;
+        // }
+        // setGalleryControls({
+        //     ...galleryControls,
+        //     start: 0,
+        //     end: elementsPerPage,
+        //     length: elements.length,
+        // });
         // console.log("Gallery: controls: ", galleryControls);
     }, []);
 
     const renderElements = (elements) => {
-        // console.log("...( Gallery renderElements) controls: ", galleryControls);
+        console.log(
+            "...( Gallery renderElements) elementsPerPage elements.length,: ",
+            elementsPerPage,
+            elements.length
+        );
+
+        console.log("...( Gallery renderElements) controls: ", galleryControls);
         return elements
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {
@@ -52,24 +55,24 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             start -= elementsPerPage;
             end -= elementsPerPage;
         }
-        let hidePrev, hideNext;
+        let showPrev, showNext;
         if (start == 0) {
-            hidePrev = true;
+            showPrev = false;
         } else {
-            hidePrev = false;
+            showPrev = true;
         }
         // console.log("...() end, elements.length: ", end, elements.length);
         if (end >= elements.length) {
-            hideNext = true;
+            showNext = false;
         } else {
-            hideNext = false;
+            showNext = true;
         }
         setGalleryControls({
             ...galleryControls,
             start,
             end,
-            hidePrev,
-            hideNext,
+            showPrev,
+            showNext,
         });
     };
 
@@ -79,7 +82,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             <div>
                 <button
                     className={
-                        galleryControls.hidePrev == false
+                        galleryControls.showPrev == true
                             ? "galleryControls"
                             : "galleryControls hideControls"
                     }
@@ -109,7 +112,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             <div>
                 <button
                     className={
-                        galleryControls.hideNext == false
+                        galleryControls.showNext == true
                             ? "galleryControls"
                             : "galleryControls hideControls"
                     }
