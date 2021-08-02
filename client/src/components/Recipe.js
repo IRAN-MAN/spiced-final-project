@@ -61,7 +61,7 @@ export default function Recipe(props) {
     };
 
     return (
-        <div className="recipeWrapper flex cc fcolumn">
+        <div className="profileWrapper flex cc fcolumn">
             <div className="avatarWrapper">
                 <img
                     className="avatar"
