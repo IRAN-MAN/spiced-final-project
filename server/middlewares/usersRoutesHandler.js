@@ -146,7 +146,7 @@ const uploadProfilePic = async (request, response, next) => {
             ...request.session,
             imgURL,
         });
-        response.status(201).json({ ...profilePicURL });
+        response.status(201).json(profilePicURL);
     } catch (error) {
         console.log("[uploadProfilePic: Error]", error);
         next(error);
