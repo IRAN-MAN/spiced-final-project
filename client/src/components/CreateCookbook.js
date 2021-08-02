@@ -11,7 +11,6 @@ export default function CreateCookbook(props) {
             >
                 ×
             </button>
-            <h1>Create Cook Book</h1>
             <CookbookForm toggleOnOff={toggleOnOff} />
         </section>
     );

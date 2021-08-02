@@ -19,7 +19,9 @@ export default function CookbookForm(props) {
 
     return (
         <div className="authWrapper flex fcolumn">
-            <div className="flex fcolumn">
+            <h2>Create your own Cookbook</h2>
+            <p>Collect and share all your delicious Recipes </p>
+            <div className="flex cc fcolumn">
                 <label htmlFor="cookbook_name" value="First Name">
                     Your Cookbook Name
                     <input
