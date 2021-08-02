@@ -141,9 +141,9 @@ q {
 }
 
 .miniAvatarWrapper {
-    margin-block-start: 20px;
+    margin-inline-end: 20px;
 }
-.miniAvatarWrapper div {
+.miniAvatarWrapper img {
     width: 40px;
     height: 40px;
     object-fit: cover;
@@ -211,10 +211,15 @@ input[type="file"] {
 
 .navWrapper {
     z-index: 10;
+    position: fixed;
+    height: 25px;
+    top: 0;
+    background-color: whitesmoke;
 }
 
 nav {
     width: 100vw;
+    padding-inline: 10px;
 }
 nav-ul {
     width: 100vw;
@@ -233,11 +238,14 @@ nav ul li:hover {
 
 /* LOGO */
 .logo {
-    height: 200px;
+    max-width: 100vw;
+    object-fit: cover;
 }
 
 /* HEADER */
 header {
+    position: relative;
+    top: 30px;
     width: 100vw;
 }
 
@@ -251,13 +259,16 @@ header {
 /* FOOTER */
 footer {
     width: 100vw;
-    background-color: cadetblue;
+    background-color: black;
+}
+footer div p {
+    color: whitesmoke;
 }
 
 /* MyProfile & UserProfile */
 .profileWrapper {
     position: relative;
-    top: -75px;
+    top: -50px;
 }
 
 /* COOKBOOKS */
@@ -287,6 +298,10 @@ footer {
     height: 100%;
 
     object-fit: cover;
+}
+
+.cookbookForm {
+    margin-block-start: 50px;
 }
 
 /* COAUTHORS */
@@ -479,8 +494,24 @@ footer {
     body {
         /* background-color: pink; */
     }
+    header {
+        position: relative;
+        top: 0;
+    }
+    .navWrapper {
+        position: relative;
+        background-color: transparent;
+    }
+    .profileWrapper {
+        top: -75px;
+    }
     .instructions {
         column-count: 3;
+    }
+    .logo {
+        max-width: none;
+        height: 200px;
+        object-fit: cover;
     }
 }
 
