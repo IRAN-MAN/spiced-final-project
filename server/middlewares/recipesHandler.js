@@ -52,7 +52,7 @@ const addRecipeInCookBook = async (request, response, next) => {
         });
         const recipe_id = newRecipeId.recipe_id;
         console.log("[insertRecipe]", newRecipeId);
-        response.status(201).json({ message: "We are SMART" });
+        response.status(201).json(newRecipeId);
         addIngredientToDB(ingredients, recipe_id);
         console.log("[SUCCESS]");
     } catch (error) {
