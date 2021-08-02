@@ -24,9 +24,10 @@ import EditProfile from "./EditProfile";
 
 // import UserProfile from "./UserProfile";
 
-export default function App() {
+export default function App(props) {
     //useSelectors here:
     const user = useSelector((state) => state.user);
+    const inviteLink = props.invite;
     const dispatch = useDispatch();
 
     //useEffects here:
@@ -53,7 +54,10 @@ export default function App() {
                         path="/"
                         render={() => <p>HELLO YOU ARE LOGGED IN!</p>}
                     /> */}
-                    <Route path="/" exact component={MyProfile} />
+                    <Route path="/" exact>
+                        {inviteLink && <Redirect to={`${inviteLink}`} />}
+                        <MyProfile />
+                    </Route>
                     {/* <Route path="/userprofile/:id" component={UserProfile} /> */}
                     <Route path="/cookbook/:id" component={Cookbook} />
                     <Route path="/recipe/:id" component={Recipe} />
