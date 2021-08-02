@@ -24,9 +24,11 @@ import {
     CREATE_NEW_COOKBOOK,
     UPDATE_COOKBOOK_COVER,
     UPDATE_PROFILE_PIC,
+    GET_INVITE_LINK,
+    UPDATE_RECIPE_PHOTO,
 } from "./actions";
 
-import { addIngredients } from "./action-creators";
+// import { addIngredients } from "./action-creators";
 
 const initialState = {
     allFavourites: [],
@@ -44,6 +46,7 @@ const initialState = {
     recipePhotos: [],
     user: {},
     userInput: {},
+    inviteLink: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -168,6 +171,19 @@ const reducer = (state = initialState, action) => {
                     ...state.user,
                     profile_pic: action.payload.profile_pic,
                 },
+            };
+        case UPDATE_RECIPE_PHOTO:
+            return {
+                ...state,
+                currentRecipe: {
+                    ...state.currentRecipe,
+                    recipe_photo: action.payload.recipePhoto,
+                },
+            };
+        case GET_INVITE_LINK:
+            return {
+                ...state,
+                inviteLink: action.payload.inviteLink,
             };
         default:
             return state;
