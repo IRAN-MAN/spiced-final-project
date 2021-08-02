@@ -199,10 +199,10 @@ export const deleteIngredientById = (id, ingredients) => {
 
 export const receiveRecipePhotos = async (recipe_id) => {
     const recipePhotos = await axios.get(`/api/recipes/photos/${recipe_id}`);
-    console.log(
-        "...(ACTION receiveRecipePhotos) recipePhotos.data:",
-        recipePhotos.data
-    );
+    // console.log(
+    //     "...(ACTION receiveRecipePhotos) recipePhotos.data:",
+    //     recipePhotos.data
+    // );
     return {
         type: RECEIVE_RECIPE_PHOTOS,
         payload: { recipePhotos: recipePhotos.data },
