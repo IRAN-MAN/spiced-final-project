@@ -19,7 +19,7 @@ export default function MyProfile() {
         <div className="profileWrapper flex cc fcolumn">
             <div className="avatarWrapper">
                 <img
-                    className="avatar"
+                    className="avatar owner"
                     src={user.profile_pic}
                     alt={user.first_name + " " + user.last_name}
                 />
