@@ -55,7 +55,7 @@ export const receiveCookbooks = async (user_id) => {
     // );
     return {
         type: RECEIVE_COOKBOOKS,
-        payload: { cookbooks: cookbooks.data.cookbooks },
+        payload: { cookbooks: cookbooks.data },
     };
 };
 

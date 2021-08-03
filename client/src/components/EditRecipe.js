@@ -19,31 +19,79 @@ export default function EditRecipe(props) {
             >
                 ×
             </button>
-            <div className="formWrapper">
-                Recipeform Component
-                <div className="ingredientsInputWrapper">
-                    <IngredientInput />
-                </div>
-                <div className="recipeInputWrapper">
-                    <div className="formWrapper">
+            <div className="authWrapper flex cc fcolumn scrollY">
+                <h2>Edit Recipe</h2>
+                <div>
+                    <div className="authWrapper flex cc frow ">
+                        <div>
+                            <div>
+                                <label htmlFor="quantity">
+                                    Quantity
+                                    <input
+                                        type="number"
+                                        name="quantity"
+                                        placeholder="quantity"
+                                        defaultValue={
+                                            currentIngredients.quantity
+                                        }
+                                        required
+                                    />
+                                </label>
+                                <label htmlFor="unit">
+                                    Unit
+                                    <input
+                                        type="text"
+                                        name="unit"
+                                        placeholder="unit"
+                                        required
+                                    />
+                                </label>
+                                <label htmlFor="ingredient_name">
+                                    ingredient
+                                    <input
+                                        type="text"
+                                        name="ingredient_name"
+                                        placeholder="ingredient"
+                                        required
+                                    />
+                                </label>
+                                <div className="buttonWrapper">
+                                    <button
+                                        type="submit"
+                                        className="button submit-button"
+                                    >
+                                        <span className="flex">
+                                            add ingredient
+                                            <i className="material-icons">
+                                                arrow_right_alt
+                                            </i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul className="ingredientslist"></ul>
+                        </div>
+                    </div>
+                    <div className="authWrapper flex cc fcolumn">
                         <label htmlFor="category">
                             Category
                             <input
                                 name="category"
-                                placeholder="Name"
+                                placeholder="Category"
                                 list="category"
                                 required
-                                onChange={handleChange}
                             />
                             <datalist id="category">
-                                <option value="Starters" />
-                                <option value="Salad" />
-                                <option value="Desert" />
-                                <option value="Soups" />
-                                <option value="Cakes" />
-                                <option value="Cocktails" />
-                                <option value="Fast Food" />
-                                <option value="Snacks" />
+                                <option value="Starters"></option>
+                                <option value="Salad"></option>
+                                <option value="Desert"></option>
+                                <option value="Soups"></option>
+                                <option value="Cakes"></option>
+                                <option value="Cocktails"></option>
+                                <option value="Fast Food"></option>
+                                <option value="Snacks"></option>
                             </datalist>
                         </label>
                         <label htmlFor="recipe_name">
@@ -51,21 +99,20 @@ export default function EditRecipe(props) {
                             <input
                                 type="text"
                                 name="recipe_name"
-                                placeholder="Name"
+                                placeholder="Recipe Name"
+                                defaultValue={currentRecipe.recipe_name}
                                 required
-                                onChange={handleChange}
                             />
                         </label>
-
                         <label htmlFor="instructions">
                             Instructions
-                            <input
+                            <textarea
                                 type="text"
                                 name="instructions"
                                 placeholder="Instructions"
+                                defaultValue={currentRecipe.instructions}
                                 required
-                                onChange={handleChange}
-                            />
+                            ></textarea>
                         </label>
                         <label htmlFor="prep_time">
                             Prep time (in min)
@@ -73,8 +120,8 @@ export default function EditRecipe(props) {
                                 type="number"
                                 name="prep_time"
                                 placeholder="Prep time (in min)"
+                                defaultValue={currentRecipe.prep_time}
                                 required
-                                onChange={handleChange}
                             />
                         </label>
                         <label htmlFor="recipe_story">
@@ -83,34 +130,43 @@ export default function EditRecipe(props) {
                                 type="text"
                                 name="recipe_story"
                                 placeholder="Story"
+                                defaultValue={currentRecipe.recipe_story}
                                 required
-                                onChange={handleChange}
                             />
                         </label>
-
                         <div>
-                            <input
-                                type="range"
-                                id="difficulty_level"
-                                name="difficulty_level"
-                                defaultValue="3"
-                                min="0"
-                                max="5"
-                                onChange={handleChange}
-                            />
-                            <label htmlFor="difficulty_level">Difficulty</label>
+                            <label htmlFor="difficulty_level">
+                                Difficulty
+                                <input
+                                    type="range"
+                                    id="difficulty_level"
+                                    name="difficulty_level"
+                                    min="0"
+                                    max="5"
+                                    className="slider"
+                                    defaultValue={
+                                        currentRecipe.difficulty_level
+                                    }
+                                    value="3"
+                                />
+                            </label>
                         </div>
-                        <Button
-                            labeltext="Update Recipe"
-                            type="submit"
-                            classNames="button submit-button"
-                            icon="send"
-                            onClick={() =>
-                                props.collectRecipeInputes(inputValues)
-                            }
-                        />
+                        <div className="buttonWrapper">
+                            <button
+                                type="submit"
+                                className="button submit-button"
+                            >
+                                <span className="flex">
+                                    Update Recipe
+                                    <i className="material-icons">
+                                        arrow_right_alt
+                                    </i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
+                <div></div>
             </div>
         </section>
     );
