@@ -20,6 +20,7 @@ import Button from "./Button";
 import EditRecipe from "./EditRecipe";
 import IngredientsList from "./IngredientsList";
 import UploadPictureForm from "./forms/UploadPictureForm";
+// import FavouriteButton from "./FavouriteButton";
 
 export default function Recipe(props) {
     const recipe_id = props.match.params.id;
@@ -77,6 +78,7 @@ export default function Recipe(props) {
                 action={uploadRecipePhoto}
                 id={currentRecipe.recipe_id}
             />
+            {/* <FavouriteButton recipe_id={currentRecipe.recipe_id} /> */}
             <div className="recipeMain">
                 <h1>{currentRecipe.recipe_name}</h1>
                 <div className="recipeStory">

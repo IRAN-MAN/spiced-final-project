@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
-
 export default function CoauthorsList(props) {
     console.log("...(CoauhtorsList) coauthors: ", props.coauthors);
     const user = props.user;
-    console.log("...(CoauthorList) user: ", user);
     const renderOwner = (coauthor) => {
-        console.log("coauthor/owner:", coauthor);
         return (
             <li key={coauthor.coauthor_id} className="coauthorWrapper">
-                <Link to={"/users/profile/" + coauthor.coauthor_id}>
+                <Link to={"/users/profile/" + user.id}>
                     <div className="miniAvatarWrapper">
                         <div className="tooltip">
                             <span className="tooltiptext">cookbook owner</span>
@@ -30,15 +27,11 @@ export default function CoauthorsList(props) {
 
     const renderCoauthors = () => {
         return props.coauthors.map((coauthor) => {
-            if (coauthor.coauthor_id == user.id) {
-                console.log(
-                    "...(CoauthorList renderCoauthor) coauthor.coauthor_id, user.id: ",
-                    coauthor.coauthor_id,
-                    user.id
-                );
+            console.log("????: ", coauthor.user_id, user.id);
+            if (coauthor.user_id == user.id) {
+                console.log("yayyy: ", coauthor.user_id, user.id);
                 return renderOwner(coauthor);
             }
-
             return (
                 <li key={coauthor.coauthor_id} className="coauthorWrapper">
                     <Link to={"/users/profile/" + coauthor.id}>
@@ -63,7 +56,6 @@ export default function CoauthorsList(props) {
             );
         });
     };
-
     return (
         <div className="coauthorsListWrapper">
             <ul className="flex jcc vcenter frow">
