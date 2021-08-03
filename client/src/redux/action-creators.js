@@ -64,7 +64,7 @@ export const receiveCookbooks = async (user_id) => {
 
 export const receiveCurrentCookbook = async (cookbook_id) => {
     const cookbook = await axios.get(`/api/cookbooks/by_id/${cookbook_id}`);
-    console.log("...(ACTION receiveCurrentCookbook) cookbook:", cookbook.data);
+    // console.log("...(ACTION receiveCurrentCookbook) cookbook:", cookbook.data);
     return {
         type: RECEIVE_CURRENTCOOKBOOK,
         payload: { currentCookbook: cookbook.data },
@@ -72,7 +72,7 @@ export const receiveCurrentCookbook = async (cookbook_id) => {
 };
 
 export const receiveRecipes = async (cookbook_id) => {
-    console.log("receiveRecipes cookbook_id:", cookbook_id);
+    // console.log("receiveRecipes cookbook_id:", cookbook_id);
     const recipes = await axios.get(`/api/recipes/by_cookbook/${cookbook_id}`);
     // console.log(
     //     "...(ACTION receiveRecipes) recipes.data:",
@@ -119,10 +119,10 @@ export const receiveCurrentRecipe = async (recipe_id) => {
 
 export const receiveCoauthors = async (cookbook_id) => {
     const coauthors = await axios.get(`/api/co_authors/${cookbook_id}`);
-    console.log(
-        "...(ACTION receiveCoauthors) coauthors.data.allCoAuthors:",
-        coauthors.data.allCoAuthors
-    );
+    // console.log(
+    //     "...(ACTION receiveCoauthors) coauthors.data.allCoAuthors:",
+    //     coauthors.data.allCoAuthors
+    // );
     return {
         type: RECEIVE_COAUTHORS,
         payload: { coauthors: coauthors.data.allCoAuthors },
@@ -169,7 +169,7 @@ export const sendRecipeInfo = async (recipeInfo, chapter_id, cookbook_id) => {
         `/api/recipes/add_recipe?chapter_id=${chapter_id}&cookbook_id=${cookbook_id}`,
         recipeInfo
     );
-    console.log("[sendRecipeInfo: axios]", message);
+    // console.log("[sendRecipeInfo: axios]", message);
     return {
         type: SEND_RECIPE_INFO,
         payload: {
@@ -191,7 +191,7 @@ export const deleteIngredientById = (id, ingredients) => {
     id--;
 
     const newIngredients = ingredients.filter((_, i) => i != id);
-    console.log("newIngredients", newIngredients);
+    // console.log("newIngredients", newIngredients);
     return {
         type: DELETE_INGREDIENT,
         payload: {
@@ -233,10 +233,10 @@ export const uploadRecipePhoto = async (formData, recipe_id) => {
         `/api/recipes/photos/add_photo/${recipe_id}`,
         formData
     );
-    console.log(
-        "...(ACTION uploadRecipePhoto) recipePhoto.data: ",
-        recipePhoto.data
-    );
+    // console.log(
+    //     "...(ACTION uploadRecipePhoto) recipePhoto.data: ",
+    //     recipePhoto.data
+    // );
     return {
         type: UPDATE_RECIPE_PHOTO,
         payload: { recipePhoto: recipePhoto.data.recipe_photo },
@@ -248,10 +248,10 @@ export const uploadCookbookCover = async (formData, cookbook_id) => {
         `/api/cookbooks/update_cover/${cookbook_id}`,
         formData
     );
-    console.log(
-        "...(ACTION uploadCookbookCover) cover_pic.data: ",
-        cover_pic.data
-    );
+    // console.log(
+    //     "...(ACTION uploadCookbookCover) cover_pic.data: ",
+    //     cover_pic.data
+    // );
     return {
         type: UPDATE_COOKBOOK_COVER,
         payload: { cover_pic: cover_pic.data },
@@ -262,10 +262,10 @@ export const uploadProfilePic = async (formData) => {
         `/api/users/profile/upload_profile_pic`,
         formData
     );
-    console.log(
-        "...(ACTION uploadProfilePic) profile_pic.data: ",
-        profile_pic.data
-    );
+    // console.log(
+    //     "...(ACTION uploadProfilePic) profile_pic.data: ",
+    //     profile_pic.data
+    // );
     return {
         type: UPDATE_PROFILE_PIC,
         payload: { profile_pic: profile_pic.data },
@@ -273,7 +273,7 @@ export const uploadProfilePic = async (formData) => {
 };
 
 export const onUserInputChange = (input) => {
-    console.log("...(ACTIONS onUserInputChange) input: ", input);
+    // console.log("...(ACTIONS onUserInputChange) input: ", input);
     return {
         type: UPDATE_USERINPUT,
         payload: { input },
@@ -281,9 +281,9 @@ export const onUserInputChange = (input) => {
 };
 
 export const updateAccount = async (editUserInfo) => {
-    console.log("...(ACTIONS updateAccount) editUserInfo: ", editUserInfo);
+    // console.log("...(ACTIONS updateAccount) editUserInfo: ", editUserInfo);
     const user = await axios.post("/api/users/edit_userInfo", editUserInfo);
-    console.log("...(ACTIONS updateAccount) user: ", user.data);
+    // console.log("...(ACTIONS updateAccount) user: ", user.data);
     return {
         type: UPDATE_USER,
         payload: user.data.rows[0],
@@ -295,10 +295,10 @@ export const createNewCookbook = async (cookbookInfo) => {
         `/api/cookbooks/create_cookbook`,
         cookbookInfo
     );
-    console.log(
-        "...(ACTION createNewCookbook) newCookbook.data:",
-        newCookbook.data
-    );
+    // console.log(
+    //     "...(ACTION createNewCookbook) newCookbook.data:",
+    //     newCookbook.data
+    // );
     return {
         type: CREATE_NEW_COOKBOOK,
         payload: {
@@ -342,7 +342,7 @@ export const removePotato = async (recipe_id) => {
 };
 export const receivePotatoCount = async (recipe_id) => {
     const potatocount = await axios.get(
-        `/api/favourite_recipes/by_recipe/${recipe_id}`
+        `/api/favourite_recipes/count_by_recipe/${recipe_id}`
     );
     console.log(
         "...(ACTION receivePotatoCount) potatocount.data:",
@@ -353,5 +353,17 @@ export const receivePotatoCount = async (recipe_id) => {
         payload: {
             potatocount: potatocount.data,
         },
+    };
+};
+
+export const receivePotatoButtonState = async (user_id) => {
+    const potatoButtonState = await axios.get(`/api/potato/${user_id}`);
+    console.log(
+        "...(ACTION receivePotatoButtonState) potatoButtonState:",
+        potatoButtonState.data.hasGivenPotato
+    );
+    return {
+        type: "RECEIVE_POTATOBUTTON",
+        payload: { potatoButtonState: potatoButtonState.data.hasGivenPotato },
     };
 };
