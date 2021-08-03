@@ -24,7 +24,7 @@ export default function Cookbook(props) {
     const cookbook_id = props.match.params.id;
     const coauthors = useSelector((state) => state.coauthors);
     const currentCookbook = useSelector((state) => state.currentCookbook);
-
+    const user = useSelector((state) => state.user);
     const [toggle, toggleOnOff] = useToggle();
     const [toggle2, toggleOnOff2] = useToggle();
 
@@ -59,7 +59,11 @@ export default function Cookbook(props) {
                     <h1>{currentCookbook.cookbook_name}</h1>
                 </div>
             )}
-            <CoauthorsList coauthors={coauthors} toggleOnOff={toggleOnOff2} />
+            <CoauthorsList
+                user={user}
+                coauthors={coauthors}
+                toggleOnOff={toggleOnOff2}
+            />
             <ChapterList />
             <div className="tooltip tooltipBtn">
                 <span className="tooltiptext">Add new Recipe</span>

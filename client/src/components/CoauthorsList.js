@@ -2,8 +2,43 @@ import { Link } from "react-router-dom";
 
 export default function CoauthorsList(props) {
     console.log("...(CoauhtorsList) coauthors: ", props.coauthors);
+    const user = props.user;
+    console.log("...(CoauthorList) user: ", user);
+    const renderOwner = (coauthor) => {
+        console.log("coauthor/owner:", coauthor);
+        return (
+            <li key={coauthor.coauthor_id} className="coauthorWrapper">
+                <Link to={"/users/profile/" + coauthor.coauthor_id}>
+                    <div className="miniAvatarWrapper">
+                        <div className="tooltip">
+                            <span className="tooltiptext">cookbook owner</span>
+                            <img
+                                className="avatar smallAvatar owner"
+                                src={coauthor.profile_pic}
+                                alt={
+                                    coauthor.first_name +
+                                    " from " +
+                                    coauthor.city
+                                }
+                            />
+                        </div>
+                    </div>
+                </Link>
+            </li>
+        );
+    };
+
     const renderCoauthors = () => {
         return props.coauthors.map((coauthor) => {
+            if (coauthor.coauthor_id == user.id) {
+                console.log(
+                    "...(CoauthorList renderCoauthor) coauthor.coauthor_id, user.id: ",
+                    coauthor.coauthor_id,
+                    user.id
+                );
+                return renderOwner(coauthor);
+            }
+
             return (
                 <li key={coauthor.coauthor_id} className="coauthorWrapper">
                     <Link to={"/users/profile/" + coauthor.id}>

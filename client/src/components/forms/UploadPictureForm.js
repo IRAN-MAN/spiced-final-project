@@ -16,7 +16,7 @@ export default function UploadPictureForm(props) {
     };
     return (
         <div
-            className="formWrapper"
+            className="formWrapper flex cc"
             onClick={(event) => event.stopPropagation()}
         >
             <form
