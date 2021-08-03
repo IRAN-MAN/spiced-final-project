@@ -8,6 +8,7 @@ import {
     uploadRecipePhoto,
     addRecipePhoto,
 } from "../redux/action-creators";
+const DEFAULT_COVER = "/images/default_photo.jpeg";
 
 //hooks
 import { useToggle } from "../hooks/hooks";
@@ -67,7 +68,7 @@ export default function Recipe(props) {
             <div className="avatarWrapper">
                 <img
                     className="avatar"
-                    src={currentRecipe.recipe_photo}
+                    src={currentRecipe.recipe_photo || DEFAULT_COVER}
                     alt={currentRecipe.recipe_name}
                     onClick={toggleLightbox}
                 />

@@ -6,6 +6,7 @@ import {
     receiveRecipes,
     receiveCurrentCookbook,
     uploadCookbookCover,
+    receiveCookbooks,
 } from "../redux/action-creators";
 
 //components
@@ -36,6 +37,13 @@ export default function Cookbook(props) {
             dispatch(receiveRecipes(cookbook_id));
         }
     }, []);
+
+    useEffect(() => {
+        console.log("[cookbook: useEffect: user]", user);
+        if (user.id) {
+            dispatch(receiveCookbooks(user.id));
+        }
+    }, [currentCookbook]);
 
     return (
         <div className="profileWrapper flex cc fcolumn">

@@ -10,6 +10,7 @@ const cookBookInfo = async (request, response, next) => {
     try {
         console.log("cookBookInfo", request.params);
         const cookbooks = await getCookBookByUserId({ ...request.params });
+        console.log("[cookBookInfo: all cookbooks by user_id]", cookbooks);
         response.status(200).json(cookbooks.reverse());
     } catch (error) {
         console.log("[cookBookInfo: Error]", error);

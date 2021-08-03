@@ -22,6 +22,7 @@ export default function RecipeForm(props) {
     };
 
     const collectRecipeInputes = async (inputValues) => {
+        console.log("[collectRecipeInputes: inputValues]", inputValues);
         if (
             !inputValues.recipe_name ||
             !inputValues.instructions ||

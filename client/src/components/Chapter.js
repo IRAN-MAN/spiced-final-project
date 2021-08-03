@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { recipesTEST } from "./TESTDATA.js";
 import { Link } from "react-router-dom";
+const DEFAULT_COVER = "/images/default_photo.jpeg";
 
 // components
 import Recipe from "./Recipe";
@@ -25,7 +26,7 @@ export default function Chapter({ chapter_id }) {
                     <div className="recipePreviewWrapper flex jcc fcolumn">
                         <img
                             className="recipePreview"
-                            src={recipe.recipe_photo}
+                            src={recipe.recipe_photo || DEFAULT_COVER}
                         />
                     </div>
                     <p>{recipe.recipe_name}</p>
@@ -35,7 +36,6 @@ export default function Chapter({ chapter_id }) {
     };
     return (
         <div className="chapterWrapper flex cc fcolumn">
-            Chapter Component
             <ul className="flex jcc">
                 {/* {recipes.length > 0 && renderRecipePreviews()} */}
                 <Gallery
