@@ -27,6 +27,9 @@ import {
     UPDATE_PROFILE_PIC,
     GET_INVITE_LINK,
     UPDATE_RECIPE_PHOTO,
+    ADD_NEW_POTATO,
+    REMOVE_POTATO,
+    RECEIVE_POTATOES,
 } from "./actions";
 
 export const receiveUserInfo = async (user_id) => {
@@ -309,6 +312,46 @@ export const getInviteLink = (link) => {
         type: GET_INVITE_LINK,
         payload: {
             inviteLink: link,
+        },
+    };
+};
+
+export const addPotato = async (recipe_id) => {
+    const potatocount = await axios.post(
+        `/api/favourite_recipes/add_fav/${recipe_id}`
+    );
+    console.log("...(ACTION addFavourite) potatocount.data:", potatocount.data);
+    return {
+        type: ADD_NEW_POTATO,
+        payload: {
+            potatocount: potatocount.data,
+        },
+    };
+};
+export const removePotato = async (recipe_id) => {
+    const potatocount = await axios.delete(
+        `/api/favourite_recipes/remove_fav/${recipe_id}`
+    );
+    console.log("...(ACTION removePotato) potatocount.data:", potatocount.data);
+    return {
+        type: REMOVE_POTATO,
+        payload: {
+            potatocount: potatocount.data,
+        },
+    };
+};
+export const receivePotatoCount = async (recipe_id) => {
+    const potatocount = await axios.get(
+        `/api/favourite_recipes/by_recipe/${recipe_id}`
+    );
+    console.log(
+        "...(ACTION receivePotatoCount) potatocount.data:",
+        potatocount.data
+    );
+    return {
+        type: RECEIVE_POTATOES,
+        payload: {
+            potatocount: potatocount.data,
         },
     };
 };

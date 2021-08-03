@@ -26,6 +26,9 @@ import {
     UPDATE_PROFILE_PIC,
     GET_INVITE_LINK,
     UPDATE_RECIPE_PHOTO,
+    ADD_NEW_POTATO,
+    REMOVE_POTATO,
+    RECEIVE_POTATOES,
 } from "./actions";
 
 // import { addIngredients } from "./action-creators";
@@ -47,6 +50,7 @@ const initialState = {
     user: {},
     userInput: {},
     inviteLink: "",
+    potatocount: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -184,6 +188,20 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 inviteLink: action.payload.inviteLink,
+            };
+        case ADD_NEW_POTATO:
+            return {
+                ...state,
+                potatocount: state.potatocount + 1,
+            };
+        case REMOVE_POTATO:
+            return {
+                ...state,
+                potatocount: state.potatocount - 1,
+            };
+        case RECEIVE_POTATOES:
+            return {
+                potatocount: action.payload.potatocount,
             };
         default:
             return state;
