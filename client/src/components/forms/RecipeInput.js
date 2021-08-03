@@ -16,7 +16,7 @@ export default function RecipeInput(props) {
                     required
                     onChange={handleChange}
                 />
-                <datalist id="category">
+                <datalist id="category" onChange={handleChange}>
                     <option value="Starters" />
                     <option value="Salad" />
                     <option value="Desert" />

@@ -286,7 +286,7 @@ export const updateAccount = async (editUserInfo) => {
     // console.log("...(ACTIONS updateAccount) user: ", user.data);
     return {
         type: UPDATE_USER,
-        payload: user.data.rows[0],
+        payload: user.data,
     };
 };
 

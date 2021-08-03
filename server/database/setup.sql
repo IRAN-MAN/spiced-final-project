@@ -86,7 +86,7 @@ CREATE TABLE photos (
     id              SERIAL PRIMARY KEY,
     recipe_id       INT REFERENCES recipes (id) NOT NULL,        
     user_id         INTEGER NOT NULL REFERENCES users (id),
-    photo_url       TEXT NOT NULL DEFAULT '/images/default_photo.jpeg',
+    photo_url       TEXT DEFAULT '/images/default_photo.jpeg',
     created_at      TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

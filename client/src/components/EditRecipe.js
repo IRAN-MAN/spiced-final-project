@@ -147,7 +147,6 @@ export default function EditRecipe(props) {
                                     defaultValue={
                                         currentRecipe.difficulty_level
                                     }
-                                    value="3"
                                 />
                             </label>
                         </div>
