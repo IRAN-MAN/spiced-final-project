@@ -8,9 +8,7 @@ export default function CoauthorsList(props) {
                 <Link to={"/users/profile/" + user.id}>
                     <div className="miniAvatarWrapper">
                         <div className="tooltip">
-                            <span className="tooltiptext">
-                                {coauthor.first_name}
-                            </span>
+                            <span className="tooltiptext">cookbook owner</span>
                             <img
                                 className="avatar smallAvatar owner"
                                 src={coauthor.profile_pic}
