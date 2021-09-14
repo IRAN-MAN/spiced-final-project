@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+// components
 import Logout from "./Logout";
 
 export default function Navigation() {
