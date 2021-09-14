@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom";
-// import { useDispatch } from "react-redux";
 import axios from "./axios";
+
 // redux & redux devtools
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import { getInviteLink } from "./redux/action-creators";
+// import { getInviteLink } from "./redux/action-creators";
 
 //components
 import Welcome from "./components/Welcome";
