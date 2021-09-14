@@ -6,14 +6,10 @@ import {
     receiveRecipePhotos,
     toggleLightboxVisible,
     uploadRecipePhoto,
-    addRecipePhoto,
 } from "../redux/action-creators";
-const DEFAULT_COVER = "/images/default_photo.jpeg";
 
-//hooks
-import { useToggle } from "../hooks/hooks";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+// constants
+const DEFAULT_COVER = "/images/default_photo.jpeg";
 
 //components
 import Lightbox from "./Lightbox";
@@ -22,6 +18,11 @@ import EditRecipe from "./EditRecipe";
 import IngredientsList from "./IngredientsList";
 import UploadPictureForm from "./forms/UploadPictureForm";
 // import FavouriteButton from "./FavouriteButton";
+
+//hooks
+import { useToggle } from "../hooks/hooks";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Recipe(props) {
     const recipe_id = props.match.params.id;
@@ -50,10 +51,10 @@ export default function Recipe(props) {
     }, [currentRecipe]);
 
     const toggleLightbox = () => {
-        console.log(
-            "...(Recipe toggleLightbox) isLightboxVisible: ",
-            isLightboxVisible
-        );
+        // console.log(
+        //     "...(Recipe toggleLightbox) isLightboxVisible: ",
+        //     isLightboxVisible
+        // );
         dispatch(toggleLightboxVisible(isLightboxVisible));
     };
     const renderDifficulty = (difficulty) => {

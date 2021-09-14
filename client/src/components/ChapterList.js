@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
-import { chaptersTEST } from "./TESTDATA.js";
-//components
+// components
 import Chapter from "./Chapter";
+
+// hooks
+import { useSelector } from "react-redux";
 
 export default function ChapterList() {
     const chapters = useSelector((state) => state.chapters);
@@ -17,6 +18,7 @@ export default function ChapterList() {
             );
         });
     };
+
     return (
         <div className="chapterListWrapper flex cc fcolumn">
             <ul className="flex jcc fcolumn">

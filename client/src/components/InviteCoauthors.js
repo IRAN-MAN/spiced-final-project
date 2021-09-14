@@ -1,6 +1,4 @@
 //components
-import RecipeForm from "./forms/RecipeForm";
-import UploadPictureForm from "./forms/UploadPictureForm";
 import InvitationForm from "./forms/InvitationForm";
 
 export default function InviteCoauthors(props) {
@@ -15,8 +13,6 @@ export default function InviteCoauthors(props) {
             >
                 ×
             </button>
-            {/* <UploadPictureForm /> */}
-            {/* <RecipeForm /> */}
             <InvitationForm />
         </section>
     );

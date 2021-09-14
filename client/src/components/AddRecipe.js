@@ -1,6 +1,5 @@
 //components
 import RecipeForm from "./forms/RecipeForm";
-import UploadPictureForm from "./forms/UploadPictureForm";
 
 export default function AddRecipe(props) {
     const { toggleOnOff } = props;
@@ -13,7 +12,6 @@ export default function AddRecipe(props) {
             >
                 ×
             </button>
-            {/* <UploadPictureForm /> */}
             <RecipeForm toggleOnOff={toggleOnOff} />
         </section>
     );

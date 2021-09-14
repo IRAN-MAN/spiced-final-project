@@ -1,3 +1,4 @@
+// constants
 const LOGO_URL = "/images/logo.png";
 const LOGO_URL_SMALL = "/images/logosmall.png";
 

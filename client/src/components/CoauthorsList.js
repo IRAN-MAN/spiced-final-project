@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+
 export default function CoauthorsList(props) {
     console.log("...(CoauhtorsList) coauthors: ", props.coauthors);
     const user = props.user;
+
     const renderOwner = (coauthor) => {
         return (
             <li key={coauthor.coauthor_id} className="coauthorWrapper">
@@ -27,9 +29,7 @@ export default function CoauthorsList(props) {
 
     const renderCoauthors = () => {
         return props.coauthors.map((coauthor) => {
-            console.log("????: ", coauthor.user_id, user.id);
             if (coauthor.user_id == user.id) {
-                console.log("yayyy: ", coauthor.user_id, user.id);
                 return renderOwner(coauthor);
             }
             return (
@@ -56,6 +56,7 @@ export default function CoauthorsList(props) {
             );
         });
     };
+
     return (
         <div className="coauthorsListWrapper">
             <ul className="flex jcc vcenter frow">

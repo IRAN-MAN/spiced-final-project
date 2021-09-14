@@ -1,13 +1,10 @@
+// hooks
 import { useSelector } from "react-redux";
-
-import { useStatefulFields } from "../hooks/hooks";
-
-import IngredientInput from "./forms/IngredientInput";
-import Button from "./Button";
+// import { useStatefulFields } from "../hooks/hooks";
 
 export default function EditRecipe(props) {
     const { toggleOnOff } = props;
-    const [inputValues, handleChange] = useStatefulFields();
+    // const [inputValues, handleChange] = useStatefulFields();
     const currentRecipe = useSelector((state) => state.currentRecipe);
     const currentIngredients = useSelector((state) => state.ingredients_list);
 

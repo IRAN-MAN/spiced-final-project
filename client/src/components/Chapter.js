@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux";
-import { recipesTEST } from "./TESTDATA.js";
 import { Link } from "react-router-dom";
 const DEFAULT_COVER = "/images/default_photo.jpeg";
 
 // components
-import Recipe from "./Recipe";
 import Gallery from "./Gallery";
+
+// hooks
+import { useSelector } from "react-redux";
 
 export default function Chapter({ chapter_id }) {
     const recipes = useSelector((state) => state.recipes);
@@ -34,6 +34,7 @@ export default function Chapter({ chapter_id }) {
             </li>
         );
     };
+
     return (
         <div className="chapterWrapper flex cc fcolumn">
             <ul className="flex jcc">

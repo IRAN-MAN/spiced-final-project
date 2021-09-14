@@ -1,18 +1,17 @@
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { uploadProfilePic } from "../redux/action-creators";
-
 //components
 import MyCookbooks from "./MyCookbooks";
 import UploadPictureForm from "./forms/UploadPictureForm";
+import { uploadProfilePic } from "../redux/action-creators";
+
+// hooks
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function MyProfile() {
     const user = useSelector((state) => {
         return state.user;
     });
 
-    const dispatch = useDispatch();
-    useEffect(() => {}, []);
     useEffect(() => {}, [user]);
 
     return (

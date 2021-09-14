@@ -5,6 +5,7 @@ export default function Logout() {
         await axios.post("/api/users/logout");
         window.location = "/";
     };
+
     return (
         <div className="logout">
             <button className="logout-btn" onClick={onClickHandler}>
