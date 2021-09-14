@@ -1,6 +1,6 @@
 //components
 import RegistrationForm from "./forms/RegistrationForm";
-import { Link } from "react-router-dom";
+
 export default function Registration() {
     return (
         <div className="flex authWrapper">
