@@ -1,13 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-
 import {
     getUser,
     receiveUserInfo,
     receiveChapters,
     receiveCookbooks,
 } from "../redux/action-creators";
-
 import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
 
 // components
@@ -18,8 +14,11 @@ import MyProfile from "./MyProfile";
 import Cookbook from "./Cookbook";
 import Recipe from "./Recipe";
 import EditProfile from "./EditProfile";
-
 // import UserProfile from "./UserProfile";
+
+//hooks
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 export default function App(props) {
     //useSelectors here:
@@ -33,13 +32,11 @@ export default function App(props) {
         dispatch(receiveChapters());
     }, []);
     useEffect(() => {
-        // console.log("...(BEFORE user: ", user);
-
         if (user.id) {
-            // console.log("...(AFTER user: ", user);
             dispatch(receiveCookbooks(user.id));
         }
     }, [user]);
+
     return (
         <BrowserRouter>
             <Header />
