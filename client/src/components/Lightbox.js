@@ -1,3 +1,4 @@
+// components
 import Gallery from "./Gallery";
 
 export default function Lightbox({ elements, toggleLightbox }) {
