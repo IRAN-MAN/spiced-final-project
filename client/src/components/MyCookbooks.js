@@ -1,27 +1,20 @@
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-
-import { receiveCookbooks, receiveUserInfo } from "../redux/action-creators";
 import { Link } from "react-router-dom";
-import { cookbooksTEST } from "./TESTDATA";
-import Button from "./Button";
 
-import { useToggle } from "../hooks/hooks";
-//components
+// components
 import Gallery from "./Gallery";
 import CreateCookbook from "./CreateCookbook";
+import Button from "./Button";
+
+// hooks
+import { useSelector } from "react-redux";
+import { useToggle } from "../hooks/hooks";
 
 export default function MyCookbooks() {
-    const user = useSelector((state) => {
-        return state.user;
-    });
     const cookbooks = useSelector((state) => {
         return state.cookbooks;
     });
 
     const [toggle, toggleOnOff] = useToggle();
-    const dispatch = useDispatch();
-    useEffect(() => {}, []);
 
     const renderCookbooks = (cookbook) => {
         return (
@@ -44,7 +37,6 @@ export default function MyCookbooks() {
 
     return (
         <div className="cookbooksWrapper flex cc fcolumn">
-            {/* <ul>{cookbooks.length > 0 && renderCookbooks()}</ul> */}
             <h2>My Cookbooks</h2>
             <ul className="flex jcc ">
                 <Gallery
