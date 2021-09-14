@@ -1,13 +1,16 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import {
     onUserInputChange,
     updateAccount,
     receiveUserInfo,
 } from "../redux/action-creators";
 
+// components
 import Button from "./Button";
+
+// hooks
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 export default function EditProfile() {
     const dispatch = useDispatch();
@@ -20,18 +23,13 @@ export default function EditProfile() {
         await dispatchUserInput(event, dispatch);
         history.push("/");
     };
-    // const [inputValues, handleChange] = useStatefulFields();
-    // const [submit, error] = useAuthSubmit(
-    //     "/api/users/edit_userInfo",
-    //     inputValues
-    // );
+
     useEffect(() => {
         if (userInput.first_name) {
             dispatch(updateAccount(userInput));
             dispatch(receiveUserInfo(user.id));
         }
     }, [userInput]);
-    useEffect(() => {}, []);
 
     return (
         <div className="authWrapper flex fcolumn">
