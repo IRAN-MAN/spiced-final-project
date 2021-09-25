@@ -14,7 +14,7 @@ const DEFAULT_COVER = "/images/default_photo.jpeg";
 //components
 import Lightbox from "./Lightbox";
 import Button from "./Button";
-import EditRecipe from "./EditRecipe";
+import EditRecipe from "./forms/EditRecipe";
 import IngredientsList from "./IngredientsList";
 import UploadPictureForm from "./forms/UploadPictureForm";
 // import FavouriteButton from "./FavouriteButton";
