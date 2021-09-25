@@ -10,27 +10,29 @@ export default function LoginForm() {
     return (
         <div className="authWrapper">
             <form onSubmit={submit} className="flex">
-                <label htmlFor="email">
-                    Email
+                <label htmlFor="email" className="input">
                     <input
                         id="email"
+                        className="input__field"
                         type="text"
                         name="email"
-                        placeholder="email"
+                        placeholder=" "
                         required
                         onChange={handleChange}
                     />
+                    <span className="input__label">Email</span>
                 </label>
-                <label htmlFor="password">
-                    Password
+                <label htmlFor="password" className="input">
                     <input
                         id="password"
+                        className="input__field"
                         type="password"
                         name="password"
-                        placeholder="******"
+                        placeholder=" "
                         required
                         onChange={handleChange}
                     />
+                    <span className="input__label">Password</span>
                 </label>
                 <Button
                     labeltext="log in"

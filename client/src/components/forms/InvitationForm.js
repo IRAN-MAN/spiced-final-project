@@ -1,7 +1,7 @@
 // import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
 
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 //components
 // import Button from "../Button";
@@ -9,13 +9,16 @@ import { useState } from "react";
 export default function InvitationForm() {
     // const [inputValues, handleChange] = useStatefulFields();
     // const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
+    const cookbook_id = useSelector(
+        (state) => state.currentCookbook.cookbook_id
+    );
+
     const [inviteLink, setInviteLink] = useState(
-        "http://localhost:3000/api/co_authors/community/invite/1"
+        `http://localhost:3000/api/co_authors/community/invite/${cookbook_id}`
     );
 
     return (
         <div className="formWrapper">
-            InvitationForm
             <div className="flex fcolumn">
                 <h1>Invite your Friends &amp; Family</h1>
                 <p>to join your cookbook</p>
@@ -31,8 +34,8 @@ export default function InvitationForm() {
                             }}
                         >
                             <q>
-                                click to copy:
-                                http://www.whatscooking-goodlooking.com/invite
+                                http://www.whatscooking-goodlooking.com/
+                                {cookbook_id}
                             </q>
                             <button />
                             <div className="tooltip">

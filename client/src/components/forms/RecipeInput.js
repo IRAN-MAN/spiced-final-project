@@ -7,66 +7,78 @@ export default function RecipeInput(props) {
 
     return (
         <div className="authWrapper flex cc fcolumn">
-            <label htmlFor="category">
-                Category
+            <label htmlFor="category" className="input">
                 <input
+                    id="category"
+                    className="input__field"
+                    list="categorylist"
                     name="category"
-                    placeholder="Category"
-                    list="category"
+                    placeholder=" "
                     required
+                    autoComplete="off"
                     onChange={handleChange}
                 />
-                <datalist id="category" onChange={handleChange}>
-                    <option value="Starters" />
-                    <option value="Salad" />
-                    <option value="Desert" />
-                    <option value="Soups" />
-                    <option value="Cakes" />
-                    <option value="Cocktails" />
-                    <option value="Fast Food" />
-                    <option value="Snacks" />
-                </datalist>
+                <span className="input__label">Category</span>
             </label>
-            <label htmlFor="recipe_name">
-                Recipe Name
+            <datalist id="categorylist" onChange={handleChange}>
+                <option value="Starters" />
+                <option value="Salad" />
+                <option value="Desert" />
+                <option value="Soups" />
+                <option value="Cakes" />
+                <option value="Cocktails" />
+                <option value="Fast Food" />
+                <option value="Snacks" />
+            </datalist>
+
+            <label htmlFor="recipe_name" className="input">
                 <input
-                    type="text"
+                    id="recipe_name"
+                    className="input__field"
                     name="recipe_name"
-                    placeholder="Recipe Name"
+                    type="text"
+                    placeholder=" "
                     required
                     onChange={handleChange}
                 />
+                <span className="input__label"> Recipe Name</span>
             </label>
 
-            <label htmlFor="instructions">
-                Instructions
+            <label htmlFor="instructions" className="input">
                 <textarea
-                    type="text"
+                    id="instructions"
+                    className="input__field"
                     name="instructions"
-                    placeholder="Instructions"
+                    placeholder=" "
                     required
                     onChange={handleChange}
                 />
+                <span className="input__label">Instructions</span>
             </label>
-            <label htmlFor="prep_time">
-                Prep time (in min)
+
+            <label htmlFor="prep_time" className="input">
                 <input
-                    type="number"
+                    id="prep_time"
+                    className="input__field"
                     name="prep_time"
-                    placeholder="Prep time (in min)"
+                    type="number"
+                    placeholder=" "
                     required
                     onChange={handleChange}
                 />
+                <span className="input__label">Prep time (in min)</span>
             </label>
-            <label htmlFor="recipe_story">
-                Story
-                <input
-                    type="text"
+
+            <label htmlFor="recipe_story" className="input">
+                <textarea
+                    id="recipe_story"
+                    className="input__field"
                     name="recipe_story"
-                    placeholder="Story"
+                    placeholder=" "
                     required
                     onChange={handleChange}
                 />
+                <span className="input__label">Story</span>
             </label>
 
             <div>
