@@ -35,6 +35,11 @@ textarea {
     border: none;
     padding-inline-start: 5px;
 }
+input:focus {
+    outline: none !important;
+    border-color: peru;
+    box-shadow: 0 0 5px peru;
+}
 
 /* UL LIST */
 
@@ -96,6 +101,7 @@ q {
     inset: 0;
     padding: 50px;
     z-index: 20;
+    overflow-y: scroll;
 }
 
 /* SCROLL */
@@ -124,6 +130,7 @@ q {
 .authWrapper label {
     max-width: 400px;
     width: 60%;
+    margin-block: 10px;
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
