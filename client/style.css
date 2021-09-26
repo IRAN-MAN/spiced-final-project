@@ -147,6 +147,7 @@ q {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    border-radius: 50%;
 }
 .avatar {
     border-radius: 50%;
@@ -164,6 +165,7 @@ q {
     width: 40px;
     height: 40px;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 /* BUTTONS */
@@ -208,7 +210,12 @@ input[type="file"] {
 .edit-button {
 }
 .submit-button {
+    border: 3px solid transparent;
+    border-radius: 5px;
 }
+.submit-button:hover {
+}
+
 .logout-btn {
     padding: 0;
 }
@@ -500,6 +507,15 @@ footer div p {
     margin-block: 20px;
     padding: 10px;
     background-color: white;
+}
+
+/* BOX-SHADOW */
+
+.boxShadowS {
+    box-shadow: 0px 2px 5px grey;
+}
+.boxShadowL {
+    box-shadow: 0px 4px 10px grey;
 }
 
 @media only screen and (min-width: 480px) {

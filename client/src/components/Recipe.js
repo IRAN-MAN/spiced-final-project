@@ -69,7 +69,7 @@ export default function Recipe(props) {
         <div className="profileWrapper flex cc fcolumn">
             <div className="avatarWrapper">
                 <img
-                    className="avatar"
+                    className="avatar boxShadowL"
                     src={currentRecipe.recipe_photo || DEFAULT_COVER}
                     alt={currentRecipe.recipe_name}
                     onClick={toggleLightbox}
@@ -129,7 +129,7 @@ export default function Recipe(props) {
                     <Button
                         onClick={() => toggleOnOff(false)}
                         type="submit"
-                        classNames="button addrecipe-button flex cc"
+                        classNames="button addrecipe-button flex cc boxShadowL"
                         icon="edit"
                     />
                 </div>

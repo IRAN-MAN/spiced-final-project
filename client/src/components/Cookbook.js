@@ -13,6 +13,7 @@ import Button from "./Button";
 import AddRecipe from "./AddRecipe";
 import InviteCoauthors from "./InviteCoauthors";
 import UploadPictureForm from "./forms/UploadPictureForm";
+import FadeIn from "./FadeIn";
 
 //hooks
 import { useToggle } from "../hooks/hooks";
@@ -47,7 +48,7 @@ export default function Cookbook(props) {
     return (
         <div className="profileWrapper flex cc fcolumn">
             {currentCookbook && (
-                <div className="avatarWrapper">
+                <div className="avatarWrapper boxShadowL">
                     <img
                         className="avatar"
                         src={currentCookbook.cover_pic}
@@ -66,18 +67,20 @@ export default function Cookbook(props) {
                     <h1>{currentCookbook.cookbook_name}</h1>
                 </div>
             )}
+
             <CoauthorsList
                 user={user}
                 coauthors={coauthors}
                 toggleOnOff={toggleOnOff2}
             />
+
             <ChapterList />
             <div className="tooltip tooltipBtn">
                 <span className="tooltiptext">Add new Recipe</span>
                 <Button
                     onClick={() => toggleOnOff(false)}
                     type="submit"
-                    classNames="button addrecipe-button flex cc"
+                    classNames="button addrecipe-button flex cc boxShadowL"
                     icon="post_add"
                 />
             </div>
