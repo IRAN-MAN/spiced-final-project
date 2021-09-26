@@ -16,7 +16,7 @@ export default function MyProfile() {
 
     return (
         <div className="profileWrapper flex cc fcolumn">
-            <div className="avatarWrapper">
+            <div className="avatarWrapper boxShadowL">
                 <img
                     className="avatar owner"
                     src={user.profile_pic}

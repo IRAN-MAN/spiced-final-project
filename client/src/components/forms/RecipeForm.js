@@ -63,7 +63,7 @@ export default function RecipeForm(props) {
     };
 
     return (
-        <div className="authWrapper flex cc fcolumn scrollY">
+        <div className="authWrapper flex cc fcolumn">
             <h2>Add a new delicious Recipe</h2>
             <div>
                 <IngredientInput />

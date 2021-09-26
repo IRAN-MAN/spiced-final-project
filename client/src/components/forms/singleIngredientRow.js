@@ -12,39 +12,45 @@ export default function SingleIngredientRow(props) {
     const [inputValues, handleChange] = useStatefulFields();
     return (
         <div>
-            <label htmlFor="quantity">
-                Quantity
+            <label htmlFor="quantity" className="input">
                 <input
+                    id="quantity"
                     ref={quantityInput}
+                    className="input__field"
                     type="number"
                     name="quantity"
-                    placeholder="quantity"
+                    placeholder=" "
                     required
                     onChange={handleChange}
                 />
+                <span className="input__label">Quantity</span>
             </label>
 
-            <label htmlFor="unit">
-                Unit
+            <label htmlFor="unit" className="input">
                 <input
+                    id="unit"
                     ref={unitInput}
+                    className="input__field"
                     type="text"
                     name="unit"
-                    placeholder="unit"
+                    placeholder=" "
                     required
                     onChange={handleChange}
                 />
+                <span className="input__label">Unit</span>
             </label>
-            <label htmlFor="ingredient_name">
-                ingredient
+            <label htmlFor="ingredient_name" className="input">
                 <input
+                    id="ingredient_name"
                     ref={nameInput}
+                    className="input__field"
                     type="text"
                     name="ingredient_name"
-                    placeholder="ingredient"
+                    placeholder=" "
                     required
                     onChange={handleChange}
                 />
+                <span className="input__label">Ingredient</span>
             </label>
             <Button
                 labeltext="add ingredient"

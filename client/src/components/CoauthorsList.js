@@ -12,7 +12,7 @@ export default function CoauthorsList(props) {
                         <div className="tooltip">
                             <span className="tooltiptext">cookbook owner</span>
                             <img
-                                className="avatar smallAvatar owner"
+                                className="avatar smallAvatar owner boxShadowS"
                                 src={coauthor.profile_pic}
                                 alt={
                                     coauthor.first_name +
@@ -41,7 +41,7 @@ export default function CoauthorsList(props) {
                                     {coauthor.first_name}
                                 </span>
                                 <img
-                                    className="avatar smallAvatar"
+                                    className="avatar smallAvatar boxShadowS"
                                     src={coauthor.profile_pic}
                                     alt={
                                         coauthor.first_name +

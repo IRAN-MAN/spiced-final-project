@@ -25,7 +25,7 @@ export default function Chapter({ chapter_id }) {
                 <Link to={"/recipe/" + recipe.recipe_id}>
                     <div className="recipePreviewWrapper flex jcc fcolumn">
                         <img
-                            className="recipePreview"
+                            className="recipePreview boxShadowL"
                             src={recipe.recipe_photo || DEFAULT_COVER}
                         />
                     </div>

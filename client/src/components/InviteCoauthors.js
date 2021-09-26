@@ -6,7 +6,6 @@ export default function InviteCoauthors(props) {
 
     return (
         <section className="backdrop">
-            InviteCoauthors Component
             <button
                 className="closeBackdropButton"
                 onClick={() => toggleOnOff(true)}

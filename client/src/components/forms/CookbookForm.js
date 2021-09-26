@@ -22,16 +22,19 @@ export default function CookbookForm(props) {
             <h2>Create your own Cookbook</h2>
             <p>Collect and share all your delicious Recipes </p>
             <div className="cookbookForm flex cc fcolumn">
-                <label htmlFor="cookbook_name" value="First Name">
-                    Your Cookbook Name
+                <label htmlFor="cookbook_name" className="input">
                     <input
+                        id="cookbook_name"
+                        className="input__field"
                         type="text"
                         name="cookbook_name"
-                        placeholder="Cookbook Name"
+                        placeholder=" "
                         required
                         onChange={handleChange}
                     />
+                    <span className="input__label">Your Cookbook Name</span>
                 </label>
+
                 <Button
                     labeltext="Create Cookbook"
                     type="submit"

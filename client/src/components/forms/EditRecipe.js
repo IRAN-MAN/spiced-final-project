@@ -16,7 +16,7 @@ export default function EditRecipe(props) {
             >
                 ×
             </button>
-            <div className="authWrapper flex cc fcolumn scrollY">
+            <div className="authWrapper flex cc fcolumn">
                 <h2>Edit Recipe</h2>
                 <div>
                     <div className="authWrapper flex cc frow ">

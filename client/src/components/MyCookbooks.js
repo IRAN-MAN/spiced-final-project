@@ -21,7 +21,7 @@ export default function MyCookbooks() {
             <div className="" key={cookbook.cookbook_id}>
                 <li key={cookbook.cookbook_id} className="cookbookWrapper">
                     <Link to={"/cookbook/" + cookbook.cookbook_id}>
-                        <div className="coverWrapper">
+                        <div className="coverWrapper boxShadowL">
                             <img
                                 className="cover"
                                 src={cookbook.cover_pic}
@@ -50,7 +50,7 @@ export default function MyCookbooks() {
                 <Button
                     onClick={() => toggleOnOff(false)}
                     type="Create CookBook"
-                    classNames="button addrecipe-button flex cc"
+                    classNames="button addrecipe-button flex cc boxShadowL"
                     icon="menu_book"
                 />
             </div>
