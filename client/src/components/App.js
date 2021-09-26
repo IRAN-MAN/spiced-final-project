@@ -14,6 +14,7 @@ import MyProfile from "./MyProfile";
 import Cookbook from "./Cookbook";
 import Recipe from "./Recipe";
 import EditProfile from "./EditProfile";
+import FadeIn from "./FadeIn";
 // import UserProfile from "./UserProfile";
 
 //hooks
@@ -39,25 +40,27 @@ export default function App(props) {
 
     return (
         <BrowserRouter>
-            <Header />
-            <Navigation />
-            <div className="main-content">
-                <Switch>
-                    <Route path="/" exact>
-                        {inviteLink && <Redirect to={`${inviteLink}`} />}
-                        <MyProfile />
-                    </Route>
-                    <Route path="/cookbook/:id" component={Cookbook} />
-                    <Route path="/recipe/:id" component={Recipe} />
-                    <Route path="/editProfile" component={EditProfile} />
+            <FadeIn delay={250} duration={850}>
+                <Header />
+                <Navigation />
+                <div className="main-content">
+                    <Switch>
+                        <Route path="/" exact>
+                            {inviteLink && <Redirect to={`${inviteLink}`} />}
+                            <MyProfile />
+                        </Route>
+                        <Route path="/cookbook/:id" component={Cookbook} />
+                        <Route path="/recipe/:id" component={Recipe} />
+                        <Route path="/editProfile" component={EditProfile} />
 
-                    {/* This one should catch all the weird ones */}
-                    <Route path="/">
-                        <Redirect to="/" />
-                    </Route>
-                </Switch>
-            </div>
-            <Footer />
+                        {/* This one should catch all the weird ones */}
+                        <Route path="/">
+                            <Redirect to="/" />
+                        </Route>
+                    </Switch>
+                </div>
+                <Footer />
+            </FadeIn>
         </BrowserRouter>
     );
 }
