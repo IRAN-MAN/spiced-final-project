@@ -3,17 +3,15 @@ import Login from "./Login";
 import Registration from "./Registration";
 import AcceptInvite from "./AcceptInvite";
 import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
-import Logo from "./Logo";
 import FadeIn from "./FadeIn";
+import Header from "./Header";
 
 export default function Welcome() {
     return (
         <BrowserRouter>
             <FadeIn delay={250} duration={850}>
                 <div className="flex fcolumn cc">
-                    <div>
-                        <Logo />
-                    </div>
+                    <Header />
 
                     <div className="navWrapper">
                         <nav>
