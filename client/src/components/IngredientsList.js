@@ -13,7 +13,7 @@ export default function IngredientsList(props) {
     };
 
     return (
-        <div className="ingredientsWrapper flex cc">
+        <div>
             <p className="ingredients">
                 <span className="bolder">Ingredients: </span>
                 {renderIngredients()}
