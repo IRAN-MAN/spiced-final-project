@@ -6,7 +6,7 @@ import {
 
 // components
 import Button from "./Button";
-
+import FadeIn from "./FadeIn";
 // hooks
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -32,90 +32,103 @@ export default function EditProfile() {
     }, [userInput]);
 
     return (
-        <div className="authWrapper flex fcolumn">
-            <form
-                onSubmit={(event) => onEditAccountSubmit(event)}
-                className="flex fcolumn"
-            >
-                <label htmlFor="first_name" value="First Name">
-                    First Name
-                    <input
-                        id="first_name"
-                        type="text"
-                        name="first_name"
-                        placeholder="first name"
-                        defaultValue={user.first_name}
-                        required
+        <FadeIn delay={250} duration={850}>
+            <div className="authWrapper flex fcolumn">
+                <form
+                    onSubmit={(event) => onEditAccountSubmit(event)}
+                    className="flex fcolumn"
+                >
+                    <label htmlFor="first_name" className="input">
+                        <input
+                            id="first_name"
+                            className="input__field"
+                            type="text"
+                            name="first_name"
+                            placeholder=" "
+                            defaultValue={user.first_name}
+                            required
+                        />
+                        <span className="input__label">First Name</span>
+                    </label>
+
+                    <label htmlFor="last_name" className="input">
+                        <input
+                            id="last_name"
+                            className="input__field"
+                            type="text"
+                            name="last_name"
+                            placeholder=" "
+                            defaultValue={user.last_name}
+                            required
+                        />
+                        <span className="input__label">Last Name</span>
+                    </label>
+                    <label htmlFor="email" className="input">
+                        <input
+                            id="email"
+                            className="input__field"
+                            type="text"
+                            name="email"
+                            placeholder=" "
+                            defaultValue={user.email}
+                            required
+                        />
+                        <span className="input__label">Email</span>
+                    </label>
+                    <label htmlFor="about" className="input">
+                        <input
+                            id="about"
+                            className="input__field"
+                            type="text"
+                            name="about"
+                            placeholder=" "
+                            defaultValue={user.about}
+                            required
+                        />
+                        <span className="input__label">About</span>
+                    </label>
+
+                    <label htmlFor="city" className="input">
+                        <input
+                            id="city"
+                            className="input__field"
+                            type="text"
+                            name="city"
+                            placeholder=" "
+                            defaultValue={user.city}
+                            required
+                        />
+                        <span className="input__label">City</span>
+                    </label>
+                    <label htmlFor="new_password" className="input">
+                        <input
+                            id="new_password"
+                            className="input__field"
+                            type="password"
+                            name="new_password"
+                            placeholder="******"
+                        />
+                        <span className="input__label">Password</span>
+                    </label>
+                    <label htmlFor="repeat_password" className="input">
+                        <input
+                            id="repeat_password"
+                            className="input__field"
+                            type="password"
+                            name="repeat_password"
+                            placeholder="******"
+                        />
+                        <span className="input__label">Repeat Password</span>
+                    </label>
+                    <Button
+                        labeltext="Update Info"
+                        type="submit"
+                        classNames="button submit-button"
+                        icon="arrow_right_alt"
                     />
-                </label>
-                <label htmlFor="last_name">
-                    Last Name
-                    <input
-                        id="last_name"
-                        type="text"
-                        name="last_name"
-                        placeholder="last name"
-                        defaultValue={user.last_name}
-                        required
-                    />
-                </label>
-                <label htmlFor="email">
-                    Email
-                    <input
-                        id="email"
-                        type="text"
-                        name="email"
-                        placeholder="email"
-                        defaultValue={user.email}
-                        required
-                    />
-                </label>
-                <label htmlFor="about">
-                    About
-                    <input
-                        id="about"
-                        type="text"
-                        name="about"
-                        placeholder="last name"
-                        defaultValue={user.about}
-                    />
-                </label>
-                <label htmlFor="city">
-                    City
-                    <input
-                        id="city"
-                        type="text"
-                        name="city"
-                        placeholder="last name"
-                        defaultValue={user.city}
-                    />
-                </label>
-                <label htmlFor="password">
-                    Password
-                    <input
-                        id="password"
-                        type="password"
-                        name="new_password"
-                        placeholder="******"
-                    />
-                </label>
-                <label htmlFor="repeat_password">
-                    Repeat Password
-                    <input
-                        id="repeat_password"
-                        type="password"
-                        name="repeat_password"
-                        placeholder="******"
-                    />
-                </label>
-                <Button
-                    labeltext="Update Info"
-                    type="submit"
-                    classNames="button submit-button"
-                    icon="arrow_right_alt"
-                />
-            </form>
-        </div>
+                </form>
+            </div>
+        </FadeIn>
     );
 }
 
@@ -127,11 +140,12 @@ async function dispatchUserInput(event, dispatch) {
         email,
         about,
         city,
-        password,
+        new_password,
         repeat_password,
     } = event.target;
-
-    if (!password.value) {
+    console.log("password: ", new_password.value);
+    console.log("repeat: ", repeat_password.value);
+    if (!new_password.value) {
         await dispatch(
             onUserInputChange({
                 first_name: first_name.value,
@@ -142,6 +156,17 @@ async function dispatchUserInput(event, dispatch) {
             })
         );
     } else {
+        console.log(
+            "!!!: ",
+            first_name.value,
+            last_name.value,
+            email.value,
+            city.value,
+            about.value
+        );
+
+        console.log("password: ", new_password.value);
+        console.log("repeat: ", repeat_password.value);
         await dispatch(
             onUserInputChange({
                 first_name: first_name.value,
@@ -149,7 +174,7 @@ async function dispatchUserInput(event, dispatch) {
                 email: email.value,
                 about: about.value,
                 city: city.value,
-                password: password.value,
+                new_password: new_password.value,
                 repeat_password: repeat_password.value,
             })
         );
