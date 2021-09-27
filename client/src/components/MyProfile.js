@@ -2,6 +2,7 @@
 import MyCookbooks from "./MyCookbooks";
 import UploadPictureForm from "./forms/UploadPictureForm";
 import { uploadProfilePic } from "../redux/action-creators";
+import FadeIn from "./FadeIn";
 
 // hooks
 import { useEffect } from "react";
@@ -36,7 +37,9 @@ export default function MyProfile() {
                     </p>
                 </div>
             </div>
-            <MyCookbooks />
+            <FadeIn delay={250} duration={850}>
+                <MyCookbooks />
+            </FadeIn>
         </div>
     );
 }
