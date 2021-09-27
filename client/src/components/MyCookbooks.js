@@ -7,7 +7,7 @@ import Button from "./Button";
 
 // hooks
 import { useSelector } from "react-redux";
-import { useToggle } from "../hooks/hooks";
+import { useToggle, useCurrentWidth } from "../hooks/hooks";
 
 export default function MyCookbooks() {
     const cookbooks = useSelector((state) => {
@@ -15,6 +15,7 @@ export default function MyCookbooks() {
     });
 
     const [toggle, toggleOnOff] = useToggle();
+    let windowWidth = useCurrentWidth();
 
     const renderCookbooks = (cookbook) => {
         return (
@@ -38,12 +39,22 @@ export default function MyCookbooks() {
     return (
         <div className="cookbooksWrapper flex cc fcolumn">
             <h2>My Cookbooks</h2>
+            <p>{windowWidth}</p>
             <ul className="flex jcc ">
-                <Gallery
-                    elements={cookbooks}
-                    elementsPerPage={4}
-                    render={renderCookbooks}
-                />
+                {windowWidth > 768 && (
+                    <Gallery
+                        elements={cookbooks}
+                        elementsPerPage={4}
+                        render={renderCookbooks}
+                    />
+                )}
+                {windowWidth <= 768 && (
+                    <Gallery
+                        elements={cookbooks}
+                        elementsPerPage={2}
+                        render={renderCookbooks}
+                    />
+                )}
             </ul>
             <div className="tooltip tooltipBtn">
                 <span className="tooltiptext">Create Cookbook</span>
