@@ -84,23 +84,20 @@ export default function Recipe(props) {
             <div className="recipeMain">
                 <h1>{currentRecipe.recipe_name}</h1>
                 <div className="recipeStory">
-                    <q>
-                        <span className="bolder">
-                            {currentRecipe.recipe_story}
-                        </span>
-                    </q>
+                    <q>{currentRecipe.recipe_story} </q>
                 </div>
-                <div className="recipeDetails">
-                    <p className="ingredients">
-                        <span className="bolder">Prep time: </span>
-                        {currentRecipe.prep_time}
-                        {" ••• "}
+                <div className="ingredientsWrapper boxShadowS">
+                    <p className="recipeDetails">
+                        <span className="bolder">Preparation: </span>
+                        {currentRecipe.prep_time}min
+                        {" | "}
                         <span className="bolder">Difficulty: </span>
                         {renderDifficulty(currentRecipe.difficulty_level)}
                     </p>
+
+                    <IngredientsList ingredients_list={ingredients_list} />
                 </div>
-                <IngredientsList ingredients_list={ingredients_list} />
-                <div className="instructionsWrapper">
+                <div className="instructionsWrapper boxShadowS">
                     <div className="instructions">
                         <p>{currentRecipe.instructions}</p>
                     </div>
@@ -108,7 +105,7 @@ export default function Recipe(props) {
                 <div className="madeByWrapper flex cc ">
                     <div className="miniAvatarWrapper flex vcenter">
                         <img
-                            className="avatar smallAvatar"
+                            className="avatar smallAvatar boxShadowS"
                             src={author.profile_pic}
                             alt={author.first_name + " " + author.last_name}
                         />
