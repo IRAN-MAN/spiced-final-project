@@ -16,9 +16,9 @@ import UploadPictureForm from "./forms/UploadPictureForm";
 import FadeIn from "./FadeIn";
 
 //hooks
-import { useToggle } from "../hooks/hooks";
+import { useToggle, useCurrentWidth } from "../hooks/hooks";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Cookbook(props) {
     const dispatch = useDispatch();
@@ -67,14 +67,15 @@ export default function Cookbook(props) {
                     <h1>{currentCookbook.cookbook_name}</h1>
                 </div>
             )}
+            <FadeIn delay={250} duration={850}>
+                <CoauthorsList
+                    user={user}
+                    coauthors={coauthors}
+                    toggleOnOff={toggleOnOff2}
+                />
 
-            <CoauthorsList
-                user={user}
-                coauthors={coauthors}
-                toggleOnOff={toggleOnOff2}
-            />
-
-            <ChapterList />
+                <ChapterList />
+            </FadeIn>
             <div className="tooltip tooltipBtn">
                 <span className="tooltiptext">Add new Recipe</span>
                 <Button

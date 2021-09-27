@@ -6,9 +6,11 @@ import Gallery from "./Gallery";
 
 // hooks
 import { useSelector } from "react-redux";
+import { useCurrentWidth } from "../hooks/hooks";
 
 export default function Chapter({ chapter_id }) {
     const recipes = useSelector((state) => state.recipes);
+    let windowWidth = useCurrentWidth();
 
     //filter recipes by chapter
     const filteredRecipes = () => {
@@ -38,12 +40,26 @@ export default function Chapter({ chapter_id }) {
     return (
         <div className="chapterWrapper flex cc fcolumn">
             <ul className="flex jcc">
+                {windowWidth > 768 && (
+                    <Gallery
+                        elements={filteredRecipes()}
+                        elementsPerPage={4}
+                        render={renderRecipe}
+                    />
+                )}
+                {windowWidth <= 768 && (
+                    <Gallery
+                        elements={filteredRecipes()}
+                        elementsPerPage={1}
+                        render={renderRecipe}
+                    />
+                )}
                 {/* {recipes.length > 0 && renderRecipePreviews()} */}
-                <Gallery
+                {/* <Gallery
                     elements={filteredRecipes()}
                     elementsPerPage={3}
                     render={renderRecipe}
-                />
+                /> */}
             </ul>
         </div>
     );
