@@ -12,7 +12,7 @@ export default function ChapterList() {
         return chapters.map((chapter) => {
             return (
                 <li key={chapter.id}>
-                    <h1>{chapter.category}</h1>
+                    <h2 className="chapterHeading">{chapter.category}</h2>
                     <Chapter chapter_id={chapter.id}></Chapter>
                 </li>
             );
