@@ -1,0 +1,15 @@
+/* INPUT */
+
+input {
+    border: none;
+    padding: 5px;
+}
+textarea {
+    border: none;
+    padding-inline-start: 5px;
+}
+input:focus {
+    outline: none !important;
+    border-color: peru;
+    box-shadow: 0 0 5px peru;
+}

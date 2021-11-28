@@ -1,0 +1,24 @@
+/* INGREDIENTS */
+
+.ingredientsWrapper {
+    background-color: white;
+    padding: 20px;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-block-end: 20px;
+    /* border: 2px solid black; */
+}
+.ingredients {
+}
+.ingredientslist {
+    list-style: none;
+    padding-inline-start: 50px;
+    padding-block-start: 20px;
+    height: 225px;
+    overflow-y: scroll;
+}
+.ingredientslist li {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
