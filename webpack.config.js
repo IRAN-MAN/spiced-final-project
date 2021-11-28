@@ -33,21 +33,36 @@ module.exports = () => ({
             {
                 test: /\.js$/,
                 loader: "babel-loader",
-            }, {
-                test: /\.css$/i,
+            },
+
+            // {
+            //     test: /\.css$/i,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         {
+            //             loader: "css-loader",
+            //             options: {
+            //                 url: false,
+            //             },
+            //         },
+            //     ],
+            // },
+            {
+                test: /\.s[ac]ss$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: "css-loader",
-                        options: {
-                            url: false,
-                        },
-                    },
+                    // Creates `style` nodes from JS strings
+                    "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
                 ],
             },
         ],
     },
-    plugins: [new MiniCssExtractPlugin({
-        filename: 'bundle.css',
-    })],
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "bundle.css",
+        }),
+    ],
 });

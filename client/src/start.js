@@ -9,6 +9,7 @@ import store from "./redux/store";
 //components
 import Welcome from "./components/Welcome";
 import App from "./components/App";
+import "./sass/main.scss";
 
 const isLoggedIn = async () => {
     // const dispatch = useDispatch();
