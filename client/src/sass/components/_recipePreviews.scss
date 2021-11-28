@@ -1,0 +1,20 @@
+/* RECIPEPREVIEWS */
+
+.recipePreviewWrapper {
+}
+.recipePreview {
+    width: 80vw;
+    height: 200px;
+    overflow: hidden;
+    margin-inline: 10px;
+    object-fit: cover;
+    @media only screen and (min-width: 768px) {
+        width: 150px;
+    }
+}
+
+.recipePreview:hover,
+.coverWrapper:hover {
+    transform: scale(105%, 105%);
+    transition: transform 2s ease, box-shadow 2s ease;
+}

@@ -1,0 +1,8 @@
+.backdrop {
+    position: fixed;
+    background-color: rgba(245, 245, 245, 0.95);
+    inset: 0;
+    padding-block: 50px;
+    z-index: 20;
+    overflow-y: scroll;
+}

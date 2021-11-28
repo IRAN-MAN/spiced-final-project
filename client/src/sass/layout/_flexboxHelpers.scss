@@ -1,0 +1,20 @@
+/* FLEX */
+.flex {
+    display: flex;
+}
+.vcenter {
+    align-items: center;
+}
+.jcc {
+    justify-content: center;
+}
+.cc {
+    align-items: center;
+    justify-content: center;
+}
+.fcolumn {
+    flex-direction: column;
+}
+.frow {
+    flex-direction: row !important;
+}

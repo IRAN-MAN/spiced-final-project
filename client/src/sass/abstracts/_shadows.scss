@@ -1,0 +1,26 @@
+@mixin boxshadow1() {
+    box-shadow: 0.5rem 0.5rem 2rem rgba($color-black, 0.6);
+}
+
+@mixin boxshadow_small() {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.3);
+}
+@mixin boxshadow_big() {
+    box-shadow: 1.2rem 1.2rem 2.5rem rgba($color-darkgrey, 0.6),
+        1.3rem 1.3rem 2.8rem rgba($color-darkgrey, 0.2);
+}
+
+/* BOX-SHADOW */
+
+.boxShadowS {
+    box-shadow: 0px 2px 5px grey;
+}
+.boxShadowL {
+    box-shadow: 0px 4px 10px grey;
+}
+.boxShadowS:hover {
+    box-shadow: 0px 4px 5px grey;
+}
+.boxShadowL:hover {
+    box-shadow: 0px 6px 10px grey;
+}

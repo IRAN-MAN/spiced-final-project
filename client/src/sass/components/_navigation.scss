@@ -1,0 +1,32 @@
+/* NAVIGATION */
+
+.navWrapper {
+    z-index: 10;
+    position: fixed;
+    height: 25px;
+    top: 0;
+    background-color: whitesmoke;
+    @media only screen and (min-width: 768px) {
+        position: relative;
+        background-color: transparent;
+    }
+}
+
+nav {
+    width: 100vw;
+    padding-inline: 10px;
+}
+nav-ul {
+    width: 100vw;
+    flex-direction: row;
+}
+.nav-ul :last-child {
+    margin-inline-start: auto;
+}
+nav ul li {
+    margin-inline: 10px;
+    height: 30px;
+}
+nav ul li:hover {
+    border-block-end: 2px solid peru;
+}

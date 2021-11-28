@@ -1,0 +1,25 @@
+/* INSTRUCTIONS */
+.instructionsWrapper {
+    width: 90%;
+    max-width: 700px;
+    padding: 20px;
+    margin-inline: auto;
+    margin-block: 20px;
+    background-color: white;
+}
+.instructions {
+    width: 100%;
+    column-count: 1;
+    column-gap: 35px;
+    column-rule-style: solid;
+    column-width: 100px;
+    column-rule-width: 2px;
+    text-align: justify;
+    text-justify: inter-word;
+    @media only screen and (min-width: 480px) {
+        column-count: 2;
+    }
+    @media only screen and (min-width: 768px) {
+        column-count: 3;
+    }
+}

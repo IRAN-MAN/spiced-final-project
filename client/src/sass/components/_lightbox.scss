@@ -1,0 +1,18 @@
+/* LIGHTBOX */
+.lightboxWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(209, 209, 209, 0.8);
+    z-index: 20;
+}
+.lightboxImageWrapper {
+    width: 90vw;
+    height: 100vh;
+}
+.lightboxImageWrapper img {
+    max-height: 60vw;
+}

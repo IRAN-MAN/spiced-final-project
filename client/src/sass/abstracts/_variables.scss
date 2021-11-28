@@ -1,0 +1,25 @@
+//FONT
+$logo-font-family-main: "Baybayin Sisil 400";
+$logo-font-family-sub: "Major Mono Display Regular";
+$default-font-family: "Big Shoulders Text";
+$default-font-heading: "Ostrich Sans Regular";
+$default-font-paragraph: "Big Shoulders Text";
+
+$default-font-size: 1.6rem;
+
+//BREAKPOINTS
+
+$breakpoints: (
+    mobile: 768px,
+    tablet: 769px,
+    desktop: 1024px,
+    widescreen: 1216px,
+    fullhd: 1408px,
+) !default;
+
+//animation
+$animation-time-veryshort: 0.2;
+$animation-time-short: 0.5;
+$animation-time-middle: 1;
+$animation-time-long: 2;
+$animation-time-verylong: 2.5;

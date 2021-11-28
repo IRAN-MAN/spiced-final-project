@@ -1,0 +1,10 @@
+/* LOGO */
+.logo {
+    width: 100vw;
+    object-fit: cover;
+    @media only screen and (min-width: 768px) {
+        max-width: none;
+        height: 200px;
+        object-fit: cover;
+    }
+}
