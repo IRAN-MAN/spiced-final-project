@@ -81,7 +81,7 @@ export default function Cookbook(props) {
                 <Button
                     onClick={() => toggleOnOff(false)}
                     type="submit"
-                    classNames="button addrecipe-button flex cc boxShadowL"
+                    classNames="button button__addRecipe flex cc boxShadowL"
                     icon="post_add"
                 />
             </div>

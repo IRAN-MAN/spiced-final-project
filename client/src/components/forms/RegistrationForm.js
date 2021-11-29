@@ -74,7 +74,7 @@ export default function RegistrationForm() {
                 <Button
                     labeltext="sign up"
                     type="submit"
-                    classNames="button submit-button"
+                    classNames="button button__submit"
                     icon="arrow_right_alt"
                 />
                 <p className="message">{error}</p>

@@ -85,7 +85,7 @@ export default function AcceptInvite(props) {
                     <Button
                         labeltext="join cookbook"
                         type="submit"
-                        classNames="button submit-button"
+                        classNames="button button__submit"
                         icon="send"
                     />
                     <p className="message">{error}</p>

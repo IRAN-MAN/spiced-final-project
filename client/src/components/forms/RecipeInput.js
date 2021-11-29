@@ -96,7 +96,7 @@ export default function RecipeInput(props) {
             <Button
                 labeltext="add recipe"
                 type="submit"
-                classNames="button submit-button"
+                classNames="button button__submit"
                 icon="arrow_right_alt"
                 onClick={() => props.collectRecipeInputes(inputValues)}
             />

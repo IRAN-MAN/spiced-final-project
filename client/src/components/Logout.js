@@ -8,7 +8,7 @@ export default function Logout() {
 
     return (
         <div className="logout">
-            <button className="logout-btn" onClick={onClickHandler}>
+            <button className="button__logout" onClick={onClickHandler}>
                 Logout
             </button>
         </div>

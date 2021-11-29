@@ -2,11 +2,13 @@
 
 .recipeStory {
     margin-block-end: 20px;
+    & q {
+        font-size: 1.4rem;
+        font-weight: 900;
+    }
 }
-.recipeStory q {
-    font-size: 1.4rem;
-    font-weight: 900;
-}
+
+
 .recipeMain {
     width: 100vw;
 }

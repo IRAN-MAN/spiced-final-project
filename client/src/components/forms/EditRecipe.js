@@ -17,7 +17,8 @@ export default function EditRecipe(props) {
         <section className="backdrop">
             <FadeIn delay={250} duration={450}>
                 <button
-                    className="closeBackdropButton"
+                    className="button__closeBackdrop"
+
                     onClick={() => toggleOnOff(true)}
                 >
                     ×
@@ -58,10 +59,12 @@ export default function EditRecipe(props) {
                                             required
                                         />
                                     </label>
-                                    <div className="buttonWrapper">
+
+                                    <div className="button__wrapper">
                                         <button
                                             type="submit"
-                                            className="button submit-button"
+                                            className="button button__submit"
+
                                         >
                                             <span className="flex">
                                                 add ingredient
@@ -151,10 +154,12 @@ export default function EditRecipe(props) {
                                     />
                                 </label>
                             </div>
-                            <div className="buttonWrapper">
+
+                            <div className="button__wrapper">
                                 <button
                                     type="submit"
-                                    className="button submit-button"
+                                    className="button button__submit"
+
                                 >
                                     <span className="flex">
                                         Update Recipe

@@ -38,7 +38,7 @@ export default function CookbookForm(props) {
                 <Button
                     labeltext="Create Cookbook"
                     type="submit"
-                    classNames="button submit-button"
+                    classNames="button button__submit"
                     icon="arrow_right_alt"
                     onClick={onClick}
                 />

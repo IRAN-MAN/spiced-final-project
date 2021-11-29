@@ -3,6 +3,13 @@
 input {
     border: none;
     padding: 5px;
+    &__label {
+        font-size: 1rem;
+    }
+}
+input[type="file"] {
+    display: none;
+
 }
 textarea {
     border: none;
@@ -13,3 +20,71 @@ input:focus {
     border-color: peru;
     box-shadow: 0 0 5px peru;
 }
+//----
+:root {
+    --color-light: whitesmoke;
+    --color-dark: black;
+    --color-signal: peru;
+
+    --color-background: var(--color-light);
+    --color-text: var(--color-dark);
+    --color-accent: var(--color-signal);
+
+    --size-bezela: 0.5rem;
+    --size-radius: 4px;
+
+    line-height: 1.4;
+
+    font-family: "Inter", sans-serif;
+    font-size: calc(0.6rem + 0.4vw);
+    color: var(--color-text);
+    background: var(--color-background);
+    font-weight: 300;
+    padding: 0 calc(var(--size-bezel) * 3);
+}
+
+.l-design-width {
+    max-width: 40rem;
+    padding: 1rem;
+}
+
+.input {
+    position: relative;
+
+    &__label {
+        font-size: 1.3rem;
+        position: absolute;
+        left: 5px;
+        top: 0;
+        padding: calc(var(--size-bezela) * 0.75) calc(var(--size-bezela) * 0.5);
+        margin: calc(var(--size-bezela) * 0.75 + 3px)
+            calc(var(--size-bezela) * 0.5);
+        background: pink;
+        white-space: nowrap;
+        transform: translate(0, 0);
+        transform-origin: 0 0;
+        background: var(--color-background);
+        transition: transform 120ms ease-in;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    &__field {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border: 3px solid currentColor;
+        padding: calc(var(--size-bezela) * 1.5) var(--size-bezela);
+        color: currentColor;
+        background: transparent;
+        border-radius: var(--size-radius);
+
+        &:focus,
+        &:not(:placeholder-shown) {
+            & + .input__label {
+                transform: translate(0.25rem, -65%) scale(0.8);
+                color: var(--color-accent);
+            }
+        }
+    }
+}
+

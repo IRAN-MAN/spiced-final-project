@@ -25,7 +25,7 @@ export default function UploadPictureForm(props) {
                 action="/api/upload"
                 method="POST"
             >
-                <label className="buttonWrapper" forhtml="file">
+                <label className="button_wrapper" forhtml="file">
                     <input
                         id="file"
                         className="textfield"
