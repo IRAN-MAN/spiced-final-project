@@ -84,6 +84,7 @@ export default function RecipeForm(props) {
                                 onClick={() => setStep(step + 1)}
                                 type="submit"
                                 classNames="button button__addRecipe flex cc boxShadowL"
+
                                 icon="send"
                             />
                         </div>

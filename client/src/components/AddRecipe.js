@@ -9,7 +9,9 @@ export default function AddRecipe(props) {
         <section className="backdrop">
             <FadeIn delay={250} duration={850}>
                 <button
+
                     className="button__closeBackdrop"
+
                     onClick={() => toggleOnOff(true)}
                 >
                     ×

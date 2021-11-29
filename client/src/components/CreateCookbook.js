@@ -10,6 +10,7 @@ export default function CreateCookbook(props) {
             <FadeIn delay={250} duration={450}>
                 <button
                     className="button__closeBackdrop"
+
                     onClick={() => toggleOnOff(true)}
                 >
                     ×
