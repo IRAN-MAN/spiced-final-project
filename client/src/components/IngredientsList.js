@@ -1,10 +1,15 @@
-export default function IngredientsList(props) {
+import { recipe } from "./constants/constants";
+
+export default function IngredientsList({ ingredients_list }) {
     const renderIngredients = () => {
-        return props.ingredients_list.map((ingredient) => {
+        // console.log("length:", ingredients_list.length);
+        return ingredients_list.map((ingredient, i) => {
             const ingredientresult = (
-                <span className="ingredient" key={ingredient.id}>
+                <span className="ingredient" key={i}>
                     {ingredient.quantity}
-                    {ingredient.unit} {ingredient.ingredient_name},{" "}
+                    {ingredient.unit && ingredient.unit + " "}
+                    {ingredient.ingredient_name}
+                    {i !== ingredients_list.length - 1 && recipe.comma}
                 </span>
             );
 
@@ -15,7 +20,9 @@ export default function IngredientsList(props) {
     return (
         <div>
             <p className="ingredients">
-                <span className="bolder">Ingredients: </span>
+                <span className="bolder">
+                    {recipe.ingredients + recipe.colon}
+                </span>
                 {renderIngredients()}
             </p>
         </div>

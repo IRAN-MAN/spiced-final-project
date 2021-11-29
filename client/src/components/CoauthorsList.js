@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 
+//constants
+import { tooltips } from "./constants/constants";
+
 export default function CoauthorsList(props) {
     console.log("...(CoauhtorsList) coauthors: ", props.coauthors);
     const user = props.user;
@@ -8,9 +11,11 @@ export default function CoauthorsList(props) {
         return (
             <li key={coauthor.coauthor_id} className="coauthorWrapper">
                 <Link to={"/users/profile/" + user.id}>
-                    <div className="miniAvatarWrapper">
+                    <div className="avatar__wrapper-mini">
                         <div className="tooltip">
-                            <span className="tooltiptext">cookbook owner</span>
+                            <span className="tooltiptext">
+                                {tooltips.cookbookOwner}
+                            </span>
                             <img
                                 className="avatar smallAvatar owner boxShadowS"
                                 src={coauthor.profile_pic}
@@ -35,7 +40,7 @@ export default function CoauthorsList(props) {
             return (
                 <li key={coauthor.coauthor_id} className="coauthorWrapper">
                     <Link to={"/users/profile/" + coauthor.id}>
-                        <div className="miniAvatarWrapper">
+                        <div className="avatar__wrapper-mini">
                             <div className="tooltip">
                                 <span className="tooltiptext">
                                     {coauthor.first_name}
@@ -62,17 +67,16 @@ export default function CoauthorsList(props) {
             <ul className="flex jcc vcenter frow">
                 {props.coauthors.length > 0 && renderCoauthors()}
                 <li className="coauthorWrapper">
-                    <div className="miniAvatarWrapper">
+                    <div className="avatar__wrapper-mini">
                         <label>
                             <button
                                 onClick={() => {
-                                    console.log("CLICK!");
                                     props.toggleOnOff(false);
                                 }}
                             ></button>
                             <div className="pointer tooltip">
                                 <span className="tooltiptext">
-                                    add coauthors
+                                    {tooltips.addCoauthor}
                                 </span>
                                 <span className="flex">
                                     <i className="material-icons white">

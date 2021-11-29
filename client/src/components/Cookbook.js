@@ -15,6 +15,9 @@ import InviteCoauthors from "./InviteCoauthors";
 import UploadPictureForm from "./forms/UploadPictureForm";
 import FadeIn from "./FadeIn";
 
+//constants
+import { tooltips } from "./constants/constants";
+
 //hooks
 import { useToggle } from "../hooks/hooks";
 import { useSelector, useDispatch } from "react-redux";
@@ -48,7 +51,7 @@ export default function Cookbook(props) {
     return (
         <div className="profileWrapper flex cc fcolumn">
             {currentCookbook && (
-                <div className="avatarWrapper boxShadowL">
+                <div className="avatar__wrapper boxShadowL">
                     <img
                         className="avatar"
                         src={currentCookbook.cover_pic}
@@ -58,7 +61,7 @@ export default function Cookbook(props) {
             )}
 
             <UploadPictureForm
-                label="change cover"
+                label={tooltips.changeCover}
                 action={uploadCookbookCover}
                 id={cookbook_id}
             />
@@ -77,7 +80,7 @@ export default function Cookbook(props) {
                 <ChapterList />
             </FadeIn>
             <div className="tooltip tooltipBtn">
-                <span className="tooltiptext">Add new Recipe</span>
+                <span className="tooltiptext">{tooltips.addRecipe}</span>
                 <Button
                     onClick={() => toggleOnOff(false)}
                     type="submit"

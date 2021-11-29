@@ -4,6 +4,9 @@ import UploadPictureForm from "./forms/UploadPictureForm";
 import { uploadProfilePic } from "../redux/action-creators";
 import FadeIn from "./FadeIn";
 
+//constants
+import { tooltips, userProfile } from "./constants/constants";
+
 // hooks
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -17,7 +20,7 @@ export default function MyProfile() {
 
     return (
         <div className="profileWrapper flex cc fcolumn">
-            <div className="avatarWrapper boxShadowL">
+            <div className="avatar__wrapper boxShadowL">
                 <img
                     className="avatar owner"
                     src={user.profile_pic}
@@ -25,7 +28,7 @@ export default function MyProfile() {
                 />
             </div>
             <UploadPictureForm
-                label="add photo"
+                label={tooltips.addPhoto}
                 action={uploadProfilePic}
                 id={user.id}
             />
@@ -33,7 +36,8 @@ export default function MyProfile() {
                 <h1>{user.first_name + " " + user.last_name}</h1>
                 <div>
                     <p>
-                        from <span className="bolder">{user.city}</span>
+                        {userProfile.from}
+                        <span className="bolder">{user.city}</span>
                     </p>
                 </div>
             </div>

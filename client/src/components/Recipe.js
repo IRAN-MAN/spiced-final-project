@@ -10,6 +10,7 @@ import {
 
 // constants
 const DEFAULT_COVER = "/images/default_photo.jpeg";
+import { recipe, tooltips } from "./constants/constants";
 
 //components
 import Lightbox from "./Lightbox";
@@ -60,14 +61,14 @@ export default function Recipe(props) {
     const renderDifficulty = (difficulty) => {
         let string = "";
         for (var i = 0; i < difficulty; i++) {
-            string += "⭑";
+            string += `${recipe.difficultyIndicator}`;
         }
         return <i>{string}</i>;
     };
 
     return (
         <div className="profileWrapper flex cc fcolumn">
-            <div className="avatarWrapper">
+            <div className="avatar__wrapper">
                 <img
                     className="avatar boxShadowL"
                     src={currentRecipe.recipe_photo || DEFAULT_COVER}
@@ -76,7 +77,7 @@ export default function Recipe(props) {
                 />
             </div>
             <UploadPictureForm
-                label="add photo"
+                label={tooltips.addPhoto}
                 action={uploadRecipePhoto}
                 id={currentRecipe.recipe_id}
             />
@@ -88,10 +89,14 @@ export default function Recipe(props) {
                 </div>
                 <div className="ingredientsWrapper boxShadowS">
                     <p className="recipeDetails">
-                        <span className="bolder">Preparation: </span>
-                        {currentRecipe.prep_time}min
-                        {" | "}
-                        <span className="bolder">Difficulty: </span>
+                        <span className="bolder">
+                            {recipe.preparation + recipe.colon}
+                        </span>
+                        {currentRecipe.prep_time + recipe.minutes}
+                        {recipe.separator}
+                        <span className="bolder">
+                            {recipe.difficulty + recipe.colon}
+                        </span>
                         {renderDifficulty(currentRecipe.difficulty_level)}
                     </p>
 
@@ -103,7 +108,7 @@ export default function Recipe(props) {
                     </div>
                 </div>
                 <div className="madeByWrapper flex cc ">
-                    <div className="miniAvatarWrapper flex vcenter">
+                    <div className="avatar__wrapper-mini flex vcenter">
                         <img
                             className="avatar smallAvatar boxShadowS"
                             src={author.profile_pic}
@@ -113,7 +118,7 @@ export default function Recipe(props) {
                     <div>
                         <Link to="/userprofile/:id">
                             <p>
-                                Made with love by{" "}
+                                {recipe.madeWithLove}
                                 <span className="bolder">
                                     {author.first_name + " " + author.last_name}
                                 </span>
@@ -122,7 +127,7 @@ export default function Recipe(props) {
                     </div>
                 </div>
                 <div className="tooltip tooltipBtn flex jcc vcenter">
-                    <span className="tooltiptext">Edit Recipe</span>
+                    <span className="tooltiptext">{tooltips.editRecipe}</span>
                     <Button
                         onClick={() => toggleOnOff(false)}
                         type="submit"

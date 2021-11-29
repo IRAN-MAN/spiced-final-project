@@ -1,6 +1,14 @@
 //components
 import FadeIn from "../FadeIn";
 
+//constants
+import {
+    buttonLabels,
+    editRecipe,
+    inputLabels,
+    inputPlaceholders,
+} from "../constants/constants";
+
 // hooks
 import { useSelector } from "react-redux";
 // import { useStatefulFields } from "../hooks/hooks";
@@ -11,7 +19,6 @@ export default function EditRecipe(props) {
     const currentRecipe = useSelector((state) => state.currentRecipe);
     const currentIngredients = useSelector((state) => state.ingredients_list);
     const chapters = useSelector((state) => state.chapters);
-    const ingredients_list = useSelector((state) => state.ingredients_list);
 
     return (
         <section className="backdrop">
@@ -23,17 +30,19 @@ export default function EditRecipe(props) {
                     ×
                 </button>
                 <div>
-                    <h2>Edit your Recipe</h2>
+                    <h2>{editRecipe.heading}</h2>
                     <div>
                         <div className="authWrapper flex cc frow ">
                             <div>
                                 <div>
                                     <label htmlFor="quantity">
-                                        Quantity
+                                        {inputLabels.quantity}
                                         <input
                                             type="number"
                                             name="quantity"
-                                            placeholder="quantity"
+                                            placeholder={
+                                                inputPlaceholders.quantity
+                                            }
                                             defaultValue={
                                                 currentIngredients.quantity
                                             }
@@ -41,20 +50,22 @@ export default function EditRecipe(props) {
                                         />
                                     </label>
                                     <label htmlFor="unit">
-                                        Unit
+                                        {inputLabels.unit}
                                         <input
                                             type="text"
                                             name="unit"
-                                            placeholder="unit"
+                                            placeholder={inputPlaceholders.unit}
                                             required
                                         />
                                     </label>
                                     <label htmlFor="ingredient_name">
-                                        ingredient
+                                        {inputLabels.ingredient}
                                         <input
                                             type="text"
                                             name="ingredient_name"
-                                            placeholder="ingredient"
+                                            placeholder={
+                                                inputPlaceholders.ingredient
+                                            }
                                             required
                                         />
                                     </label>
@@ -64,7 +75,7 @@ export default function EditRecipe(props) {
                                             className="button button__submit"
                                         >
                                             <span className="flex">
-                                                add ingredient
+                                                {buttonLabels.addIngredient}
                                                 <i className="material-icons">
                                                     arrow_right_alt
                                                 </i>
@@ -79,10 +90,10 @@ export default function EditRecipe(props) {
                         </div>
                         <div className="authWrapper flex cc fcolumn">
                             <label htmlFor="category">
-                                Category
+                                {inputLabels.category}
                                 <input
                                     name="category"
-                                    placeholder="Category"
+                                    placeholder={inputPlaceholders.category}
                                     list="category"
                                     required
                                 />
@@ -96,48 +107,48 @@ export default function EditRecipe(props) {
                                 </datalist>
                             </label>
                             <label htmlFor="recipe_name">
-                                Recipe Name
+                                {inputLabels.recipeName}
                                 <input
                                     type="text"
                                     name="recipe_name"
-                                    placeholder="Recipe Name"
+                                    placeholder={inputPlaceholders.recipeName}
                                     defaultValue={currentRecipe.recipe_name}
                                     required
                                 />
                             </label>
                             <label htmlFor="instructions">
-                                Instructions
+                                {inputLabels.instructions}
                                 <textarea
                                     type="text"
                                     name="instructions"
-                                    placeholder="Instructions"
+                                    placeholder={inputPlaceholders.instructions}
                                     defaultValue={currentRecipe.instructions}
                                     required
                                 ></textarea>
                             </label>
                             <label htmlFor="prep_time">
-                                Prep time (in min)
+                                {inputLabels.preptime}
                                 <input
                                     type="number"
                                     name="prep_time"
-                                    placeholder="Prep time (in min)"
+                                    placeholder={inputPlaceholders.preptime}
                                     defaultValue={currentRecipe.prep_time}
                                     required
                                 />
                             </label>
                             <label htmlFor="recipe_story">
-                                Story
+                                {inputLabels.story}
                                 <input
                                     type="text"
                                     name="recipe_story"
-                                    placeholder="Story"
+                                    placeholder={inputPlaceholders.story}
                                     defaultValue={currentRecipe.recipe_story}
                                     required
                                 />
                             </label>
                             <div>
                                 <label htmlFor="difficulty_level">
-                                    Difficulty
+                                    {inputLabels.difficulty}
                                     <input
                                         type="range"
                                         id="difficulty_level"
@@ -157,7 +168,7 @@ export default function EditRecipe(props) {
                                     className="button button__submit"
                                 >
                                     <span className="flex">
-                                        Update Recipe
+                                        {buttonLabels.updateRecipe}
                                         <i className="material-icons">
                                             arrow_right_alt
                                         </i>

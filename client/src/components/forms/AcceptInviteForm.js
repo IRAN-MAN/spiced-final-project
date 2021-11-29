@@ -3,6 +3,14 @@ import axios from "../../axios";
 // //components
 import Button from "../Button";
 
+//constants
+import {
+    acceptInvite,
+    buttonLabels,
+    inputLabels,
+    inputPlaceholders,
+} from "../constants/constants";
+
 // hooks
 import { useState, useEffect } from "react";
 import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
@@ -17,30 +25,30 @@ export default function AcceptInvite(props) {
     );
 
     // const cookbook_id = props.match.params.id;
-    console.log("...(ACCEPTINVITATION) cookbook_id: ", cookbook_id);
+    // console.log("...(ACCEPTINVITATION) cookbook_id: ", cookbook_id);
 
     const getCookbook = async (cookbook_id) => {
         const cookbookInfo = await axios.get(
             `/api/cookbooks/by_id/${cookbook_id}`
         );
-        console.log(
-            "...(ACTION receiveCurrentCookbook) cookbook:",
-            cookbookInfo.data
-        );
+        // console.log(
+        //     "...(ACTION receiveCurrentCookbook) cookbook:",
+        //     cookbookInfo.data
+        // );
         return cookbookInfo;
     };
 
     useEffect(async () => {
         const cookbook = await getCookbook(cookbook_id);
         setCookbook(cookbook.data);
-        console.log("THE COOKBOOK:", cookbook.data);
+        // console.log("THE COOKBOOK:", cookbook.data);
     }, []);
 
     return (
         <div className="authWrapper flex cc fcolumn">
-            <h1>Hej Good-Looking!</h1>
-            <p>Accept Invitation to join a community cookbook:</p>
-            <div className="avatarWrapper">
+            <h1>{acceptInvite.heading}</h1>
+            <p>{acceptInvite.subline}</p>
+            <div className="avatar__wrapper">
                 <img
                     className="avatar"
                     src={cookbook.cover_pic}
@@ -51,7 +59,7 @@ export default function AcceptInvite(props) {
             <div className="bioContent">
                 <h1>{cookbook.cookbook_name}</h1>
                 <p>
-                    by{" "}
+                    {acceptInvite.by}
                     {cookbook.author_first_name +
                         " " +
                         cookbook.author_last_name}
@@ -61,29 +69,29 @@ export default function AcceptInvite(props) {
             <div className="formWrapper">
                 <form onSubmit={submit} className="flex">
                     <label htmlFor="email">
-                        Email
+                        {inputLabels.email}
                         <input
                             id="email"
                             type="text"
                             name="email"
-                            placeholder="email"
+                            placeholder={inputPlaceholders.email}
                             required
                             onChange={handleChange}
                         />
                     </label>
                     <label htmlFor="password">
-                        Password
+                        {inputLabels.password}
                         <input
                             id="password"
                             type="password"
                             name="password"
-                            placeholder="******"
+                            placeholder={inputPlaceholders.password}
                             required
                             onChange={handleChange}
                         />
                     </label>
                     <Button
-                        labeltext="join cookbook"
+                        labeltext={buttonLabels.joinCookbook}
                         type="submit"
                         classNames="button button__submit"
                         icon="send"
