@@ -3,6 +3,9 @@ import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
 //components
 import Button from "../Button";
 
+//constants
+import { inputLabels, buttonLabels } from "../constants/constants";
+
 export default function RegistrationForm() {
     const [inputValues, handleChange] = useStatefulFields();
     const [submit, error] = useAuthSubmit("/api/users/signup", inputValues);
@@ -21,7 +24,9 @@ export default function RegistrationForm() {
                         onChange={handleChange}
                         autoComplete="off"
                     />
-                    <span className="input__label">First Name</span>
+                    <span className="input__label">
+                        {inputLabels.firstName}
+                    </span>
                 </label>
                 <label htmlFor="last_name" className="input">
                     <input
@@ -33,7 +38,7 @@ export default function RegistrationForm() {
                         required
                         onChange={handleChange}
                     />
-                    <span className="input__label">Last Name</span>
+                    <span className="input__label">{inputLabels.lastName}</span>
                 </label>
                 <label htmlFor="email" className="input">
                     <input
@@ -45,7 +50,7 @@ export default function RegistrationForm() {
                         required
                         onChange={handleChange}
                     />
-                    <span className="input__label">Email</span>
+                    <span className="input__label">{inputLabels.email}</span>
                 </label>
                 <label htmlFor="password" className="input">
                     <input
@@ -57,7 +62,7 @@ export default function RegistrationForm() {
                         required
                         onChange={handleChange}
                     />
-                    <span className="input__label">Password</span>
+                    <span className="input__label">{inputLabels.password}</span>
                 </label>
                 <label htmlFor="repeat_password" className="input">
                     <input
@@ -69,10 +74,12 @@ export default function RegistrationForm() {
                         required
                         onChange={handleChange}
                     />
-                    <span className="input__label">Repeat Password</span>
+                    <span className="input__label">
+                        {inputLabels.repeatPassword}
+                    </span>
                 </label>
                 <Button
-                    labeltext="sign up"
+                    labeltext={buttonLabels.signup}
                     type="submit"
                     classNames="button button__submit"
                     icon="arrow_right_alt"

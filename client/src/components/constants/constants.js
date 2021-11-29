@@ -10,6 +10,10 @@ export const tooltips = {
     cookbookOwner: "cookbook owner",
     editRecipe: "edit recipe",
     newCookbook: "new cookbook",
+    copyClipboard: "copy to clipboard",
+    shareFB: "share on fb",
+    shareWhatsapp: "share on whatsapp",
+    addInstructions: "add instructions",
 };
 
 export const recipe = {
@@ -35,11 +39,16 @@ export const buttonLabels = {
     createCookbook: "create cookbook",
     addIngredient: "add ingredient",
     updateRecipe: "update recipe",
+    login: "log in",
+    addRecipe: "add recipe",
 };
 
 export const inputLabels = {
+    firstName: "first name",
+    lastName: "last name",
     email: "email",
     password: "password",
+    repeatPassword: "repeat password",
     quantity: "quantity",
     unit: "unit",
     ingredient: "ingrdient",
@@ -57,7 +66,7 @@ export const inputPlaceholders = {
     newCookbook: "cookbook name",
     quantity: "quantity",
     unit: "unit",
-    ingredient: "ingrdient",
+    ingredient: "ingredient",
     category: "category",
     recipeName: "recipe name",
     instructions: "instructions",
@@ -73,4 +82,21 @@ export const newCookbook = {
 
 export const editRecipe = {
     heading: "Edit your Recipe",
+};
+
+export const addRecipe = {
+    heading: "Add a new delicious Recipe",
+    subline_1: "First add all your ingredients!",
+    subline_2: "Now add your instructions!",
+};
+
+export const invitation = {
+    heading: "Invite your Friends &amp; Family",
+    subline: "to join your cookbook",
+    callToShare: "Simply share this invitation with them:",
+    inviteCode: "www.whatscooking-goodlooking.com/",
+};
+
+export const urls = {
+    inviteLink: "http://localhost:3000/api/co_authors/community/invite/",
 };

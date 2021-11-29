@@ -1,7 +1,10 @@
 import { useDispatch } from "react-redux";
 // import { updateProfilePic } from "../actions";
 
-export default function UploadPictureForm(props) {
+//constants
+import { tooltips } from "../constants/constants";
+
+export default function UploadPictureForm({ label, id, action }) {
     const dispatch = useDispatch();
     // console.log(
     //     "...(UploadPictureForm) props:",
@@ -12,7 +15,7 @@ export default function UploadPictureForm(props) {
     const onPictureUpload = async (file) => {
         const formData = new FormData();
         formData.append("file", file);
-        await dispatch(props.action(formData, props.id));
+        await dispatch(action(formData, id));
     };
     return (
         <div
@@ -36,7 +39,7 @@ export default function UploadPictureForm(props) {
                         required
                     />
                     <div className="tooltip">
-                        <span className="tooltiptext">{props.label}</span>
+                        <span className="tooltiptext">{label}</span>
                         <span className="flex">
                             <i className="material-icons white">add_a_photo</i>
                         </span>

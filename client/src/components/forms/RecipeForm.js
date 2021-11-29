@@ -5,6 +5,9 @@ import { receiveRecipes } from "../../redux/action-creators";
 import IngredientInput from "./IngredientInput";
 import RecipeInput from "./RecipeInput";
 
+//constants
+import { addRecipe, tooltips } from "../constants/constants";
+
 //hooks
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
@@ -69,16 +72,16 @@ export default function RecipeForm(props) {
 
     return (
         <div>
-            <h2>Add a new delicious Recipe</h2>
+            <h2>{addRecipe.heading}</h2>
 
             <div>
                 {step === 1 && (
                     <div>
-                        <p>First add all your ingredients!</p>
+                        <p>{addRecipe.subline_1}</p>
                         <IngredientInput />
                         <div className="tooltip tooltipBtn">
                             <span className="tooltiptext">
-                                Add instructions
+                                {tooltips.addInstructions}
                             </span>
                             <Button
                                 onClick={() => setStep(step + 1)}
@@ -91,7 +94,7 @@ export default function RecipeForm(props) {
                 )}
                 {step === 2 && (
                     <div>
-                        <p>Now add your instructions! </p>
+                        <p>{addRecipe.subline_2}</p>
                         <RecipeInput
                             collectRecipeInputes={collectRecipeInputs}
                         />

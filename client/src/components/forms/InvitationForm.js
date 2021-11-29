@@ -1,10 +1,12 @@
 // import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
-
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
 //components
 // import Button from "../Button";
+
+//constants
+import { tooltips, invitation, urls } from "../constants/constants";
 
 export default function InvitationForm() {
     // const [inputValues, handleChange] = useStatefulFields();
@@ -14,36 +16,30 @@ export default function InvitationForm() {
     );
 
     const [inviteLink, setInviteLink] = useState(
-        `http://localhost:3000/api/co_authors/community/invite/${cookbook_id}`
+        `${urls.inviteLink}${cookbook_id}`
     );
 
     return (
         <div className="formWrapper">
             <div className="flex fcolumn">
-                <h1>Invite your Friends &amp; Family</h1>
-                <p>to join your cookbook</p>
+                <h1>{invitation.heading}</h1>
+                <p>{invitation.subline}</p>
 
                 <div className="invitationWrapper flex fcolumn boxShadowS">
-                    <p className="bolder">
-                        Simply share this invitation with them:
-                    </p>
+                    <p className="bolder">{invitation.callToShare}</p>
                     <label className="button__wrapper">
                         <div
                             className="invitationLink flex fcolumn cc"
                             onClick={() => {
-                                // console.log("CLICK!", inviteLink);
                                 navigator.clipboard.writeText(inviteLink);
                             }}
                         >
-                            <q>
-                                www.whatscooking-goodlooking.com/
-                                {cookbook_id}
-                            </q>
+                            <q>{invitation.inviteCode + cookbook_id}</q>
                             <button />
                             <div className=" flex frow cc">
                                 <div className="tooltip">
                                     <span className="tooltiptext">
-                                        copy to clipboard
+                                        {tooltips.copyClipboard}
                                     </span>
                                     <span className="flex">
                                         <i className="material-icons white">
@@ -53,7 +49,7 @@ export default function InvitationForm() {
                                 </div>
                                 <div className="tooltip">
                                     <span className="tooltiptext">
-                                        share on fb
+                                        {tooltips.shareFB}
                                     </span>
                                     <span className="flex">
                                         <i className="material-icons white">
@@ -63,7 +59,7 @@ export default function InvitationForm() {
                                 </div>
                                 <div className="tooltip">
                                     <span className="tooltiptext">
-                                        share on whatsapp
+                                        {tooltips.shareWhatsapp}
                                     </span>
                                     <span className="flex">
                                         <i className="material-icons white">

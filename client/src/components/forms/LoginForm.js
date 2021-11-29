@@ -3,6 +3,9 @@ import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
 //components
 import Button from "../Button";
 
+//constants
+import { inputLabels, buttonLabels } from "../constants/constants";
+
 export default function LoginForm() {
     const [inputValues, handleChange] = useStatefulFields();
     const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
@@ -20,7 +23,7 @@ export default function LoginForm() {
                         required
                         onChange={handleChange}
                     />
-                    <span className="input__label">Email</span>
+                    <span className="input__label">{inputLabels.email}</span>
                 </label>
                 <label htmlFor="password" className="input">
                     <input
@@ -32,10 +35,10 @@ export default function LoginForm() {
                         required
                         onChange={handleChange}
                     />
-                    <span className="input__label">Password</span>
+                    <span className="input__label">{inputLabels.password}</span>
                 </label>
                 <Button
-                    labeltext="log in"
+                    labeltext={buttonLabels.login}
                     type="submit"
                     classNames="button button__submit"
                     icon="arrow_right_alt"

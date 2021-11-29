@@ -1,7 +1,11 @@
 import { useSelector } from "react-redux";
 import { useStatefulFields } from "../../hooks/hooks";
 
+//components
 import Button from "../Button";
+
+//constants
+import { inputLabels, buttonLabels } from "../constants/constants";
 
 export default function RecipeInput(props) {
     const [inputValues, handleChange] = useStatefulFields();
@@ -20,7 +24,7 @@ export default function RecipeInput(props) {
                     autoComplete="off"
                     onChange={handleChange}
                 />
-                <span className="input__label">Category</span>
+                <span className="input__label">{inputLabels.category}</span>
             </label>
             <datalist id="categorylist" onChange={handleChange}>
                 {chapters.map((chapter, index) => (
@@ -38,7 +42,7 @@ export default function RecipeInput(props) {
                     required
                     onChange={handleChange}
                 />
-                <span className="input__label"> Recipe Name</span>
+                <span className="input__label">{inputLabels.recipeName}</span>
             </label>
 
             <label htmlFor="instructions" className="input">
@@ -50,7 +54,7 @@ export default function RecipeInput(props) {
                     required
                     onChange={handleChange}
                 />
-                <span className="input__label">Instructions</span>
+                <span className="input__label">{inputLabels.instructions}</span>
             </label>
 
             <label htmlFor="prep_time" className="input">
@@ -63,7 +67,7 @@ export default function RecipeInput(props) {
                     required
                     onChange={handleChange}
                 />
-                <span className="input__label">Prep time (in min)</span>
+                <span className="input__label">{inputLabels.preptime}</span>
             </label>
 
             <label htmlFor="recipe_story" className="input">
@@ -75,12 +79,12 @@ export default function RecipeInput(props) {
                     required
                     onChange={handleChange}
                 />
-                <span className="input__label">Story</span>
+                <span className="input__label">{inputLabels.story}</span>
             </label>
 
             <div>
                 <label htmlFor="difficulty_level">
-                    Difficulty
+                    {inputLabels.difficulty}
                     <input
                         type="range"
                         id="difficulty_level"
@@ -94,7 +98,7 @@ export default function RecipeInput(props) {
                 </label>
             </div>
             <Button
-                labeltext="add recipe"
+                labeltext={buttonLabels.addRecipe}
                 type="submit"
                 classNames="button button__submit"
                 icon="arrow_right_alt"

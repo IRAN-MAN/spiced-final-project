@@ -5,6 +5,9 @@ import { useStatefulFields } from "../../hooks/hooks";
 //components
 import Button from "../Button";
 
+//constants
+import { inputLabels, buttonLabels } from "../constants/constants";
+
 export default function SingleIngredientRow(props) {
     const quantityInput = createRef();
     const unitInput = createRef();
@@ -23,7 +26,7 @@ export default function SingleIngredientRow(props) {
                     required
                     onChange={handleChange}
                 />
-                <span className="input__label">Quantity</span>
+                <span className="input__label">{inputLabels.quantity}</span>
             </label>
 
             <label htmlFor="unit" className="input">
@@ -37,7 +40,7 @@ export default function SingleIngredientRow(props) {
                     required
                     onChange={handleChange}
                 />
-                <span className="input__label">Unit</span>
+                <span className="input__label">{inputLabels.unit}</span>
             </label>
             <label htmlFor="ingredient_name" className="input">
                 <input
@@ -50,10 +53,10 @@ export default function SingleIngredientRow(props) {
                     required
                     onChange={handleChange}
                 />
-                <span className="input__label">Ingredient</span>
+                <span className="input__label">{inputLabels.ingredient}</span>
             </label>
             <Button
-                labeltext="add ingredient"
+                labeltext={buttonLabels.addIngredient}
                 type="submit"
                 classNames="button button__submit"
                 icon="arrow_right_alt"
