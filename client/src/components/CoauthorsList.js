@@ -70,7 +70,7 @@ export default function CoauthorsList(props) {
                                     props.toggleOnOff(false);
                                 }}
                             ></button>
-                            <div className="tooltip">
+                            <div className="pointer tooltip">
                                 <span className="tooltiptext">
                                     add coauthors
                                 </span>
