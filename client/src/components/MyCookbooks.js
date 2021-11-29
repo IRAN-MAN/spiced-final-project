@@ -61,7 +61,7 @@ export default function MyCookbooks() {
                 <Button
                     onClick={() => toggleOnOff(false)}
                     type="Create CookBook"
-                    classNames="button addrecipe-button flex cc boxShadowL"
+                    classNames="button button__addRecipe flex cc boxShadowL"
                     icon="menu_book"
                 />
             </div>

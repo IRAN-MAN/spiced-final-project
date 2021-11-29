@@ -27,7 +27,7 @@ export default function InvitationForm() {
                     <p className="bolder">
                         Simply share this invitation with them:
                     </p>
-                    <label className="buttonWrapper">
+                    <label className="button__wrapper">
                         <div
                             className="invitationLink flex fcolumn cc"
                             onClick={() => {

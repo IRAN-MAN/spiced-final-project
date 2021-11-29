@@ -37,7 +37,7 @@ export default function LoginForm() {
                 <Button
                     labeltext="log in"
                     type="submit"
-                    classNames="button submit-button"
+                    classNames="button button__submit"
                     icon="arrow_right_alt"
                 />
                 <p className="message">{error}</p>

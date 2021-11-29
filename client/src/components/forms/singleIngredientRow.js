@@ -55,7 +55,7 @@ export default function SingleIngredientRow(props) {
             <Button
                 labeltext="add ingredient"
                 type="submit"
-                classNames="button submit-button"
+                classNames="button button__submit"
                 icon="arrow_right_alt"
                 onClick={() => {
                     props.saveInputToArray(inputValues);

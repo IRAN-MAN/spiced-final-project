@@ -123,7 +123,7 @@ export default function EditProfile() {
                     <Button
                         labeltext="Update Info"
                         type="submit"
-                        classNames="button submit-button"
+                        classNames="button button__submit"
                         icon="arrow_right_alt"
                     />
                 </form>

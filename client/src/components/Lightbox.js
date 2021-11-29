@@ -20,7 +20,7 @@ export default function Lightbox({ elements, toggleLightbox }) {
 
     return (
         <div className="lightboxWrapper flex fcolumn" onClick={toggleLightbox}>
-            <button className="closeBackdropButton" onClick={toggleLightbox}>
+            <button className="button__closeBackdrop" onClick={toggleLightbox}>
                 {"×"}
             </button>
             <Gallery
