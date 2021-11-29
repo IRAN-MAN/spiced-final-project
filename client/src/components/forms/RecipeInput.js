@@ -1,9 +1,11 @@
+import { useSelector } from "react-redux";
 import { useStatefulFields } from "../../hooks/hooks";
 
 import Button from "../Button";
 
 export default function RecipeInput(props) {
     const [inputValues, handleChange] = useStatefulFields();
+    const chapters = useSelector((state) => state.chapters);
 
     return (
         <div className="authWrapper flex cc fcolumn">
@@ -21,14 +23,9 @@ export default function RecipeInput(props) {
                 <span className="input__label">Category</span>
             </label>
             <datalist id="categorylist" onChange={handleChange}>
-                <option value="Starters" />
-                <option value="Salad" />
-                <option value="Desert" />
-                <option value="Soups" />
-                <option value="Cakes" />
-                <option value="Cocktails" />
-                <option value="Fast Food" />
-                <option value="Snacks" />
+                {chapters.map((chapter, index) => (
+                    <option key={index} value={chapter.category} />
+                ))}
             </datalist>
 
             <label htmlFor="recipe_name" className="input">
