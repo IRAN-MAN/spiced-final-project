@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Gallery({ elements, render, elementsPerPage }) {
     const [galleryControls, setGalleryControls] = useState({
@@ -11,34 +11,7 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         length: elements.length,
     });
 
-    useEffect(async () => {
-        // console.log(
-        //     "...(Gallery) props elements.length, elementsPerPage: ",
-        //     elements.length,
-        //     elementsPerPage
-        // );
-        // let hide = false;
-        // // console.log("...(Gallery) props elementsPerPage --- Length");
-        // if (galleryControls.end >= elements.length) {
-        //     hide = true;
-        // }
-        // setGalleryControls({
-        //     ...galleryControls,
-        //     start: 0,
-        //     end: elementsPerPage,
-        //     length: elements.length,
-        // });
-        // console.log("Gallery: controls: ", galleryControls);
-    }, []);
-
     const renderElements = (elements) => {
-        // console.log(
-        //     "...( Gallery renderElements) elementsPerPage elements.length,: ",
-        //     elementsPerPage,
-        //     elements.length
-        // );
-
-        // console.log("...( Gallery renderElements) controls: ", galleryControls);
         return elements
             .slice(galleryControls.start, galleryControls.end)
             .map((element) => {
@@ -47,8 +20,6 @@ export default function Gallery({ elements, render, elementsPerPage }) {
     };
 
     const changeStartEnd = (start, end, direction) => {
-        // console.log("...(ACTIONS setPhotoPicker) start/end: ", start, end);
-
         if (direction) {
             start += elementsPerPage;
             end += elementsPerPage;
@@ -62,7 +33,6 @@ export default function Gallery({ elements, render, elementsPerPage }) {
         } else {
             showPrev = true;
         }
-        // console.log("...() end, elements.length: ", end, elements.length);
         if (end >= elements.length) {
             showNext = false;
         } else {
@@ -94,10 +64,6 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                             galleryControls.end,
                             false
                         );
-                        // console.log(
-                        //     "...(CLICK PREV) galleryControls: ",
-                        //     galleryControls
-                        // );
                     }}
                 >
                     <i className="material-icons">arrow_left</i>
@@ -124,10 +90,6 @@ export default function Gallery({ elements, render, elementsPerPage }) {
                             galleryControls.end,
                             true
                         );
-                        // console.log(
-                        //     "...(CLICK NEXT) galleryControls: ",
-                        //     galleryControls
-                        // );
                     }}
                 >
                     <i className="material-icons">arrow_right</i>
