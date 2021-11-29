@@ -1,0 +1,29 @@
+/* GENERAL SETUP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 12pt;
+    font-weight: 400;
+    color: black;
+    // background-color: green !important;
+}
+body {
+    background-color: whitesmoke;
+    width: 100vw;
+    @media only screen and (min-width: 480px) {
+        /* background-color: cadetblue; */
+    }
+    @media only screen and (min-width: 768px) {
+        /* background-color: pink; */
+    }
+    @media only screen and (min-width: 1200px) {
+        /* background-color: wheat; */
+    }
+}
+main {
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}

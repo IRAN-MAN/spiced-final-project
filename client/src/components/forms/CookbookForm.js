@@ -18,7 +18,7 @@ export default function CookbookForm(props) {
     };
 
     return (
-        <div className="authWrapper flex fcolumn">
+        <div>
             <h2>Create your own Cookbook</h2>
             <p>Collect and share all your delicious Recipes </p>
             <div className="cookbookForm flex cc fcolumn">

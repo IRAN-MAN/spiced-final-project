@@ -1,0 +1,12 @@
+/* MyProfile & UserProfile */
+.profileWrapper {
+    position: relative;
+    top: -25px;
+    @media only screen and (min-width: 480px) {
+        position: relative;
+        top: -50px;
+    }
+    @media only screen and (min-width: 768px) {
+        top: -75px;
+    }
+}

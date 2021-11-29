@@ -10,6 +10,8 @@ export default function EditRecipe(props) {
     // const [inputValues, handleChange] = useStatefulFields();
     const currentRecipe = useSelector((state) => state.currentRecipe);
     const currentIngredients = useSelector((state) => state.ingredients_list);
+    const chapters = useSelector((state) => state.chapters);
+    const ingredients_list = useSelector((state) => state.ingredients_list);
 
     return (
         <section className="backdrop">
@@ -20,8 +22,8 @@ export default function EditRecipe(props) {
                 >
                     ×
                 </button>
-                <div className="authWrapper flex cc fcolumn">
-                    <h2>Edit Recipe</h2>
+                <div>
+                    <h2>Edit your Recipe</h2>
                     <div>
                         <div className="authWrapper flex cc frow ">
                             <div>
@@ -85,14 +87,12 @@ export default function EditRecipe(props) {
                                     required
                                 />
                                 <datalist id="category">
-                                    <option value="Starters"></option>
-                                    <option value="Salad"></option>
-                                    <option value="Desert"></option>
-                                    <option value="Soups"></option>
-                                    <option value="Cakes"></option>
-                                    <option value="Cocktails"></option>
-                                    <option value="Fast Food"></option>
-                                    <option value="Snacks"></option>
+                                    {chapters.map((chapter, index) => (
+                                        <option
+                                            key={index}
+                                            value={chapter.category}
+                                        />
+                                    ))}
                                 </datalist>
                             </label>
                             <label htmlFor="recipe_name">

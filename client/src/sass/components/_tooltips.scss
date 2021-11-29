@@ -1,0 +1,37 @@
+/* TOOL TIPS */
+
+.tooltip {
+    position: relative;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* display: inline-block; */
+}
+
+.tooltip .tooltiptext {
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 0;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    /* Position the tooltip */
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.tooltip:hover .tooltiptext {
+    display: block;
+}
+.tooltipBtn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+.tooltipBtn .tooltiptext {
+    left: -20px;
+    top: 60px;
+}
