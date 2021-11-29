@@ -23,32 +23,55 @@ export default function InvitationForm() {
                 <h1>Invite your Friends &amp; Family</h1>
                 <p>to join your cookbook</p>
 
-                <div className="invitationWrapper flex fcolumn">
-                    <p>Simply share this invitation with them:</p>
+                <div className="invitationWrapper flex fcolumn boxShadowS">
+                    <p className="bolder">
+                        Simply share this invitation with them:
+                    </p>
                     <label className="buttonWrapper">
                         <div
-                            className="invitationLink flex frow cc"
+                            className="invitationLink flex fcolumn cc"
                             onClick={() => {
-                                console.log("CLICK!", inviteLink);
+                                // console.log("CLICK!", inviteLink);
                                 navigator.clipboard.writeText(inviteLink);
                             }}
                         >
                             <q>
-                                http://www.whatscooking-goodlooking.com/
+                                www.whatscooking-goodlooking.com/
                                 {cookbook_id}
                             </q>
                             <button />
-                            <div className="tooltip">
-                                <span className="tooltiptext">
-                                    copy to clipboard
-                                </span>
-                                <span className="flex">
-                                    <i className="material-icons white">
-                                        content_copy
-                                    </i>
-                                </span>
+                            <div className=" flex frow cc">
+                                <div className="tooltip">
+                                    <span className="tooltiptext">
+                                        copy to clipboard
+                                    </span>
+                                    <span className="flex">
+                                        <i className="material-icons white">
+                                            content_copy
+                                        </i>
+                                    </span>
+                                </div>
+                                <div className="tooltip">
+                                    <span className="tooltiptext">
+                                        share on fb
+                                    </span>
+                                    <span className="flex">
+                                        <i className="material-icons white">
+                                            facebook
+                                        </i>
+                                    </span>
+                                </div>
+                                <div className="tooltip">
+                                    <span className="tooltiptext">
+                                        share on whatsapp
+                                    </span>
+                                    <span className="flex">
+                                        <i className="material-icons white">
+                                            whatsapp
+                                        </i>
+                                    </span>
+                                </div>
                             </div>
-
                             {/* content_copy */}
                         </div>
                     </label>
