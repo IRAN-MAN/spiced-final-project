@@ -16,7 +16,7 @@ import UploadPictureForm from "./forms/UploadPictureForm";
 import FadeIn from "./FadeIn";
 
 //hooks
-import { useToggle, useCurrentWidth } from "../hooks/hooks";
+import { useToggle } from "../hooks/hooks";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
