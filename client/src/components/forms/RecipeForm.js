@@ -1,13 +1,18 @@
-//components
 import axios from "../../axios";
-import { useSelector, useDispatch } from "react-redux";
+import { receiveRecipes } from "../../redux/action-creators";
 
+//components
 import IngredientInput from "./IngredientInput";
 import RecipeInput from "./RecipeInput";
-import { receiveRecipes } from "../../redux/action-creators";
+
+//hooks
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import Button from "../Button";
 
 export default function RecipeForm(props) {
     const dispatch = useDispatch();
+    const [step, setStep] = useState(1);
 
     const ingredientList = useSelector((state) => state.ingredients);
     const currentCB = useSelector((state) => state.currentCookbook);
@@ -26,16 +31,16 @@ export default function RecipeForm(props) {
     };
 
     const getChapterId = (chapters, inputValues) => {
-        let cid = null;
+        let chapterId = null;
         chapters.map((chapter) => {
             if (chapter.category == inputValues.category) {
-                cid = chapter.id;
+                chapterId = chapter.id;
             }
         });
-        return cid;
+        return chapterId;
     };
 
-    const collectRecipeInputes = async (inputValues) => {
+    const collectRecipeInputs = async (inputValues) => {
         console.log("[collectRecipeInputes: inputValues]", inputValues);
         if (
             !inputValues.recipe_name ||
@@ -45,7 +50,7 @@ export default function RecipeForm(props) {
         ) {
             return;
         }
-        console.log("[collectRecipeInputes]", ingredientList, inputValues);
+        console.log("[collectRecipeInputs]", ingredientList, inputValues);
         const recipeInfo = serialiseDataObject(ingredientList, inputValues);
         const cookbook_id = currentCB.cookbook_id;
         // console.log("[collectRecipeInputes: recipeInfo]", recipeInfo);
@@ -63,11 +68,35 @@ export default function RecipeForm(props) {
     };
 
     return (
-        <div className="authWrapper flex cc fcolumn">
+        <div>
             <h2>Add a new delicious Recipe</h2>
+
             <div>
-                <IngredientInput />
-                <RecipeInput collectRecipeInputes={collectRecipeInputes} />
+                {step === 1 && (
+                    <div>
+                        <p>First add all your ingredients!</p>
+                        <IngredientInput />
+                        <div className="tooltip tooltipBtn">
+                            <span className="tooltiptext">
+                                Add instructions
+                            </span>
+                            <Button
+                                onClick={() => setStep(step + 1)}
+                                type="submit"
+                                classNames="button addrecipe-button flex cc boxShadowL"
+                                icon="send"
+                            />
+                        </div>
+                    </div>
+                )}
+                {step === 2 && (
+                    <div>
+                        <p>Now add your instructions! </p>
+                        <RecipeInput
+                            collectRecipeInputes={collectRecipeInputs}
+                        />
+                    </div>
+                )}
             </div>
             <div></div>
             {/* s<p className="message">{message}</p> */}
