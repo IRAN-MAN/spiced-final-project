@@ -39,7 +39,7 @@ export default function MyCookbooks() {
     return (
         <div className="cookbooksWrapper flex cc fcolumn">
             <h2>My Cookbooks</h2>
-            <p>{windowWidth}</p>
+            {/* <p>{windowWidth}</p> */}
             <ul className="flex jcc ">
                 {windowWidth > 768 && (
                     <Gallery
