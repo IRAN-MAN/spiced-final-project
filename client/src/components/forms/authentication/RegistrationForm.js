@@ -1,10 +1,10 @@
-import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
+import { useStatefulFields, useAuthSubmit } from "../../../hooks/hooks";
 
 //components
-import Button from "../Button";
+import Button from "../../Button";
 
 //constants
-import { inputLabels, buttonLabels } from "../constants/constants";
+import { inputLabels, buttonLabels } from "../../constants/constants";
 
 export default function RegistrationForm() {
     const [inputValues, handleChange] = useStatefulFields();

@@ -1,5 +1,5 @@
 //components
-import RecipeForm from "./forms/RecipeForm";
+import RecipeForm from "./forms/recipe/RecipeForm";
 import FadeIn from "./FadeIn";
 
 export default function AddRecipe(props) {

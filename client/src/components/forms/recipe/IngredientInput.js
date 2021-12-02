@@ -6,7 +6,7 @@ import SingleIngredientRow from "./singleIngredientRow";
 import {
     addIngredients,
     deleteIngredientById,
-} from "../../redux/action-creators";
+} from "../../../redux/action-creators";
 
 export default function IngredientInput() {
     const dispatch = useDispatch();

@@ -3,19 +3,19 @@ import {
     receiveUserInfo,
     receiveChapters,
     receiveCookbooks,
-} from "../redux/action-creators";
+} from "../../redux/action-creators";
 import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
 
 // components
-import Footer from "./Footer";
-import Header from "./Header";
-import Navigation from "./Navigation";
-import MyProfile from "./MyProfile";
-import Cookbook from "./Cookbook";
-import Recipe from "./Recipe";
-import EditProfile from "./EditProfile";
-import FadeIn from "./FadeIn";
-// import UserProfile from "./UserProfile";
+import Footer from "../Footer";
+import Header from "../Header";
+import Navigation from "../Navigation";
+import MyProfile from "../MyProfile";
+import Cookbook from "../Cookbook";
+import Recipe from "../Recipe";
+import EditProfile from "../EditProfile";
+import FadeIn from "../FadeIn";
+// import UserProfile from "../UserProfile";
 
 //hooks
 import { useSelector, useDispatch } from "react-redux";

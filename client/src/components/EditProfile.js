@@ -133,7 +133,7 @@ export default function EditProfile() {
 }
 
 async function dispatchUserInput(event, dispatch) {
-    console.log("...(dispatchUserInput)");
+    // console.log("...(dispatchUserInput)");
     const {
         first_name,
         last_name,
@@ -143,8 +143,8 @@ async function dispatchUserInput(event, dispatch) {
         new_password,
         repeat_password,
     } = event.target;
-    console.log("password: ", new_password.value);
-    console.log("repeat: ", repeat_password.value);
+    // console.log("password: ", new_password.value);
+    // console.log("repeat: ", repeat_password.value);
     if (!new_password.value) {
         await dispatch(
             onUserInputChange({
@@ -156,17 +156,17 @@ async function dispatchUserInput(event, dispatch) {
             })
         );
     } else {
-        console.log(
-            "!!!: ",
-            first_name.value,
-            last_name.value,
-            email.value,
-            city.value,
-            about.value
-        );
+        // console.log(
+        //     "!!!: ",
+        //     first_name.value,
+        //     last_name.value,
+        //     email.value,
+        //     city.value,
+        //     about.value
+        // );
 
-        console.log("password: ", new_password.value);
-        console.log("repeat: ", repeat_password.value);
+        // console.log("password: ", new_password.value);
+        // console.log("repeat: ", repeat_password.value);
         await dispatch(
             onUserInputChange({
                 first_name: first_name.value,

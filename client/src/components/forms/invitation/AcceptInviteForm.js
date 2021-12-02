@@ -1,7 +1,7 @@
-import axios from "../../axios";
+import axios from "../../../axios";
 
 // //components
-import Button from "../Button";
+import Button from "../../Button";
 
 //constants
 import {
@@ -9,11 +9,11 @@ import {
     buttonLabels,
     inputLabels,
     inputPlaceholders,
-} from "../constants/constants";
+} from "../../constants/constants";
 
 // hooks
 import { useState, useEffect } from "react";
-import { useStatefulFields, useAuthSubmit } from "../../hooks/hooks";
+import { useStatefulFields, useAuthSubmit } from "../../../hooks/hooks";
 
 export default function AcceptInvite(props) {
     const cookbook_id = props.cookbook_id;

@@ -15,10 +15,11 @@ import { recipe, tooltips } from "./constants/constants";
 //components
 import Lightbox from "./Lightbox";
 import Button from "./Button";
-import EditRecipe from "./forms/EditRecipe";
+import EditRecipe from "./forms/recipe/EditRecipe";
 import IngredientsList from "./IngredientsList";
 import UploadPictureForm from "./forms/UploadPictureForm";
 // import FavouriteButton from "./FavouriteButton";
+import { Tooltip } from "./helpers/tooltip";
 
 //hooks
 import { useToggle } from "../hooks/hooks";
@@ -110,7 +111,7 @@ export default function Recipe(props) {
                 <div className="madeByWrapper flex cc ">
                     <div className="avatar__wrapper-mini flex vcenter">
                         <img
-                            className="avatar smallAvatar boxShadowS"
+                            className="avatar boxShadowS"
                             src={author.profile_pic}
                             alt={author.first_name + " " + author.last_name}
                         />
@@ -126,15 +127,14 @@ export default function Recipe(props) {
                         </Link>
                     </div>
                 </div>
-                <div className="tooltip tooltipBtn flex jcc vcenter">
-                    <span className="tooltiptext">{tooltips.editRecipe}</span>
+                <Tooltip label={tooltips.editRecipe} className={"tooltipBtn"}>
                     <Button
                         onClick={() => toggleOnOff(false)}
                         type="submit"
                         classNames="button button__addRecipe flex cc boxShadowL"
                         icon="edit"
                     />
-                </div>
+                </Tooltip>
 
                 {toggle && (
                     <EditRecipe toggle={toggle} toggleOnOff={toggleOnOff} />

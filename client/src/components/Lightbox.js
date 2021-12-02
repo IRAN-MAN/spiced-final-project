@@ -1,9 +1,9 @@
 // components
-import Gallery from "./Gallery";
+import { Gallery } from "./Gallery";
 
 export default function Lightbox({ elements, toggleLightbox }) {
     const renderPhoto = (image) => {
-        console.log("...(LIGHTBOX renderphoto) image: ", image);
+        // console.log("...(LIGHTBOX renderphoto) image: ", image);
         return (
             <div
                 key={image.photo_id}

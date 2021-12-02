@@ -14,6 +14,7 @@ import AddRecipe from "./AddRecipe";
 import InviteCoauthors from "./InviteCoauthors";
 import UploadPictureForm from "./forms/UploadPictureForm";
 import FadeIn from "./FadeIn";
+import { Tooltip } from "./helpers/tooltip";
 
 //constants
 import { tooltips } from "./constants/constants";
@@ -33,7 +34,7 @@ export default function Cookbook(props) {
     const [toggle2, toggleOnOff2] = useToggle();
 
     useEffect(() => {
-        console.log("...(COOKBOOK) cookbook_id", cookbook_id);
+        // console.log("...(COOKBOOK) cookbook_id", cookbook_id);
         dispatch(receiveCurrentCookbook(cookbook_id));
         dispatch(receiveCoauthors(cookbook_id));
         if (cookbook_id != undefined) {
@@ -42,7 +43,7 @@ export default function Cookbook(props) {
     }, []);
 
     useEffect(() => {
-        console.log("[cookbook: useEffect: user]", user);
+        // console.log("[cookbook: useEffect: user]", user);
         if (user.id) {
             dispatch(receiveCookbooks(user.id));
         }
@@ -79,15 +80,14 @@ export default function Cookbook(props) {
 
                 <ChapterList />
             </FadeIn>
-            <div className="tooltip tooltipBtn">
-                <span className="tooltiptext">{tooltips.addRecipe}</span>
+            <Tooltip label={tooltips.addRecipe} className={"tooltipBtn"}>
                 <Button
                     onClick={() => toggleOnOff(false)}
                     type="submit"
                     classNames="button button__addRecipe flex cc boxShadowL"
                     icon="post_add"
                 />
-            </div>
+            </Tooltip>
             {toggle && <AddRecipe toggle={toggle} toggleOnOff={toggleOnOff} />}
             {toggle2 && (
                 <InviteCoauthors toggle={toggle2} toggleOnOff={toggleOnOff2} />

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
 // components
-import Gallery from "./Gallery";
+import { Gallery } from "./Gallery";
 import CreateCookbook from "./CreateCookbook";
 import Button from "./Button";
+import { Tooltip } from "./helpers/tooltip";
 
 //constants
 import { tooltips, userProfile } from "./constants/constants";
@@ -22,20 +23,18 @@ export default function MyCookbooks() {
 
     const renderCookbooks = (cookbook) => {
         return (
-            <div className="" key={cookbook.cookbook_id}>
-                <li key={cookbook.cookbook_id} className="cookbookWrapper">
-                    <Link to={"/cookbook/" + cookbook.cookbook_id}>
-                        <div className="coverWrapper boxShadowL">
-                            <img
-                                className="cover"
-                                src={cookbook.cover_pic}
-                                alt={cookbook.cookbook_name}
-                            />
-                        </div>
-                        <p>{cookbook.cookbook_name}</p>
-                    </Link>
-                </li>
-            </div>
+            <li key={cookbook.cookbook_id} className="cookbookWrapper">
+                <Link to={"/cookbook/" + cookbook.cookbook_id}>
+                    <div className="coverWrapper boxShadowL">
+                        <img
+                            className="cover"
+                            src={cookbook.cover_pic}
+                            alt={cookbook.cookbook_name}
+                        />
+                    </div>
+                    <p>{cookbook.cookbook_name}</p>
+                </Link>
+            </li>
         );
     };
 
@@ -43,31 +42,28 @@ export default function MyCookbooks() {
         <div className="cookbooksWrapper flex cc fcolumn">
             <h2>{userProfile.myCookbooks}</h2>
             {/* <p>{windowWidth}</p> */}
-            <ul className="flex jcc ">
-                {windowWidth > 768 && (
-                    <Gallery
-                        elements={cookbooks}
-                        elementsPerPage={4}
-                        render={renderCookbooks}
-                    />
-                )}
-                {windowWidth <= 768 && (
-                    <Gallery
-                        elements={cookbooks}
-                        elementsPerPage={2}
-                        render={renderCookbooks}
-                    />
-                )}
-            </ul>
-            <div className="tooltip tooltipBtn">
-                <span className="tooltiptext">{tooltips.newCookbook}</span>
+            {windowWidth > 768 && (
+                <Gallery
+                    elements={cookbooks}
+                    elementsPerPage={4}
+                    render={renderCookbooks}
+                />
+            )}
+            {windowWidth <= 768 && (
+                <Gallery
+                    elements={cookbooks}
+                    elementsPerPage={2}
+                    render={renderCookbooks}
+                />
+            )}
+            <Tooltip label={tooltips.newCookbook} className={"tooltipBtn"}>
                 <Button
                     onClick={() => toggleOnOff(false)}
                     type="Create CookBook"
                     classNames="button button__addRecipe flex cc boxShadowL"
                     icon="menu_book"
                 />
-            </div>
+            </Tooltip>
             {toggle && (
                 <CreateCookbook toggle={toggle} toggleOnOff={toggleOnOff} />
             )}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const DEFAULT_COVER = "/images/default_photo.jpeg";
 
 // components
-import Gallery from "./Gallery";
+import { Gallery } from "./Gallery";
 
 // hooks
 import { useSelector } from "react-redux";
@@ -20,11 +20,11 @@ export default function Chapter({ chapter_id }) {
         });
     };
 
-    const renderRecipe = (recipe) => {
+    const renderRecipe = (recipe, id) => {
         // console.log("...(Chapter) renderRecipe recipe: ", recipe);
         return (
-            <li key={recipe.recipe_id}>
-                <Link to={"/recipe/" + recipe.recipe_id}>
+            <li key={id} className="cookbookWrapper">
+                <Link to={"/recipe/" + recipe.recipe_id} key={recipe.recipe_id}>
                     <div className="recipePreviewWrapper flex jcc fcolumn">
                         <img
                             className="recipePreview boxShadowL"
@@ -39,28 +39,26 @@ export default function Chapter({ chapter_id }) {
 
     return (
         <div className="chapterWrapper flex cc fcolumn">
-            <ul className="flex jcc">
-                {windowWidth > 768 && (
-                    <Gallery
-                        elements={filteredRecipes()}
-                        elementsPerPage={4}
-                        render={renderRecipe}
-                    />
-                )}
-                {windowWidth <= 768 && (
-                    <Gallery
-                        elements={filteredRecipes()}
-                        elementsPerPage={1}
-                        render={renderRecipe}
-                    />
-                )}
-                {/* {recipes.length > 0 && renderRecipePreviews()} */}
-                {/* <Gallery
+            {windowWidth > 768 && (
+                <Gallery
+                    elements={filteredRecipes()}
+                    elementsPerPage={4}
+                    render={renderRecipe}
+                />
+            )}
+            {windowWidth <= 768 && (
+                <Gallery
+                    elements={filteredRecipes()}
+                    elementsPerPage={1}
+                    render={renderRecipe}
+                />
+            )}
+            {/* {recipes.length > 0 && renderRecipePreviews()} */}
+            {/* <Gallery
                     elements={filteredRecipes()}
                     elementsPerPage={3}
                     render={renderRecipe}
                 /> */}
-            </ul>
         </div>
     );
 }

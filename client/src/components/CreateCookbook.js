@@ -1,5 +1,5 @@
 // components
-import CookbookForm from "./forms/CookbookForm";
+import CookbookForm from "./forms/cookbook/CookbookForm";
 import FadeIn from "./FadeIn";
 
 export default function CreateCookbook(props) {

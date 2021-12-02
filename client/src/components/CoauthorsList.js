@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 
 //constants
 import { tooltips } from "./constants/constants";
+import { icons } from "./constants/icons";
+
+//components
+import { Tooltip } from "./helpers/tooltip";
 
 export default function CoauthorsList(props) {
-    console.log("...(CoauhtorsList) coauthors: ", props.coauthors);
+    // console.log("...(CoauhtorsList) coauthors: ", props.coauthors);
     const user = props.user;
 
     const renderOwner = (coauthor) => {
@@ -12,12 +16,9 @@ export default function CoauthorsList(props) {
             <li key={coauthor.coauthor_id} className="coauthorWrapper">
                 <Link to={"/users/profile/" + user.id}>
                     <div className="avatar__wrapper-mini">
-                        <div className="tooltip">
-                            <span className="tooltiptext">
-                                {tooltips.cookbookOwner}
-                            </span>
+                        <Tooltip label={tooltips.cookbookOwner}>
                             <img
-                                className="avatar smallAvatar owner boxShadowS"
+                                className="avatar owner boxShadowS"
                                 src={coauthor.profile_pic}
                                 alt={
                                     coauthor.first_name +
@@ -25,7 +26,7 @@ export default function CoauthorsList(props) {
                                     coauthor.city
                                 }
                             />
-                        </div>
+                        </Tooltip>
                     </div>
                 </Link>
             </li>
@@ -41,12 +42,9 @@ export default function CoauthorsList(props) {
                 <li key={coauthor.coauthor_id} className="coauthorWrapper">
                     <Link to={"/users/profile/" + coauthor.id}>
                         <div className="avatar__wrapper-mini">
-                            <div className="tooltip">
-                                <span className="tooltiptext">
-                                    {coauthor.first_name}
-                                </span>
+                            <Tooltip label={coauthor.first_name}>
                                 <img
-                                    className="avatar smallAvatar boxShadowS"
+                                    className="avatar boxShadowS"
                                     src={coauthor.profile_pic}
                                     alt={
                                         coauthor.first_name +
@@ -54,7 +52,7 @@ export default function CoauthorsList(props) {
                                         coauthor.city
                                     }
                                 />
-                            </div>
+                            </Tooltip>
                         </div>
                     </Link>
                 </li>
@@ -74,16 +72,13 @@ export default function CoauthorsList(props) {
                                     props.toggleOnOff(false);
                                 }}
                             ></button>
-                            <div className="pointer tooltip">
-                                <span className="tooltiptext">
-                                    {tooltips.addCoauthor}
-                                </span>
+                            <Tooltip label={tooltips.addCoauthor}>
                                 <span className="flex">
                                     <i className="material-icons white">
-                                        add_circle_outline
+                                        {icons.add_circle_outline}
                                     </i>
                                 </span>
-                            </div>
+                            </Tooltip>
                         </label>
                     </div>
                 </li>

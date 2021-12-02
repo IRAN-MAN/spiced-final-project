@@ -1,5 +1,5 @@
 //components
-import AcceptInviteForm from "./forms/AcceptInviteForm";
+import AcceptInviteForm from "./forms/invitation/AcceptInviteForm";
 
 export default function AcceptInvite(props) {
     const cookbook_id = props.match.params.id;

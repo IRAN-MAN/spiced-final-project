@@ -1,95 +1,142 @@
 import { useState } from "react";
 
-export default function Gallery({ elements, render, elementsPerPage }) {
+export const Gallery = ({ elements, render, elementsPerPage }) => {
+    console.log("elementsperpage:", elementsPerPage);
     const [galleryControls, setGalleryControls] = useState({
         start: 0,
         end: elementsPerPage,
-        showPrev: false,
-        // showNext: elementsPerPage >= elements.length,
-        showNext: true,
-        direction: true,
+        hidePrev: true,
+        hideNext: isLast,
+        // showNext: true,
         length: elements.length,
     });
 
     const renderElements = (elements) => {
         return elements
             .slice(galleryControls.start, galleryControls.end)
-            .map((element) => {
-                return render(element);
+            .map((element, id) => {
+                return render(element, id);
             });
     };
 
-    const changeStartEnd = (start, end, direction) => {
-        if (direction) {
-            start += elementsPerPage;
-            end += elementsPerPage;
-        } else {
-            start -= elementsPerPage;
-            end -= elementsPerPage;
+    //-------
+    const previous = () => {
+        loadPreviousElements();
+        if (isFirst()) {
+            hidePreviousButton();
         }
-        let showPrev, showNext;
-        if (start == 0) {
-            showPrev = false;
-        } else {
-            showPrev = true;
+    };
+    const next = () => {
+        loadNextElements();
+        if (isLast()) {
+            hideNextButton();
         }
-        if (end >= elements.length) {
-            showNext = false;
-        } else {
-            showNext = true;
-        }
+    };
+    //--------
+
+    const loadPreviousElements = () => {
         setGalleryControls({
             ...galleryControls,
-            start,
-            end,
-            showPrev,
-            showNext,
+            start: galleryControls.start - elementsPerPage,
+            end: galleryControls.end - elementsPerPage,
+        });
+    };
+    const loadNextElements = () => {
+        setGalleryControls({
+            ...galleryControls,
+            start: galleryControls.start + elementsPerPage,
+            end: galleryControls.end + elementsPerPage,
+        });
+    };
+    //--------
+
+    const isFirst = () => {
+        return galleryControls.start === 0;
+    };
+    const isLast = () => {
+        return galleryControls.end >= elements.length;
+    };
+
+    //--------
+    const hidePreviousButton = () => {
+        setGalleryControls({
+            ...galleryControls,
+            hideNext: false,
+            hidePrev: true,
+        });
+    };
+    const hideNextButton = () => {
+        setGalleryControls({
+            ...galleryControls,
+            hideNext: true,
+            hidePrev: false,
         });
     };
 
+    // const changeStartEnd = (start, end, direction) => {
+    //     if (direction) {
+    //         start += elementsPerPage;
+    //         end += elementsPerPage;
+    //     } else {
+    //         start -= elementsPerPage;
+    //         end -= elementsPerPage;
+    //     }
+    //     let showPrev, showNext;
+    //     if (start == 0) {
+    //         showPrev = false;
+    //     } else {
+    //         showPrev = true;
+    //     }
+    //     // console.log("end: ", end);
+    //     if (end >= elements.length) {
+    //         showNext = false;
+    //     } else {
+    //         showNext = true;
+    //     }
+    //     setGalleryControls({
+    //         ...galleryControls,
+    //         start,
+    //         end,
+    //         showPrev,
+    //         showNext,
+    //     });
+    // };
+
     return (
-        <div className="galleryWrapper flex cc">
-            {/* Prev Button */}
-            <div>
+        <div className="gallery__wrapper flex cc">
+            <div className="gallery__controls">
+                {/* Prev Button */}
                 <button
                     className={
-                        galleryControls.showPrev == true
+                        galleryControls.hidePrev == false
                             ? "galleryControls"
                             : "galleryControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();
-                        changeStartEnd(
-                            galleryControls.start,
-                            galleryControls.end,
-                            false
-                        );
+                        previous();
                     }}
                 >
                     <i className="material-icons">arrow_left</i>
                 </button>
             </div>
-
             {/* Gallery */}
-            <div className="gallery flex">
-                {elements.length > 0 && renderElements(elements)}
+            <div className="gallery__elements">
+                <ul className="flex frow">
+                    {elements.length > 0 && renderElements(elements)}
+                </ul>
             </div>
-
-            {/* Next Button */}
-            <div>
+            <div className="gallery__controls">
+                {/* Next Button */}
                 <button
                     className={
-                        galleryControls.showNext == true
+                        galleryControls.hideNext == false
                             ? "galleryControls"
                             : "galleryControls hideControls"
                     }
                     onClick={(event) => {
                         event.stopPropagation();
-                        changeStartEnd(
-                            galleryControls.start,
-                            galleryControls.end,
-                            true
-                        );
+                        next();
                     }}
                 >
                     <i className="material-icons">arrow_right</i>
@@ -97,4 +144,4 @@ export default function Gallery({ elements, render, elementsPerPage }) {
             </div>
         </div>
     );
-}
+};

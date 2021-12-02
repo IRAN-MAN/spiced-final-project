@@ -1,19 +1,20 @@
-import axios from "../../axios";
-import { receiveRecipes } from "../../redux/action-creators";
+import axios from "../../../axios";
+import { receiveRecipes } from "../../../redux/action-creators";
 
 //components
 import IngredientInput from "./IngredientInput";
-import RecipeInput from "./RecipeInput";
+import InstructionsInput from "./InstructionsInput";
+import { Tooltip } from "../../helpers/tooltip";
 
 //constants
-import { addRecipe, tooltips } from "../constants/constants";
+import { addRecipe, tooltips } from "../../constants/constants";
 
 //hooks
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import Button from "../Button";
+import Button from "../../Button";
 
-export default function RecipeForm(props) {
+export default function RecipeForm({ toggleOnOff }) {
     const dispatch = useDispatch();
     const [step, setStep] = useState(1);
 
@@ -22,11 +23,11 @@ export default function RecipeForm(props) {
     const chapters = useSelector((state) => state.chapters);
 
     const serialiseDataObject = (ingredients, recipe) => {
-        console.log(
-            "[serialiseDataObject: ingredients, recipe]",
-            ingredients,
-            recipe
-        );
+        // console.log(
+        //     "[serialiseDataObject: ingredients, recipe]",
+        //     ingredients,
+        //     recipe
+        // );
         return {
             ingredients: ingredients,
             recipeDetails: recipe,
@@ -44,7 +45,7 @@ export default function RecipeForm(props) {
     };
 
     const collectRecipeInputs = async (inputValues) => {
-        console.log("[collectRecipeInputes: inputValues]", inputValues);
+        // console.log("[collectRecipeInputes: inputValues]", inputValues);
         if (
             !inputValues.recipe_name ||
             !inputValues.instructions ||
@@ -53,7 +54,7 @@ export default function RecipeForm(props) {
         ) {
             return;
         }
-        console.log("[collectRecipeInputs]", ingredientList, inputValues);
+        // console.log("[collectRecipeInputs]", ingredientList, inputValues);
         const recipeInfo = serialiseDataObject(ingredientList, inputValues);
         const cookbook_id = currentCB.cookbook_id;
         // console.log("[collectRecipeInputes: recipeInfo]", recipeInfo);
@@ -63,11 +64,11 @@ export default function RecipeForm(props) {
             `/api/recipes/add_recipe?chapter_id=${chapter_id}&cookbook_id=${cookbook_id}`,
             recipeInfo
         );
-        console.log("[sendRecipeInfo: axios]", message);
+        // console.log("[sendRecipeInfo: axios]", message);
         // dispatch(useAddToIngredients(recipeInfo, chapter_id, cookbook_id));
         dispatch(receiveRecipes(cookbook_id));
 
-        props.toggleOnOff(true);
+        toggleOnOff(true);
     };
 
     return (
@@ -79,23 +80,23 @@ export default function RecipeForm(props) {
                     <div>
                         <p>{addRecipe.subline_1}</p>
                         <IngredientInput />
-                        <div className="tooltip tooltipBtn">
-                            <span className="tooltiptext">
-                                {tooltips.addInstructions}
-                            </span>
+                        <Tooltip
+                            label={tooltips.addInstructions}
+                            className={"tooltipBtn"}
+                        >
                             <Button
                                 onClick={() => setStep(step + 1)}
                                 type="submit"
                                 classNames="button button__addRecipe flex cc boxShadowL"
                                 icon="send"
                             />
-                        </div>
+                        </Tooltip>
                     </div>
                 )}
                 {step === 2 && (
                     <div>
                         <p>{addRecipe.subline_2}</p>
-                        <RecipeInput
+                        <InstructionsInput
                             collectRecipeInputes={collectRecipeInputs}
                         />
                     </div>

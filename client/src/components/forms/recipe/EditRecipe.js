@@ -1,5 +1,5 @@
 //components
-import FadeIn from "../FadeIn";
+import FadeIn from "../../FadeIn";
 
 //constants
 import {
@@ -7,7 +7,7 @@ import {
     editRecipe,
     inputLabels,
     inputPlaceholders,
-} from "../constants/constants";
+} from "../../constants/constants";
 
 // hooks
 import { useSelector } from "react-redux";

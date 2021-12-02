@@ -4,9 +4,11 @@ import { useSelector } from "react-redux";
 
 //components
 // import Button from "../Button";
+import { Tooltip } from "../../helpers/tooltip";
 
 //constants
-import { tooltips, invitation, urls } from "../constants/constants";
+import { tooltips, invitation, urls } from "../../constants/constants";
+import { icons } from "../../constants/icons";
 
 export default function InvitationForm() {
     // const [inputValues, handleChange] = useStatefulFields();
@@ -36,39 +38,29 @@ export default function InvitationForm() {
                         >
                             <q>{invitation.inviteCode + cookbook_id}</q>
                             <button />
-                            <div className=" flex frow cc">
-                                <div className="tooltip">
-                                    <span className="tooltiptext">
-                                        {tooltips.copyClipboard}
-                                    </span>
+                            <div className="flex frow cc">
+                                <Tooltip label={tooltips.copyClipboard}>
                                     <span className="flex">
                                         <i className="material-icons white">
-                                            content_copy
+                                            {icons["content_copy"]}
                                         </i>
                                     </span>
-                                </div>
-                                <div className="tooltip">
-                                    <span className="tooltiptext">
-                                        {tooltips.shareFB}
-                                    </span>
+                                </Tooltip>
+                                <Tooltip label={tooltips.shareFB}>
                                     <span className="flex">
                                         <i className="material-icons white">
-                                            facebook
+                                            {icons["facebook"]}
                                         </i>
                                     </span>
-                                </div>
-                                <div className="tooltip">
-                                    <span className="tooltiptext">
-                                        {tooltips.shareWhatsapp}
-                                    </span>
+                                </Tooltip>
+                                <Tooltip label={tooltips.shareWhatsapp}>
                                     <span className="flex">
                                         <i className="material-icons white">
-                                            whatsapp
+                                            {icons["whatsapp"]}
                                         </i>
                                     </span>
-                                </div>
+                                </Tooltip>
                             </div>
-                            {/* content_copy */}
                         </div>
                     </label>
                 </div>

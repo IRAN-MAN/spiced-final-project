@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { useStatefulFields } from "../../hooks/hooks";
+import { useStatefulFields } from "../../../hooks/hooks";
 
 //components
-import Button from "../Button";
+import Button from "../../Button";
 
 //constants
-import { inputLabels, buttonLabels } from "../constants/constants";
+import { inputLabels, buttonLabels } from "../../constants/constants";
 
 export default function RecipeInput(props) {
     const [inputValues, handleChange] = useStatefulFields();

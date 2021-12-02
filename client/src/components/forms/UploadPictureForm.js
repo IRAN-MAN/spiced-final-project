@@ -1,17 +1,15 @@
 import { useDispatch } from "react-redux";
 // import { updateProfilePic } from "../actions";
 
+//components
+import { Tooltip } from "../helpers/tooltip";
+
 //constants
-import { tooltips } from "../constants/constants";
+// import { tooltips } from "../constants/constants";
+import { icons } from "../constants/icons";
 
 export default function UploadPictureForm({ label, id, action }) {
     const dispatch = useDispatch();
-    // console.log(
-    //     "...(UploadPictureForm) props:",
-    //     props.toggle,
-    //     props.toggleOnOff
-    // );
-
     const onPictureUpload = async (file) => {
         const formData = new FormData();
         formData.append("file", file);
@@ -38,12 +36,13 @@ export default function UploadPictureForm({ label, id, action }) {
                         onChange={() => onPictureUpload(event.target.files[0])}
                         required
                     />
-                    <div className="tooltip">
-                        <span className="tooltiptext">{label}</span>
+                    <Tooltip label={label}>
                         <span className="flex">
-                            <i className="material-icons white">add_a_photo</i>
+                            <i className="material-icons white">
+                                {icons["add_a_photo"]}
+                            </i>
                         </span>
-                    </div>
+                    </Tooltip>
                 </label>
             </form>
         </div>
