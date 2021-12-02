@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 // components
-import Logout from "./Logout";
+import Logout from "../elements/Logout";
 
 export default function Navigation() {
     return (

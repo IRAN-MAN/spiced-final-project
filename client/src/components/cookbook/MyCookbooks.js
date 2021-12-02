@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 
 // components
-import { Gallery } from "./Gallery";
+import { Gallery } from "../elements/Gallery";
 import CreateCookbook from "./CreateCookbook";
-import Button from "./Button";
-import { Tooltip } from "./helpers/tooltip";
+import Button from "../elements/Button";
+import { Tooltip } from "../helpers/tooltip";
 
 //constants
-import { tooltips, userProfile } from "./constants/constants";
+import { tooltips, userProfile } from "../constants/constants";
 
 // hooks
 import { useSelector } from "react-redux";
-import { useToggle, useCurrentWidth } from "../hooks/hooks";
+import { useToggle, useCurrentWidth } from "../../hooks/hooks";
 
 export default function MyCookbooks() {
     const cookbooks = useSelector((state) => {

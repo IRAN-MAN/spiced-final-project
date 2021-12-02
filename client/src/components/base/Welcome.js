@@ -1,10 +1,10 @@
 //components
-import Login from "../Login";
-import Registration from "../Registration";
-import AcceptInvite from "../AcceptInvite";
+import Login from "../pages/Login";
+import Registration from "../pages/Registration";
+import AcceptInvite from "../users/AcceptInvite";
 import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
-import FadeIn from "../FadeIn";
-import Header from "../Header";
+import FadeIn from "../helpers/FadeIn";
+import Header from "./Header";
 
 export default function Welcome() {
     return (

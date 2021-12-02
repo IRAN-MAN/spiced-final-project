@@ -1,11 +1,11 @@
 //components
-import MyCookbooks from "./MyCookbooks";
-import UploadPictureForm from "./forms/UploadPictureForm";
-import { uploadProfilePic } from "../redux/action-creators";
-import FadeIn from "./FadeIn";
+import MyCookbooks from "../cookbook/MyCookbooks";
+import UploadPictureForm from "../forms/UploadPictureForm";
+import { uploadProfilePic } from "../../redux/action-creators";
+import FadeIn from "../helpers/FadeIn";
 
 //constants
-import { tooltips, userProfile } from "./constants/constants";
+import { tooltips, userProfile } from "../constants/constants";
 
 // hooks
 import { useEffect } from "react";

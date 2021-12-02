@@ -1,4 +1,4 @@
-import { recipe } from "./constants/constants";
+import { recipe } from "../../../constants/constants";
 
 export default function IngredientsList({ ingredients_list }) {
     const renderIngredients = () => {

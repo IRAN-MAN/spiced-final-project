@@ -1,5 +1,5 @@
 //components
-import FadeIn from "../../FadeIn";
+import FadeIn from "../../helpers/FadeIn";
 
 //constants
 import {

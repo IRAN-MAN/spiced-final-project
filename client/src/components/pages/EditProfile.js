@@ -2,11 +2,11 @@ import {
     onUserInputChange,
     updateAccount,
     receiveUserInfo,
-} from "../redux/action-creators";
+} from "../../redux/action-creators";
 
 // components
-import Button from "./Button";
-import FadeIn from "./FadeIn";
+import Button from "../elements/Button";
+import FadeIn from "../helpers/FadeIn";
 // hooks
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -156,17 +156,6 @@ async function dispatchUserInput(event, dispatch) {
             })
         );
     } else {
-        // console.log(
-        //     "!!!: ",
-        //     first_name.value,
-        //     last_name.value,
-        //     email.value,
-        //     city.value,
-        //     about.value
-        // );
-
-        // console.log("password: ", new_password.value);
-        // console.log("repeat: ", repeat_password.value);
         await dispatch(
             onUserInputChange({
                 first_name: first_name.value,

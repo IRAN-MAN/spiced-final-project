@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 const DEFAULT_COVER = "/images/default_photo.jpeg";
 
 // components
-import { Gallery } from "./Gallery";
+import { Gallery } from "../../elements/Gallery";
 
 // hooks
 import { useSelector } from "react-redux";
-import { useCurrentWidth } from "../hooks/hooks";
+import { useCurrentWidth } from "../../../hooks/hooks";
 
 export default function Chapter({ chapter_id }) {
     const recipes = useSelector((state) => state.recipes);

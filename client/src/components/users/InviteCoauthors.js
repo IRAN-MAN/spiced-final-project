@@ -1,6 +1,6 @@
 //components
-import FadeIn from "./FadeIn";
-import InvitationForm from "./forms/invitation/InvitationForm";
+import FadeIn from "../helpers/FadeIn";
+import InvitationForm from "../forms/invitation/InvitationForm";
 
 export default function InviteCoauthors(props) {
     const { toggleOnOff } = props;

@@ -1,7 +1,7 @@
 import { useStatefulFields, useAuthSubmit } from "../../../hooks/hooks";
 
 //components
-import Button from "../../Button";
+import Button from "../../elements/Button";
 
 //constants
 import { inputLabels, buttonLabels } from "../../constants/constants";

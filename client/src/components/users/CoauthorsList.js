@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 //constants
-import { tooltips } from "./constants/constants";
-import { icons } from "./constants/icons";
+import { tooltips } from "../constants/constants";
+import { icons } from "../constants/icons";
 
 //components
-import { Tooltip } from "./helpers/tooltip";
+import { Tooltip } from "../helpers/tooltip";
 
 export default function CoauthorsList(props) {
     // console.log("...(CoauhtorsList) coauthors: ", props.coauthors);

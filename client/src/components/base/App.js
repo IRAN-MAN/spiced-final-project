@@ -7,14 +7,14 @@ import {
 import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
 
 // components
-import Footer from "../Footer";
-import Header from "../Header";
-import Navigation from "../Navigation";
-import MyProfile from "../MyProfile";
-import Cookbook from "../Cookbook";
-import Recipe from "../Recipe";
-import EditProfile from "../EditProfile";
-import FadeIn from "../FadeIn";
+import Footer from "./Footer";
+import Header from "./Header";
+import Navigation from "./Navigation";
+import MyProfile from "../pages/MyProfile";
+import Cookbook from "../pages/Cookbook";
+import Recipe from "../pages/Recipe";
+import EditProfile from "../pages/EditProfile";
+import FadeIn from "../helpers/FadeIn";
 // import UserProfile from "../UserProfile";
 
 //hooks

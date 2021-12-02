@@ -5,7 +5,7 @@ import { createNewCookbook } from "../../../redux/action-creators";
 import { useStatefulFields } from "../../../hooks/hooks";
 
 //components
-import Button from "../../Button";
+import Button from "../../elements/Button";
 
 //constants
 import {

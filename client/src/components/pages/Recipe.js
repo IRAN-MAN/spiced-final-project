@@ -6,23 +6,23 @@ import {
     receiveRecipePhotos,
     toggleLightboxVisible,
     uploadRecipePhoto,
-} from "../redux/action-creators";
+} from "../../redux/action-creators";
 
 // constants
 const DEFAULT_COVER = "/images/default_photo.jpeg";
-import { recipe, tooltips } from "./constants/constants";
+import { recipe, tooltips } from "../constants/constants";
 
 //components
-import Lightbox from "./Lightbox";
-import Button from "./Button";
-import EditRecipe from "./forms/recipe/EditRecipe";
-import IngredientsList from "./IngredientsList";
-import UploadPictureForm from "./forms/UploadPictureForm";
+import Lightbox from "../elements/Lightbox";
+import Button from "../elements/Button";
+import EditRecipe from "../forms/recipe/EditRecipe";
+import IngredientsList from "../cookbook/chapter/recipe/IngredientsList";
+import UploadPictureForm from "../forms/UploadPictureForm";
 // import FavouriteButton from "./FavouriteButton";
-import { Tooltip } from "./helpers/tooltip";
+import { Tooltip } from "../helpers/tooltip";
 
 //hooks
-import { useToggle } from "../hooks/hooks";
+import { useToggle } from "../../hooks/hooks";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 

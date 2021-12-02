@@ -12,7 +12,7 @@ import { addRecipe, tooltips } from "../../constants/constants";
 //hooks
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import Button from "../../Button";
+import Button from "../../elements/Button";
 
 export default function RecipeForm({ toggleOnOff }) {
     const dispatch = useDispatch();

@@ -4,23 +4,23 @@ import {
     receiveCurrentCookbook,
     uploadCookbookCover,
     receiveCookbooks,
-} from "../redux/action-creators";
+} from "../../redux/action-creators";
 
 //components
-import CoauthorsList from "./CoauthorsList";
-import ChapterList from "./ChapterList";
-import Button from "./Button";
-import AddRecipe from "./AddRecipe";
-import InviteCoauthors from "./InviteCoauthors";
-import UploadPictureForm from "./forms/UploadPictureForm";
-import FadeIn from "./FadeIn";
-import { Tooltip } from "./helpers/tooltip";
+import CoauthorsList from "../users/CoauthorsList";
+import ChapterList from "../cookbook/chapter/ChapterList";
+import Button from "../elements/Button";
+import AddRecipe from "../cookbook/chapter/recipe/AddRecipe";
+import InviteCoauthors from "../users/InviteCoauthors";
+import UploadPictureForm from "../forms/UploadPictureForm";
+import FadeIn from "../helpers/FadeIn";
+import { Tooltip } from "../helpers/tooltip";
 
 //constants
-import { tooltips } from "./constants/constants";
+import { tooltips } from "../constants/constants";
 
 //hooks
-import { useToggle } from "../hooks/hooks";
+import { useToggle } from "../../hooks/hooks";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 

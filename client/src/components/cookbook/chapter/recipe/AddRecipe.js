@@ -1,20 +1,20 @@
-// components
-import CookbookForm from "./forms/cookbook/CookbookForm";
-import FadeIn from "./FadeIn";
+//components
+import RecipeForm from "../../../forms/recipe/RecipeForm";
+import FadeIn from "../../../helpers/FadeIn";
 
-export default function CreateCookbook(props) {
+export default function AddRecipe(props) {
     const { toggleOnOff } = props;
 
     return (
         <section className="backdrop">
-            <FadeIn delay={250} duration={450}>
+            <FadeIn delay={250} duration={850}>
                 <button
                     className="button__closeBackdrop"
                     onClick={() => toggleOnOff(true)}
                 >
                     ×
                 </button>
-                <CookbookForm toggleOnOff={toggleOnOff} />
+                <RecipeForm toggleOnOff={toggleOnOff} />
             </FadeIn>
         </section>
     );

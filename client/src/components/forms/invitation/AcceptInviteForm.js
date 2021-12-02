@@ -1,7 +1,7 @@
 import axios from "../../../axios";
 
 // //components
-import Button from "../../Button";
+import Button from "../../elements/Button";
 
 //constants
 import {

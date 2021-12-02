@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { useStatefulFields } from "../../../hooks/hooks";
 
 //components
-import Button from "../../Button";
+import Button from "../../elements/Button";
 
 //constants
 import { inputLabels, buttonLabels } from "../../constants/constants";
