@@ -1,17 +1,16 @@
 /* GALLERY & GALLERY CONTROLS */
-.galleryWrapper {
-    min-height: 200px;
-}
-
-.galleryControls {
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    visibility: visible;
+.gallery {
+    &__wrapper {
+        min-height: 200px;
+    }
+    &__controls {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        visibility: visible;
+    }
 }
 
 .hideControls {
     visibility: hidden;
-}
-.gallery {
 }

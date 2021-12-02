@@ -22,7 +22,7 @@ export default function InvitationForm() {
     );
 
     return (
-        <div className="formWrapper">
+        <div className="wrapper__form">
             <div className="flex fcolumn">
                 <h1>{invitation.heading}</h1>
                 <p>{invitation.subline}</p>

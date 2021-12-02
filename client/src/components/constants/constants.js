@@ -51,7 +51,7 @@ export const inputLabels = {
     repeatPassword: "repeat password",
     quantity: "quantity",
     unit: "unit",
-    ingredient: "ingrdient",
+    ingredient: "ingredient",
     category: "category",
     recipeName: "recipe name",
     instructions: "instructions",
@@ -91,7 +91,7 @@ export const addRecipe = {
 };
 
 export const invitation = {
-    heading: "Invite your Friends &amp; Family",
+    heading: "Invite your Friends & Family",
     subline: "to join your cookbook",
     callToShare: "Simply share this invitation with them:",
     inviteCode: "www.whatscooking-goodlooking.com/",

@@ -23,11 +23,6 @@ export default function RecipeForm({ toggleOnOff }) {
     const chapters = useSelector((state) => state.chapters);
 
     const serialiseDataObject = (ingredients, recipe) => {
-        // console.log(
-        //     "[serialiseDataObject: ingredients, recipe]",
-        //     ingredients,
-        //     recipe
-        // );
         return {
             ingredients: ingredients,
             recipeDetails: recipe,
@@ -45,7 +40,6 @@ export default function RecipeForm({ toggleOnOff }) {
     };
 
     const collectRecipeInputs = async (inputValues) => {
-        // console.log("[collectRecipeInputes: inputValues]", inputValues);
         if (
             !inputValues.recipe_name ||
             !inputValues.instructions ||
@@ -54,18 +48,15 @@ export default function RecipeForm({ toggleOnOff }) {
         ) {
             return;
         }
-        // console.log("[collectRecipeInputs]", ingredientList, inputValues);
         const recipeInfo = serialiseDataObject(ingredientList, inputValues);
         const cookbook_id = currentCB.cookbook_id;
-        // console.log("[collectRecipeInputes: recipeInfo]", recipeInfo);
         const chapter_id = getChapterId(chapters, inputValues);
-        // console.log("[collectRecipeInputes: chapter id]", chapter_id);
         const message = await axios.post(
             `/api/recipes/add_recipe?chapter_id=${chapter_id}&cookbook_id=${cookbook_id}`,
             recipeInfo
         );
-        // console.log("[sendRecipeInfo: axios]", message);
-        // dispatch(useAddToIngredients(recipeInfo, chapter_id, cookbook_id));
+        console.log("message: ", message);
+
         dispatch(receiveRecipes(cookbook_id));
 
         toggleOnOff(true);

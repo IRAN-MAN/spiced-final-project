@@ -32,7 +32,7 @@ export default function EditRecipe(props) {
                 <div>
                     <h2>{editRecipe.heading}</h2>
                     <div>
-                        <div className="authWrapper flex cc frow ">
+                        <div className="wrapper__auth flex cc frow boxShadowS">
                             <div>
                                 <div>
                                     <label htmlFor="quantity">
@@ -46,6 +46,7 @@ export default function EditRecipe(props) {
                                             defaultValue={
                                                 currentIngredients.quantity
                                             }
+                                            autoComplete="off"
                                             required
                                         />
                                     </label>
@@ -55,6 +56,7 @@ export default function EditRecipe(props) {
                                             type="text"
                                             name="unit"
                                             placeholder={inputPlaceholders.unit}
+                                            autoComplete="off"
                                             required
                                         />
                                     </label>
@@ -66,6 +68,7 @@ export default function EditRecipe(props) {
                                             placeholder={
                                                 inputPlaceholders.ingredient
                                             }
+                                            autoComplete="off"
                                             required
                                         />
                                     </label>
@@ -88,13 +91,14 @@ export default function EditRecipe(props) {
                                 <ul className="ingredientslist"></ul>
                             </div>
                         </div>
-                        <div className="authWrapper flex cc fcolumn">
+                        <div className="wrapper__auth flex cc fcolumn boxShadowS">
                             <label htmlFor="category">
                                 {inputLabels.category}
                                 <input
                                     name="category"
                                     placeholder={inputPlaceholders.category}
                                     list="category"
+                                    autoComplete="off"
                                     required
                                 />
                                 <datalist id="category">
@@ -113,6 +117,7 @@ export default function EditRecipe(props) {
                                     name="recipe_name"
                                     placeholder={inputPlaceholders.recipeName}
                                     defaultValue={currentRecipe.recipe_name}
+                                    autoComplete="off"
                                     required
                                 />
                             </label>
@@ -123,6 +128,7 @@ export default function EditRecipe(props) {
                                     name="instructions"
                                     placeholder={inputPlaceholders.instructions}
                                     defaultValue={currentRecipe.instructions}
+                                    autoComplete="off"
                                     required
                                 ></textarea>
                             </label>
@@ -133,6 +139,7 @@ export default function EditRecipe(props) {
                                     name="prep_time"
                                     placeholder={inputPlaceholders.preptime}
                                     defaultValue={currentRecipe.prep_time}
+                                    autoComplete="off"
                                     required
                                 />
                             </label>
@@ -143,6 +150,7 @@ export default function EditRecipe(props) {
                                     name="recipe_story"
                                     placeholder={inputPlaceholders.story}
                                     defaultValue={currentRecipe.recipe_story}
+                                    autoComplete="off"
                                     required
                                 />
                             </label>

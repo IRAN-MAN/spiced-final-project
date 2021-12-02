@@ -11,7 +11,7 @@ export default function RegistrationForm() {
     const [submit, error] = useAuthSubmit("/api/users/signup", inputValues);
 
     return (
-        <div className="authWrapper">
+        <div className="wrapper__auth">
             <form onSubmit={submit} className="flex">
                 <label htmlFor="first_name" className="input">
                     <input
@@ -22,7 +22,7 @@ export default function RegistrationForm() {
                         placeholder=" "
                         required
                         onChange={handleChange}
-                        autoComplete="off"
+                        autoComplete="given-name"
                     />
                     <span className="input__label">
                         {inputLabels.firstName}
@@ -37,6 +37,7 @@ export default function RegistrationForm() {
                         placeholder=" "
                         required
                         onChange={handleChange}
+                        autoComplete="family-name"
                     />
                     <span className="input__label">{inputLabels.lastName}</span>
                 </label>
@@ -49,6 +50,7 @@ export default function RegistrationForm() {
                         placeholder=" "
                         required
                         onChange={handleChange}
+                        autoComplete="email"
                     />
                     <span className="input__label">{inputLabels.email}</span>
                 </label>
@@ -61,6 +63,7 @@ export default function RegistrationForm() {
                         placeholder=" "
                         required
                         onChange={handleChange}
+                        autoComplete="new-password"
                     />
                     <span className="input__label">{inputLabels.password}</span>
                 </label>
@@ -73,6 +76,7 @@ export default function RegistrationForm() {
                         placeholder=" "
                         required
                         onChange={handleChange}
+                        autoComplete="new-password"
                     />
                     <span className="input__label">
                         {inputLabels.repeatPassword}

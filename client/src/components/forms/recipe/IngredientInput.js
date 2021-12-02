@@ -51,7 +51,7 @@ export default function IngredientInput() {
     };
 
     return (
-        <div className="authWrapper flex cc frow ">
+        <div className="wrapper__auth flex cc frow boxShadowS">
             <div>{renderIngredientInput()}</div>
             <div>
                 <ul className="ingredientslist">

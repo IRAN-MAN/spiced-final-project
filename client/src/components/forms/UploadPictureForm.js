@@ -17,7 +17,7 @@ export default function UploadPictureForm({ label, id, action }) {
     };
     return (
         <div
-            className="formWrapper flex cc"
+            className="wrapper__form flex cc"
             onClick={(event) => event.stopPropagation()}
         >
             <form

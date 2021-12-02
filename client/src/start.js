@@ -7,8 +7,8 @@ import store from "./redux/store";
 // import { getInviteLink } from "./redux/action-creators";
 
 //components
-import Welcome from "./components/Welcome";
-import App from "./components/App";
+import Welcome from "./components/base/Welcome";
+import App from "./components/base/App";
 import "./sass/main.scss";
 
 const isLoggedIn = async () => {

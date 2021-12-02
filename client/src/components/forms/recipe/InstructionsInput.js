@@ -12,7 +12,7 @@ export default function RecipeInput(props) {
     const chapters = useSelector((state) => state.chapters);
 
     return (
-        <div className="authWrapper flex cc fcolumn">
+        <div className="wrapper__auth flex cc fcolumn boxShadowS">
             <label htmlFor="category" className="input">
                 <input
                     id="category"
@@ -40,6 +40,7 @@ export default function RecipeInput(props) {
                     type="text"
                     placeholder=" "
                     required
+                    autoComplete="off"
                     onChange={handleChange}
                 />
                 <span className="input__label">{inputLabels.recipeName}</span>
@@ -52,6 +53,7 @@ export default function RecipeInput(props) {
                     name="instructions"
                     placeholder=" "
                     required
+                    autoComplete="off"
                     onChange={handleChange}
                 />
                 <span className="input__label">{inputLabels.instructions}</span>
@@ -65,6 +67,7 @@ export default function RecipeInput(props) {
                     type="number"
                     placeholder=" "
                     required
+                    autoComplete="off"
                     onChange={handleChange}
                 />
                 <span className="input__label">{inputLabels.preptime}</span>
@@ -77,6 +80,7 @@ export default function RecipeInput(props) {
                     name="recipe_story"
                     placeholder=" "
                     required
+                    autoComplete="off"
                     onChange={handleChange}
                 />
                 <span className="input__label">{inputLabels.story}</span>

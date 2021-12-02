@@ -16,19 +16,11 @@ textarea {
 }
 input:focus {
     outline: none !important;
-    border-color: peru;
-    box-shadow: 0 0 5px peru;
+    border-color: $color-sub-dark;
+    box-shadow: 0 0 5px $color-sub-dark;
 }
 //----
 :root {
-    --color-light: whitesmoke;
-    --color-dark: black;
-    --color-signal: peru;
-
-    --color-background: var(--color-light);
-    --color-text: var(--color-dark);
-    --color-accent: var(--color-signal);
-
     --size-bezela: 0.5rem;
     --size-radius: 4px;
 
@@ -36,8 +28,8 @@ input:focus {
 
     font-family: "Inter", sans-serif;
     font-size: calc(0.6rem + 0.4vw);
-    color: var(--color-text);
-    background: var(--color-background);
+    color: $color-text;
+    background: white;
     font-weight: 300;
     padding: 0 calc(var(--size-bezel) * 3);
 }
@@ -51,18 +43,17 @@ input:focus {
     position: relative;
 
     &__label {
-        font-size: 1.3rem;
+        font-size: 1rem;
         position: absolute;
         left: 5px;
         top: 0;
         padding: calc(var(--size-bezela) * 0.75) calc(var(--size-bezela) * 0.5);
         margin: calc(var(--size-bezela) * 0.75 + 3px)
             calc(var(--size-bezela) * 0.5);
-        background: pink;
         white-space: nowrap;
         transform: translate(0, 0);
         transform-origin: 0 0;
-        background: var(--color-background);
+        background: white;
         transition: transform 120ms ease-in;
         font-weight: bold;
         line-height: 1.2;
@@ -81,7 +72,7 @@ input:focus {
         &:not(:placeholder-shown) {
             & + .input__label {
                 transform: translate(0.25rem, -65%) scale(0.8);
-                color: var(--color-accent);
+                color: $color-sub-dark;
             }
         }
     }

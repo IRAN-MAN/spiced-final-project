@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --color-light: whitesmoke;
     --color-dark: black;
     --color-signal: peru;
@@ -53,6 +53,6 @@
 .input__field:not(:placeholder-shown) + .input__label {
     transform: translate(0.25rem, -65%) scale(0.8);
     color: var(--color-accent);
-}
+} */
 
 /*# sourceMappingURL=style_input.css.map */

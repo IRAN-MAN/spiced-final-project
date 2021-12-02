@@ -40,6 +40,7 @@ export default function CookbookForm(props) {
                         placeholder=" "
                         required
                         onChange={handleChange}
+                        autoComplete="off"
                     />
                     <span className="input__label">
                         {inputPlaceholders.newCookbook}

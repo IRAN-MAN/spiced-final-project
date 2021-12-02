@@ -25,6 +25,7 @@ export default function SingleIngredientRow(props) {
                     placeholder=" "
                     required
                     onChange={handleChange}
+                    autoComplete="off"
                 />
                 <span className="input__label">{inputLabels.quantity}</span>
             </label>
@@ -39,6 +40,7 @@ export default function SingleIngredientRow(props) {
                     placeholder=" "
                     required
                     onChange={handleChange}
+                    autoComplete="off"
                 />
                 <span className="input__label">{inputLabels.unit}</span>
             </label>
@@ -52,6 +54,7 @@ export default function SingleIngredientRow(props) {
                     placeholder=" "
                     required
                     onChange={handleChange}
+                    autoComplete="off"
                 />
                 <span className="input__label">{inputLabels.ingredient}</span>
             </label>

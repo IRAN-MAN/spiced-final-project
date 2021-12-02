@@ -11,7 +11,7 @@ export default function LoginForm() {
     const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
 
     return (
-        <div className="authWrapper">
+        <div className="wrapper__auth">
             <form onSubmit={submit} className="flex">
                 <label htmlFor="email" className="input">
                     <input
@@ -22,6 +22,7 @@ export default function LoginForm() {
                         placeholder=" "
                         required
                         onChange={handleChange}
+                        autoComplete="username"
                     />
                     <span className="input__label">{inputLabels.email}</span>
                 </label>
@@ -34,6 +35,7 @@ export default function LoginForm() {
                         placeholder=" "
                         required
                         onChange={handleChange}
+                        autoComplete="current-password"
                     />
                     <span className="input__label">{inputLabels.password}</span>
                 </label>

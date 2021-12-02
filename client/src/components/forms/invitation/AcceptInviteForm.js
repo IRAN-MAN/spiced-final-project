@@ -45,7 +45,7 @@ export default function AcceptInvite(props) {
     }, []);
 
     return (
-        <div className="authWrapper flex cc fcolumn">
+        <div className="wrapper__auth flex cc fcolumn boxShadowS">
             <h1>{acceptInvite.heading}</h1>
             <p>{acceptInvite.subline}</p>
             <div className="avatar__wrapper">
@@ -66,7 +66,7 @@ export default function AcceptInvite(props) {
                 </p>
             </div>
 
-            <div className="formWrapper">
+            <div className="wrapper__form">
                 <form onSubmit={submit} className="flex">
                     <label htmlFor="email">
                         {inputLabels.email}

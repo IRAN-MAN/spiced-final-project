@@ -33,7 +33,7 @@ export default function EditProfile() {
 
     return (
         <FadeIn delay={250} duration={850}>
-            <div className="authWrapper flex fcolumn">
+            <div className="wrapper__auth flex fcolumn boxShadowS">
                 <form
                     onSubmit={(event) => onEditAccountSubmit(event)}
                     className="flex fcolumn"

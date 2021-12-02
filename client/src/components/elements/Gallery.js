@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Gallery = ({ elements, render, elementsPerPage }) => {
-    console.log("elementsperpage:", elementsPerPage);
+    console.log("elementsperpage:", elementsPerPage, elements.length);
     const [galleryControls, setGalleryControls] = useState({
         start: 0,
         end: elementsPerPage,
         hidePrev: true,
-        hideNext: isLast,
+        hideNext: elementsPerPage >= elements.length,
         // showNext: true,
         length: elements.length,
     });
@@ -54,7 +54,8 @@ export const Gallery = ({ elements, render, elementsPerPage }) => {
         return galleryControls.start === 0;
     };
     const isLast = () => {
-        return galleryControls.end >= elements.length;
+        console.log(galleryControls.end, elements.length);
+        return galleryControls.end + 1 >= elements.length;
     };
 
     //--------
