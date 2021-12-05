@@ -123,9 +123,11 @@ const reducer = (state = initialState, action) => {
                 currentCookbook: action.payload.currentCookbook,
             };
         case DELETE_INGREDIENT:
+            console.log("DELETE");
             return {
                 ...state,
                 ingredients: action.payload.newIngredients,
+                ingredients_list: action.payload.newIngredients,
             };
         case RECEIVE_RECIPE_PHOTOS:
             return {

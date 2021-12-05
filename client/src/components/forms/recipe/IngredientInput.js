@@ -31,16 +31,12 @@ export default function IngredientInput() {
     }, [ingredients]);
 
     const renderIngredients = () => {
-        let count = 0;
-        return ingredients.map((ingredient) => {
-            count++;
-            // console.log("CLICK creation: ", count);
-            const a = count;
+        return ingredients.map((ingredient, index) => {
             return (
-                <li key={count}>
+                <li key={index}>
                     {ingredient.quantity} {ingredient.unit}{" "}
                     {ingredient.ingredient_name}
-                    <button onClick={() => deleteIngredient(a)}>×</button>
+                    <button onClick={() => deleteIngredient(index)}>×</button>
                 </li>
             );
         });

@@ -188,9 +188,7 @@ export const populateCurrentCookbook = (currentCookbook) => {
 };
 
 export const deleteIngredientById = (id, ingredients) => {
-    id--;
-
-    const newIngredients = ingredients.filter((_, i) => i != id);
+    const newIngredients = ingredients.filter((_, i) => i !== id);
     // console.log("newIngredients", newIngredients);
     return {
         type: DELETE_INGREDIENT,
