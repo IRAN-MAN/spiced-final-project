@@ -1,19 +1,61 @@
 import { useState, useEffect } from "react";
 
 export const Gallery = ({ elements, render, elementsPerPage }) => {
-    console.log("elementsperpage:", elementsPerPage, elements.length);
-    const [galleryControls, setGalleryControls] = useState({
+    const allPages = Math.ceil(elements.length / elementsPerPage);
+    const [galleryParams, setGalleryParams] = useState({
         start: 0,
         end: elementsPerPage,
-        hidePrev: true,
-        hideNext: elementsPerPage >= elements.length,
-        // showNext: true,
-        length: elements.length,
+        pages: Math.ceil(elements.length / elementsPerPage),
+        currentPage: 1,
     });
 
-    const renderElements = (elements) => {
+    const [nextPrevButtons, setNextPrevButtons] = useState({
+        hidePrev: galleryParams.currentPage === 1,
+        hideNext: galleryParams.currentPage >= allPages,
+    });
+    useEffect(() => {
+        setGalleryParams({
+            start: 0,
+            end: elementsPerPage,
+            pages: Math.ceil(elements.length / elementsPerPage),
+            currentPage: 1,
+        });
+    }, [elements]);
+
+    useEffect(() => {
+        console.log("First/Last: ", nextPrevButtons, elements.length);
+        if (elements.length !== 0) {
+            if (isFirst()) {
+                if (isLast()) {
+                    setNextPrevButtons({
+                        hideNext: true,
+                        hidePrev: true,
+                    });
+                    return;
+                }
+                setNextPrevButtons({
+                    hideNext: false,
+                    hidePrev: true,
+                });
+                return;
+            }
+            if (isLast()) {
+                setNextPrevButtons({
+                    hideNext: true,
+                    hidePrev: false,
+                });
+                return;
+            }
+            setNextPrevButtons({
+                hideNext: false,
+                hidePrev: false,
+            });
+        }
+    }, [galleryParams.currentPage, elements.length]);
+
+    const mapAndRenderElements = (elements) => {
         return elements
-            .slice(galleryControls.start, galleryControls.end)
+            .slice(galleryParams.start, galleryParams.end)
             .map((element, id) => {
                 return render(element, id);
             });
@@ -22,126 +64,58 @@ export const Gallery = ({ elements, render, elementsPerPage }) => {
     //-------
     const previous = () => {
         loadPreviousElements();
-        if (isFirst()) {
-            hidePreviousButton();
-        }
     };
     const next = () => {
         loadNextElements();
-        if (isLast()) {
-            hideNextButton();
-        }
     };
     //--------
-
     const loadPreviousElements = () => {
-        setGalleryControls({
-            ...galleryControls,
-            start: galleryControls.start - elementsPerPage,
-            end: galleryControls.end - elementsPerPage,
+        setGalleryParams({
+            ...galleryParams,
+            start: galleryParams.start - elementsPerPage,
+            end: galleryParams.end - elementsPerPage,
+            currentPage: galleryParams.currentPage - 1,
         });
     };
     const loadNextElements = () => {
-        setGalleryControls({
-            ...galleryControls,
-            start: galleryControls.start + elementsPerPage,
-            end: galleryControls.end + elementsPerPage,
+        setGalleryParams({
+            ...galleryParams,
+            start: galleryParams.start + elementsPerPage,
+            end: galleryParams.end + elementsPerPage,
+            currentPage: galleryParams.currentPage + 1,
         });
     };
     //--------
-
     const isFirst = () => {
-        return galleryControls.start === 0;
+        return galleryParams.currentPage === 1;
     };
     const isLast = () => {
-        console.log(galleryControls.end, elements.length);
-        return galleryControls.end + 1 >= elements.length;
+        return galleryParams.currentPage >= allPages;
     };
-
-    //--------
-    const hidePreviousButton = () => {
-        setGalleryControls({
-            ...galleryControls,
-            hideNext: false,
-            hidePrev: true,
-        });
-    };
-    const hideNextButton = () => {
-        setGalleryControls({
-            ...galleryControls,
-            hideNext: true,
-            hidePrev: false,
-        });
-    };
-
-    // const changeStartEnd = (start, end, direction) => {
-    //     if (direction) {
-    //         start += elementsPerPage;
-    //         end += elementsPerPage;
-    //     } else {
-    //         start -= elementsPerPage;
-    //         end -= elementsPerPage;
-    //     }
-    //     let showPrev, showNext;
-    //     if (start == 0) {
-    //         showPrev = false;
-    //     } else {
-    //         showPrev = true;
-    //     }
-    //     // console.log("end: ", end);
-    //     if (end >= elements.length) {
-    //         showNext = false;
-    //     } else {
-    //         showNext = true;
-    //     }
-    //     setGalleryControls({
-    //         ...galleryControls,
-    //         start,
-    //         end,
-    //         showPrev,
-    //         showNext,
-    //     });
-    // };
 
     return (
         <div className="gallery__wrapper flex cc">
             <div className="gallery__controls">
                 {/* Prev Button */}
-                <button
-                    className={
-                        galleryControls.hidePrev == false
-                            ? "galleryControls"
-                            : "galleryControls hideControls"
-                    }
-                    onClick={(event) => {
-                        event.stopPropagation();
-                        previous();
-                    }}
-                >
-                    <i className="material-icons">arrow_left</i>
-                </button>
+                {nextPrevButtons.hidePrev !== true && (
+                    <button className={"galleryControls"} onClick={previous}>
+                        <i className="material-icons">arrow_left</i>
+                    </button>
+                )}
             </div>
             {/* Gallery */}
             <div className="gallery__elements">
                 <ul className="flex frow">
-                    {elements.length > 0 && renderElements(elements)}
+                    {elements.length > 0 && mapAndRenderElements(elements)}
                 </ul>
             </div>
             <div className="gallery__controls">
                 {/* Next Button */}
-                <button
-                    className={
-                        galleryControls.hideNext == false
-                            ? "galleryControls"
-                            : "galleryControls hideControls"
-                    }
-                    onClick={(event) => {
-                        event.stopPropagation();
-                        next();
-                    }}
-                >
-                    <i className="material-icons">arrow_right</i>
-                </button>
+                {nextPrevButtons.hideNext !== true && (
+                    <button className={"galleryControls"} onClick={next}>
+                        <i className="material-icons">arrow_right</i>
+                    </button>
+                )}
             </div>
         </div>
     );
