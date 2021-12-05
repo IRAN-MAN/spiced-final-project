@@ -11,7 +11,7 @@ export default function LoginForm() {
     const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
 
     return (
-        <div className="wrapper__auth">
+        <div>
             <form onSubmit={submit} className="flex">
                 <label htmlFor="email" className="input">
                     <input

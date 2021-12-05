@@ -23,7 +23,6 @@ export const Gallery = ({ elements, render, elementsPerPage }) => {
     }, [elements]);
 
     useEffect(() => {
-        console.log("First/Last: ", nextPrevButtons, elements.length);
         if (elements.length !== 0) {
             if (isFirst()) {
                 if (isLast()) {
