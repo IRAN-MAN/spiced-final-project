@@ -1,11 +1,13 @@
+//redux
 import { useDispatch } from "react-redux";
-
 import { createNewCookbook } from "../../../redux/action-creators";
 
+//hooks
 import { useStatefulFields } from "../../../hooks/hooks";
 
 //components
 import Button from "../../elements/Button";
+import FormWrapper from "../../elements/FormWrapper";
 
 //constants
 import {
@@ -27,10 +29,11 @@ export default function CookbookForm(props) {
     };
 
     return (
-        <div>
-            <h2>{newCookbook.heading}</h2>
-            <p>{newCookbook.subline}</p>
-            <div className="cookbookForm flex cc fcolumn">
+        <FormWrapper
+            heading={newCookbook.heading}
+            subline={newCookbook.subline}
+        >
+            <div className="wrapper__auth cookbookForm flex cc fcolumn boxShadowS">
                 <label htmlFor="cookbook_name" className="input">
                     <input
                         id="cookbook_name"
@@ -55,6 +58,6 @@ export default function CookbookForm(props) {
                     onClick={onClick}
                 />
             </div>
-        </div>
+        </FormWrapper>
     );
 }

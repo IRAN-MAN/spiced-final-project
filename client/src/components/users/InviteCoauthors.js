@@ -1,21 +1,13 @@
 //components
-import FadeIn from "../helpers/FadeIn";
+import Backdrop from "../elements/Backdrop";
 import InvitationForm from "../forms/invitation/InvitationForm";
 
 export default function InviteCoauthors(props) {
     const { toggleOnOff } = props;
 
     return (
-        <FadeIn delay={250} duration={450}>
-            <section className="backdrop">
-                <button
-                    className="button__closeBackdrop"
-                    onClick={() => toggleOnOff(true)}
-                >
-                    ×
-                </button>
-                <InvitationForm />
-            </section>
-        </FadeIn>
+        <Backdrop toggleOnOff={toggleOnOff}>
+            <InvitationForm />
+        </Backdrop>
     );
 }

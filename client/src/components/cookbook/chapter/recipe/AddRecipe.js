@@ -1,21 +1,13 @@
 //components
 import RecipeForm from "../../../forms/recipe/RecipeForm";
-import FadeIn from "../../../helpers/FadeIn";
+import Backdrop from "../../../elements/Backdrop";
 
 export default function AddRecipe(props) {
     const { toggleOnOff } = props;
 
     return (
-        <section className="backdrop">
-            <FadeIn delay={250} duration={850}>
-                <button
-                    className="button__closeBackdrop"
-                    onClick={() => toggleOnOff(true)}
-                >
-                    ×
-                </button>
-                <RecipeForm toggleOnOff={toggleOnOff} />
-            </FadeIn>
-        </section>
+        <Backdrop toggleOnOff={toggleOnOff}>
+            <RecipeForm toggleOnOff={toggleOnOff} />
+        </Backdrop>
     );
 }
