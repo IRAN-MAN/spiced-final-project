@@ -5,6 +5,8 @@ import { receiveRecipes } from "../../../redux/action-creators";
 import IngredientInput from "./IngredientInput";
 import InstructionsInput from "./InstructionsInput";
 import { Tooltip } from "../../helpers/tooltip";
+import FormWrapper from "../../elements/FormWrapper";
+import TempIngredientsList from "./TempIngredientsList";
 
 //constants
 import { addRecipe, tooltips } from "../../constants/constants";
@@ -18,7 +20,7 @@ export default function RecipeForm({ toggleOnOff }) {
     const dispatch = useDispatch();
     const [step, setStep] = useState(1);
 
-    const ingredientList = useSelector((state) => state.ingredients);
+    const editIngredients = useSelector((state) => state.editIngredients);
     const currentCB = useSelector((state) => state.currentCookbook);
     const chapters = useSelector((state) => state.chapters);
 
@@ -48,7 +50,7 @@ export default function RecipeForm({ toggleOnOff }) {
         ) {
             return;
         }
-        const recipeInfo = serialiseDataObject(ingredientList, inputValues);
+        const recipeInfo = serialiseDataObject(editIngredients, inputValues);
         const cookbook_id = currentCB.cookbook_id;
         const chapter_id = getChapterId(chapters, inputValues);
         const message = await axios.post(
@@ -63,38 +65,37 @@ export default function RecipeForm({ toggleOnOff }) {
     };
 
     return (
-        <div>
-            <h2>{addRecipe.heading}</h2>
-
-            <div>
-                {step === 1 && (
-                    <div>
-                        <p>{addRecipe.subline_1}</p>
-                        <IngredientInput />
-                        <Tooltip
-                            label={tooltips.addInstructions}
-                            className={"tooltipBtn"}
-                        >
-                            <Button
-                                onClick={() => setStep(step + 1)}
-                                type="submit"
-                                classNames="button button__addRecipe flex cc boxShadowL"
-                                icon="send"
-                            />
-                        </Tooltip>
-                    </div>
-                )}
-                {step === 2 && (
-                    <div>
-                        <p>{addRecipe.subline_2}</p>
-                        <InstructionsInput
-                            collectRecipeInputes={collectRecipeInputs}
+        <>
+            {step === 1 && (
+                <FormWrapper
+                    heading={addRecipe.heading}
+                    subline={addRecipe.subline_1}
+                >
+                    <IngredientInput />
+                    {/* <TempIngredientsList ingredients={editIngredients} /> */}
+                    <Tooltip
+                        label={tooltips.addInstructions}
+                        className={"tooltipBtn"}
+                    >
+                        <Button
+                            onClick={() => setStep(step + 1)}
+                            type="submit"
+                            classNames="button button__addRecipe flex cc boxShadowL"
+                            icon="send"
                         />
-                    </div>
-                )}
-            </div>
-            <div></div>
-            {/* s<p className="message">{message}</p> */}
-        </div>
+                    </Tooltip>
+                </FormWrapper>
+            )}
+            {step === 2 && (
+                <FormWrapper
+                    heading={addRecipe.heading}
+                    subline={addRecipe.subline_2}
+                >
+                    <InstructionsInput
+                        collectRecipeInputes={collectRecipeInputs}
+                    />
+                </FormWrapper>
+            )}
+        </>
     );
 }

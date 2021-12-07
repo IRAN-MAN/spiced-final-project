@@ -7,7 +7,7 @@ import Button from "../../elements/Button";
 //constants
 import { inputLabels, buttonLabels } from "../../constants/constants";
 
-export default function RecipeInput(props) {
+export default function InstructionsInput({ collectRecipeInputes }) {
     const [inputValues, handleChange] = useStatefulFields();
     const chapters = useSelector((state) => state.chapters);
 
@@ -106,7 +106,7 @@ export default function RecipeInput(props) {
                 type="submit"
                 classNames="button button__submit"
                 icon="arrow_right_alt"
-                onClick={() => props.collectRecipeInputes(inputValues)}
+                onClick={() => collectRecipeInputes(inputValues)}
             />
         </div>
     );
