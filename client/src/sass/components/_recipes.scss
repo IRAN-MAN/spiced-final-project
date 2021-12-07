@@ -1,16 +1,18 @@
 /* RECIPES */
 
-.recipeStory {
-    margin-block-end: 20px;
-    & q {
-        font-size: 1.4rem;
-        font-weight: 900;
+.recipe {
+    &__story {
+        margin-block-end: 20px;
+        & q {
+            font-size: 1.4rem;
+            font-weight: 900;
+        }
     }
-}
-
-.recipeMain {
-    width: 100vw;
-}
-.recipeDetails {
-    padding-block-end: 20px;
+    &__main {
+        width: 100vw;
+    }
+    &__details {
+        padding-block-end: 0.5rem;
+        // padding-inline-start: 5rem;
+    }
 }

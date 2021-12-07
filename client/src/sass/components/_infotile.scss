@@ -1,0 +1,16 @@
+.info {
+    &__tile {
+        background-color: $color-sub-light;
+        color: $color-text;
+        border-radius: 0.5rem;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        margin: 1rem;
+        .material-icons {
+            margin-inline: 0.5rem;
+        }
+    }
+}

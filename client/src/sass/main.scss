@@ -13,6 +13,7 @@
 @import "base/_link.scss";
 @import "base/_list.scss";
 @import "base/_scroll.scss";
+@import "base/_tables.scss";
 @import "base/_typography.scss";
 @import "base/_utilities.scss";
 
@@ -20,8 +21,9 @@
 @import "components/_chapters.scss";
 @import "components/_coauthors.scss";
 @import "components/_cookbook.scss";
-@import "components/_forms.scss";
+@import "components/_wrapper.scss";
 @import "components/_gallery.scss";
+@import "components/_infotile.scss";
 @import "components/_ingredients.scss";
 @import "components/_instructions.scss";
 @import "components/_invitation.scss";

@@ -1,12 +1,15 @@
 /* INGREDIENTS */
 
-.ingredientsWrapper {
-    background-color: white;
-    padding: 20px;
-    max-width: 700px;
-    margin-inline: auto;
-    margin-block-end: 20px;
-    /* border: 2px solid black; */
+.wrapper {
+    &__ingredients {
+        text-align: start;
+        background-color: white;
+        padding: 20px;
+        max-width: 700px;
+        margin-inline: auto;
+        margin-block-end: 20px;
+        /* border: 2px solid black; */
+    }
 }
 .ingredients {
 }

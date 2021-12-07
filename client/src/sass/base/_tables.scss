@@ -1,0 +1,22 @@
+.table {
+    &__ingredients {
+        width: 100%;
+        // border: 1px solid black;
+        table-layout: fixed;
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 2rem 0.1rem;
+        border-color: gray;
+    }
+}
+
+tr:nth-child(even) {
+    background: #eee;
+}
+tr:nth-child(odd) {
+    background: #fff;
+}
+
+td {
+    padding-inline: 1.5rem;
+}
