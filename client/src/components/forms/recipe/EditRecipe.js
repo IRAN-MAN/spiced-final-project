@@ -1,7 +1,11 @@
+import axios from "../../../axios";
+
 //components
 import Backdrop from "../../elements/Backdrop";
 import FormWrapper from "../../elements/FormWrapper";
 import SingleIngredientRow from "./singleIngredientRow";
+import TempIngredientsList from "./TempIngredientsList";
+
 //constants
 import {
     buttonLabels,
@@ -15,15 +19,17 @@ import {
 } from "../../../redux/action-creators";
 // hooks
 import { useDispatch, useSelector } from "react-redux";
-// import { useStatefulFields } from "../hooks/hooks";
+
+import { useStatefulFields } from "../../../hooks/hooks";
 
 export default function EditRecipe({ toggleOnOff }) {
     const dispatch = useDispatch();
 
     // const [inputValues, handleChange] = useStatefulFields();
     const currentRecipe = useSelector((state) => state.currentRecipe);
-    const currentIngredients = useSelector((state) => state.ingredients_list);
+    const editIngredients = useSelector((state) => state.editIngredients);
     const chapters = useSelector((state) => state.chapters);
+    const [inputValues, handleChange] = useStatefulFields();
 
     const addToIngredients = (input) => {
         // console.log("[IngredientInput] input: ", input);
@@ -31,25 +37,56 @@ export default function EditRecipe({ toggleOnOff }) {
             return;
         }
         dispatch(addIngredients(input));
-        // console.log("[addToIngredients]", ingredients);
+        console.log("[addToIngredients]", editIngredients);
     };
-    const deleteIngredient = (id) => {
-        dispatch(deleteIngredientById(id, currentIngredients));
-    };
+    // const deleteIngredient = (id) => {
+    //     dispatch(deleteIngredientById(id, ingredients_list));
+    // };
     const renderIngredientInput = () => {
         return <SingleIngredientRow saveInputToArray={addToIngredients} />;
     };
-    const renderIngredients = () => {
-        return currentIngredients.map((ingredient, index) => {
-            // console.log("CLICK creation: ", count);
-            return (
-                <li key={index}>
-                    {ingredient.quantity} {ingredient.unit}{" "}
-                    {ingredient.ingredient_name}
-                    <button onClick={() => deleteIngredient(index)}>×</button>
-                </li>
-            );
-        });
+    // const renderIngredients = () => {
+    //     return ingredients.map((ingredient, index) => {
+    //         // console.log("CLICK creation: ", count);
+    //         return (
+    //             <li key={index}>
+    //                 {ingredient.quantity} {ingredient.unit}{" "}
+    //                 {ingredient.ingredient_name}
+    //                 <button onClick={() => deleteIngredient(index)}>×</button>
+    //             </li>
+    //         );
+    //     });
+    // };
+    const collectRecipeInputs = async (inputValues) => {
+        console.log("InputValues: ", inputValues);
+
+        if (
+            !inputValues.recipe_name ||
+            !inputValues.instructions ||
+            !inputValues.prep_time ||
+            !inputValues.category
+        ) {
+            console.log("No way!");
+
+            return;
+        }
+        console.log("All good!");
+
+        const recipeInfo = serialiseDataObject(editIngredients, inputValues);
+
+        const message = await axios.post(
+            `/api/recipes/edit_recipe/${currentRecipe.recipe_id}`,
+            recipeInfo
+        );
+        console.log("message: ", message);
+
+        toggleOnOff(true);
+    };
+    const serialiseDataObject = (ingredients, recipe) => {
+        return {
+            ingredients: ingredients,
+            recipeDetails: recipe,
+        };
     };
 
     return (
@@ -58,10 +95,7 @@ export default function EditRecipe({ toggleOnOff }) {
                 <div className="wrapper__auth flex cc frow boxShadowS">
                     <div>{renderIngredientInput()}</div>
                     <div>
-                        <ul className="ingredientslist">
-                            {currentIngredients.length > 0 &&
-                                renderIngredients()}
-                        </ul>
+                        <TempIngredientsList ingredients={editIngredients} />
                     </div>
                 </div>
                 <div className="wrapper__auth flex cc fcolumn boxShadowS">
@@ -73,8 +107,9 @@ export default function EditRecipe({ toggleOnOff }) {
                             list="category"
                             autoComplete="off"
                             required
+                            onChange={handleChange}
                         />
-                        <datalist id="category">
+                        <datalist id="category" onChange={handleChange}>
                             {chapters.map((chapter, index) => (
                                 <option key={index} value={chapter.category} />
                             ))}
@@ -89,6 +124,7 @@ export default function EditRecipe({ toggleOnOff }) {
                             defaultValue={currentRecipe.recipe_name}
                             autoComplete="off"
                             required
+                            onChange={handleChange}
                         />
                     </label>
                     <label htmlFor="instructions">
@@ -100,6 +136,7 @@ export default function EditRecipe({ toggleOnOff }) {
                             defaultValue={currentRecipe.instructions}
                             autoComplete="off"
                             required
+                            onChange={handleChange}
                         ></textarea>
                     </label>
                     <label htmlFor="prep_time">
@@ -111,6 +148,7 @@ export default function EditRecipe({ toggleOnOff }) {
                             defaultValue={currentRecipe.prep_time}
                             autoComplete="off"
                             required
+                            onChange={handleChange}
                         />
                     </label>
                     <label htmlFor="recipe_story">
@@ -122,6 +160,7 @@ export default function EditRecipe({ toggleOnOff }) {
                             defaultValue={currentRecipe.recipe_story}
                             autoComplete="off"
                             required
+                            onChange={handleChange}
                         />
                     </label>
                     <div>
@@ -135,11 +174,16 @@ export default function EditRecipe({ toggleOnOff }) {
                                 max="5"
                                 className="slider"
                                 defaultValue={currentRecipe.difficulty_level}
+                                onChange={handleChange}
                             />
                         </label>
                     </div>
                     <div className="button__wrapper">
-                        <button type="submit" className="button button__submit">
+                        <button
+                            type="submit"
+                            className="button button__submit"
+                            onClick={() => collectRecipeInputs(inputValues)}
+                        >
                             <span className="flex">
                                 {buttonLabels.updateRecipe}
                                 <i className="material-icons">
