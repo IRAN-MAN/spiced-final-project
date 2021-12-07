@@ -10,7 +10,7 @@ import {
 import CoauthorsList from "../users/CoauthorsList";
 import ChapterList from "../cookbook/chapter/ChapterList";
 import Button from "../elements/Button";
-import AddRecipe from "../cookbook/chapter/recipe/AddRecipe";
+import AddRecipe from "../forms/recipe/AddRecipe";
 import InviteCoauthors from "../users/InviteCoauthors";
 import UploadPictureForm from "../forms/UploadPictureForm";
 import FadeIn from "../helpers/FadeIn";
