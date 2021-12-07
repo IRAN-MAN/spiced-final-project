@@ -4,4 +4,7 @@ export const icons = {
     facebook: "facebook",
     whatsapp: "whatsapp",
     add_circle_outline: "add_circle_outline",
+    timer: "timer",
+    star: "star",
+    difficulty: "auto_graph",
 };

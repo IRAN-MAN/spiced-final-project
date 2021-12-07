@@ -100,3 +100,12 @@ export const invitation = {
 export const urls = {
     inviteLink: "http://localhost:3000/api/co_authors/community/invite/",
 };
+
+export const login = {
+    heading: "Login with your email",
+};
+export const registration = {
+    heading: "Sign up and create your own community cookbook",
+};
+
+export const difficulty = ["easy peasy", "moderate", "advanced"];
