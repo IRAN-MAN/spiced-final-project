@@ -129,7 +129,7 @@ export const receiveCoauthors = async (cookbook_id) => {
     };
 };
 export const receiveIngredientslist = async (recipe_id) => {
-    const ingredients_list = await axios.get(
+    const currentIngredientsList = await axios.get(
         `/api/ingredients_list/${recipe_id}`
     );
     // console.log(
@@ -139,7 +139,7 @@ export const receiveIngredientslist = async (recipe_id) => {
     return {
         type: RECEIVE_INGREDIENTSLIST,
         payload: {
-            ingredients_list: ingredients_list.data.ingredientList,
+            currentIngredients: currentIngredientsList.data.ingredientList,
         },
     };
 };

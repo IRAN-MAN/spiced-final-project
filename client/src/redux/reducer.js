@@ -41,8 +41,8 @@ const initialState = {
     cookbooks: [],
     currentCookbook: {},
     currentRecipe: {},
-    ingredients: [],
-    ingredients_list: [],
+    editIngredients: [],
+    currentIngredients: [],
     isLightboxVisible: false,
     myFavourites: [],
     recipes: [],
@@ -90,7 +90,8 @@ const reducer = (state = initialState, action) => {
         case RECEIVE_INGREDIENTSLIST:
             return {
                 ...state,
-                ingredients_list: action.payload.ingredients_list,
+                currentIngredients: action.payload.currentIngredients,
+                editIngredients: action.payload.currentIngredients,
             };
         case RECEIVE_CURRENTCOOKBOOK:
             return {
@@ -115,7 +116,10 @@ const reducer = (state = initialState, action) => {
         case ADD_INGREDIENT:
             return {
                 ...state,
-                ingredients: [...state.ingredients, action.payload.ingredient],
+                editIngredients: [
+                    ...state.editIngredients,
+                    action.payload.ingredient,
+                ],
             };
         case POPULATE_CURRENT_COOKBOOK:
             return {
@@ -126,8 +130,7 @@ const reducer = (state = initialState, action) => {
             console.log("DELETE");
             return {
                 ...state,
-                ingredients: action.payload.newIngredients,
-                ingredients_list: action.payload.newIngredients,
+                editIngredients: action.payload.newIngredients,
             };
         case RECEIVE_RECIPE_PHOTOS:
             return {
