@@ -2,6 +2,7 @@ import axios from "../../../axios";
 
 // //components
 import Button from "../../elements/Button";
+import FormWrapper from "../../elements/FormWrapper";
 
 //constants
 import {
@@ -15,8 +16,7 @@ import {
 import { useState, useEffect } from "react";
 import { useStatefulFields, useAuthSubmit } from "../../../hooks/hooks";
 
-export default function AcceptInvite(props) {
-    const cookbook_id = props.cookbook_id;
+export default function AcceptInvite({ cookbook_id }) {
     const [cookbook, setCookbook] = useState({});
     const [inputValues, handleChange] = useStatefulFields();
     const [submit, error] = useAuthSubmit(
@@ -24,30 +24,24 @@ export default function AcceptInvite(props) {
         inputValues
     );
 
-    // const cookbook_id = props.match.params.id;
-    // console.log("...(ACCEPTINVITATION) cookbook_id: ", cookbook_id);
-
     const getCookbook = async (cookbook_id) => {
         const cookbookInfo = await axios.get(
             `/api/cookbooks/by_id/${cookbook_id}`
         );
-        // console.log(
-        //     "...(ACTION receiveCurrentCookbook) cookbook:",
-        //     cookbookInfo.data
-        // );
+
         return cookbookInfo;
     };
 
     useEffect(async () => {
         const cookbook = await getCookbook(cookbook_id);
         setCookbook(cookbook.data);
-        // console.log("THE COOKBOOK:", cookbook.data);
     }, []);
 
     return (
-        <div className="wrapper__auth flex cc fcolumn boxShadowS">
-            <h1>{acceptInvite.heading}</h1>
-            <p>{acceptInvite.subline}</p>
+        <FormWrapper
+            heading={acceptInvite.heading}
+            subline={acceptInvite.subline}
+        >
             <div className="avatar__wrapper">
                 <img
                     className="avatar"
@@ -99,6 +93,6 @@ export default function AcceptInvite(props) {
                     <p className="message">{error}</p>
                 </form>
             </div>
-        </div>
+        </FormWrapper>
     );
 }
