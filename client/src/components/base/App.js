@@ -12,7 +12,7 @@ import Header from "./Header";
 import Navigation from "./Navigation";
 import MyProfile from "../pages/MyProfile";
 import Cookbook from "../pages/Cookbook";
-import Recipe from "../pages/Recipe";
+import Recipe from "../cookbook/chapter/recipe/Recipe";
 import EditProfile from "../pages/EditProfile";
 import FadeIn from "../helpers/FadeIn";
 // import UserProfile from "../UserProfile";
