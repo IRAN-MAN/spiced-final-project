@@ -1,6 +1,6 @@
 //components
-import RecipeForm from "../../../forms/recipe/RecipeForm";
-import Backdrop from "../../../elements/Backdrop";
+import RecipeForm from "./RecipeForm";
+import Backdrop from "../../elements/Backdrop";
 
 export default function AddRecipe(props) {
     const { toggleOnOff } = props;
