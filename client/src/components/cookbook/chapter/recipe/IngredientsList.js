@@ -1,30 +1,27 @@
 import { recipe } from "../../../constants/constants";
 
-export default function IngredientsList({ ingredients_list }) {
+export default function IngredientsList({ ingredients }) {
     const renderIngredients = () => {
         // console.log("length:", ingredients_list.length);
-        return ingredients_list.map((ingredient, i) => {
-            const ingredientresult = (
-                <span className="ingredient" key={i}>
-                    {ingredient.quantity}
-                    {ingredient.unit && ingredient.unit + " "}
-                    {ingredient.ingredient_name}
-                    {i !== ingredients_list.length - 1 && recipe.comma}
-                </span>
+        return ingredients.map((ingredient, i) => {
+            return (
+                <tr className="ingredient" key={i}>
+                    <td className="u-align-end">
+                        {ingredient.quantity + " "}
+                        {ingredient.unit && ingredient.unit}
+                    </td>
+                    <td className="u-align-start">
+                        {ingredient.ingredient_name}
+                        {/* {i !== ingredients.length - 1 && recipe.comma} */}
+                    </td>
+                </tr>
             );
-
-            return ingredientresult;
         });
     };
 
     return (
-        <div>
-            <p className="ingredients">
-                <span className="bolder">
-                    {recipe.ingredients + recipe.colon}
-                </span>
-                {renderIngredients()}
-            </p>
-        </div>
+        <table className="recipe__details table__ingredients">
+            <tbody>{renderIngredients()}</tbody>
+        </table>
     );
 }
