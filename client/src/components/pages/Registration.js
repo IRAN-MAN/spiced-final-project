@@ -1,11 +1,14 @@
 //components
 import RegistrationForm from "../forms/authentication/RegistrationForm";
+import FormWrapper from "../elements/FormWrapper";
+import { registration } from "../constants/constants";
 
 export default function Registration() {
     return (
-        <div className="flex wrapper__auth boxShadowS">
-            <h2>Sign up and create your own community cookbook</h2>
-            <RegistrationForm />
-        </div>
+        <FormWrapper heading={registration.heading}>
+            <div className="flex wrapper__auth boxShadowS">
+                <RegistrationForm />
+            </div>
+        </FormWrapper>
     );
 }
