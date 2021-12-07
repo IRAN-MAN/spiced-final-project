@@ -61,10 +61,12 @@ export const Gallery = ({ elements, render, elementsPerPage }) => {
     };
 
     //-------
-    const previous = () => {
+    const previous = (e) => {
+        e.stopPropagation();
         loadPreviousElements();
     };
-    const next = () => {
+    const next = (e) => {
+        e.stopPropagation();
         loadNextElements();
     };
     //--------
@@ -97,7 +99,10 @@ export const Gallery = ({ elements, render, elementsPerPage }) => {
             <div className="gallery__controls">
                 {/* Prev Button */}
                 {nextPrevButtons.hidePrev !== true && (
-                    <button className={"galleryControls"} onClick={previous}>
+                    <button
+                        className={"galleryControls"}
+                        onClick={(e) => previous(e)}
+                    >
                         <i className="material-icons">arrow_left</i>
                     </button>
                 )}
@@ -111,7 +116,10 @@ export const Gallery = ({ elements, render, elementsPerPage }) => {
             <div className="gallery__controls">
                 {/* Next Button */}
                 {nextPrevButtons.hideNext !== true && (
-                    <button className={"galleryControls"} onClick={next}>
+                    <button
+                        className={"galleryControls"}
+                        onClick={(e) => next(e)}
+                    >
                         <i className="material-icons">arrow_right</i>
                     </button>
                 )}
