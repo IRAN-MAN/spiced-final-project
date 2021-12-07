@@ -6,23 +6,25 @@ import {
     receiveRecipePhotos,
     toggleLightboxVisible,
     uploadRecipePhoto,
-} from "../../redux/action-creators";
+} from "../../../../redux/action-creators";
 
 // constants
 const DEFAULT_COVER = "/images/default_photo.jpeg";
-import { recipe, tooltips } from "../constants/constants";
+import { recipe, tooltips, difficulty } from "../../../constants/constants";
+import { icons } from "../../../constants/icons";
 
 //components
-import Lightbox from "../elements/Lightbox";
-import Button from "../elements/Button";
-import EditRecipe from "../forms/recipe/EditRecipe";
-import IngredientsList from "../cookbook/chapter/recipe/IngredientsList";
-import UploadPictureForm from "../forms/UploadPictureForm";
+import Lightbox from "../../../elements/Lightbox";
+import Button from "../../../elements/Button";
+import EditRecipe from "../../../forms/recipe/EditRecipe";
+import IngredientsList from "./IngredientsList";
+import UploadPictureForm from "../../../forms/UploadPictureForm";
 // import FavouriteButton from "./FavouriteButton";
-import { Tooltip } from "../helpers/tooltip";
+import { Tooltip } from "../../../helpers/tooltip";
+import InfoTile from "../../../elements/infoTile";
 
 //hooks
-import { useToggle } from "../../hooks/hooks";
+import { useToggle } from "../../../../hooks/hooks";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -32,7 +34,7 @@ export default function Recipe(props) {
     const currentRecipe = useSelector((state) => state.currentRecipe);
     const recipePhotos = useSelector((state) => state.recipePhotos);
     const author = useSelector((state) => state.author);
-    const ingredients_list = useSelector((state) => state.ingredients_list);
+    const ingredients_list = useSelector((state) => state.currentIngredients);
     const isLightboxVisible = useSelector((state) => state.isLightboxVisible);
 
     const dispatch = useDispatch();
@@ -59,13 +61,13 @@ export default function Recipe(props) {
         // );
         dispatch(toggleLightboxVisible(isLightboxVisible));
     };
-    const renderDifficulty = (difficulty) => {
-        let string = "";
-        for (var i = 0; i < difficulty; i++) {
-            string += `${recipe.difficultyIndicator}`;
-        }
-        return <i>{string}</i>;
-    };
+    // const renderDifficulty = (difficulty) => {
+    //     let string = "";
+    //     for (var i = 0; i < difficulty; i++) {
+    //         string += `${recipe.difficultyIndicator}`;
+    //     }
+    //     return <i>{string}</i>;
+    // };
 
     return (
         <div className="profileWrapper flex cc fcolumn">
@@ -83,25 +85,25 @@ export default function Recipe(props) {
                 id={currentRecipe.recipe_id}
             />
             {/* <FavouriteButton recipe_id={currentRecipe.recipe_id} /> */}
-            <div className="recipeMain">
+            <div className="recipe__main">
                 <h1>{currentRecipe.recipe_name}</h1>
-                <div className="recipeStory">
+
+                <div className="recipe__story">
                     <q>{currentRecipe.recipe_story} </q>
                 </div>
-                <div className="ingredientsWrapper boxShadowS">
-                    <p className="recipeDetails">
-                        <span className="bolder">
-                            {recipe.preparation + recipe.colon}
-                        </span>
-                        {currentRecipe.prep_time + recipe.minutes}
-                        {recipe.separator}
-                        <span className="bolder">
-                            {recipe.difficulty + recipe.colon}
-                        </span>
-                        {renderDifficulty(currentRecipe.difficulty_level)}
-                    </p>
+                <div className="wrapper__info flex jcc">
+                    <InfoTile
+                        icon={icons.timer}
+                        labeltext={currentRecipe.prep_time + recipe.minutes}
+                    ></InfoTile>
+                    <InfoTile
+                        icon={icons.difficulty}
+                        labeltext={difficulty[currentRecipe.difficulty_level]}
+                    ></InfoTile>
+                </div>
 
-                    <IngredientsList ingredients_list={ingredients_list} />
+                <div className="wrapper__ingredients boxShadowS">
+                    <IngredientsList ingredients={ingredients_list} />
                 </div>
                 <div className="instructionsWrapper boxShadowS">
                     <div className="instructions">
