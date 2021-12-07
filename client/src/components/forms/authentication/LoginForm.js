@@ -11,42 +11,40 @@ export default function LoginForm() {
     const [submit, error] = useAuthSubmit("/api/users/login", inputValues);
 
     return (
-        <div>
-            <form onSubmit={submit} className="flex">
-                <label htmlFor="email" className="input">
-                    <input
-                        id="email"
-                        className="input__field"
-                        type="text"
-                        name="email"
-                        placeholder=" "
-                        required
-                        onChange={handleChange}
-                        autoComplete="username"
-                    />
-                    <span className="input__label">{inputLabels.email}</span>
-                </label>
-                <label htmlFor="password" className="input">
-                    <input
-                        id="password"
-                        className="input__field"
-                        type="password"
-                        name="password"
-                        placeholder=" "
-                        required
-                        onChange={handleChange}
-                        autoComplete="current-password"
-                    />
-                    <span className="input__label">{inputLabels.password}</span>
-                </label>
-                <Button
-                    labeltext={buttonLabels.login}
-                    type="submit"
-                    classNames="button button__submit"
-                    icon="arrow_right_alt"
+        <form onSubmit={submit} className="flex">
+            <label htmlFor="email" className="input">
+                <input
+                    id="email"
+                    className="input__field"
+                    type="text"
+                    name="email"
+                    placeholder=" "
+                    required
+                    onChange={handleChange}
+                    autoComplete="username"
                 />
-                <p className="message">{error}</p>
-            </form>
-        </div>
+                <span className="input__label">{inputLabels.email}</span>
+            </label>
+            <label htmlFor="password" className="input">
+                <input
+                    id="password"
+                    className="input__field"
+                    type="password"
+                    name="password"
+                    placeholder=" "
+                    required
+                    onChange={handleChange}
+                    autoComplete="current-password"
+                />
+                <span className="input__label">{inputLabels.password}</span>
+            </label>
+            <Button
+                labeltext={buttonLabels.login}
+                type="submit"
+                classNames="button button__submit"
+                icon="arrow_right_alt"
+            />
+            <p className="message">{error}</p>
+        </form>
     );
 }
