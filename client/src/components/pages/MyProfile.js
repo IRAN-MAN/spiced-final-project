@@ -1,7 +1,7 @@
 //components
 import MyCookbooks from "../cookbook/MyCookbooks";
 import UploadPictureForm from "../forms/UploadPictureForm";
-import { uploadProfilePic } from "../../redux/action-creators";
+import { uploadProfilePic } from "../../redux/action-creators.ts";
 import FadeIn from "../helpers/FadeIn";
 
 //constants

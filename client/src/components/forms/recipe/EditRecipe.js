@@ -1,4 +1,5 @@
-import axios from "../../../axios";
+import { instance as axios } from "../../../axios.ts";
+import { addIngredients } from "../../../redux/action-creators.ts";
 
 //components
 import Backdrop from "../../elements/Backdrop";
@@ -13,10 +14,7 @@ import {
     inputLabels,
     inputPlaceholders,
 } from "../../constants/constants";
-import {
-    addIngredients,
-    deleteIngredientById,
-} from "../../../redux/action-creators";
+
 // hooks
 import { useDispatch, useSelector } from "react-redux";
 

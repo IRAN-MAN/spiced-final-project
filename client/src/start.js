@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom";
-import axios from "./axios";
+import { instance as axios } from "./axios.ts";
 
 // redux & redux devtools
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import store from "./redux/store.ts";
 // import { getInviteLink } from "./redux/action-creators";
 
 //components

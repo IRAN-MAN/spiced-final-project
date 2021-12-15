@@ -1,4 +1,4 @@
-import axios from "../../axios";
+import { instance as axios } from "../../axios.ts";
 
 export default function Logout() {
     const onClickHandler = async () => {

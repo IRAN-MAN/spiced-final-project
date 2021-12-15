@@ -2,7 +2,7 @@ import {
     onUserInputChange,
     updateAccount,
     receiveUserInfo,
-} from "../../redux/action-creators";
+} from "../../redux/action-creators.ts";
 
 // components
 import Button from "../elements/Button";

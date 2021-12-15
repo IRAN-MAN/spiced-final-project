@@ -6,7 +6,7 @@ import {
     receiveRecipePhotos,
     toggleLightboxVisible,
     uploadRecipePhoto,
-} from "../../../../redux/action-creators";
+} from "../../../../redux/action-creators.ts";
 
 // constants
 const DEFAULT_COVER = "/images/default_photo.jpeg";

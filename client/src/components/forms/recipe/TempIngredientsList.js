@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteIngredientById } from "../../../redux/action-creators";
+import { deleteIngredientById } from "../../../redux/action-creators.ts";
 
 export default function TempIngredientsList({ ingredients }) {
     console.log("TempList:", ingredients);

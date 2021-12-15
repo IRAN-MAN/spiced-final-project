@@ -1,6 +1,6 @@
 //redux
 import { useDispatch } from "react-redux";
-import { createNewCookbook } from "../../../redux/action-creators";
+import { createNewCookbook } from "../../../redux/action-creators.ts";
 
 //hooks
 import { useStatefulFields } from "../../../hooks/hooks";

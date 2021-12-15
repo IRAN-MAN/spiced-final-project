@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "../axios";
+import { instance as axios } from "../axios.ts";
 
 export function useStatefulFields() {
     const [inputValues, setInputValues] = useState({});

@@ -1,4 +1,4 @@
-import axios from "../../../axios";
+import { instance as axios } from "../../../axios.ts";
 
 // //components
 import Button from "../../elements/Button";

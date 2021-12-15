@@ -9,7 +9,7 @@ import TempIngredientsList from "./TempIngredientsList";
 import {
     addIngredients,
     deleteIngredientById,
-} from "../../../redux/action-creators";
+} from "../../../redux/action-creators.ts";
 
 export default function IngredientInput() {
     const dispatch = useDispatch();

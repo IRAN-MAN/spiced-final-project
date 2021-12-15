@@ -1,5 +1,5 @@
-import axios from "../../../axios";
-import { receiveRecipes } from "../../../redux/action-creators";
+import { instance as axios } from "../../../axios.ts";
+import { receiveRecipes } from "../../../redux/action-creators.ts";
 
 //components
 import IngredientInput from "./IngredientInput";

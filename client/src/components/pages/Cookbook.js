@@ -4,7 +4,7 @@ import {
     receiveCurrentCookbook,
     uploadCookbookCover,
     receiveCookbooks,
-} from "../../redux/action-creators";
+} from "../../redux/action-creators.ts";
 
 //components
 import CoauthorsList from "../users/CoauthorsList";

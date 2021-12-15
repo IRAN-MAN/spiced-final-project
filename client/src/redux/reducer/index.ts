@@ -1,35 +1,6 @@
-/* eslint-disable indent */
 // Reducer
-import {
-    RECEIVE_STATE,
-    RECEIVE_CHAPTERS,
-    RECEIVE_COAUTHORS,
-    RECEIVE_COOKBOOKS,
-    RECEIVE_CURRENTCOOKBOOK,
-    RECEIVE_MYFAVOURITES,
-    RECEIVE_ALLFAVOURITES,
-    RECEIVE_INGREDIENTSLIST,
-    RECEIVE_RECIPES,
-    RECEIVE_RECIPE_PHOTOS,
-    RECEIVE_CURRENTRECIPE,
-    RECEIVE_USERINFO,
-    RECEIVE_AUTHORINFO,
-    ADD_INGREDIENT,
-    POPULATE_CURRENT_COOKBOOK,
-    DELETE_INGREDIENT,
-    IS_LIGHTBOX_VISIBLE,
-    ADD_RECIPE_PHOTO,
-    UPDATE_USERINPUT,
-    UPDATE_USER,
-    CREATE_NEW_COOKBOOK,
-    UPDATE_COOKBOOK_COVER,
-    UPDATE_PROFILE_PIC,
-    GET_INVITE_LINK,
-    UPDATE_RECIPE_PHOTO,
-    ADD_NEW_POTATO,
-    REMOVE_POTATO,
-    RECEIVE_POTATOES,
-} from "./actions";
+import { ActionTypes } from "..";
+import { Reducer } from "redux";
 
 // import { addIngredients } from "./action-creators";
 
@@ -53,67 +24,67 @@ const initialState = {
     potatocount: 0,
 };
 
-const reducer = (state = initialState, action) => {
+export const reducer: Reducer = (state = initialState, action: any) => {
     switch (action.type) {
-        case RECEIVE_STATE:
+        case ActionTypes.RECEIVE_STATE:
             return { ...state };
-        case RECEIVE_USERINFO:
+        case ActionTypes.RECEIVE_USERINFO:
             return {
                 ...state,
                 user: action.payload.user,
             };
-        case RECEIVE_CHAPTERS:
+        case ActionTypes.RECEIVE_CHAPTERS:
             return {
                 ...state,
                 chapters: action.payload.chapters,
             };
-        case RECEIVE_COOKBOOKS:
+        case ActionTypes.RECEIVE_COOKBOOKS:
             return {
                 ...state,
                 cookbooks: action.payload.cookbooks,
             };
-        case RECEIVE_RECIPES:
+        case ActionTypes.RECEIVE_RECIPES:
             return {
                 ...state,
                 recipes: action.payload.recipes,
             };
-        case RECEIVE_COAUTHORS:
+        case ActionTypes.RECEIVE_COAUTHORS:
             return {
                 ...state,
                 coauthors: action.payload.coauthors,
             };
-        case RECEIVE_CURRENTRECIPE:
+        case ActionTypes.RECEIVE_CURRENTRECIPE:
             return {
                 ...state,
                 currentRecipe: action.payload.currentRecipe,
             };
-        case RECEIVE_INGREDIENTSLIST:
+        case ActionTypes.RECEIVE_INGREDIENTSLIST:
             return {
                 ...state,
                 currentIngredients: action.payload.currentIngredients,
                 editIngredients: action.payload.currentIngredients,
             };
-        case RECEIVE_CURRENTCOOKBOOK:
+        case ActionTypes.RECEIVE_CURRENTCOOKBOOK:
             return {
                 ...state,
                 currentCookbook: action.payload.currentCookbook,
             };
-        case RECEIVE_MYFAVOURITES:
+        case ActionTypes.RECEIVE_MYFAVOURITES:
             return {
                 ...state,
                 myFavourites: action.payload.favourites,
             };
-        case RECEIVE_ALLFAVOURITES:
+        case ActionTypes.RECEIVE_ALLFAVOURITES:
             return {
                 ...state,
                 allFavourites: action.payload.favourites,
             };
-        case RECEIVE_AUTHORINFO:
+        case ActionTypes.RECEIVE_AUTHORINFO:
             return {
                 ...state,
                 author: action.payload.author,
             };
-        case ADD_INGREDIENT:
+        case ActionTypes.ADD_INGREDIENT:
             return {
                 ...state,
                 editIngredients: [
@@ -121,28 +92,28 @@ const reducer = (state = initialState, action) => {
                     action.payload.ingredient,
                 ],
             };
-        case POPULATE_CURRENT_COOKBOOK:
+        case ActionTypes.POPULATE_CURRENT_COOKBOOK:
             return {
                 ...state,
                 currentCookbook: action.payload.currentCookbook,
             };
-        case DELETE_INGREDIENT:
+        case ActionTypes.DELETE_INGREDIENT:
             console.log("DELETE");
             return {
                 ...state,
                 editIngredients: action.payload.newIngredients,
             };
-        case RECEIVE_RECIPE_PHOTOS:
+        case ActionTypes.RECEIVE_RECIPE_PHOTOS:
             return {
                 ...state,
                 recipePhotos: action.payload.recipePhotos,
             };
-        case IS_LIGHTBOX_VISIBLE:
+        case ActionTypes.IS_LIGHTBOX_VISIBLE:
             return {
                 ...state,
                 isLightboxVisible: action.payload.isVisible,
             };
-        case ADD_RECIPE_PHOTO:
+        case ActionTypes.ADD_RECIPE_PHOTO:
             return {
                 ...state,
                 recipePhotos: [
@@ -150,22 +121,22 @@ const reducer = (state = initialState, action) => {
                     ...state.recipePhotos,
                 ],
             };
-        case UPDATE_USERINPUT:
+        case ActionTypes.UPDATE_USERINPUT:
             return {
                 ...state,
                 userInput: { ...state.userInput, ...action.payload.input },
             };
-        case UPDATE_USER:
+        case ActionTypes.UPDATE_USER:
             return {
                 ...state,
                 user: { ...state.user, ...action.payload },
             };
-        case CREATE_NEW_COOKBOOK:
+        case ActionTypes.CREATE_NEW_COOKBOOK:
             return {
                 ...state,
                 cookbooks: [action.payload.newCookbook, ...state.cookbooks],
             };
-        case UPDATE_COOKBOOK_COVER:
+        case ActionTypes.UPDATE_COOKBOOK_COVER:
             return {
                 ...state,
                 currentCookbook: {
@@ -173,7 +144,7 @@ const reducer = (state = initialState, action) => {
                     cover_pic: action.payload.cover_pic,
                 },
             };
-        case UPDATE_PROFILE_PIC:
+        case ActionTypes.UPDATE_PROFILE_PIC:
             return {
                 ...state,
                 user: {
@@ -181,7 +152,7 @@ const reducer = (state = initialState, action) => {
                     profile_pic: action.payload.profile_pic,
                 },
             };
-        case UPDATE_RECIPE_PHOTO:
+        case ActionTypes.UPDATE_RECIPE_PHOTO:
             return {
                 ...state,
                 currentRecipe: {
@@ -189,22 +160,22 @@ const reducer = (state = initialState, action) => {
                     recipe_photo: action.payload.recipePhoto,
                 },
             };
-        case GET_INVITE_LINK:
+        case ActionTypes.GET_INVITE_LINK:
             return {
                 ...state,
                 inviteLink: action.payload.inviteLink,
             };
-        case ADD_NEW_POTATO:
+        case ActionTypes.ADD_NEW_POTATO:
             return {
                 ...state,
                 potatocount: state.potatocount + 1,
             };
-        case REMOVE_POTATO:
+        case ActionTypes.REMOVE_POTATO:
             return {
                 ...state,
                 potatocount: state.potatocount - 1,
             };
-        case RECEIVE_POTATOES:
+        case ActionTypes.RECEIVE_POTATOES:
             return {
                 potatocount: action.payload.potatocount,
             };
@@ -212,5 +183,3 @@ const reducer = (state = initialState, action) => {
             return state;
     }
 };
-
-export default reducer;

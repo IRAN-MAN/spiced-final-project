@@ -3,7 +3,7 @@ import {
     receiveUserInfo,
     receiveChapters,
     receiveCookbooks,
-} from "../../redux/action-creators";
+} from "../../redux/action-creators.ts";
 import { BrowserRouter, Link, Redirect, Route, Switch } from "react-router-dom";
 
 // components
